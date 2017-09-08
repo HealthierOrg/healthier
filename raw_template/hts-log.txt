@@ -1,0 +1,15 @@
+HTTrack3.48-21 launched on Fri, 08 Sep 2017 17:37:03 at http://deothemes.com/envato/emaus/emaus_html/index.html
+(httrack http://deothemes.com/envato/emaus/emaus_html/index.html )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+17:37:04	Warning: 	Note: due to deothemes.com remote robots.txt rules, links beginning with these path will be forbidden: /wp-admin/ (see in the options to disable this)
+17:37:42	Error: 	"Not Found" (404) at link deothemes.com/envato/emaus/emaus_html/img/apple-touch-icon.png (from deothemes.com/envato/emaus/emaus_html/index.html)
+17:38:01	Error: 	"Not Found" (404) at link deothemes.com/envato/emaus/emaus_html/img/dropdown.png (from deothemes.com/envato/emaus/emaus_html/css/style.css)
+17:38:01	Error: 	"Not Found" (404) at link deothemes.com/envato/emaus/emaus_html/img/pattern.jpg (from deothemes.com/envato/emaus/emaus_html/css/style.css)
+
+HTTrack Website Copier/3.48-21 mirror complete in 1 minutes 0 seconds : 53 links scanned, 49 files written (1614006 bytes overall) [1523236 bytes received at 25387 bytes/sec], 519719 bytes transferred using HTTP compression in 15 files, ratio 27%, 13.2 requests per connection
+(3 errors, 1 warnings, 0 messages)

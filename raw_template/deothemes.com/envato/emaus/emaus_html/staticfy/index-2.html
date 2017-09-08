@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from deothemes.com/envato/emaus/emaus_html/index-2.html by HTTrack Website Copier/3.x [XR&CO"2014], Fri, 08 Sep 2017 16:37:42 GMT -->
+<head>
+  <title>Emaus | App Landing</title>
+
+  <meta charset="utf-8">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700%7CLato:300,400,400i,700" rel="stylesheet">
+
+  <!-- Css -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/font-icons.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+  <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.html' %}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72.png' %}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114.png' %}">
+
+</head>
+
+<body data-spy="scroll" data-offset="60" data-target=".nav__holder">
+
+  <!-- Preloader -->
+  <div class="loader-mask">
+    <div class="loader">
+      "Loading..."
+    </div>
+  </div>
+
+  <main class="main-wrapper">
+
+    <!-- Navigation -->
+    <header class="nav nav--sticky-on-mobile" id="home">
+
+      <div class="nav__holder" id="sticky-nav">
+        <div class="container">
+          <div class="flex-parent">
+
+            <div class="nav__header clearfix">
+              <!-- Logo -->
+              <div class="logo-wrap local-scroll">
+                <a href="#home" class="logo__link">
+                  <img class="logo logo--dark" src="{% static 'img/logo_dark.png' %}" alt="logo">
+                </a>
+              </div>
+
+              <button type="button" class="nav__icon-toggle" id="nav__icon-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="nav__icon-toggle-bar"></span>
+                <span class="nav__icon-toggle-bar"></span>
+                <span class="nav__icon-toggle-bar"></span>
+              </button>
+            </div> <!-- end nav-header -->
+
+
+            <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse">              
+              <ul class="nav__menu nav__menu--inline local-scroll" id="onepage-nav">
+                <li>
+                  <a href="#features">Features</a>
+                </li>
+                <li>
+                  <a href="#testimonials">Testimonials</a>
+                </li>
+                <li>
+                  <a href="#screens">Screens</a>
+                </li>
+              </ul> <!-- end menu -->
+
+              <div class="nav__btn-holder">
+                <a href="#" class="btn btn--sm btn--color rounded"><span>Download</span></a>
+              </div>
+            </nav> <!-- end nav-wrap -->
+
+        
+          </div> <!-- end flex-parent -->
+        </div> <!-- end container -->
+
+      </div>
+    </header> <!-- end navigation -->
+
+
+    <div class="content-wrapper oh">
+
+      <!-- Hero -->
+      <section class="hero bg-gradient bg-gradient--1 white-text">
+
+        <!-- SVG Wave -->
+        <svg version="1.1" class="wave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 152.8" enable-background="new 0 0 1920 152.8" xml:space="preserve">
+          <path class="wave-path" d="M1,152.4v-61c0,0,257.3,56.4,431,44c260.8-18.7,490.2-63.1,647-97c496.4-107.3,842,42,842,42v72H1z"/>
+        </svg>
+
+        <div class="container hero__container hero__container--720">
+
+          <div class="row hero__outer flex-vertical-align-center">
+            <div class="col-lg-5 col-md-7 text-center hidden-sm hidden-xs">
+              <img src="{% static 'img/hero/iphone_app.png' %}" class="hero__img--mt-210" alt="">
+            </div>
+            <div class="col-lg-6 col-md-5">
+              <h1 class="hero__title hero--boxed">Build the amazing app that everyone will love</h1>
+              <p class="hero__subtitle">An idea that takes the parts of a structure and turns whole system. Practice is the frequent and continued contemplation of the mode of executing any given work.</p>
+              <div class="hero__btn-holder mt-30">
+                <a href="#" class="btn btn--lg btn--transparent rounded"><span>Learn More</span></a>
+                <a href="#" class="btn btn--lg btn--color btn--icon rounded"><span><i class="ui-apple"></i>Download app</span></a>
+              </div>                  
+            </div>
+          </div>              
+         
+        </div>
+      </section> <!-- end hero -->
+
+
+      <!-- Promo Section -->
+      <section class="section-wrap promo-section pt-200 pt-md-100">
+        <div class="container">
+          <div class="row flex-parent flex-vertical-align-center flex-sm-collapse">
+            <div class="col-md-5 col-sm-12 mb-md-40">
+              <div class="promo-section__description">
+                <h2 class="promo-section__title">Intuitive interface for collaboration</h2>
+                <p class="lead mb-40">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+                <a href="#" class="btn btn--lg btn--color btn--icon rounded"><span><i class="ui-apple"></i>Download app</span></a>
+              </div>
+            </div>
+            <div class="col-md-6 col-md-offset-1 col-sm-12">
+              <img src="{% static 'img/promo/3.jpg' %}" alt="" class="promo-section__img">
+            </div>
+          </div>
+        </div>
+      </section> <!-- end promo section -->
+
+
+      <!-- Video -->
+      <section class="section-wrap video-section bg-img" style="background-image: url(img/video/video_bg.jpg);">
+        <div class="container text-center">
+          <a href="https://www.youtube.com/watch?v=nVzVohG304A?autoplay=1" class="play-btn icon-wave single-video-lightbox"></a>
+        </div>
+      </section> <!-- end video-section -->
+
+
+      <!-- Feature -->
+      <section class="section-wrap bottom-divider" id="features">
+        <div class="container">
+          <div class="row flex-parent flex-vertical-align-center flex-sm-collapse">
+
+            <div class="col-sm-4 mb-sm-40">
+              <div class="feature text-center mb-60">
+                <a href="#" class="feature__icon-holder">
+                  <i class="ui-layers feature__icon feature__icon--gradient-1"></i>
+                </a>
+                <div class="feature__text">
+                  <h3 class="feature__title">Well Documented</h3>
+                  <p class="feature__paragraph">Our Theme is a very slick and clean e-commerce template with endless possibilities.</p>
+                </div>
+              </div> <!-- end feature item -->
+
+              <div class="feature text-center">
+                <a href="#" class="feature__icon-holder">
+                  <i class="ui-pencil-ruler feature__icon feature__icon--gradient-1"></i>
+                </a>
+                <div class="feature__text">
+                  <h3 class="feature__title">Tracking Sales</h3>
+                  <p class="feature__paragraph">Our Theme is a very slick and clean e-commerce template with endless possibilities.</p>
+                </div>
+              </div> <!-- end feature item -->
+            </div> <!-- end col -->
+
+            <div class="col-sm-4 mb-sm-40 text-center">
+              <img src="{% static 'img/promo/iphone_app.png' %}" alt="">
+            </div> <!-- end col -->
+
+            <div class="col-sm-4">
+              <div class="feature text-center mb-60">
+                <a href="#" class="feature__icon-holder">
+                  <i class="ui-fountain-pen-head-1 feature__icon feature__icon--gradient-1"></i>
+                </a>
+                <div class="feature__text">
+                  <h3 class="feature__title">Send Message</h3>
+                  <p class="feature__paragraph">Our Theme is a very slick and clean e-commerce template with endless possibilities.</p>
+                </div>
+              </div> <!-- end feature item -->
+
+              <div class="feature text-center">
+                <a href="#" class="feature__icon-holder">
+                  <i class="ui-microphone feature__icon feature__icon--gradient-1"></i>
+                </a>
+                <div class="feature__text">
+                  <h3 class="feature__title">Notifications</h3>
+                  <p class="feature__paragraph">Our Theme is a very slick and clean e-commerce template with endless possibilities.</p>
+                </div>
+              </div> <!-- end feature item -->
+            </div> <!-- end col -->
+
+          </div>
+        </div>
+      </section> <!-- end feature -->
+
+      
+      <!-- Testimonials -->
+      <section class="section-wrap bg-light bottom-divider" id="testimonials">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-6 mb-md-40">
+              <div class="testimonial box-shadow text-center clearfix">
+                <img src="{% static 'img/testimonials/1.jpg' %}" alt="" class="testimonial__img">
+                <div class="testimonial__body">
+                  <p class="testimonial__text">“I’am amazed, I should say thank you so much for your awesome template. Design is so good and neat.”</p>
+                </div>
+                <div class="testimonial__info">
+                  <span class="testimonial__author">Christine Clark</span>
+                  <span class="testimonial__company">DeoThemes</span>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="testimonial box-shadow text-center clearfix">
+                <img src="{% static 'img/testimonials/2.jpg' %}" alt="" class="testimonial__img">
+                <div class="testimonial__body">
+                  <p class="testimonial__text">“Every detail has been taken care these team are realy amazing and talented! I will work only with emaus agency.”</p>
+                </div>
+                <div class="testimonial__info">
+                  <span class="testimonial__author">Mark Zukerberg</span>
+                  <span class="testimonial__company">Facebook</span>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+      </section> <!-- end testimonials -->
+
+
+      <!-- Screens -->
+      <section class="section-wrap bottom-divider" id="screens">
+        <div class="container">
+          <div class="row">
+
+            <div id="owl-apps-slider" class="owl-carousel owl-theme text-center">
+              <img src="{% static 'img/app_screens/1.jpg' %}" alt="">
+              <img src="{% static 'img/app_screens/2.jpg' %}" alt="">
+              <img src="{% static 'img/app_screens/3.jpg' %}" alt="">
+              <img src="{% static 'img/app_screens/4.jpg' %}" alt="">
+            </div>
+
+          </div>
+        </div>
+      </section> <!-- end screens -->
+
+
+
+      <!-- CTA -->
+      <section class="section-wrap bg-light bottom-divider">
+        <div class="container text-center">
+
+          <div class="heading-row">
+            <h2 class="heading">Get the app that suits you</h2>
+          </div>
+
+          <div class="btn__holder">
+            <a href="#" class="btn btn--x-large btn--icon btn--google">
+              <i class="ui-android"></i><span>Google Play</span>
+            </a>
+            <a href="#" class="btn btn--x-large btn--icon btn--apple">
+              <i class="ui-apple"></i><span>App Store</span>
+            </a>
+            <a href="#" class="btn btn--x-large btn--icon btn--windows">
+              <i class="ui-windows"></i><span>Windows Store</span>
+            </a>
+          </div>
+          
+        </div>
+      </section> <!-- end CTA -->
+
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__widgets">
+            <div class="row">
+
+              <div class="col-md-4 col-sm-3 col-xs-12">
+                <div class="widget footer__about-us">
+                  <img src="{% static 'img/logo_dark.png' %}" alt="" class="logo">
+                  <div class="footer__socials mt-40">
+                    <div class="social-icons social-icons--nobase">
+                      <a href="#"><i class="ui-twitter"></i></a>
+                      <a href="#"><i class="ui-facebook"></i></a>
+                      <a href="#"><i class="ui-linkedin"></i></a>
+                      <a href="#"><i class="ui-instagram"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- end about us -->
+
+
+              <div class="col-md-2 col-md-offset-2 col-sm-3 col-xs-12">
+                <div class="widget widget-links">
+                  <h5 class="widget-title">Product</h5>
+                  <ul class="list-no-dividers">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-3 col-xs-12">
+                <div class="widget widget-links">
+                  <h5 class="widget-title">Support</h5>
+                  <ul class="list-no-dividers">                  
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Support Policy</a></li>
+                    <li><a href="#">F.A.Q</a></li>
+                    <li><a href="#">Privacy &amp; Terms</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-3 col-xs-12">
+                <div class="widget widget-links">
+                  <h5 class="widget-title">Company</h5>
+                  <ul class="list-no-dividers">
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Join Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </div>
+              </div>           
+
+            </div>
+          </div>    
+        </div> <!-- end container -->
+
+        <div class="footer__bottom top-divider">
+          <div class="container text-center">
+            <span class="copyright">
+              &copy; 2017 Emaus, Made by <a href="https://deothemes.com/">DeoThemes</a>
+            </span>
+          </div>
+        </div> <!-- end footer bottom -->
+      </footer> <!-- end footer -->
+
+
+      <div id="back-to-top">
+        <a href="#top"><i class="ui-arrow-up"></i></a>
+      </div>
+
+    </div> <!-- end content wrapper -->
+  </main> <!-- end main wrapper -->
+  
+
+  <!-- jQuery Scripts -->
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/plugins.js' %}"></script>  
+  <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+    
+</body>
+
+<!-- Mirrored from deothemes.com/envato/emaus/emaus_html/index-2.html by HTTrack Website Copier/3.x [XR&CO"2014], Fri, 08 Sep 2017 16:37:56 GMT -->
+</html>
