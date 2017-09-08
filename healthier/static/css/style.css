@@ -314,6 +314,11 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 .text-center {
   text-align: center; }
 
+.search_bar {
+  position: relative;
+  top: 5000px;
+}
+
 .text-right {
   text-align: right; }
 
@@ -672,8 +677,13 @@ address {
     margin-right: 12px; }
   .hero--boxed {
     max-width: 500px; }
+  .hero--not-boxed {
+    max-width: 100% }
   .hero--boxed--md {
-    max-width: 670px; }
+    width:auto;
+    left: 500px;
+    position: relative;
+    }
   .hero--center {
     margin-left: auto;
     margin-right: auto; }
@@ -2122,7 +2132,7 @@ img.mfp-img {
 /*-------------------------------------------------------*/
 /* Sliders
 /*-------------------------------------------------------*/
-/* 
+/*
  *  Core Owl Carousel CSS File
  *  v1.3.3
  */
