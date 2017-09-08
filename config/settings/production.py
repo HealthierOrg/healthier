@@ -126,8 +126,7 @@ CACHES = {
 
 
 # Sentry Configuration
-SENTRY_DSN = env('DJANGO_SENTRY_DSN')
-SENTRY_CLIENT = env('DJANGO_SENTRY_CLIENT', default='raven.contrib.django.raven_compat.DjangoClient')
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -175,12 +174,6 @@ LOGGING = {
         },
     },
 }
-SENTRY_CELERY_LOGLEVEL = env.int('DJANGO_SENTRY_LOG_LEVEL', logging.INFO)
-RAVEN_CONFIG = {
-    'CELERY_LOGLEVEL': env.int('DJANGO_SENTRY_LOG_LEVEL', logging.INFO),
-    'DSN': SENTRY_DSN
-}
-
 # Custom Admin URL, use {% url 'admin:index' %}
 ADMIN_URL = env('DJANGO_ADMIN_URL')
 
