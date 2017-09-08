@@ -24,3 +24,5 @@ django-anymail==0.11.1
 raven==6.1.0
 
 
+django-debug-toolbar==1.8
+
