@@ -10,60 +10,7 @@
 
   <main class="main-wrapper">
 
-    <!-- Navigation -->
-    <header class="nav nav--transparent">
-
-      <div class="nav__holder" id="sticky-nav">
-        <div class="container">
-          <div class="flex-parent">
-
-            <div class="nav__header clearfix">
-              <!-- Logo -->
-              <div class="logo-wrap">
-                <a href="index.html" class="logo__link">
-                  <img class="logo logo--dark" src="{% static 'img/logo.png' %}" alt="logo">
-                  <img class="logo logo--light" src="{% static 'img/logo.png' %}" alt="logo">
-                </a>
-              </div>
-
-              <button type="button" class="nav__icon-toggle" id="nav__icon-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="nav__icon-toggle-bar"></span>
-                <span class="nav__icon-toggle-bar"></span>
-                <span class="nav__icon-toggle-bar"></span>
-              </button>
-            </div> <!-- end nav-header -->
-
-            <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse">
-              <ul class="nav__menu nav__menu--inline">
-                <li>
-                  <a href="features.html">Providers</a>
-                </li>
-                <li>
-                  <a href="features.html">Consumers</a>
-                </li>
-                <li>
-                  <a href="features.html">How it works</a>
-                </li>
-                <li>
-                  <a href="pricing.html">About</a>
-                </li>
-              </ul> <!-- end menu -->
-
-              <div class="nav__btn-holder">
-                <a href="#" class="btn btn--sm btn--google"><span>Login</span></a>
-              </div>
-                <div class="nav__btn-holder">
-                <a href="#" class="btn btn--sm btn--color"><span>Cart</span></a>
-              </div>
-            </nav> <!-- end nav-wrap -->
-
-          </div> <!-- end flex-parent -->
-        </div> <!-- end container -->
-
-      </div>
-    </header> <!-- end navigation -->
-
+    {% include 'nav.html' %}
 
     <div class="content-wrapper oh">
 
@@ -74,8 +21,6 @@
 
         <div class="row hero__outer flex-vertical-align-center">
             <div class="col-md-12">
-              <h1 class="hero__title">Enjoy the best health services from trusted service providers.
-              </h1>
                 <div class="">
                 <form class="relative mt-20">
                   <input type="text" class="newsletter__input" style="width: 100%;" placeholder="Search for a service">

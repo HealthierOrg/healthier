@@ -12,11 +12,10 @@ urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
 
-    # User management
-    url(r'^users/', include('healthier.users.urls', namespace='users')),
-    url(r'^accounts/', include('allauth.urls')),
+    url(r'^auth/', include('healthier.auth.urls', namespace='auth')),
 
-    # Your stuff: custom urls includes go here
+    url(r'^providers/', include('healthier.providers.urls', namespace='providers')),
+    url(r'^consumers/', include('healthier.consumers.urls', namespace='consumers')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
