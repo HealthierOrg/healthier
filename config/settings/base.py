@@ -56,7 +56,6 @@ LOCAL_APPS = [
     # custom users app
     'healthier.consumers.apps.ConsumersConfig',
     'healthier.providers.apps.ProvidersConfig',
-    # Your stuff: custom apps go here
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -256,7 +255,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # ------------------------------------------------------------------------------
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 # Some really nice defaults

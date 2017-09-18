@@ -1,8 +1,10 @@
+from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
 from healthier.providers.forms import ProviderRegistrationForm
 from healthier.consumers.forms import ConsumerRegistrationForm
+from healthier.providers.models import Provider
 
 
 class RegistrationView(View):
@@ -23,4 +25,30 @@ class RegistrationView(View):
             user.save()
             return redirect("providers:dashboard")
         return HttpResponse(form.errors)
+
+
+class LoginView(View):
+    template_name = 'registration/login.html'
+    provider_form = ProviderRegistrationForm
+    consumer_form = ConsumerRegistrationForm
+
+    def get(self, request):
+        return render(request, self.template_name)
+
+    def post(self, request):
+        account_type = request.POST['account_type']
+        email = request.POST['email']
+        password = request.POST['password']
+        account = Provider if account_type == "Provider" else "Consumer"
+        try:
+            user = account.objects.get(email=email)
+            if user.check_password(password):
+                username = user.email
+                user = authenticate(username=username, password=password)
+                login(request, user)
+                request.session["current_user"] = user
+                return redirect("{0}:dashboard".format(account_type.lower()))
+            return render(request, self.template_name, context={"error": "Invalid Password. Please, try again."})
+        except account.DoesNotExist:
+            return render(request, self.template_name, context={"error": "No account is associated with this email"})
 

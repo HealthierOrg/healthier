@@ -41,8 +41,6 @@ class CeleryConfig(AppConfig):
             raven_register_signal(raven_client)
 
 
-
-
 @app.task(bind=True)
 def debug_task(self):
     print('Request: {0!r}'.format(self.request))  # pragma: no cover
