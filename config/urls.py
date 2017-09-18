@@ -7,13 +7,12 @@ from django.views import defaults as default_views
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
-    url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
+    url(r'^about/', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
 
-    url(r'^auth/', include('healthier.auth.urls', namespace='auth')),
-    # url(r'^auth/', include('registration.backends.hmac.urls', namespace='auth')),
+    url(r'auth/', include('healthier.auth.urls', namespace="auth")),
     url(r'^providers/', include('healthier.providers.urls', namespace='providers')),
     url(r'^consumers/', include('healthier.consumers.urls', namespace='consumers')),
 

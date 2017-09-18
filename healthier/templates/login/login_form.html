@@ -1,6 +1,6 @@
 {% load static %}
 
-{% include 'registration/header.html' %}
+{% include 'login/header.html' %}
 
 <div class="account-pages"></div>
         <div class="clearfix"></div>
@@ -10,10 +10,10 @@
             </div>
         	<div class="m-t-40 card-box">
                 <div class="text-center">
-                    <h4 class="text-uppercase font-bold m-b-0">Registration</h4>
+                    <h4 class="text-uppercase font-bold m-b-0">Login</h4>
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal m-t-20" action="{% url "auth:register" %}" method="POST">
+                    <form class="form-horizontal m-t-20" action="{% url "auth:login" %}" method="POST">
                           {% csrf_token %}
                         <div class="form-group ">
                             <div class="col-xs-12">
@@ -38,7 +38,7 @@
 
                         <div class="form-group text-center m-t-30">
                             <div class="col-xs-12">
-                                <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" type="submit">Sign Up</button>
+                                <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" type="submit">Login</button>
                             </div>
                         </div>
 
@@ -56,4 +56,4 @@
 
         </div>
 
-{% include 'registration/footer.html' %}
+{% include 'login/footer.html' %}

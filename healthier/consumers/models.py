@@ -10,7 +10,6 @@ class Consumer(models.Model):
 
     healthier_ID = models.CharField(max_length=30)
     phone_number = models.CharField(max_length=200)
-    date_of_birth = models.DateField(auto_now=False, auto_now_add=False, )
     gender = models.CharField(max_length=5, choices=(("", "Select Gender"), ('M', "Male"), ("F", "Female"),),
                               blank=True)
     text = models.CharField(max_length=200)

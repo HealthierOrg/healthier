@@ -1,26 +1,8 @@
 from django.conf.urls import url, include
 from django.views.generic import TemplateView
-from django.contrib.auth import views as auth_views
-from healthier.auth.views import SignupView
-from healthier.auth.views import LoginView
-
+from . import views
 
 urlpatterns = [
-    url(
-        r'^login/$',
-        LoginView.as_view(),
-        {'template_name': 'account/login.html'},
-        name='login'
-    ),
-    url(
-        r'^logout/$',
-        auth_views.logout,
-        {'next_page': '/'},
-        name='logout'
-    ),
-    url(
-        regex=r'^register/$',
-        view=SignupView.as_view(),
-        name='register'
-    ),
+    url(r'^login/$', TemplateView.as_view(template_name='login/login_form.html'), name='login'),
+    url(r'^register/$', views.RegistrationView.as_view(template_name='registration/registration_form.html'), name='register'),
 ]
