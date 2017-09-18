@@ -12,8 +12,8 @@ urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
 
-    url(r'^auth/', include('registration.backends.hmac.urls')),
-
+    url(r'^auth/', include('healthier.auth.urls', namespace='auth')),
+    # url(r'^auth/', include('registration.backends.hmac.urls', namespace='auth')),
     url(r'^providers/', include('healthier.providers.urls', namespace='providers')),
     url(r'^consumers/', include('healthier.consumers.urls', namespace='consumers')),
 

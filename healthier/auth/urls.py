@@ -7,7 +7,7 @@ from healthier.auth.views import LoginView
 
 urlpatterns = [
     url(
-        r'^login$',
+        r'^login/$',
         LoginView.as_view(),
         {'template_name': 'account/login.html'},
         name='login'
