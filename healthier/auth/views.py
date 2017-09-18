@@ -24,3 +24,21 @@ class RegistrationView(View):
             return redirect("providers:dashboard")
         return HttpResponse(form.errors)
 
+class LoginView(View):
+    template_name = 'login/login_form.html'
+    provider_form = ProviderRegistrationForm
+    consumer_form = ConsumerRegistrationForm
+
+    def get(self, request):
+        return render(request, self.template_name)
+
+    def post(self, request, *args, **kwargs):
+        account_type = request.POST['account_type']
+        form = ProviderRegistrationForm(request.POST) if account_type == "Provider" \
+            else ConsumerRegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.set_password(form.cleaned_data.get('password'))
+            user.save()
+            return redirect("providers:dashboard")
+        return HttpResponse(form.errors)
