@@ -1,15 +1,21 @@
-from django import forms
+from django.forms import ModelForm, forms
 
-class ProviderForm(ModelForm):
+from healthier.providers.models import Provider
+
+
+class ProviderRegistrationForm(ModelForm):
     class Meta:
-        model = Consumer
-        fields =   [
-            'name', 
-            'email', 
-            'logo', 
-            'adress', 
-            'city', 
-            'country', 
-            'phone_number', 
-            'website'
-            ]
+            model = Provider
+            exclude = ('name', 'logo', 'city', 'country', 'address', 'website', 'phone_number', 'is_active', 'is_admin',
+                       'is_staff', 'date_joined', 'groups', 'healthier_ID', 'last_login')
+
+    def __init__(self, *args, **kwargs):
+            super(ProviderRegistrationForm, self).__init__(*args, **kwargs)
+
+    def clean_password(self):
+        password = self.cleaned_data.get('password')
+        if not password:
+            raise forms.ValidationError("You must confirm your password")
+        return password
+
+

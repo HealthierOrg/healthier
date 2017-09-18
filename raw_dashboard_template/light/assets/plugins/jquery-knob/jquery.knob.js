@@ -29,7 +29,7 @@
     "use strict";
 
     /**
-     * Definition of globals and core
+     * Definition of globals and dash
      */
     var k = {}, // kontrol
         max = Math.max,

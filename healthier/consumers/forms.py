@@ -1,15 +1,9 @@
 from django.forms import ModelForm
-from .models import Consumer
 
-class ConsumerForm(ModelForm):
+from healthier.consumers.models import Consumer
+
+
+class ConsumerRegistrationForm(ModelForm):
     class Meta:
         model = Consumer
-        fields =   [
-            'first_name', 
-            'last_name', 
-            'email', 
-            'phone_number', 
-            'date_of_birth', 
-            'gender', 
-            'picture'
-            ]
+        exclude = ('healthier_ID', 'phone_number', 'gender', 'text', 'picture')
