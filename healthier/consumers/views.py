@@ -1,24 +1,10 @@
+from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic.edit import CreateView, UpdateView
-from healthier.consumers.models import Consumer
+from django.views import View
 
 
-# Create your views here.
-class ConsumerCreate(CreateView):
-    model = Consumer
-    fields =   [
-            'phone_number',
-            'date_of_birth',
-            'gender',
-            'picture'
-            ]
+class DashboardView(View):
+    template_name = ""
 
-
-class ConsumerUpdate(UpdateView):
-    model = Consumer
-    fields =   [
-            'phone_number',
-            'date_of_birth',
-            'gender',
-            'picture'
-            ]
+    def get(self, request):
+        return HttpResponse("Welcome To Consumer")
