@@ -24,7 +24,7 @@ class RegistrationView(View):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data.get('password'))
             user.save()
-            return redirect("providers:dashboard")
+            return redirect("{0}:dashboard".format(account_type.lower()))
         return HttpResponse(form.errors)
 
 

@@ -22,11 +22,6 @@ class Provider(AbstractBaseUser):
     date_joined = models.DateTimeField(_('Date Joined'), default=now)
     is_admin = models.BooleanField(_('Admin'), default=False)
     is_active = models.BooleanField(_('Active'), default=True)
-    groups = models.ManyToManyField(blank=True,
-                                    help_text='The groups this hospital belongs to. '
-                                              'An hospital will get all permissions granted to '
-                                              'each of their groups.', related_name='hospital_set',
-                                    related_query_name='hospital', to='auth.Group', verbose_name='groups')
     logo = models.ImageField(upload_to="uploads/images/providers/")
     address = models.CharField(max_length=100)
     city = models.CharField(max_length=200)

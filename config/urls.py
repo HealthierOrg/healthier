@@ -13,8 +13,9 @@ urlpatterns = [
     url(settings.ADMIN_URL, admin.site.urls),
 
     url(r'auth/', include('healthier.auth.urls', namespace="auth")),
-    url(r'^provider/', include('healthier.providers.urls', namespace='provider')),
-    url(r'^consumer/', include('healthier.consumers.urls', namespace='consumer')),
+    url(r'how/', TemplateView.as_view(template_name='pages/how.html'), name="how"),
+    url(r'^providers/', include('healthier.providers.urls', namespace='provider')),
+    url(r'^consumers/', include('healthier.consumers.urls', namespace='consumer')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
