@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
-# from healthier.service.models import HealthService
+from healthier.service.models import HealthService
 from healthier.api.serializers import ConsumerSerializer, ProviderSerializer
 
 

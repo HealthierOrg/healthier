@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
-# from healthier.service.models import HealthService
+from healthier.service.models import HealthService
 
 class ConsumerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,16 +16,16 @@ class ProviderSerializer(serializers.ModelSerializer):
             'address', 'city', 'country', 'website'
             )
 
-# class HealthServiceSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = HealthService
-#         fields = (
-#             'Category',
-#             'Service',
-#             'details',
-#             'cost',
-#             'cost_denom',
-#             'days_available', 
-#             'time_available',
-#             'provider_ID'
-#         )
+class HealthServiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HealthService
+        fields = (
+            'Category',
+            'Service',
+            'details',
+            'cost',
+            'cost_denom',
+            'days_available', 
+            'time_available',
+            'provider_ID'
+        )
