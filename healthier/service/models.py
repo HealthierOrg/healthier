@@ -1,8 +1,22 @@
 from django.db import models
-
-# Create your models here.
-from healthier.consumers.models import Customer
+from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
+
+
+class ServiceGroup(models.Model):
+    # class Meta:
+    #     app_label = 'service'
+
+    """Initial services for providers to use as template"""
+    Categories = models.CharField(max_length=50)
+    Group = models.CharField(max_length=30)
+    servicename = models.CharField(max_length=30)
+    category_ID = models.CharField(max_length=30, blank=True)
+    group_ID = models.CharField(max_length=30, blank=True)
+
+    def __str__(self):
+        """Return a string representation of the model."""
+        return self.servicename
 
 
 class HealthService(models.Model):
@@ -25,7 +39,7 @@ class HealthService(models.Model):
 
 class OrderedService(models.Model):
     """A paid for service request to the service organization"""
-    healthier_ID = models.ForeignKey(Customer)
+    healthier_ID = models.ForeignKey(Consumer)
     serv_ordered = models.CharField(max_length=30)
     payment_status = models.CharField(max_length=30,
                                       choices=(("", "Payment Status"), ('Paid', "P"), ('Not Paid', "NP"),), blank=True)
@@ -44,7 +58,7 @@ class OrderedService(models.Model):
 
 class MyHealth(models.Model):
     """A paid for service request to the service organization"""
-    healthier_ID = models.ForeignKey(Customer)
+    healthier_ID = models.ForeignKey(Consumer)
     service_date = models.DateField(auto_now=False, auto_now_add=False, )
     health_data = models.CharField(max_length=200)
     data_value = models.CharField(max_length=200)
@@ -56,7 +70,7 @@ class MyHealth(models.Model):
 
 class Requests(models.Model):
     """A paid for service request to the service organization"""
-    healthier_ID = models.ForeignKey(Customer)
+    healthier_ID = models.ForeignKey(Consumer)
     request_date = models.DateField(auto_now=False, auto_now_add=False, )
     request_type = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
@@ -71,7 +85,7 @@ class Requests(models.Model):
 class AmbulReport(models.Model):
     """A paid for service request to the service organization"""
     order_ID = models.ForeignKey("OrderedService")
-    healthier_ID = models.ForeignKey(Customer)
+    healthier_ID = models.ForeignKey(Consumer)
     service_ID = models.CharField(max_length=30)
     pickup_date = models.DateField(auto_now=False, auto_now_add=False, )
     pickup_address = models.CharField(max_length=30)
@@ -107,7 +121,7 @@ class SentReport(models.Model):
     vaccine_expirydate = models.DateField(auto_now=False, auto_now_add=False, )
     vaccine_batchnumber = models.CharField(max_length=200)
     next_appointment = models.DateField(auto_now=False, auto_now_add=False, )
-    customer = models.ForeignKey(Customer)
+    Consumer = models.ForeignKey(Consumer)
     file_upload = models.FileField(upload_to='uploads/%Y/%m/%d/', null=True)
 
     def __str__(self):
@@ -115,22 +129,9 @@ class SentReport(models.Model):
         return self.report_type
 
 
-class ServiceGroup(models.Model):
-    """Initial services for providers to use as template"""
-    Categories = models.CharField(max_length=50)
-    Group = models.CharField(max_length=30)
-    servicename = models.CharField(max_length=30)
-    category_ID = models.CharField(max_length=30, blank=True)
-    group_ID = models.CharField(max_length=30, blank=True)
-
-    def __str__(self):
-        """Return a string representation of the model."""
-        return self.servicename
-
-
 class MeasuredTest(models.Model):
     """Db for measured tests including range"""
-    healthier_ID = models.ForeignKey(Customer)
+    healthier_ID = models.ForeignKey(Consumer)
     order_ID = models.ForeignKey(OrderedService)
     service_date = models.DateField(auto_now=False, auto_now_add=False, )
     service_test = models.CharField(max_length=30)

@@ -73,3 +73,12 @@ CELERY_ALWAYS_EAGER = True
 # ------------------------------------------------------------------------------
 
 ACCOUNT_ID_LENGTH = 20
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [],
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
+}
+
+ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1']

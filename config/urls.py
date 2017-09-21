@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'how/', TemplateView.as_view(template_name='pages/how.html'), name="how"),
     url(r'^providers/', include('healthier.providers.urls', namespace='provider')),
     url(r'^consumers/', include('healthier.consumers.urls', namespace='consumer')),
+    url(r'^api/', include('healthier.api.urls', namespace='api')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
