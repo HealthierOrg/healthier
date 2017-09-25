@@ -44,26 +44,12 @@ DJANGO_APPS = [
     # Admin
     'django.contrib.admin',
 ]
-<<<<<<< HEAD
-THIRD_PARTY_APPS = [
-    'crispy_forms',  # Form layouts
-    'allauth',  # registration
-    'allauth.account',  # registration
-    'allauth.socialaccount',  # registration
-    'rest_framework',
-]
-=======
->>>>>>> 7afde39961ae4860392743a688fe635d48e77a1b
 
 # Apps specific for this project go here.
 LOCAL_APPS = [
     # custom users app
     'healthier.consumers.apps.ConsumersConfig',
     'healthier.providers.apps.ProvidersConfig',
-<<<<<<< HEAD
-    'healthier.api.apps.ApiConfig',
-    'healthier.service.apps.ServiceConfig',
-=======
     'healthier.user.apps.UserConfig',
     'healthier.service.apps.ServiceConfig'
 ]
@@ -74,7 +60,6 @@ THIRD_PARTY_APPS = [
     'allauth.account',  # registration
     'django_prices',
     'django_mysql',
->>>>>>> 7afde39961ae4860392743a688fe635d48e77a1b
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -132,13 +117,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'healthier',
         'USER': 'root',
-<<<<<<< HEAD
         'PASSWORD': 'password',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-=======
-        'PASSWORD': 'lekan',
         'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
->>>>>>> 7afde39961ae4860392743a688fe635d48e77a1b
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',

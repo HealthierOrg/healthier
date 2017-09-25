@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
-from healthier.service.models import HealthService
+from healthier.service.models import BaseHealthierService
+
 
 class ConsumerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,7 +19,7 @@ class ProviderSerializer(serializers.ModelSerializer):
 
 class HealthServiceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = HealthService
+        model = BaseHealthierService
         fields = (
             'Category',
             'Service',

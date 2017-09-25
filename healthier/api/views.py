@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
-from healthier.service.models import HealthService
+from healthier.service.models import BaseHealthierService
 from healthier.api.serializers import ConsumerSerializer, ProviderSerializer
 
 
@@ -80,7 +80,7 @@ def service_detail(request):
 
     id = request.query_params.get('id', None)
     if not id:
-        services = HealthService.objects.all()
+        services = BaseHealthierService.objects.all()
         serializer = HealthServiceSerializer(services, many=True)
         return Response(serializer.data)
     else:

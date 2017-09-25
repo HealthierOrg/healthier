@@ -74,18 +74,7 @@ CELERY_ALWAYS_EAGER = True
 
 ACCOUNT_ID_LENGTH = 20
 
-<<<<<<< HEAD
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [],
-    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
-}
-
-ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1']
-=======
 ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = "account_login"
 
 ACCOUNT_EMAIL_VERIFICATION = "optional"
 
->>>>>>> 7afde39961ae4860392743a688fe635d48e77a1b

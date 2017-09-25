@@ -55,3 +55,6 @@ mysqlclient==1.3.12
 
 # Your custom requirements go here
 djangorestframework==3.6.2
+django-prices
+django-mysql
+jsonfield
