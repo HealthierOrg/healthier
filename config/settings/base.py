@@ -44,18 +44,22 @@ DJANGO_APPS = [
     # Admin
     'django.contrib.admin',
 ]
-THIRD_PARTY_APPS = [
-    'crispy_forms',  # Form layouts
-    'allauth',  # registration
-    'allauth.account',  # registration
-    'allauth.socialaccount',  # registration
-]
 
 # Apps specific for this project go here.
 LOCAL_APPS = [
     # custom users app
     'healthier.consumers.apps.ConsumersConfig',
     'healthier.providers.apps.ProvidersConfig',
+    'healthier.user.apps.UserConfig',
+    'healthier.service.apps.ServiceConfig'
+]
+
+THIRD_PARTY_APPS = [
+    'crispy_forms',  # Form layouts
+    'allauth',  # registration
+    'allauth.account',  # registration
+    'django_prices',
+    'django_mysql',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -93,7 +97,7 @@ FIXTURE_DIRS = (
 
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.dash.mail.backends.smtp.EmailBackend')
+EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
 
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -114,16 +118,19 @@ DATABASES = {
         'NAME': 'healthier',
         'USER': 'root',
         'PASSWORD': 'lekan',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
         'PORT': '3306',
-    },
-    'OPTIONS': {
-        'charset': 'utf8mb4',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+        },
+        'TEST': {
+            'CHARSET': 'utf8mb4',
+            'COLLATION': 'utf8mb4_unicode_ci',
+        }
     },
 
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
-
 
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -254,15 +261,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
-
-# Some really nice defaults
-ACCOUNT_AUTHENTICATION_METHOD = 'username'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-
-ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
 
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
@@ -287,3 +287,24 @@ ADMIN_URL = r'^admin/'
 # ------------------------------------------------------------------------------
 ACCOUNT_ACTIVATION_DAYS = 3
 REGISTRATION_OPEN = True
+
+LOGIN_REDIRECT_URL = 'provider:dashboard'
+
+AUTH_USER_MODEL = 'user.HealthierUser'
+
+# Some really nice defaults
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
+
+ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
+
+ACCOUNT_SIGNUP_FORM_CLASS = 'healthier.user.forms.SignupForm'
+
+ACCOUNT_USERNAME_REQUIRED = False
+
+ACCOUNT_USER_MODEL_EMAIL_FIELD = 'email'
+
+ACCOUNT_UNIQUE_EMAIL = True
+
+ACCOUNT_LOGOUT_ON_GET = True

@@ -3,15 +3,15 @@ from django.shortcuts import render, get_object_or_404
 from django.views import View
 from django.views.generic import DetailView
 from django.views.generic import ListView
-
+from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
 
 
 class DashboardView(View):
-    template_name = ""
+    template_name = "dashboard/index.html"
 
     def get(self, request):
-        return HttpResponse("Welcome Here")
+        return render(request, self.template_name)
 
 
 class ProviderListView(ListView):
@@ -30,3 +30,39 @@ class ProviderDetailView(DetailView):
 
     def get_object(self, queryset=None):
         return Provider.objects.get(id=self.kwargs["id"])
+
+
+class FinancesView(View):
+    template_name = "dashboard/index.html"
+
+    def get(self, request):
+        return render(request, self.template_name)
+
+
+class CustomerListView(ListView):
+    template_name = 'dashboard/customers.html'
+    context_object_name = 'providers'
+    model = Consumer
+
+    def get_queryset(self):
+        return Consumer.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {"has_tables": True, "current_page_title": "Customers"})
+
+
+class ServicesListView(ListView):
+    template_name = 'dashboard/services.html'
+    context_object_name = 'providers'
+    model = Consumer
+
+    def get_queryset(self):
+        return Consumer.objects.all()
+
+
+class SettingsView(View):
+    template_name = "dashboard/index.html"
+
+    def get(self, request):
+        return render(request, self.template_name)
+

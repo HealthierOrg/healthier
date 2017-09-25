@@ -1,0 +1,33 @@
+{% load static %}
+
+{% include "header.html" %}
+
+  <main class="main-wrapper">
+
+   {% include 'nav.html' %}
+
+
+    <div class="content-wrapper oh ">
+
+      <!-- Page Title -->
+      <section class="page-title bottom-divider text-center">
+        <div class="container">
+
+          <div class="page-title__outer">
+            <div class="page-title__inner">
+              <div class="page-title__holder">
+                <h1 class="page-title__title">{{ service.service_name }}</h1>
+                <p class="page-title__subtitle lead">{{ service.details }}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section> <!-- end page title -->
+
+
+    </div>
+  </main> <!-- end main wrapper -->
+
+
+{% include "footer.html" %}

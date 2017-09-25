@@ -29,7 +29,7 @@ EMAIL_PORT = 1025
 
 EMAIL_HOST = 'localhost'
 EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
-                    default='django.dash.mail.backends.console.EmailBackend')
+                    default='django.core.mail.backends.console.EmailBackend')
 
 
 # CACHING
@@ -47,7 +47,7 @@ MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
 INSTALLED_APPS += ['debug_toolbar', ]
 
 INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
-ALLOWED_HOSTS = [".herokuapp.com", 'localhost']
+ALLOWED_HOSTS = [".herokuapp.com", 'localhost', '6097c2c6.ngrok.io']
 
 DEBUG_TOOLBAR_CONFIG = {
     'DISABLE_PANELS': [
@@ -73,3 +73,8 @@ CELERY_ALWAYS_EAGER = True
 # ------------------------------------------------------------------------------
 
 ACCOUNT_ID_LENGTH = 20
+
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = "account_login"
+
+ACCOUNT_EMAIL_VERIFICATION = "optional"
+

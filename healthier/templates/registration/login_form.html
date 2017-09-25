@@ -18,7 +18,7 @@
                                                 {{ error }}
                         </p>
                     {%  endif %}
-                    <form class="form-horizontal m-t-20" action="{% url "auth:login" %}" method="POST">
+                    <form class="form-horizontal m-t-20" action="{% url "account_login" %}" method="POST">
                           {% csrf_token %}
                         <div class="form-group ">
                             <div class="col-xs-12">
@@ -55,7 +55,7 @@
 
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <p class="text-muted">New User? <a href="{% url "auth:register" %}" class="text-primary m-l-5"><b>Sign Up</b></a></p>
+                    <p class="text-muted">New User? <a href="{% url "account_signup" %}" class="text-primary m-l-5"><b>Sign Up</b></a></p>
                 </div>
             </div>
 

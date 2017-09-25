@@ -4,17 +4,19 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from healthier.service.views import ServicesListView
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
+    url(r'^$', ServicesListView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^about/', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
 
-    url(r'auth/', include('healthier.auth.urls', namespace="auth")),
+    url(r'^auth/', include('allauth.urls')),
     url(r'how/', TemplateView.as_view(template_name='pages/how.html'), name="how"),
     url(r'^providers/', include('healthier.providers.urls', namespace='provider')),
+    url(r'^services/', include('healthier.service.urls', namespace='service')),
     url(r'^consumers/', include('healthier.consumers.urls', namespace='consumer')),
 
 

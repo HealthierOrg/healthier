@@ -15,7 +15,7 @@ class RegistrationView(View):
     def get(self, request):
         return render(request, self.template_name)
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         account_type = request.POST['account_type']
         form = ProviderRegistrationForm(request.POST) if account_type == "Provider" \
             else ConsumerRegistrationForm(request.POST)
@@ -46,9 +46,16 @@ class LoginView(View):
                 username = user.email
                 user = authenticate(username=username, password=password)
                 login(request, user)
+                print(request.session)
                 request.session["current_user"] = user
                 return redirect("{0}:dashboard".format(account_type.lower()))
             return render(request, self.template_name, context={"error": "Invalid Password. Please, try again."})
         except account.DoesNotExist:
             return render(request, self.template_name, context={"error": "No account is associated with this email"})
 
+
+class LogoutView(View):
+
+    def get(self, request):
+        del request.session
+        return redirect("/")
