@@ -1,5 +1,3 @@
-from allauth.account.forms import LoginForm
-from django.utils.translation import pgettext, ugettext, ugettext_lazy as _
 from django import forms
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider

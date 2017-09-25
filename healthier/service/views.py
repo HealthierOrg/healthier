@@ -2,7 +2,8 @@ from django.views.generic import DetailView
 from django.views.generic import ListView
 
 from healthier.providers.models import Provider
-from healthier.service.models import BaseHealthierService, OrderedService
+from healthier.service.models import BaseHealthierService, ServiceRequests
+from healthier.user.models import HealthierUser
 
 
 class ServicesListView(ListView):
@@ -25,6 +26,7 @@ class ServiceDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ServiceDetailView, self).get_context_data(**kwargs)
         context["service"] = BaseHealthierService.objects.get(id=self.kwargs["id"])
-        context["providers"] = OrderedService.objects.get(service_id=self.kwargs["id"])
+        cz = ServiceRequests.objects.get(service_id=self.kwargs["id"])
+        print(cz.requested_by)
+        # context["base_provider_details"] = Provider.objects.get(id=cz.requested_by)
         return context
-

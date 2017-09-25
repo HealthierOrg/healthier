@@ -47,7 +47,7 @@ MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
 INSTALLED_APPS += ['debug_toolbar', ]
 
 INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
-ALLOWED_HOSTS = [".herokuapp.com", 'localhost', '6097c2c6.ngrok.io']
+ALLOWED_HOSTS = [".herokuapp.com", 'localhost', 'f06dbc0f.ngrok.io']
 
 DEBUG_TOOLBAR_CONFIG = {
     'DISABLE_PANELS': [
