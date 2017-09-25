@@ -1,9 +1,9 @@
   {% load static %}
 
     <!-- Navigation -->
-    <header class="nav`">
+    <header class="nav nav--transparent">
 
-      <div class="nav__holder" id="sticky-nav">
+      <div class="nav__holder bg-green" id="sticky-nav">
         <div class="container">
           <div class="flex-parent">
 
@@ -23,8 +23,8 @@
               </button>
             </div> <!-- end nav-header -->
 
-            <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse">
-              <ul class="nav__menu nav__menu--inline">
+            <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse ">
+              <ul class="nav__menu nav__menu--inline ">
                 <li>
                   <a href="{% url 'provider:providers' %}">Providers</a>
                 </li>
@@ -36,12 +36,20 @@
                 </li>
               </ul> <!-- end menu -->
 
-              <div class="nav__btn-holder">
-                <a href="{% url 'auth:login' %}" class="btn btn--sm btn--google"><span>Login</span></a>
+                {% if user.is_authenticated %}
+                       <div class="nav__btn-holder">
+                       <a href="{% url 'provider:dashboard' %}" class="btn btn--sm btn--google"><span>Dashboard</span></a>
+              </div>
+                {% else %}
+                <div class="nav__btn-holder">
+                    <a href="{% url 'account_login' %}" class="btn btn--sm btn--google"><span>Login</span></a>
               </div>
                 <div class="nav__btn-holder">
-                <a href="{% url "auth:register" %}" class="btn btn--sm btn--color"><span>SignUp</span></a>
+                <a href="{% url "account_signup" %}" class="btn btn--sm btn--color"><span>SignUp</span></a>
               </div>
+                {% endif %}
+
+
             </nav> <!-- end nav-wrap -->
 
           </div> <!-- end flex-parent -->

@@ -1,4 +1,4 @@
 from django.contrib import admin
-from healthier.consumers.models import Consumer
+from .models import Consumer
 
-admin.register(Consumer)
+admin.site.register(Consumer)

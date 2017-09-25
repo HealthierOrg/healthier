@@ -1,0 +1,63 @@
+{% load static %}
+
+{% load prices %}
+
+
+{% include "header.html" %}
+
+  <main class="main-wrapper">
+
+   {% include 'nav.html' %}
+
+
+    <div class="content-wrapper oh ">
+        <section class="page-title bottom-divider text-center">
+        <div class="container">
+
+          <div class="page-title__outer">
+            <div class="page-title__inner">
+              <div class="page-title__holder">
+                <h1 class="page-title__title">{{ service.service_name }}</h1>
+                <p class="page-title__subtitle lead">{{ service.details }}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+     <section class="section-wrap bg-light bottom-divider" id="testimonials">
+                                  <h1 class="text-center bg-light">This service is offered by</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-md-20">
+              <div class="testimonial box-shadow text-center clearfix">
+                <div class="testimonial__body">
+                  <p class="testimonial__text">{{ providers.requested_by.username }}</p>
+                </div>
+                <div class="testimonial__info">
+                  <span class="testimonial__author">Price:</span>
+                  <span class="testimonial__company">{% gross providers.price %}</span>
+                </div>
+                 <div class="testimonial__info">
+                      <span class="testimonial__author">Days Available:</span>
+                      <span class="testimonial__company">{{ providers.days_available }}</span>
+                </div>
+                   <div class="testimonial__info">
+                      <span class="testimonial__author">Time Available:</span>
+                      <span class="testimonial__company">{{ providers.time_available }}</span>
+                </div>
+                  <br>
+                  <div class="btn--google align-bottom">
+                    <a href="{% url 'account_login' %}" class="btn btn--lg"><span>Select Provider</span></a>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+
+{% include "footer.html" %}

@@ -29,7 +29,7 @@ EMAIL_PORT = 1025
 
 EMAIL_HOST = 'localhost'
 EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
-                    default='django.dash.mail.backends.console.EmailBackend')
+                    default='django.core.mail.backends.console.EmailBackend')
 
 
 # CACHING
@@ -47,7 +47,7 @@ MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
 INSTALLED_APPS += ['debug_toolbar', ]
 
 INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
-ALLOWED_HOSTS = [".herokuapp.com", 'localhost']
+ALLOWED_HOSTS = [".herokuapp.com", 'localhost', 'f06dbc0f.ngrok.io']
 
 DEBUG_TOOLBAR_CONFIG = {
     'DISABLE_PANELS': [
@@ -74,6 +74,7 @@ CELERY_ALWAYS_EAGER = True
 
 ACCOUNT_ID_LENGTH = 20
 
+<<<<<<< HEAD
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
@@ -82,3 +83,9 @@ REST_FRAMEWORK = {
 }
 
 ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1']
+=======
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = "account_login"
+
+ACCOUNT_EMAIL_VERIFICATION = "optional"
+
+>>>>>>> 7afde39961ae4860392743a688fe635d48e77a1b

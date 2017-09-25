@@ -1,4 +1,5 @@
 from django.contrib import admin
-from healthier.providers.models import Provider
+from .models import Provider, ProviderRating
 
-admin.register(Provider)
+admin.site.register(Provider)
+admin.site.register(ProviderRating)

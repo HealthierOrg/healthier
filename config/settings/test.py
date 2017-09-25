@@ -24,9 +24,9 @@ SECRET_KEY = env('DJANGO_SECRET_KEY', default='CHANGEME!!!')
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
 
-# In-memory email backend stores messages in django.dash.mail.outbox
+# In-memory email backend stores messages in django.core.mail.outbox
 # for unit testing purposes
-EMAIL_BACKEND = 'django.dash.mail.backends.locmem.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
 
 # CACHING
 # ------------------------------------------------------------------------------
@@ -51,7 +51,7 @@ PASSWORD_HASHERS = [
 ]
 
 # TEMPLATE LOADERS
-# ------------------------------------------------------------------------------
+# -----t-------------------------------------------------------------------------
 # Keep templates in memory so tests run faster
 TEMPLATES[0]['OPTIONS']['loaders'] = [
     ['django.template.loaders.cached.Loader', [
