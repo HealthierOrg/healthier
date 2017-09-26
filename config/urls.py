@@ -15,6 +15,7 @@ urlpatterns = [
 
     url(r'^auth/', include('allauth.urls')),
     url(r'how/', TemplateView.as_view(template_name='pages/how.html'), name="how"),
+    url(r'^dashboard/', include('healthier.dashboard.urls', namespace='dashboard')),
     url(r'^providers/', include('healthier.providers.urls', namespace='provider')),
     url(r'^services/', include('healthier.service.urls', namespace='service')),
     url(r'^consumers/', include('healthier.consumers.urls', namespace='consumer')),
@@ -32,8 +33,8 @@ if settings.DEBUG:
         url(r'^404/$', default_views.page_not_found, kwargs={'exception': Exception('Page not Found')}),
         url(r'^500/$', default_views.server_error),
     ]
-    if 'debug_toolbar' in settings.INSTALLED_APPS:
-        import debug_toolbar
-        urlpatterns = [
-            url(r'^__debug__/', include(debug_toolbar.urls)),
-        ] + urlpatterns
+    # if 'debug_toolbar' in settings.INSTALLED_APPS:
+    #     import debug_toolbar
+    #     urlpatterns = [
+    #         url(r'^__debug__/', include(debug_toolbar.urls)),
+    #     ] + urlpatterns

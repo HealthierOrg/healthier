@@ -19,6 +19,9 @@
             <link href="{% static 'dash/plugins/datatables/scroller.bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
         {% endif %}
 
+        {% if "settings" in request.path %}
+           <link href="{% static 'dash/plugins/fileuploads/css/dropify.min.css' %}" rel="stylesheet" type="text/css" />
+        {% endif %}
 
         <!-- App CSS -->
         <link href="{% static 'dash/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />

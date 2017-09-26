@@ -51,7 +51,7 @@ LOCAL_APPS = [
     'healthier.consumers.apps.ConsumersConfig',
     'healthier.providers.apps.ProvidersConfig',
     'healthier.user.apps.UserConfig',
-    'healthier.service.apps.ServiceConfig'
+    'healthier.service.apps.ServiceConfig',
 ]
 
 THIRD_PARTY_APPS = [
@@ -61,6 +61,9 @@ THIRD_PARTY_APPS = [
     'django_prices',
     'django_mysql',
     'rest_framework_swagger',
+    'widget_tweaks',
+    'django_countries',
+    'datetimewidget',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -87,7 +90,7 @@ MIGRATION_MODULES = {
 # DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = env.bool('DJANGO_DEBUG', False)
+DEBUG = env.bool('DJANGO_DEBUG', True)
 
 # FIXTURE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -289,7 +292,7 @@ ADMIN_URL = r'^admin/'
 ACCOUNT_ACTIVATION_DAYS = 3
 REGISTRATION_OPEN = True
 
-LOGIN_REDIRECT_URL = 'provider:dashboard'
+LOGIN_REDIRECT_URL = 'dashboard:dashboard'
 
 AUTH_USER_MODEL = 'user.HealthierUser'
 
@@ -309,3 +312,5 @@ ACCOUNT_USER_MODEL_EMAIL_FIELD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
 
 ACCOUNT_LOGOUT_ON_GET = True
+
+LOGIN_URL = "account_login"

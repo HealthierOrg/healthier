@@ -1,0 +1,81 @@
+ {% load static %}
+{% load widget_tweaks %}
+
+{% include 'registration/header.html' %}
+
+<body class="fixed-left">
+
+{% include 'dashboard/dashboard_nav.html' %}
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+                        <div class="row">
+                        	<div class="col-sm-12">
+                        		<div class="card-box">
+
+                        			<h4 class="header-title m-t-0 m-b-30">Edit your account details</h4>
+
+                        			<div class="row">
+                        				<div class="col-lg-12">
+                        					<form class="form-horizontal" role="form">
+                                                 <div class="form-group">
+	                                                <label class="col-md-2 control-label">{{ form.username.label }}</label>
+	                                                <div class="col-md-10">
+	                                                    <input type="text" class="form-control" placeholder="{{ user.username }}">
+	                                                </div>
+	                                            </div>
+                                                 <div class="form-group">
+	                                                <label class="col-md-2 control-label">{{ form.email.label }}</label>
+	                                                <div class="col-md-10">
+	                                                    <input type="text" class="form-control" placeholder="{{ user.email }}">
+	                                                </div>
+	                                            </div>
+                                                <div class="form-group">
+	                                                <label class="col-sm-2 control-label">{{ form.country.label }}</label>
+	                                                <div class="col-sm-10">
+	                                                        {{ form.country }}
+	                                                </div>
+	                                            </div>
+                                                <div class="form-group">
+	                                                <label class="col-md-2 control-label">{{ form.city.label }}</label>
+	                                                <div class="col-md-10">
+	                                                    <input type="text" class="form-control" placeholder="{{ user.city }}">
+	                                                </div>
+	                                            </div>
+                                                <div class="form-group">
+	                                                <label class="col-md-2 control-label">{{ form.phone_number.label }}</label>
+	                                                <div class="col-md-10">
+	                                                    <input type="text" class="form-control" placeholder="{{ user.phone_number }}">
+	                                                </div>
+	                                            </div>
+                                                <div class="form-group">
+	                                                <label class="col-md-2 control-label">{{ form.description.label }}</label>
+	                                                <div class="col-md-10">
+	                                                    <textarea rows="7" class="form-control" placeholder="{{ user.description }}"></textarea>
+	                                                </div>
+	                                            </div>
+                                                <div class="form-group">
+	                                                <label class="col-md-2 control-label">{{ form.website.label }}</label>
+	                                                <div class="col-md-10">
+	                                                    <input class="form-control" placeholder="{{ user.website }}"/>
+	                                                </div>
+	                                            </div>
+                                                 <div class="form-group">
+                                                     	<label class="col-md-2 control-label">{{ form.image.label }}</label>
+                                                        <div class="col-md-10">
+                                                                <input type="file" class="dropify" data-height="300" />
+                                                            </div>
+                                                        </div>
+                                                    <button type="submit" class="btn btn-googleplus waves-effect waves-light">Submit</button>
+	                                        </form>
+                        				</div>
+                        			</div><!-- end row -->
+                        		</div>
+                        	</div><!-- end col -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+{% include 'dashboard/footer.html' %}
