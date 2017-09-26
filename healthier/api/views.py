@@ -1,105 +1,105 @@
+# django
+from django.http import Http404
+
+# django extensions
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+from rest_framework.schemas import SchemaGenerator
+from rest_framework.views import APIView
+from rest_framework_swagger import renderers
+
+# local
+from healthier.user.models import HealthierUser
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
+from .serializers import UserSerializer, ConsumerSerializer, ProviderSerializer
 from healthier.service.models import BaseHealthierService
-from healthier.api.serializers import ConsumerSerializer, ProviderSerializer
 
 
-@api_view(['GET', 'PUT', 'DELETE'])
-def consumer_detail(request):
+class SwaggerSchemaView(APIView):
+    permission_classes = [AllowAny]
+    renderer_classes = [
+        renderers.OpenAPIRenderer,
+        renderers.SwaggerUIRenderer
+    ]
+
+    def get(self, request):
+        generator = SchemaGenerator()
+        schema = generator.get_schema(request=request)
+
+        return Response(schema)
+
+
+class AbstractDetail(APIView):
     """
-    Retrieve, update or delete a consumer instance.
+    Retrieve, update or delete a user instance.
     """
 
-    id = request.query_params.get('id', None)
-    if not id:
-        consumers = Consumer.objects.all()
-        serializer = ConsumerSerializer(consumers, many=True)
-        return Response(serializer.data)
-    else:
+    def get_object(self, id):
+        self.ID = {self.ID_NAME: id}
+        print(self.ID)
         try:
-            consumer = Consumer.objects.get(healthier_ID=id)
-        except Consumer.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
+            return self.MODEL.objects.get(**self.ID)
+        except self.MODEL.DoesNotExist:
+            raise Http404
+    
+    def get_all(self):
+        return self.MODEL.objects.all()
 
-        if request.method == 'GET':
-            serializer = ConsumerSerializer(consumer)
+    def get(self, request, format=None):
+        id = request.query_params.get(self.ID_NAME, None)
+        if id:
+            matching_object = self.get_object(id)
+            serializer = self.SERIALIZER(matching_object)
+            return Response(serializer.data)
+        else:
+            matching_objects = self.get_all()
+            serializer = self.SERIALIZER(matching_objects, many=True)
             return Response(serializer.data)
 
-        elif request.method == 'PUT':
-            serializer = ConsumerSerializer(consumer, data=request.query_params, partial=True)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-        elif request.method == 'DELETE':
-            consumer.delete()
-            return Response(status=status.HTTP_204_NO_CONTENT)
-
-
-@api_view(['GET', 'PUT', 'DELETE'])
-def provider_detail(request):
-    """
-    Retrieve, update or delete a provider instance.
-    """
-
-    id = request.query_params.get('id', None)
-    if not id:
-        providers = Provider.objects.all()
-        serializer = ProviderSerializer(providers, many=True)
-        return Response(serializer.data)
-    else:
+    def put(self, request, format=None):
+        id = request.data.get(self.ID_NAME, None)
         try:
-            provider = Provider.objects.get(healthier_ID=id)
-        except Provider.DoesNotExist:
+            matching_object = self.get_object(id)
+        except self.MODEL.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-
-        if request.method == 'GET':
-            serializer = ProviderSerializer(provider)
+       
+        serializer = self.SERIALIZER(self.MODEL, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
             return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        elif request.method == 'PUT':
-            serializer = ProviderSerializer(provider, data=request.query_params, partial=True)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def delete(self, request, format=None):
+        id = request.data.get(self.ID_NAME, None)
+        matching_object = self.get_object(id)
+        matching_object.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
-        elif request.method == 'DELETE':
-            provider.delete()
-            return Response(status=status.HTTP_204_NO_CONTENT)
+class ConsumerDetail(AbstractDetail):
+    def __init__(self):
+        self.MODEL = Consumer
+        self.SERIALIZER = ConsumerSerializer
+        self.ID_NAME = 'healthier_id'
+        self.ID_VALUE = None
+        AbstractDetail.__init__(self)
 
-@api_view(['GET', 'PUT', 'DELETE'])
-def service_detail(request):
-    """
-    Retrieve, update or delete a healthservice instance.
-    """
+class ProviderDetail(AbstractDetail):
+    def __init__(self):
+        self.MODEL = Provider
+        self.SERIALIZER = ProviderSerializer
+        self.ID_NAME = 'healthier_id'
+        self.ID_VALUE = None
+        AbstractDetail.__init__(self)
 
-    id = request.query_params.get('id', None)
-    if not id:
-        services = BaseHealthierService.objects.all()
-        serializer = HealthServiceSerializer(services, many=True)
-        return Response(serializer.data)
-    else:
-        try:
-            service = HealthServiceSerializer.objects.get(service_ID=id)
-        except HealthService.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
 
-        if request.method == 'GET':
-            serializer = HealthServiceSerializer(service)
-            return Response(serializer.data)
-
-        elif request.method == 'PUT':
-            serializer = HealthServiceSerializer(service, data=request.query_params, partial=True)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-        elif request.method == 'DELETE':
-            service.delete()
-            return Response(status=status.HTTP_204_NO_CONTENT)
+class UserDetail(AbstractDetail):
+    def __init__(self):
+        self.MODEL = HealthierUser
+        self.SERIALIZER = UserSerializer
+        self.ID_NAME = 'email'
+        self.ID_VALUE = None
+        AbstractDetail.__init__(self)

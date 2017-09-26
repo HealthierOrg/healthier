@@ -58,3 +58,4 @@ djangorestframework==3.6.2
 django-prices
 django-mysql
 jsonfield
+django-rest-swagger

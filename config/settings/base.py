@@ -60,6 +60,7 @@ THIRD_PARTY_APPS = [
     'allauth.account',  # registration
     'django_prices',
     'django_mysql',
+    'rest_framework_swagger',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
