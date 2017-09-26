@@ -48,7 +48,7 @@
                 </div>
                   <br>
                   <div class="btn--google align-bottom">
-                    <a href="{% url 'account_login' %}" class="btn btn--lg"><span>Select Provider</span></a>
+                    <a href="{% url 'dashboard:service_configuration' %}?service={{ providers.service_id_id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg"><span>Select Provider</span></a>
                   </div>
               </div>
 

@@ -5,6 +5,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import (AbstractBaseUser,
                                         BaseUserManager)
+from django_countries.fields import CountryField
 
 from model_utils.managers import InheritanceManager
 
@@ -20,7 +21,7 @@ class BaseHealthierUserManager(BaseUserManager, InheritanceManager):
         now = timezone.now()
         email = self.normalize_email(email)
         u = HealthierUser(email=email, is_admin=False, last_login=now,
-                        **extra_fields)
+                          **extra_fields)
         u.set_password(password)
         u.save(using=self._db)
         return u
@@ -48,16 +49,16 @@ class HealthierUser(AbstractBaseUser, PermissionsMixin):
     objects = BaseHealthierUserManager()
 
     account_choices = (
-            ('PRO', 'Provider'),
-            ('CON', 'Consumer'),
-        )
+        ('PRO', 'Provider'),
+        ('CON', 'Consumer'),
+    )
     account_type = models.CharField(max_length=3, choices=account_choices)
     image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, null=True,
-                                  blank=True)
+                              blank=True)
     address = models.CharField(max_length=100)
     description = models.TextField(max_length=1000, blank=True)
     city = models.CharField(max_length=200)
-    country = models.CharField(max_length=200)
+    country = CountryField()
     phone_number = models.CharField(max_length=200)
     website = models.URLField(blank=True, null=True)
     username = models.CharField(_('Username'), blank=True, max_length=50)
@@ -72,14 +73,10 @@ class HealthierUser(AbstractBaseUser, PermissionsMixin):
                                     related_query_name='hospital', to='auth.Group', verbose_name='groups')
     is_logged_in = models.BooleanField(_('Logged In'), default=False)
     is_superuser = models.BooleanField(_('Superuser'), default=True)
+    has_configured_account = models.BooleanField(_('Has Configured Account'), default=False)
 
     def __unicode__(self):
         return self.email
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELD = ['account_type']
-
-
-
-
-

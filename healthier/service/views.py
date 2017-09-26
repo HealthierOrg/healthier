@@ -1,9 +1,8 @@
-from django.views.generic import DetailView
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+from django.views.generic import DetailView, CreateView
 from django.views.generic import ListView
-
-from healthier.providers.models import Provider
 from healthier.service.models import BaseHealthierService, ServiceRequests
-from healthier.user.models import HealthierUser
 
 
 class ServicesListView(ListView):
@@ -26,7 +25,23 @@ class ServiceDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ServiceDetailView, self).get_context_data(**kwargs)
         context["service"] = BaseHealthierService.objects.get(id=self.kwargs["id"])
-        cz = ServiceRequests.objects.get(service_id=self.kwargs["id"])
-        print(cz.requested_by)
-        # context["base_provider_details"] = Provider.objects.get(id=cz.requested_by)
+        context["providers"] = ServiceRequests.objects.get(service_id=self.kwargs["id"])
         return context
+
+
+# @login_required
+class ServiceConfiguration(CreateView):
+    template_name = "dashboard/customers.html"
+
+    def form_invalid(self, form):
+        pass
+
+    def form_valid(self, form):
+        pass
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+    def post(self, request, *args, **kwargs):
+        pass
+

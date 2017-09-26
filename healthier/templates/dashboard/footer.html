@@ -1,0 +1,77 @@
+
+ {% load static %}
+    	<script>
+            var resizefunc = [{{ request.path }}];
+        </script>
+
+        <!-- jQuery  -->
+        <script src="{% static 'dash/js/jquery.min.js' %}"></script>
+        <script src="{% static 'dash/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'dash/js/detect.js' %}"></script>
+        <script src="{% static 'dash/js/fastclick.js' %}"></script>
+        <script src="{% static 'dash/js/jquery.slimscroll.js' %}"></script>
+        <script src="{% static 'dash/js/jquery.blockUI.js' %}"></script>
+        <script src="{% static 'dash/js/waves.js' %}"></script>
+        <script src="{% static 'dash/js/wow.min.js' %}"></script>
+        <script src="{% static 'dash/js/jquery.nicescroll.js' %}"></script>
+        <script src="{% static 'dash/js/jquery.scrollTo.min.js' %}"></script>
+
+        <!-- App js -->
+        <script src="{% static 'dash/js/jquery.dash.js' %}"></script>
+        <script src="{% static 'dash/js/jquery.app.js' %}"></script>
+
+        {% if has_tables %}
+
+                    <!-- Datatables-->
+        <script src="{% static 'dash/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/datatables/dataTables.bootstrap.js' %}"></script>
+        <script src="{% static 'dash/plugins/datatables/dataTables.buttons.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/datatables/buttons.bootstrap.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/datatables/jszip.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/datatables/pdfmake.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/datatables/vfs_fonts.js' %}"></script>
+        <script src="{% static 'dash/plugins/datatables/buttons.html5.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/datatables/buttons.print.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/datatables/dataTables.fixedHeader.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/datatables/dataTables.keyTable.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/datatables/dataTables.responsive.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/datatables/responsive.bootstrap.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/datatables/dataTables.scroller.min.js' %}"></script>
+
+        <!-- Datatable init js -->
+        <script src="{% static 'dash/pages/datatables.init.js' %}"></script>
+
+        <!-- App js -->
+        <script src="{% static 'dash/js/jquery.dash.js' %}"></script>
+        <script src="{% static 'dash/js/jquery.app.js' %}"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#datatable").dataTable();
+                $("#datatable-keytable").DataTable( { keys: true } );
+                $("#datatable-responsive").DataTable();
+                $("#datatable-scroller").DataTable( { ajax: "dash/plugins/datatables/json/scroller-demo.json", deferRender: true, scrollY: 380, scrollCollapse: true, scroller: true } );
+                var table = $("#datatable-fixed-header").DataTable( { fixedHeader: true } );
+            } );
+            TableManageButtons.init();
+
+        </script>
+        {% endif %}
+
+        {% if "settings" in request.path %}
+                    <script src="{% static 'dash/plugins/fileuploads/js/dropify.min.js' %}"></script>
+                        <script type="text/javascript">
+                    $(".dropify").dropify({
+                        messages: {
+                            "default": "Drag and drop a file here or click",
+                            "replace": "Drag and drop or click to replace",
+                            "remove": "Remove",
+                            "error": "Ooops, something wrong appended."
+                        },
+                        error: {
+                            "fileSize": "The file size is too big (1M max)."
+                        }
+                    });
+        </script>
+        {% endif %}
+	</body>

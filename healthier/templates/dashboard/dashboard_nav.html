@@ -18,10 +18,37 @@
                                 <h4 class="page-title">{{ current_page_title }}</h4>
                             </li>
                         </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <!-- Notification -->
+                                <div class="notification-box">
+                                    <ul class="list-inline m-b-0">
+                                        <li>
+                                            <a href="javascript:void(0);" class="right-bar-toggle">
+                                                <i class="zmdi zmdi-notifications-none"></i>
+                                            </a>
+                                            <div class="noti-dot">
+                                                <span class="dot"></span>
+                                                <span class="pulse"></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- End Notification bar -->
+                            </li>
+                            <li class="hidden-xs">
+                                <form role="search" class="app-search">
+                                    <input type="text" placeholder="Search..."
+                                           class="form-control">
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                </form>
+                            </li>
+                        </ul>
+
                     </div><!-- end container -->
                 </div><!-- end navbar -->
-            </div>
 
+            </div>
 
             <div class="left side-menu">
                 <div class="sidebar-inner slimscrollleft">
@@ -32,10 +59,10 @@
                             <img src="{% static 'dash/images/small/img3.jpg' %}" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                             <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
                         </div>
-                        <h5><a href="#">Mat Helme</a> </h5>
+                        <h5><a href="#">{{ user.account_type }}</a> </h5>
                         <ul class="list-inline">
                             <li>
-                                <a href="#" >
+                                <a href="#">
                                     <i class="zmdi zmdi-settings"></i>
                                 </a>
                             </li>
@@ -47,9 +74,6 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- End User -->
-
-                    <!--- Sidemenu -->
                     <div id="sidebar-menu">
                         <ul>
                         	<li class="text-muted menu-title">Navigation</li>
@@ -57,15 +81,29 @@
                             <li>
                                 <a href="{% url 'provider:dashboard' %}" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
                             </li>
+
+                            {% if user.account_type == "PRO" %}
                             <li>
                                 <a href="{% url 'provider:provider_dashboard_customers' %}" class="waves-effect"><i class="zmdi zmdi-group"></i><span> Customers </span></a>
                             </li>
+                            {% endif %}
 
                             <li>
                                 <a href="{% url 'provider:provider_dashboard_services' %}" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Services </span></a>
                             </li>
-                             <li>
-                                <a href="{% url 'provider:provider_dashboard_settings' %}" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Settings </span></a>
+
+                            <li>
+                                <a href="{% url 'provider:provider_dashboard_services' %}" class="waves-effect"><i class="zmdi zmdi-book"></i><span> Reports </span></a>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-account-add"></i><span> Settings </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{% url 'dashboard:account_settings' %}">Account Setting</a></li>
+                                    <li><a href="{% url 'dashboard:finance_settings' %}">Finance Setting</a></li>
+                                    <li><a href="{% url 'dashboard:consumer_settings' %}">Consumer Setting</a></li>
+                                    <li><a href="{% url 'dashboard:service_settings' %}">Service Setting</a></li>
+                                </ul>
                             </li>
                               <li>
                                 <a href="{% url 'account_logout' %}" class="waves-effect"><i class="zmdi zmdi-lock-open"></i><span> Logout </span></a>
