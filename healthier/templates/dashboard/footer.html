@@ -4,6 +4,8 @@
             var resizefunc = [{{ request.path }}];
         </script>
 
+
+            {% javascript 'mysite_js' %}
         <!-- jQuery  -->
         <script src="{% static 'dash/js/jquery.min.js' %}"></script>
         <script src="{% static 'dash/js/bootstrap.min.js' %}"></script>

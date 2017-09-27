@@ -64,6 +64,7 @@ THIRD_PARTY_APPS = [
     'widget_tweaks',
     'django_countries',
     'datetimewidget',
+    'rest_framework',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

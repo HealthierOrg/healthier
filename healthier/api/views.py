@@ -43,6 +43,7 @@ class ConsumerDetail(AbstractDetail):
         self.ID_VALUE = None
         AbstractDetail.__init__(self)
 
+
 class ProviderDetail(AbstractDetail):
     def __init__(self):
         self.MODEL = Provider
@@ -53,7 +54,7 @@ class ProviderDetail(AbstractDetail):
 
 
 class UserDetail(AbstractDetail):
-    """ 
+    """
     This endpoint presents user details.
     Supported methods: GET, PUT
     """
