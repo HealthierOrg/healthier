@@ -5,7 +5,6 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import (AbstractBaseUser,
                                         BaseUserManager)
-from django_countries.fields import CountryField
 
 from model_utils.managers import InheritanceManager
 
@@ -58,7 +57,7 @@ class HealthierUser(AbstractBaseUser, PermissionsMixin):
     address = models.CharField(max_length=100)
     description = models.TextField(max_length=1000, blank=True)
     city = models.CharField(max_length=200)
-    country = CountryField()
+    country = models.CharField(max_length=200)
     phone_number = models.CharField(max_length=200)
     website = models.URLField(blank=True, null=True)
     username = models.CharField(_('Username'), blank=True, max_length=50)

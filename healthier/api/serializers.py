@@ -14,7 +14,7 @@ class HealthServiceSerializer(serializers.ModelSerializer):
             'details',
             'cost',
             'cost_denom',
-            'days_available', 
+            'days_available',
             'time_available',
             'provider_ID'
         )
@@ -36,12 +36,14 @@ class UserSerializer(serializers.ModelSerializer):
             'image'
         )
 
+
 class ConsumerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Consumer
         fields = (
             'healthier_id',
         )
+
 
 class ProviderSerializer(serializers.ModelSerializer):
     class Meta:

@@ -64,6 +64,7 @@ THIRD_PARTY_APPS = [
     'widget_tweaks',
     'django_countries',
     'datetimewidget',
+    'rest_framework',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -121,7 +122,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'healthier',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': 'lekan',
         'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
         'PORT': '3306',
         'OPTIONS': {

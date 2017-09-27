@@ -45,7 +45,7 @@ class AbstractDetail(APIView):
             return self.MODEL.objects.get(**self.ID)
         except self.MODEL.DoesNotExist:
             raise Http404
-    
+
     def get_all(self):
         return self.MODEL.objects.all()
 
@@ -66,7 +66,7 @@ class AbstractDetail(APIView):
             matching_object = self.get_object(id)
         except self.MODEL.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-       
+
         serializer = self.SERIALIZER(self.MODEL, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
@@ -79,6 +79,7 @@ class AbstractDetail(APIView):
         matching_object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+
 class ConsumerDetail(AbstractDetail):
     def __init__(self):
         self.MODEL = Consumer
@@ -86,6 +87,7 @@ class ConsumerDetail(AbstractDetail):
         self.ID_NAME = 'healthier_id'
         self.ID_VALUE = None
         AbstractDetail.__init__(self)
+
 
 class ProviderDetail(AbstractDetail):
     def __init__(self):
@@ -97,6 +99,15 @@ class ProviderDetail(AbstractDetail):
 
 
 class UserDetail(AbstractDetail):
+    def __init__(self):
+        self.MODEL = HealthierUser
+        self.SERIALIZER = UserSerializer
+        self.ID_NAME = 'email'
+        self.ID_VALUE = None
+        AbstractDetail.__init__(self)
+
+
+class UserUpdate(AbstractDetail):
     def __init__(self):
         self.MODEL = HealthierUser
         self.SERIALIZER = UserSerializer
