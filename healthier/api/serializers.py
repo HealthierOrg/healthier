@@ -1,4 +1,8 @@
+# extensions
 from rest_framework import serializers
+from django_countries.serializers import CountryFieldMixin
+
+# local
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
 from healthier.service.models import BaseHealthierService
@@ -20,7 +24,7 @@ class HealthServiceSerializer(serializers.ModelSerializer):
         )
 
 
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(CountryFieldMixin, serializers.ModelSerializer):
     class Meta:
         model = HealthierUser
         fields = (
@@ -33,7 +37,13 @@ class UserSerializer(serializers.ModelSerializer):
             'country',
             'phone_number',
             'website',
-            'image'
+            'image',
+            'is_staff',
+            'is_admin',
+            'is_active',
+            'is_logged_in',
+            'is_superuser',
+            'has_configured_account'
         )
 
 class ConsumerSerializer(serializers.ModelSerializer):

@@ -82,7 +82,7 @@ class SettingsView(FormView):
     form_class_map = {"account": AccountDetailForm, "finance": "", "consumer": "", "service": ""}
     form_class = form_class_map[settings_type]
     template_name = "dashboard/settings/{0}".format(template_name_map[settings_type])
-    success_url = reverse("dashboard:profile")
+    # success_url = reverse("dashboard:profile")
 
     def form_invalid(self, form):
         return HttpResponse("Hello")
