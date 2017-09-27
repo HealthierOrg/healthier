@@ -33,7 +33,13 @@ class UserSerializer(serializers.ModelSerializer):
             'country',
             'phone_number',
             'website',
-            'image'
+            'image',
+            'is_staff',
+            'is_admin',
+            'is_active',
+            'is_logged_in',
+            'is_superuser',
+            'has_configured_account'
         )
 
 class ConsumerSerializer(serializers.ModelSerializer):

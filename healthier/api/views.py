@@ -97,6 +97,18 @@ class ProviderDetail(AbstractDetail):
 
 
 class UserDetail(AbstractDetail):
+    """ 
+    This endpoint presents user details.
+    Supported methods: GET, PUT
+
+    **GET**: 
+            - If user email is passed as argument, details of the particular user is returned.
+            - If no user email is passed, returns details of all users in the database.
+
+    **PUT**:
+            - If no user email is specified or specified email doesn't exist, error 404 is raised
+    
+    """
     def __init__(self):
         self.MODEL = HealthierUser
         self.SERIALIZER = UserSerializer
