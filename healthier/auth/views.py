@@ -5,6 +5,7 @@ from django.views import View
 from healthier.providers.forms import ProviderRegistrationForm
 from healthier.consumers.forms import ConsumerRegistrationForm
 from healthier.providers.models import Provider
+from healthier.consumers.models import Consumer
 
 
 class RegistrationView(View):
@@ -39,7 +40,7 @@ class LoginView(View):
         account_type = request.POST['account_type']
         email = request.POST['email']
         password = request.POST['password']
-        account = Provider if account_type == "Provider" else "Consumer"
+        account = Provider if account_type == "Provider" else Consumer
         try:
             user = account.objects.get(email=email)
             if user.check_password(password):

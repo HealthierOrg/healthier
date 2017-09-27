@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^providers/', include('healthier.providers.urls', namespace='provider')),
     url(r'^services/', include('healthier.service.urls', namespace='service')),
     url(r'^consumers/', include('healthier.consumers.urls', namespace='consumer')),
+    url(r'^api/', include('healthier.api.urls', namespace='api')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

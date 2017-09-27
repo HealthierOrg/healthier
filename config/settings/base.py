@@ -60,6 +60,7 @@ THIRD_PARTY_APPS = [
     'allauth.account',  # registration
     'django_prices',
     'django_mysql',
+    'rest_framework_swagger',
     'widget_tweaks',
     'django_countries',
     'datetimewidget',
@@ -120,7 +121,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'healthier',
         'USER': 'root',
-        'PASSWORD': 'lekan',
+        'PASSWORD': 'password',
         'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
         'PORT': '3306',
         'OPTIONS': {
