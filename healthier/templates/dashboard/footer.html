@@ -5,7 +5,6 @@
         </script>
 
 
-            {% javascript 'mysite_js' %}
         <!-- jQuery  -->
         <script src="{% static 'dash/js/jquery.min.js' %}"></script>
         <script src="{% static 'dash/js/bootstrap.min.js' %}"></script>
@@ -21,6 +20,7 @@
         <!-- App js -->
         <script src="{% static 'dash/js/jquery.dash.js' %}"></script>
         <script src="{% static 'dash/js/jquery.app.js' %}"></script>
+        <script src="{% static 'js/main.healthier.js' %}"></script>
 
         {% if has_tables %}
 
@@ -39,13 +39,9 @@
         <script src="{% static 'dash/plugins/datatables/dataTables.responsive.min.js' %}"></script>
         <script src="{% static 'dash/plugins/datatables/responsive.bootstrap.min.js' %}"></script>
         <script src="{% static 'dash/plugins/datatables/dataTables.scroller.min.js' %}"></script>
-
         <!-- Datatable init js -->
         <script src="{% static 'dash/pages/datatables.init.js' %}"></script>
 
-        <!-- App js -->
-        <script src="{% static 'dash/js/jquery.dash.js' %}"></script>
-        <script src="{% static 'dash/js/jquery.app.js' %}"></script>
 
         <script type="text/javascript">
             $(document).ready(function() {
