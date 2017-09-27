@@ -90,7 +90,7 @@ class BaseSettingsView(FormView):
         return HttpResponse(healthier_user)
 
     def form_invalid(self, form):
-        print("The form data is {}".format(form.data))
+        print("The form data is {}".format(form.cleaned_data))
         return HttpResponse("What?")
 
 

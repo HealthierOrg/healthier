@@ -67,7 +67,7 @@ class AbstractDetail(APIView):
         except self.MODEL.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
-        serializer = self.SERIALIZER(self.MODEL, data=request.data, partial=True)
+        serializer = self.SERIALIZER(matching_object, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -99,15 +99,17 @@ class ProviderDetail(AbstractDetail):
 
 
 class UserDetail(AbstractDetail):
-    def __init__(self):
-        self.MODEL = HealthierUser
-        self.SERIALIZER = UserSerializer
-        self.ID_NAME = 'email'
-        self.ID_VALUE = None
-        AbstractDetail.__init__(self)
+    """
+    This endpoint presents user details.
+    Supported methods: GET, PUT
+    **GET**:
+            - If user email is passed as argument, details of the particular user is returned.
+            - If no user email is passed, returns details of all users in the database.
+    **PUT**:
+            - If no user email is specified or specified email doesn't exist, error 404 is raised
 
+    """
 
-class UserUpdate(AbstractDetail):
     def __init__(self):
         self.MODEL = HealthierUser
         self.SERIALIZER = UserSerializer
