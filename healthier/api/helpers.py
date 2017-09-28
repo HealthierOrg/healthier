@@ -1,3 +1,7 @@
+# django
+from django.http import Http404
+
+# third party
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
