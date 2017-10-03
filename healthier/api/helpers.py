@@ -1,6 +1,10 @@
+# django
 from django.http import Http404
-from rest_framework.response import Response
+
+# third party
 from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 
 
 class AbstractDetail(APIView):
@@ -29,6 +33,13 @@ class AbstractDetail(APIView):
             matching_objects = self.get_all()
             serializer = self.SERIALIZER(matching_objects, many=True)
             return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = self.SERIALIZER(data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def put(self, request, format=None):
         id = request.data.get(self.ID_NAME, None)

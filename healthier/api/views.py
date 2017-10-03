@@ -67,6 +67,27 @@ class UserDetail(AbstractDetail):
         """
         return AbstractDetail.get(self, request, format=None)
 
+    def post(self, request, format=None):
+        """
+        This endpoint allows creating users
+        - **Required fields** :
+                            email, password, account_type
+        - **Valid Account Type** :
+            CON for consumer, PRO for provider
+
+        - ** If email already exist, error is raised** :
+        ```
+            {
+                "email": [
+                    "healthier user with this email already exists."
+                ]
+            }
+        ```
+
+        """
+
+        return AbstractDetail.post(self, request, format=None)
+
     def put(self, request, format=None):
         """
         This endpoint allows updating user information
@@ -95,5 +116,5 @@ class UserDetail(AbstractDetail):
         ```
 
         """
-
         return AbstractDetail.put(self, request, format=None)
+
