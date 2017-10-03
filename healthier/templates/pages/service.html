@@ -25,9 +25,24 @@
 
         </div>
       </section>
-     <section class="section-wrap bg-light bottom-divider" id="testimonials">
-                                  <h1 class="text-center bg-light">This service is offered by</h1>
-        <div class="container">
+     <section class="section-wrap bg-light bottom-divider">
+         {% if not providers %}
+             <div class="container">
+                            <h5 class="text-center">There is currently no provider rendering this service.</h5>
+             </div>
+             <section class="section-wrap newsletter bg-img bg-overlay white-text relative">
+             <div class="container">
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                      <h2 class="newsletter__title">Click the button below to become a provider for this service.</h2>
+                      <a href="{% url "dashboard:service_request_configuration" %}?service={{ service.id }}" class="btn btn--sm btn--color"><span>Become a provider</span></a>
+                    </div>
+          </div>
+        </div>
+      </section>
+         {% else %}
+         <h1 class="text-center bg-light">This service is offered by</h1>
+             <div class="container">
           <div class="row">
             <div class="col-md-4 mb-md-20">
               <div class="testimonial box-shadow text-center clearfix">
@@ -36,7 +51,7 @@
                 </div>
                 <div class="testimonial__info">
                   <span class="testimonial__author">Price:</span>
-                  <span class="testimonial__company">{% gross providers.price %}</span>
+                  <span class="testimonial__company">{% gross providers.price %} </span>
                 </div>
                  <div class="testimonial__info">
                       <span class="testimonial__author">Days Available:</span>
@@ -44,17 +59,18 @@
                 </div>
                    <div class="testimonial__info">
                       <span class="testimonial__author">Time Available:</span>
-                      <span class="testimonial__company">{{ providers.time_available }}</span>
+                      <span class="testimonial__company">{{ providers.start_time_available }} : {{ providers.end_time_available }}</span>
                 </div>
                   <br>
                   <div class="btn--google align-bottom">
-                    <a href="{% url 'dashboard:service_configuration' %}?service={{ providers.service_id_id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg"><span>Select Provider</span></a>
+                    <a href="{% url 'dashboard:service_configuration' %}?service={{ service.service_id_id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg"><span>Select Provider</span></a>
                   </div>
               </div>
 
             </div>
           </div>
         </div>
+         {% endif %}
       </section>
     </div>
   </main>

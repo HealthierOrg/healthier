@@ -16,6 +16,7 @@ from .base import *  # noqa
 DEBUG = env.bool('DJANGO_DEBUG', default=True)
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 
+
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
@@ -53,6 +54,7 @@ ALLOWED_HOSTS = [".herokuapp.com", 'localhost', 'f06dbc0f.ngrok.io', '127.0.0.1'
 #         'debug_toolbar.panels.redirects.RedirectsPanel',
 #     ],
 #     'SHOW_TEMPLATE_CONTEXT': True,
+#     'INTERCEPT_REDIRECTS': False,
 # }
 
 # django-extensions

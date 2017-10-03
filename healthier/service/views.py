@@ -25,11 +25,11 @@ class ServiceDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ServiceDetailView, self).get_context_data(**kwargs)
         context["service"] = BaseHealthierService.objects.get(id=self.kwargs["id"])
-        context["providers"] = ServiceRequests.objects.get(service_id=self.kwargs["id"])
+        context["providers"] = ServiceRequests.objects.filter(service_id=self.kwargs["id"])
+        print(context)
         return context
 
 
-# @login_required
 class ServiceConfiguration(CreateView):
     template_name = "dashboard/customers.html"
 

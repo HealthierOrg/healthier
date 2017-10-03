@@ -214,7 +214,6 @@ STATIC_URL = '/static/'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
     str(APPS_DIR.path('static')),
-    str(APPS_DIR.path('assets')),
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
@@ -323,7 +322,7 @@ LOGIN_URL = "account_login"
 
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'bundles/',
-        'STATS_FILE': os.path.join(BASE_DIR, '../webpack-stats.json'),
+        'BUNDLE_DIR_NAME': 'js/app/bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, '../healthier/static/webpack-stats.json'),
     }
 }

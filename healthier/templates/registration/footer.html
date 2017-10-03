@@ -1,7 +1,4 @@
  {% load static %}
-    	<script>
-            var resizefunc = [];
-        </script>
 
         <!-- jQuery  -->
         <script src="{% static 'dash/js/jquery.min.js' %}"></script>
@@ -16,8 +13,12 @@
         <script src="{% static 'dash/js/jquery.scrollTo.min.js' %}"></script>
 
         <!-- App js -->
-        <script src="{% static 'dash/js/jquery.dash.js' %}"></script>
+        <script src="{% static 'dash/js/jquery.core.js' %}"></script>
         <script src="{% static 'dash/js/jquery.app.js' %}"></script>
+        <script src="{% static 'dash/js/js.cookie.js' %}"></script>
+        <script src="{% static 'js/main.healthier.js' %}"></script>
+
+
 
         {% if has_tables %}
 

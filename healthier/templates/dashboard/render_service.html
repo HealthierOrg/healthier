@@ -1,0 +1,77 @@
+ {% load static %}
+{% load widget_tweaks %}
+
+{% load render_bundle from webpack_loader %}
+
+
+{% include 'registration/header.html' %}
+<body class="fixed-left">
+
+{% include 'dashboard/dashboard_nav.html' %}
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <input type="hidden" value="{{ service }}" id="service_details">
+                    <div class="container">
+                        <div class="row">
+                        	<div class="col-sm-12">
+                        		<div class="card-box">
+
+                        			<h4 class="header-title m-t-0 m-b-30">{{ service_details.service_name }}</h4>
+                        			<div class="row">
+                        				<div class="col-lg-12">
+                                               			<form class="form-horizontal" role="form" method="POST" action="{% url 'dashboard:service_request_configuration' %}?service={{ service_details.id }}">
+                                                                          {% csrf_token %}
+                                                 <div class="form-group">
+	                                                <label class="col-md-2 control-label">{{ form.price.label }}(In Naira)</label>
+	                                                <div class="col-md-10">
+	                                                    <input type="text" id="{{ form.price.html_name }}" name="{{ form.price.html_name }}" class="form-control">
+	                                                     <span class="help-block"><small>How much will your customers get to pay for this service?</small></span>
+                                                    </div>
+	                                            </div>
+                                                   <div class="form-group">
+	                                                <label class="col-sm-2 control-label">Days Available</label>
+	                                                <div class="col-sm-10">
+	                                                    <select class="form-control" name="days_available">
+	                                                        {% for x,y in form.fields.days_available.choices %}
+                                                                    <option value="{{ x }}"{% if form.fields.days_available.value == x %} selected{% endif %}>{{ y }}</option>
+                                                            {% endfor %}
+	                                                    </select>
+                                                    	<span class="help-block"><small>What day(s) will the service be rendered?</small></span>
+	                                                </div>
+	                                                 </div>
+                                                 <div class="form-group">
+	                                                <label class="col-md-2 control-label">Service Rendering Start Time</label>
+	                                                <div class="col-md-10">
+	                                                    <input type="text" id="{{ form.start_time_available.html_name }}" name="{{ form.start_time_available.html_name }}" class="form-control timepicker">
+	                                                     <span class="help-block"><small>What time will the service rendering start on the selected date(s)?</small></span>
+                                                    </div>
+	                                            </div>
+                                                 <div class="form-group">
+	                                                <label class="col-md-2 control-label">Service Rendering End Time</label>
+	                                                <div class="col-md-10">
+	                                                    <input type="text" id="{{ form.start_time_available.html_name }}" name="{{ form.end_time_available.html_name }}" class="form-control timepicker">
+	                                                     <span class="help-block"><small>What time will the service rendering end on the selected date(s)?</small></span>
+                                                    </div>
+	                                            </div>
+                                               <div class="form-group">
+	                                                <label class="col-md-2 control-label">Rendering description</label>
+	                                                <div class="col-md-10">
+	                                                    <textarea rows="7" id="{{ form.provision_description.html_name }}" name="{{ form.provision_description.html_name }}" class="form-control"></textarea>
+	                                                     <span class="help-block"><small>Give your potential customers a little description about how this service will be rendered.</small></span>
+                                                    </div>
+	                                            </div>
+
+                                                    <button type="submit" id="updateAccountDetailsBtn" class="btn btn-lg btn-googleplus waves-effect waves-light">Start Rendering Service</button>
+	                                        </form>
+
+                        				</div>
+                        			</div><!-- end row -->
+                        		</div>
+                        	</div><!-- end col -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+{% include 'dashboard/footer.html' %}

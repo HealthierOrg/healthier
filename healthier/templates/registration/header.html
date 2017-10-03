@@ -8,6 +8,9 @@
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
 
+
+        <link href="{% static 'dash/plugins/toastr/toastr.min.css' %}" rel="stylesheet" type="text/css" />
+
         <!-- App Favicon -->
         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
 
@@ -21,6 +24,12 @@
 
         {% if "settings" in request.path %}
            <link href="{% static 'dash/plugins/fileuploads/css/dropify.min.css' %}" rel="stylesheet" type="text/css" />
+        {% endif %}
+
+        {% if "request" in request.path %}
+
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
         {% endif %}
 
         <!-- App CSS -->
@@ -50,3 +59,5 @@
   ga("send", "pageview");
 
 </script>
+        <title>{{ current_page_title }}</title>
+</head>
