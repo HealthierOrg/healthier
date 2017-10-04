@@ -27,6 +27,8 @@ class BaseHealthierUserManager(BaseUserManager, InheritanceManager):
     def create_superuser(self, email, password, **extra_fields):
         u = self.create_user(email, password, **extra_fields)
         u.is_superuser = True
+        u.is_admin = True
+        u.is_staff = True
         u.save(using=self._db)
         return u
 

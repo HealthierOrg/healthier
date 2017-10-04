@@ -9,6 +9,7 @@ from healthier.dashboard.forms import AccountDetailForm, ServiceRequestConfigura
 from healthier.providers.models import Provider
 from healthier.service.models import BaseHealthierService, ServiceRequests, OrderedService, SuggestService
 from healthier.user.models import HealthierUser
+from django_messages.views import compose
 
 
 class BaseDashboardView(View):
@@ -74,19 +75,44 @@ class FinancesView(View):
 
 class CustomerListView(ListView):
     template_name = 'dashboard/customers.html'
+    detail_template_name = 'dashboard/customer_detail.html'
+    compose_message_template_name = 'dashboard/compose_message.html'
+    context_data = {}
     context_object_name = 'consumers'
     model = Consumer
 
-    def get_queryset(self):
-        return OrderedService.objects \
+    def get(self, request, *args, **kwargs):
+        self.context_data["consumers"] = OrderedService.objects \
                 .select_related('ordered_by__user_details_id__consumer_details') \
                 .filter(provided_by__user_details_id_id=self.request.user.id)
+        self.context_data['has_tables'] = 'True'
+        self.context_data['current_page_title'] = 'Customers'
+        action = request.GET.get('action', None)
+        customer_id = request.GET.get('id', None)
+        if action == "info":
+            self.context_data["current_page_title"] = "Customer Detail"
+            self.context_data["base_consumer_info"] = HealthierUser.objects.get(id=customer_id)
+            self.context_data["registered_services"] = OrderedService.objects.filter\
+                (ordered_by__user_details_id=customer_id)
+            return render(request, self.detail_template_name, self.context_data)
+        elif action == 'sendMessage':
+            return compose(request, recipient=customer_id, template_name=self.compose_message_template_name)
+        elif action == "block":
+            pass
+        return render(request, self.template_name, self.context_data)
 
-    def get_context_data(self, **kwargs):
-        context = super(CustomerListView, self).get_context_data(**kwargs)
-        context['has_tables'] = 'True'
-        context['current_page_title'] = 'Customers'
-        return context
+
+class CustomerDetailView(TemplateView):
+    template_name = 'dashboard/customer_detail.html'
+    model = BaseDashboardView
+    context = {}
+
+    def get(self, request, *args, **kwargs):
+        customer_id = request.GET.get('id', None)
+        print("I am here.")
+        print(customer_id)
+        self.context["current_page_title"] = "Customer Detail View"
+        return render(request, self.template_name, self.context)
 
 
 class UserServicesListView(ListView):

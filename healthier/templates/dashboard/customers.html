@@ -29,9 +29,12 @@
                                                 <td>{{ consumer.ordered_by.user_details_id.email }}</td>
                                                 <td>{{ consumer.ordered_by.user_details_id.phone_number }}</td>
                                                 <td>
-                                                    <button type="submit" id="updateAccountDetailsBtn" class="btn btn-small btn-success waves-effect waves-light">View Complete Details</button>
-                                                    <button type="submit" id="updateAccountDetailsBtn" class="btn btn-small btn-success waves-effect waves-light">Message User</button>
-                                                    <button type="submit" id="updateAccountDetailsBtn" class="btn btn-small btn-danger waves-effect waves-light">Block User</button>
+                                                    <a href="{% url 'dashboard:consumer' %}?action=info&id={{  consumer.ordered_by.user_details_id.id}}">
+                                                        <button type="button"  class="btn btn-small btn-success waves-effect waves-light">View Complete Details</button></a>
+                                                    <a href="{% url 'dashboard:consumer' %}?action=sendMessage&id={{  consumer.ordered_by.user_details_id.id}}">
+                                                        <button type="button"  class="btn btn-small btn-apple waves-effect waves-light">Message User</button></a>
+                                                    <a href="{% url 'dashboard:consumer' %}?action=block&id={{  consumer.ordered_by.user_details_id.id}}">
+                                                        <button type="button"  class="btn btn-small btn-danger waves-effect waves-light">Block User</button></a>
                                                 </td>
                                             </tr>
                                                 {% endfor %}

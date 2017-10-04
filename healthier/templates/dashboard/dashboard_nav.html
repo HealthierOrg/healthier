@@ -70,7 +70,7 @@
 
                             {% if user.account_type == "PRO" %}
                             <li>
-                                <a href="{% url 'dashboard:customers' %}" class="waves-effect"><i class="zmdi zmdi-group"></i><span> Customers </span></a>
+                                <a href="{% url 'dashboard:consumer' %}" class="waves-effect"><i class="zmdi zmdi-group"></i><span> Customers </span></a>
                             </li>
                             {% endif %}
 
@@ -86,9 +86,16 @@
                             <li>
                                 <a href="{% url 'dashboard:service_report' %}" class="waves-effect"><i class="zmdi zmdi-book"></i><span> Reports </span></a>
                             </li>
-                            <li>
-                                <a href="{% url 'dashboard:service_report' %}" class="waves-effect"><i class="zmdi zmdi-inbox"></i><span> Message </span></a>
+
+                           <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-inbox"></i><span> Messages </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{% url 'dashboard:messages_compose' %}">Compose</a></li>
+                                    <li><a href="{% url 'dashboard:messages_inbox' %}">Inbox</a></li>
+                                    <li><a href="{% url 'dashboard:messages_outbox' %}">Outbox</a></li>
+                                </ul>
                             </li>
+
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-account-add"></i><span> Settings </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">

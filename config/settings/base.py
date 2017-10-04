@@ -55,6 +55,8 @@ LOCAL_APPS = [
     'healthier.providers.apps.ProvidersConfig',
     'healthier.user.apps.UserConfig',
     'healthier.service.apps.ServiceConfig',
+    'healthier.finances.apps.FinancesConfig',
+
 ]
 
 THIRD_PARTY_APPS = [
@@ -69,6 +71,7 @@ THIRD_PARTY_APPS = [
     'datetimewidget',
     'rest_framework',
     'webpack_loader',
+    'django_messages',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -225,7 +228,7 @@ STATICFILES_FINDERS = [
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = str(APPS_DIR('media'))
+MEDIA_ROOT = str(APPS_DIR('media/image_uploads/'))
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
@@ -320,9 +323,4 @@ ACCOUNT_LOGOUT_ON_GET = True
 
 LOGIN_URL = "account_login"
 
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'js/app/bundles/',
-        'STATS_FILE': os.path.join(BASE_DIR, '../healthier/static/webpack-stats.json'),
-    }
-}
+DJANGO_MESSAGES_NOTIFY = False
