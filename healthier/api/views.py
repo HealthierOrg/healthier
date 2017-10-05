@@ -1,9 +1,3 @@
-# django
-from django.http import Http404
-
-# django extensions
-from rest_framework import status
-from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.schemas import SchemaGenerator
@@ -15,7 +9,6 @@ from healthier.user.models import HealthierUser
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
 from .serializers import UserSerializer, ConsumerSerializer, ProviderSerializer
-from healthier.service.models import BaseHealthierService
 
 # app
 from .helpers import AbstractDetail
@@ -75,10 +68,10 @@ class UserDetail(AbstractDetail):
         return AbstractDetail.get(self, request, format=None)
 
     def post(self, request, format=None):
-        """ 
+        """
         This endpoint allows creating users
-        - **Required fields** : 
-                            email, password, account_type 
+        - **Required fields** :
+                            email, password, account_type
         - **Valid Account Type** :
             CON for consumer, PRO for provider
 
@@ -90,16 +83,16 @@ class UserDetail(AbstractDetail):
                 ]
             }
         ```
-    
+
         """
-        
+
         return AbstractDetail.post(self, request, format=None)
 
     def put(self, request, format=None):
-        """ 
+        """
         This endpoint allows updating user information
         - **Note** : Email must always be passed!
-        - **Supported fields** : 
+        - **Supported fields** :
                             email, account_type, username, address, description, city,
                             country, phone_number, website, is_staff, is_admin, is_active,
                             is_logged_in, is_superuser, has_configured_account.
@@ -121,7 +114,7 @@ class UserDetail(AbstractDetail):
             "detail": "Not found."
         }
         ```
-    
+
         """
-        
         return AbstractDetail.put(self, request, format=None)
+

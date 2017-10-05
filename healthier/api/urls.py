@@ -7,3 +7,4 @@ urlpatterns = [
     url(r'^provider/get/$', views.ProviderDetail.as_view()),
     url(r'^docs/$', views.SwaggerSchemaView.as_view()),
 ]
+

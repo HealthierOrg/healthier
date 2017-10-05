@@ -1,0 +1,65 @@
+ {% load static %}
+{% load widget_tweaks %}
+
+{% load render_bundle from webpack_loader %}
+
+
+{% include 'registration/header.html' %}
+ <body class="fixed-left" xmlns="http://www.w3.org/1999/html">
+
+{% include 'dashboard/dashboard_nav.html' %}
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <input type="hidden" value="{{ service }}" id="service_details">
+                    <div class="container">
+                        <div class="row">
+                        	<div class="col-sm-12">
+                        		<div class="card-box">
+
+                        			<h4 class="header-title m-t-0 m-b-30">{{ service_details.service_name }}</h4>
+                        			<div class="row">
+                        				<div class="col-lg-12">
+                                               	<form class="form-horizontal" role="form" method="POST" action="{% url 'dashboard:dashboard_suggest_new_service' %}">
+                                                                          {% csrf_token %}
+                                                 <div class="form-group">
+	                                                <label class="col-md-2 control-label">Service Name</label>
+	                                                <div class="col-md-10">
+	                                                    <input type="text" name="service_name" class="form-control">
+	                                                     <span class="help-block"><small>What is the name of the new service?</small></span>
+                                                    </div>
+	                                            </div>
+                                                <div class="form-group">
+	                                                <label class="col-md-2 control-label">Service Group</label>
+	                                                <div class="col-md-10">
+	                                                    <input type="text" name="service_group" class="form-control">
+	                                                     <span class="help-block"><small>What group does this service belong to?</small></span>
+                                                    </div>
+	                                            </div>
+                                                    <div class="form-group">
+	                                                <label class="col-md-2 control-label">Service Description</label>
+                                                        <div class="col-md-10">
+                                                            <textarea rows="6" name="service_description" class="form-control"></textarea>
+                                                             <span class="help-block"><small>Describe the service being suggested?</small></span>
+                                                        </div>
+	                                                </div>
+                                                   <div class="form-group">
+	                                                <label class="col-md-2 control-label">Suggestion Reason</label>
+                                                        <div class="col-md-10">
+                                                            <textarea rows="6" name="service_suggestion_reason" class="form-control"></textarea>
+                                                             <span class="help-block"><small>Why is this service being suggested?</small></span>
+                                                        </div>
+	                                                </div>
+
+                                                    <button type="submit" id="updateAccountDetailsBtn" class="btn btn-lg btn-googleplus waves-effect waves-light">Submit Suggestion</button>
+	                                        </form>
+                        				</div>
+                        			</div><!-- end row -->
+                        		</div>
+                        	</div><!-- end col -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+{% include 'dashboard/footer.html' %}

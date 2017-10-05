@@ -19,7 +19,7 @@ class AbstractDetail(APIView):
             return self.MODEL.objects.get(**self.ID)
         except self.MODEL.DoesNotExist:
             raise Http404
-    
+
     def get_all(self):
         return self.MODEL.objects.all()
 
@@ -47,7 +47,7 @@ class AbstractDetail(APIView):
             matching_object = self.get_object(id)
         except self.MODEL.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-       
+
         serializer = self.SERIALIZER(matching_object, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()

@@ -44,7 +44,6 @@ class BaseHealthierService(models.Model):
     service_name = models.CharField(max_length=200)
     details = models.CharField(max_length=1000, blank=False, default='')
     service_id = models.CharField(max_length=200, default=generate_id("service"))
-    provider_id = models.ForeignKey(Provider, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.service_name
@@ -53,7 +52,7 @@ class BaseHealthierService(models.Model):
 class OrderedService(models.Model):
     """A paid for service request to the service organization"""
     ordered_by = models.ForeignKey(Consumer)
-    service_id = models.ForeignKey(BaseHealthierService, on_delete=models.CASCADE)
+    service = models.ForeignKey(BaseHealthierService, on_delete=models.CASCADE)
     provided_by = models.ForeignKey(Provider, on_delete=models.CASCADE, blank=True, null=True)
     payment_status = models.CharField(max_length=200,
                                       choices=(("", "Payment Status"), ('Paid', "P"), ('Not Paid', "NP"),), blank=True)
@@ -65,20 +64,21 @@ class OrderedService(models.Model):
 
     def __str__(self):
         """Return a string representation of the model."""
-        return self.service_id
+        return str(self.ordered_by)
 
 
 class ServiceRequests(models.Model):
     """A paid for service request to the service organization"""
-    request_date = models.DateTimeField(auto_now=False, auto_now_add=False, )
+    request_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=now)
     requested_by = models.ForeignKey(Provider, on_delete=models.CASCADE)
-    duration = models.CharField(max_length=200)
-    rate = models.CharField(max_length=200)
     price = PriceField(currency='NGN', decimal_places=2, max_digits=12, default=0.00)
-    service_id = models.ForeignKey(BaseHealthierService, on_delete=models.CASCADE)
+    service = models.ForeignKey(BaseHealthierService, on_delete=models.CASCADE)
     is_ordered = models.BooleanField(default=False)
     days_available = models.CharField(max_length=200, choices=DAYS_AVAILABLE_TUPLE, default='EVR')
-    time_available = models.TimeField(max_length=200, default=datetime.time(16, 00))
+    start_time_available = models.TimeField(max_length=200, default=datetime.time(16, 00))
+    end_time_available = models.TimeField(max_length=200, default=datetime.time(16, 00))
+    provision_description = models.TextField(max_length=500, default='')
+    status = models.BooleanField(default=True)
 
     def __str__(self):
         """Return a string representation of the model."""
@@ -115,3 +115,10 @@ class MeasuredTest(models.Model):
     measure_value = models.CharField(max_length=200)
     measured_by = models.ForeignKey(Provider, on_delete=models.CASCADE)
     measured_for = models.ForeignKey(Consumer, on_delete=models.CASCADE)
+
+
+class SuggestService(models.Model):
+    service_name = models.CharField(max_length=300, default='', blank=False)
+    service_group = models.CharField(max_length=300, default='', blank=False)
+    service_description = models.CharField(max_length=3000, default='', blank=False)
+    service_suggestion_reason = models.CharField(max_length=3000, default='', blank=False)

@@ -1,5 +1,6 @@
    {% load static %}
 
+
             <div class="topbar">
                 <div class="topbar-left">
                     <a href="index.html" class="logo"><span>Health<span>ier</span></span><i class="zmdi zmdi-layers"></i></a>
@@ -15,27 +16,12 @@
                                 </button>
                             </li>
                             <li>
-                                <h4 class="page-title" id="react_container">{{ current_page_title }}</h4>
+                                <h4 class="page-title" >{{ current_page_title }} </h4>
                             </li>
+
                         </ul>
+
                         <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <!-- Notification -->
-                                <div class="notification-box">
-                                    <ul class="list-inline m-b-0">
-                                        <li>
-                                            <a href="javascript:void(0);" class="right-bar-toggle">
-                                                <i class="zmdi zmdi-notifications-none"></i>
-                                            </a>
-                                            <div class="noti-dot">
-                                                <span class="dot"></span>
-                                                <span class="pulse"></span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- End Notification bar -->
-                            </li>
                             <li class="hidden-xs">
                                 <form role="search" class="app-search">
                                     <input type="text" placeholder="Search..."
@@ -59,7 +45,7 @@
                             <img src="{% static 'dash/images/small/img3.jpg' %}" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                             <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
                         </div>
-                        <h5><a href="#">{{ user.account_type }}</a> </h5>
+                        <h5><a href="#">{{ user.username }}</a> </h5>
                         <ul class="list-inline">
                             <li>
                                 <a href="#">
@@ -79,21 +65,35 @@
                         	<li class="text-muted menu-title">Navigation</li>
 
                             <li>
-                                <a href="{% url 'provider:dashboard' %}" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
+                                <a href="{% url 'dashboard:dashboard' %}" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
                             </li>
 
                             {% if user.account_type == "PRO" %}
                             <li>
-                                <a href="{% url 'provider:provider_dashboard_customers' %}" class="waves-effect"><i class="zmdi zmdi-group"></i><span> Customers </span></a>
+                                <a href="{% url 'dashboard:consumer' %}" class="waves-effect"><i class="zmdi zmdi-group"></i><span> Customers </span></a>
                             </li>
                             {% endif %}
 
-                            <li>
-                                <a href="{% url 'provider:provider_dashboard_services' %}" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Services </span></a>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-account-add"></i><span> Services </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{% url 'dashboard:dashboard_my_services' %}">My services</a></li>
+                                    <li><a href="{% url 'dashboard:dashboard_all_services' %}">All Service</a></li>
+                                    <li><a href="{% url 'dashboard:dashboard_suggest_new_service' %}">Suggest a new service</a></li>
+                                </ul>
                             </li>
 
                             <li>
-                                <a href="{% url 'provider:provider_dashboard_services' %}" class="waves-effect"><i class="zmdi zmdi-book"></i><span> Reports </span></a>
+                                <a href="{% url 'dashboard:service_report' %}" class="waves-effect"><i class="zmdi zmdi-book"></i><span> Reports </span></a>
+                            </li>
+
+                           <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-inbox"></i><span> Messages </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{% url 'dashboard:messages_compose' %}">Compose</a></li>
+                                    <li><a href="{% url 'dashboard:messages_inbox' %}">Inbox</a></li>
+                                    <li><a href="{% url 'dashboard:messages_outbox' %}">Outbox</a></li>
+                                </ul>
                             </li>
 
                             <li class="has_sub">
