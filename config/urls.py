@@ -38,3 +38,6 @@ if settings.DEBUG:
         urlpatterns = [
             url(r'^__debug__/', include(debug_toolbar.urls)),
         ] + urlpatterns
+
+
+print('debug_toolbar' in settings.INSTALLED_APPS)

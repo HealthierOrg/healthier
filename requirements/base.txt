@@ -64,3 +64,5 @@ django-countries
 django-datetime-widget
 
 django-webpack-loader
+
+-e git://github.com/arneb/django-messages

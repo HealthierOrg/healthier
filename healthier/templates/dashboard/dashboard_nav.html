@@ -48,13 +48,13 @@
                         <h5><a href="#">{{ user.username }}</a> </h5>
                         <ul class="list-inline">
                             <li>
-                                <a href="#">
+                                <a href="{% url 'dashboard:account_settings' %}">
                                     <i class="zmdi zmdi-settings"></i>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-custom">
+                                <a href="{% url 'account_logout' %}" class="text-custom">
                                     <i class="zmdi zmdi-power"></i>
                                 </a>
                             </li>
@@ -90,9 +90,9 @@
                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-inbox"></i><span> Messages </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{% url 'dashboard:messages_compose' %}">Compose</a></li>
-                                    <li><a href="{% url 'dashboard:messages_inbox' %}">Inbox</a></li>
-                                    <li><a href="{% url 'dashboard:messages_outbox' %}">Outbox</a></li>
+                                    <li><a href="{% url 'dashboard:compose_message' %}">Compose</a></li>
+                                    <li><a href="{% url 'dashboard:message_inbox' %}">Inbox</a></li>
+                                    <li><a href="{% url 'dashboard:message_outbox' %}">Outbox</a></li>
                                 </ul>
                             </li>
 

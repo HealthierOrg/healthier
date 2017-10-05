@@ -47,7 +47,7 @@
             <div class="col-md-4 mb-md-20">
               <div class="testimonial box-shadow text-center clearfix">
                 <div class="testimonial__body">
-                  <p class="testimonial__text">{{ providers.requested_by.username }}</p>
+                  <p class="testimonial__text">{{ providers.requested_by.user_details_id.username | capfirst}}</p>
                 </div>
                 <div class="testimonial__info">
                   <span class="testimonial__author">Price:</span>
@@ -59,7 +59,7 @@
                 </div>
                    <div class="testimonial__info">
                       <span class="testimonial__author">Time Available:</span>
-                      <span class="testimonial__company">{{ providers.start_time_available }} : {{ providers.end_time_available }}</span>
+                      <span class="testimonial__company">{{ providers.start_time_available |time:"H:i" }} : {{ providers.end_time_available |time:"H:i" }}</span>
                 </div>
                   <br>
                   <div class="btn--google align-bottom">
