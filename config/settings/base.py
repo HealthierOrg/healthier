@@ -72,6 +72,7 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'webpack_loader',
     'django_messages',
+    'debug_toolbar',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

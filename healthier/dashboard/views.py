@@ -3,28 +3,14 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.views import View
 from django.views.generic import DetailView, FormView, ListView, TemplateView
-from django.template.loader import select_template
+from django_messages.models import Message
+
 from healthier.consumers.models import Consumer
 from healthier.dashboard.forms import AccountDetailForm, ServiceRequestConfigurationForm
+from healthier.messenger.views import compose
 from healthier.providers.models import Provider
 from healthier.service.models import BaseHealthierService, ServiceRequests, OrderedService, SuggestService
 from healthier.user.models import HealthierUser
-from django_messages.views import compose
-
-
-class BaseDashboardView(View):
-    def __init__(self, **kwargs):
-        super(BaseDashboardView, self).__init__(**kwargs)
-        self.current_page_title = kwargs.get('current_page_title')
-
-    def get(self, request, template_name, **context):
-        template_name = select_template(
-            [template_name, 'dashboard/provider_index.html' if request.user.account_type == "PRO" else \
-                'dashboard/consumer_index.html'])
-        return render(request, template_name, **context)
-
-    def post(self, request):
-        return request
 
 
 class DashboardView(View):
@@ -41,11 +27,20 @@ class DashboardView(View):
                 .filter(provided_by__user_details_id_id=request.user.id)
             self.template_context["provider_services"] = ServiceRequests.objects.filter(requested_by__user_details_id=request.user
                                                                                         .id)
+            try:
+                self.template_context['inbox'] = Message.objects.filter(recipient=request.user.id)[3]
+            except IndexError:
+                self.template_context['inbox'] = Message.objects.filter(recipient=request.user.id)
+
         else:
             user_specific_template = self.consumer_dashboard
         if not request.user.has_configured_account:
-            return HttpResponseRedirect(reverse("dashboard:account_settings"))
-        return render(request, user_specific_template, self.template_context)
+            response_obj = HttpResponseRedirect(reverse("dashboard:account_settings"))
+            response_obj.delete_cookie('__json_message')
+            return response_obj
+        response_obj = render(request, user_specific_template, self.template_context)
+        response_obj.delete_cookie('__json_message')
+        return response_obj
 
 
 class ProviderListView(ListView):
@@ -96,23 +91,10 @@ class CustomerListView(ListView):
                 (ordered_by__user_details_id=customer_id)
             return render(request, self.detail_template_name, self.context_data)
         elif action == 'sendMessage':
-            return compose(request, recipient=customer_id, template_name=self.compose_message_template_name)
+            return compose(request, template_name=self.compose_message_template_name, recipient=customer_id)
         elif action == "block":
             pass
         return render(request, self.template_name, self.context_data)
-
-
-class CustomerDetailView(TemplateView):
-    template_name = 'dashboard/customer_detail.html'
-    model = BaseDashboardView
-    context = {}
-
-    def get(self, request, *args, **kwargs):
-        customer_id = request.GET.get('id', None)
-        print("I am here.")
-        print(customer_id)
-        self.context["current_page_title"] = "Customer Detail View"
-        return render(request, self.template_name, self.context)
 
 
 class UserServicesListView(ListView):
@@ -123,6 +105,7 @@ class UserServicesListView(ListView):
         super(UserServicesListView, self).__init__()
         context = super(UserServicesListView, self).get_context_data(**kwargs)
         user_details = Provider.objects.get(user_details_id_id=self.request.user.id)
+        context['current_page_title'] = "My Services"
         context["user_services"] = ServiceRequests.objects.filter(
             requested_by_id=user_details.id) if self.request.user.account_type == "PRO" \
             else OrderedService.objects.filter(ordered_by_id=self.request.user.id)
@@ -224,7 +207,7 @@ class AccountSettingsView(TemplateView):
         return HttpResponse(request.POST)
 
 
-class ServiceConfiguration(BaseDashboardView):
+class ServiceConfiguration(TemplateView):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.template_name = 'dashboard/configure_service.html'
@@ -246,7 +229,7 @@ class ProfileView(TemplateView):
         return HttpResponse("I got here")
 
 
-class ServiceRequestConfiguration(BaseDashboardView):
+class ServiceRequestConfiguration(TemplateView):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.template_name = 'dashboard/render_service.html'

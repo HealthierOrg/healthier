@@ -1,10 +1,10 @@
 from django.conf.urls import url, include
 from django.contrib.auth.decorators import login_required
-from django.views.generic import TemplateView
 
 from .views import DashboardView, FinancesView, CustomerListView, AccountSettingsView,\
     ServiceConfiguration, ProfileView, ServiceRequestConfiguration, UserServicesListView, AllServiceListView, \
     ServiceDetailView, SuggestServiceView
+from healthier.messenger.views import compose, inbox
 
 urlpatterns = [
     url(r'^$', DashboardView.as_view(), name='dashboard'),
@@ -28,5 +28,8 @@ urlpatterns = [
     url(r'^settings/finance$', AccountSettingsView.as_view(), name='finance_settings'),
     url(r'^settings/consumer$', AccountSettingsView.as_view(), name='consumer_settings'),
     url(r'^settings/service$', AccountSettingsView.as_view(), name='service_settings'),
-    url(r'^messages/', include('django_messages.urls')),
+    # url(r'^messages/$', include('django_messages.urls')),
+    url(r'^messages/compose_message/$', compose, name='compose_message'),
+    url(r'^messages/outbox/$', compose, name='message_outbox'),
+    url(r'^messages/inbox/$', inbox, name='message_inbox'),
 ]
