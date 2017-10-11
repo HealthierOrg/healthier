@@ -82,7 +82,7 @@ class ServiceRequests(models.Model):
 
     def __str__(self):
         """Return a string representation of the model."""
-        return str(self.requested_by)
+        return str(self.service)
 
 
 class ServiceReportGroup(models.Model):

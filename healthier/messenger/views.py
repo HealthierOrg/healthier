@@ -10,7 +10,7 @@ from healthier.user.models import HealthierUser
 
 @login_required
 def compose(request, template_name=None, recipient=None):
-    template_name = template_name if template_name else 'dashboard/compose_message.html'
+    template_name = template_name if template_name else 'dashboard/messages/compose_message.html'
     context = {}
     if request.method == "POST":
         sender = request.user
@@ -31,7 +31,7 @@ def compose(request, template_name=None, recipient=None):
 
 
 @login_required
-def inbox(request, template_name='dashboard/message_inbox.html'):
+def inbox(request, template_name='dashboard/messages/message_inbox.html'):
     message_list = Message.objects.inbox_for(request.user)
     return render(request, template_name, {
         'message_list': message_list,'current_page_title': 'Inbox'

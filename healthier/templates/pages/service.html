@@ -51,7 +51,7 @@
                 </div>
                 <div class="testimonial__info">
                   <span class="testimonial__author">Price:</span>
-                  <span class="testimonial__company">{% gross providers.price %} </span>
+                  <span class="testimonial__company">&#8358; {{ providers.price.gross }}</span>
                 </div>
                  <div class="testimonial__info">
                       <span class="testimonial__author">Days Available:</span>
@@ -59,11 +59,11 @@
                 </div>
                    <div class="testimonial__info">
                       <span class="testimonial__author">Time Available:</span>
-                      <span class="testimonial__company">{{ providers.start_time_available |time:"H:i" }} : {{ providers.end_time_available |time:"H:i" }}</span>
+                      <span class="testimonial__company">{{ providers.start_time_available |time:"H:i" }} -:- {{ providers.end_time_available |time:"H:i" }}</span>
                 </div>
                   <br>
                   <div class="btn--google align-bottom">
-                    <a href="{% url 'dashboard:service_configuration' %}?service={{ service.service_id_id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg"><span>Select Provider</span></a>
+                    <a href="{% url 'dashboard:order_service' %}?service={{ service.id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg"><span>Select Provider</span></a>
                   </div>
               </div>
 

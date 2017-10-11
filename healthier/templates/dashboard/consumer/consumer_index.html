@@ -10,12 +10,10 @@
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
-
-
                         <div class="row">
                             <div class="col-lg-3 col-md-6">
                         		<div class="card-box">
-                        			<h4 class="header-title m-t-0 m-b-30">Total Income</h4>
+                        			<h4 class="header-title m-t-0 m-b-30">Total Money Spent</h4>
 
                                     <div class="widget-box-2">
                                         <div class="widget-detail-2">
@@ -30,7 +28,7 @@
 
                             <div class="col-lg-3 col-md-6">
                         		<div class="card-box">
-                        			<h4 class="header-title m-t-0 m-b-30">Customer Count</h4>
+                        			<h4 class="header-title m-t-0 m-b-30">Service Count</h4>
 
                                     <div class="widget-box-2">
                                         <div class="widget-detail-2">
@@ -44,7 +42,7 @@
 
                             <div class="col-lg-3 col-md-6">
                         		<div class="card-box">
-                        			<h4 class="header-title m-t-0 m-b-30">Daily Sales</h4>
+                        			<h4 class="header-title m-t-0 m-b-30">Daily Service Usage</h4>
 
                                     <div class="widget-box-2">
                                         <div class="widget-detail-2">
@@ -57,7 +55,7 @@
                             </div>
                             <div class="col-lg-3 col-md-6">
                         		<div class="card-box">
-                        			<h4 class="header-title m-t-0 m-b-30">Daily Sales</h4>
+                        			<h4 class="header-title m-t-0 m-b-30">Monthly Service Usage</h4>
 
                                     <div class="widget-box-2">
                                         <div class="widget-detail-2">
@@ -71,65 +69,14 @@
 
                         </div>
 
-
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6">
-                                <div class="card-box widget-user">
-                                    <div>
-                                        <img src="{% static 'dash/images/small/img3.jpg' %}" class="img-responsive img-circle" alt="user">
-                                        <div class="wid-u-info">
-                                            <h4 class="m-t-0 m-b-5 font-600">Chadengle</h4>
-                                            <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- end col -->
-
-                            <div class="col-lg-3 col-md-6">
-                                <div class="card-box widget-user">
-                                    <div>
-                                        <img src="{% static 'dash/images/small/img3.jpg' %}" class="img-responsive img-circle" alt="user">
-                                        <div class="wid-u-info">
-                                            <h4 class="m-t-0 m-b-5 font-600"> Michael Zenaty</h4>
-                                            <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- end col -->
-
-                            <div class="col-lg-3 col-md-6">
-                                <div class="card-box widget-user">
-                                    <div>
-                                        <img src="{% static 'dash/images/small/img3.jpg' %}" class="img-responsive img-circle" alt="user">
-                                        <div class="wid-u-info">
-                                            <h4 class="m-t-0 m-b-5 font-600">Stillnotdavid</h4>
-                                            <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- end col -->
-
-                            <div class="col-lg-3 col-md-6">
-                                <div class="card-box widget-user">
-                                    <div>
-                                        <img src="{% static 'dash/images/small/img3.jpg' %}" class="img-responsive img-circle" alt="user">
-                                        <div class="wid-u-info">
-                                            <h4 class="m-t-0 m-b-5 font-600">Tomaslau</h4>
-                                            <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-
                         <div class="row">
                             <div class="col-lg-4">
                             	<div class="card-box">
                         			<h4 class="header-title m-t-0 m-b-30">Inbox</h4>
 
-									<div class="inbox-widget nicescroll" style="height: 315px;">
+									<div class="inbox-widget nicescroll" style="height: 100px;">
+                                    {% if inbox %}
+                                        {% for message in inbox %}
                                         <a href="#">
                                             <div class="inbox-item">
                                                 <div class="inbox-item-img"><img src="{% static 'dash/images/small/img3.jpg' %}" class="img-circle" alt=""></div>
@@ -138,6 +85,10 @@
                                                 <p class="inbox-item-date">13:40 PM</p>
                                             </div>
                                         </a>
+                                        {% endfor %}
+                                        {% else %}
+                                        <h3>You currently have no messages</h3>
+                                    {% endif %}
                                     </div>
 								</div>
                             </div>
@@ -153,19 +104,23 @@
                                                 <th>#</th>
                                                 <th>Service Name</th>
                                                 <th>Created On</th>
-                                                <th>Usage Count</th>
                                                 <th>Status</th>
                                             </tr>
                                             </thead>
+                                           {% if consumer_services %}
                                             <tbody>
+                                                {% for service in consumer_services %}
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>Adminto Admin v1</td>
-                                                    <td>01/01/2016</td>
-                                                    <td>26/04/2016</td>
-                                                    <td><span class="label label-danger">Released</span></td>
+                                                    <td>{{ service.id }}</td>
+                                                    <td>{{ service.service.service_name }}</td>
+                                                    <td>{{ service.request_date | date }}</td>
+                                                    <td><span class="label {% if service.status %} label-success {% else %} label-danger {% endif %}"> {% if service.status %} Active {% else %} Not Active {% endif %}</span></td>
                                                 </tr>
+                                                {% endfor %}
                                             </tbody>
+                                               {% else %}
+                                               <tbody><tr><h3>You currently have no active service</h3></tr></tbody>
+                                            {% endif %}
                                         </table>
                                     </div>
                                 </div>

@@ -3,14 +3,10 @@
 {% include 'registration/header.html' %}
 
 <body class="fixed-left">
-
 {% include 'dashboard/dashboard_nav.html' %}
-
             <div class="content-page">
                 <div class="content">
-                    <div class="container">
-                        <div class="row">
-                            {% for service in all_services %}
+                    {% for service in all_services %}
                                   <div class="col-lg-4">
                                 <div class="card-box project-box">
                         			<h4 class="m-t-0 m-b-5"><a href="#" class="text-inverse">{{ service.service_name }}</a></h4>
@@ -35,24 +31,21 @@
                                                      style="width: 45%;">
                                                 </div><!-- /.progress-bar .progress-bar-danger -->
                                             </div>
-
                                         <br>
                                         {% if user.account_type == "PRO" %}
                                         <a href="{% url 'dashboard:service_request_configuration' %}?service={{ service.id }}" class="btn btn-small btn-googleplus waves-effect waves-light">Render Service</a>
                                         {% else %}
-                                         <a href="{% url 'dashboard:service_details' service_id=service.id  %}" class="btn btn-small btn-googleplus waves-effect waves-light">View Service Providers</a>
+                                        <a href="{% url 'dashboard:order_service_step' 1 service.id  %}" class="btn btn-small btn-dropbox waves-effect waves-light">Order Service</a>
                                         {% endif%}
-                                        <br>
-                                        <br>
-                                        <a href="{% url 'dashboard:service_report' %}?service={{ service.id }}" class="btn btn-small btn-success waves-effect waves-light">View Complete Service Details</a>
+                                        <a href="{% url 'dashboard:service_details' service_id=service.id  %}" class="btn btn-small btn-dropbox waves-effect waves-light">Full  Service Details </a>
                                     </ul>
                                 </div>
                             </div>
                             {% endfor %}
-                        </div>
-                    </div>
                 </div>
             </div>
 
 
-{% include 'registration/footer.html' %}
+
+
+{% include 'dashboard/footer.html' %}
