@@ -22,6 +22,9 @@
             <link href="{% static 'dash/plugins/datatables/scroller.bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
         {% endif %}
 
+        {% if has_modal %}<link href="{% static 'dash/plugins/custombox/dist/custombox.min.css' %}" rel="stylesheet">
+        {% endif %}
+
         {% if "settings" in request.path %}
            <link href="{% static 'dash/plugins/fileuploads/css/dropify.min.css' %}" rel="stylesheet" type="text/css" />
         {% endif %}

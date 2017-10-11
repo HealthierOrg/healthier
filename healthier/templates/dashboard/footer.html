@@ -1,4 +1,6 @@
-
+ <footer class="footer">
+                    2017 © Healthier.
+ </footer>
  {% load static %}
 
 
@@ -55,6 +57,11 @@
             TableManageButtons.init();
 
         </script>
+        {% endif %}
+
+        {% if has_modal %}
+        <script src="{% static 'dash/plugins/custombox/dist/custombox.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/custombox/dist/legacy.min.js' %}"></script>
         {% endif %}
 
         {% if "settings" in request.path %}

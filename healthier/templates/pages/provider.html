@@ -5,50 +5,25 @@
   <main class="main-wrapper">
 
    {% include 'nav.html' %}
-
-            <section class="section-wrap pb-0" id="author">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5 mb-md-40">
-                          <h2 class="author__title">{{ provider.name }}</h2>
-                          <p class="author__text lead">{{ provider.description }}</p>
-                            <p>{{ provider.address }}</p>
-                            <div class="footer__socials mt-40">
-                    <div class="social-icons social-icons--nobase">
-                      <a href="#"><i class="ui-twitter"></i></a>
-                      <a href="#"><i class="ui-facebook"></i></a>
-                    </div>
-                  </div>
-                        </div>
-                        <div class="col-md-6 col-md-offset-1 text-center">
-                          <img src="{% static 'img/promo/author.jpg' %}" alt="">
-                        </div>
-                    </div>
-                </div>
-          </section>
-
             <section class="section-wrap bg-light bottom-divider" id="testimonials">
                 <div class="container">
                   <div class="heading-row text-center">
                     <h2 class="heading">Services</h2>
                   </div>
-
                 {% if services %}
                     {% for service in services %}
-                  <div class="row">
-                    <div id="owl-testimonials" class="owl-carousel owl-theme">
-                      <div class="testimonial__wrap">
-                        <div class="testimonial box-shadow text-center clearfix">
-                            <span class="testimonial__author">{{ service.name }}</span>
-                          <div class="testimonial__body">
-                            <p class="testimonial__text">{{ service.description }}</p>
-                          </div>
-                          <div class="testimonial__info">
+                      <div class="row">
+                        <div id="owl-testimonials" class="owl-carousel owl-theme">
+                          <div class="testimonial__wrap">
+                            <div class="testimonial box-shadow text-center clearfix">
+                                <span class="testimonial__author">{{ service.service_id.email }}</span>
+                              <div class="testimonial__body">
+                                <p class="testimonial__text">{{ service.service_id.description }}</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
                     {% endfor %}
                 {% else %}
                     <h5 class="text-center">{{ provider.name }} currently has no services.</h5>

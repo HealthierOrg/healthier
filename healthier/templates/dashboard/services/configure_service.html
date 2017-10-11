@@ -1,0 +1,94 @@
+ {% load static %}
+{% load widget_tweaks %}
+
+{% include 'registration/header.html' %}
+<body class="fixed-left">
+
+{% include 'dashboard/dashboard_nav.html' %}
+             <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="pull-right m-t-30">
+                                                    <p><strong>Order Date: </strong>{% now "" %} </p>
+                                                    <p class="m-t-10"><strong>Order Status: </strong> <span class="label label-pink">Pending</span></p>
+                                                    <p class="m-t-10"><strong>Order ID: </strong> #123456</p>
+                                                </div>
+                                            </div><!-- end col -->
+                                        </div>
+                                        <!-- end row -->
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr><th>#</th>
+                                                            <th>Service</th>
+                                                            <th>Description</th>
+                                                            <th>Unit Cost</th>
+                                                        </tr></thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>{{ service_details.service.service_name }}</td>
+                                                                <td>{{ service_details.service.details }}</td>
+                                                                <td>&#8358;{{ service_details.price.gross }}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <div class="clearfix m-t-40">
+                                                    <h5 class="small text-inverse font-600">PAYMENT TERMS AND POLICIES</h5>
+
+                                                    <small>
+                                                        All accounts are to be paid within 7 days from receipt of
+                                                        invoice. To be paid by cheque or credit card or direct payment
+                                                        online. If account is not paid within 7 days the credits details
+                                                        supplied as confirmation of work undertaken will be charged the
+                                                        agreed quoted fee noted above.
+                                                    </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-6 col-xs-6 col-md-offset-3">
+                                                <p class="text-right"><b>Sub-total:</b> 2930.00</p>
+                                                <p class="text-right">VAT: 12.9%</p>
+                                                <hr>
+                                                <h3 class="text-right">&#8358; 2930.00</h3>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="hidden-print">
+                                            <div class="pull-right">
+                                                <a href="{% url 'dashboard:dashboard_all_services' %}" class="btn btn-primary waves-effect waves-light">Browse More Services</a>
+                                                <a href="javascript:window.print()" class="btn btn-inverse waves-effect waves-light"><i class="fa fa-print"></i> Print </a>
+                                                <a href="#" class="btn btn-success waves-effect waves-light">Checkout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- end row -->
+
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+            </div>
+
+{% include 'dashboard/footer.html' %}
