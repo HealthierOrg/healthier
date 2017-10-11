@@ -31,13 +31,13 @@
           <div class="row row-60 items-grid">
                   {% for provider in providers %}
                     <div class="col-md-4 col-xs-6 col-xxs-12">
-                      <a href="{% url 'provider:providers' %}{{ provider.id }}" class="box-shadow">
+                      <a href="{% url 'dashboard:provider_details'  provider.id %}" class="box-shadow">
                         <div class="feature-1__icon-holder feature-1__icon-holder--green text-center">
                           <i class="ui-cog feature-1__icon"></i>
                         </div>
                         <div class="feature-1__base">
-                          <h3 class="feature-1__title">{{ provider.name }}</h3>
-                          <p class="feature-1__paragraph">{{ provider.description }}.</p>
+                          <h3 class="feature-1__title">{{ provider.user_details_id.username | capfirst }}</h3>
+                          <p class="feature-1__paragraph">{{ provider.user_details_id.description }}.</p>
                         </div>
                       </a>
                     </div> <!-- end col -->

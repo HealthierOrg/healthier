@@ -5,6 +5,7 @@ from django.views.generic import DetailView
 from django.views.generic import ListView
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
+from healthier.service.models import ServiceRequests
 
 
 class DashboardView(View):
@@ -30,6 +31,14 @@ class ProviderDetailView(DetailView):
 
     def get_object(self, queryset=None):
         return Provider.objects.get(id=self.kwargs["id"])
+
+    def get_context_data(self, **kwargs):
+        super(ProviderDetailView, self).__init__()
+        context = super(ProviderDetailView, self).get_context_data(**kwargs)
+        print(self.kwargs["id"])
+        print(ServiceRequests.objects.filter(requested_by_id=self.kwargs["id"]))
+        context['services'] = ServiceRequests.objects.filter(requested_by_id=self.kwargs["id"])
+        return context
 
 
 class FinancesView(View):
