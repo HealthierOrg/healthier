@@ -11,7 +11,7 @@ from healthier.providers.models import Provider
 from .serializers import UserSerializer, ConsumerSerializer, ProviderSerializer
 
 # app
-from .helpers import AbstractDetail
+from .helpers import AbstractDetail, EmailTest
 
 
 class SwaggerSchemaView(APIView):
@@ -117,4 +117,5 @@ class UserDetail(AbstractDetail):
 
         """
         return AbstractDetail.put(self, request, format=None)
+
 
