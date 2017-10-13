@@ -1,5 +1,6 @@
 # django
 from django.http import Http404
+from django.core.mail import send_mail
 
 # third party
 from rest_framework.views import APIView
@@ -59,3 +60,14 @@ class AbstractDetail(APIView):
         matching_object = self.get_object(id)
         matching_object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class EmailTest(APIView):
+    def get(self, request, format=None):
+        send_mail("Subject", "text body", "from@example.com",
+                  ["davash001@gmail.com"], html_message="<html>html body</html>")
+        return Response({'success': 'sent'})
+
+
+class ServiceDetail(APIView):
+    pass
