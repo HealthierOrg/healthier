@@ -31,7 +31,7 @@ var pathsConfig = function (appName) {
     templates: this.app + '/templates',
     css: this.app + '/static/css',
     sass: this.app + '/static/sass',
-    fonts: this.app + '/static/fonts',
+    fonts: this.app + '/static/font',
     images: this.app + '/static/images',
     js: this.app + '/static/js',
   }

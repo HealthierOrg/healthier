@@ -16,7 +16,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Subject</th>
-                                                <th>From</th>
+                                                <th>To</th>
                                                 <th>Date </th>
                                                 <th>Action</th>
                                             </tr>
@@ -26,7 +26,7 @@
                                               {% for message in message_list %}
                                             <tr>
                                                 <td>{{ message.subject | capfirst }}</td>
-                                                <td>{{ message.sender.email | capfirst}}</td>
+                                                <td>{{ message.recipient.email | capfirst}}</td>
                                                 <td>{{ message.sent_at | date}}</td>
                                                 <td>
                                                     <a href="{% url 'dashboard:view_message' message.id %} ">

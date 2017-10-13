@@ -7,25 +7,21 @@
 {% include 'dashboard/dashboard_nav.html' %}
 
     <div class="content-page">
-                <!-- Start content -->
                 <div class="content">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-3 col-md-6">
                         		<div class="card-box">
                         			<h4 class="header-title m-t-0 m-b-30">Total Money Spent</h4>
-
                                     <div class="widget-box-2">
                                         <div class="widget-detail-2">
                                             <span class="badge badge-success pull-left m-t-20">32% <i class="zmdi zmdi-trending-up"></i> </span>
-                                            <h2 class="m-b-0"> 8451 </h2>
+                                            <h2 class="m-b-0"> {{ request.user.total_money.gross }} </h2>
                                             <p class="text-muted m-b-25">Naira</p>
                                         </div>
                                     </div>
                         		</div>
                             </div>
-
-
                             <div class="col-lg-3 col-md-6">
                         		<div class="card-box">
                         			<h4 class="header-title m-t-0 m-b-30">Service Count</h4>
@@ -33,8 +29,8 @@
                                     <div class="widget-box-2">
                                         <div class="widget-detail-2">
                                             <span class="badge badge-success pull-left m-t-20">32% <i class="zmdi zmdi-trending-up"></i> </span>
-                                            <h2 class="m-b-0"> 8451 </h2>
-                                            <p class="text-muted m-b-25">Customers</p>
+                                            <h2 class="m-b-0"> {{ consumer_services | length }} </h2>
+                                            <p class="text-muted m-b-25">Services</p>
                                         </div>
                                     </div>
                         		</div>
@@ -76,13 +72,13 @@
 
 									<div class="inbox-widget nicescroll" style="height: 100px;">
                                     {% if inbox %}
-                                        {% for message in inbox %}
-                                        <a href="#">
+                                         {% for message in inbox %}
+                                        <a href="{% url 'dashboard:view_message' message.id %}">
                                             <div class="inbox-item">
-                                                <div class="inbox-item-img"><img src="{% static 'dash/images/small/img3.jpg' %}" class="img-circle" alt=""></div>
-                                                <p class="inbox-item-author">Chadengle</p>
-                                                <p class="inbox-item-text">Hey! there I"m available...</p>
-                                                <p class="inbox-item-date">13:40 PM</p>
+                                                <div class="inbox-item-img"><img src="{{ message.sender.image_url|default_if_none:'/static/img/default_user.png' }}" class="img-circle" alt=""></div>
+                                                <p class="inbox-item-author">{{ message.sender.username }}</p>
+                                                <p class="inbox-item-text">{{ message.subject }}</p>
+                                                <p class="inbox-item-date">{{ message.sent_at | date }}</p>
                                             </div>
                                         </a>
                                         {% endfor %}
@@ -103,7 +99,7 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Service Name</th>
-                                                <th>Created On</th>
+                                                <th>Ordered On</th>
                                                 <th>Status</th>
                                             </tr>
                                             </thead>
@@ -113,13 +109,13 @@
                                                 <tr>
                                                     <td>{{ service.id }}</td>
                                                     <td>{{ service.service.service_name }}</td>
-                                                    <td>{{ service.request_date | date }}</td>
+                                                    <td>{{ service.order_date | date }}</td>
                                                     <td><span class="label {% if service.status %} label-success {% else %} label-danger {% endif %}"> {% if service.status %} Active {% else %} Not Active {% endif %}</span></td>
                                                 </tr>
                                                 {% endfor %}
                                             </tbody>
                                                {% else %}
-                                               <tbody><tr><h3>You currently have no active service</h3></tr></tbody>
+                                               <tbody><tr><h3>You currently have not ordered any service</h3></tr></tbody>
                                             {% endif %}
                                         </table>
                                     </div>

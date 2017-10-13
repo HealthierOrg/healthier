@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/consumers.html'), name='consumers'),
     url(r'^dashboard/$', TemplateView.as_view(template_name='pages/consumers.html'), name='dashboard'),
     url(r'^dashboard/service/$', TemplateView.as_view(template_name='pages/consumers.html'), name='dashboard_service'),
-    url(r'^dashboard/service/configure/$', login_required(ServiceConfiguration.as_view()), name='dashboard_service_configuration'),
+    url(r'^dashboard/service/configure/$', login_required(ServiceConfiguration.as_view()),
+        name='dashboard_service_configuration'),
 ]

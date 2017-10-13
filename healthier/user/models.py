@@ -4,6 +4,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import (AbstractBaseUser,
                                         BaseUserManager)
+from django_prices.models import PriceField
 
 from model_utils.managers import InheritanceManager
 
@@ -74,6 +75,7 @@ class HealthierUser(AbstractBaseUser, PermissionsMixin):
     is_logged_in = models.BooleanField(_('Logged In'), default=False)
     is_superuser = models.BooleanField(_('Superuser'), default=True)
     has_configured_account = models.BooleanField(_('Has Configured Account'), default=False)
+    total_money = PriceField(currency='NGN', decimal_places=2, max_digits=12, default=0.00)
 
     def __unicode__(self):
         return self.email

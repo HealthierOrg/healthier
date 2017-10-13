@@ -39,6 +39,7 @@
                 {% if user.is_authenticated %}
                        <div class="nav__btn-holder">
                        <a href="{% url 'dashboard:dashboard' %}" class="btn btn--sm btn--google"><span>Dashboard</span></a>
+                       <a href="{% url 'dashboard:order_service' %}" class="btn btn--sm btn--secondary-color"><span>Cart</span></a>
               </div>
                 {% else %}
                 <div class="nav__btn-holder">

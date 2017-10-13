@@ -1,0 +1,84 @@
+ {% load static %}
+
+{% include 'registration/header.html' %}
+
+<body class="fixed-left">
+
+{% include 'dashboard/dashboard_nav.html' %}
+<div class="content-page">
+                <div class="content">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="card-box task-detail">
+                                    <div class="media m-b-20">
+                                        <div class="media-left">
+                                            <a href="#"> <img class="media-object img-circle" alt="64x64"
+                                                              src="{{ message.sender.image_url|default_if_none:'/static/img/default_user.png' }}"
+                                                              style="width: 48px; height: 48px;"> </a>
+                                        </div>
+                                        <div class="media-body">
+
+                                            <h4 class="media-heading m-b-0">{{ message.sender.username | capfirst }}</h4>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="font-600 m-b-20">{{ message.subject }}</h4>
+
+                                    <p class="text-muted">
+                                        {{ message.body }}
+                                    </p>
+                                </div>
+                                <form method="post" class="card-box" action="{% url 'dashboard:view_message' message.id %}">
+                                        {% csrf_token %}
+                                    <span class="input-icon icon-right">
+                                        <textarea rows="2" class="form-control" name="body" placeholder="Reply this message"></textarea>
+                                    </span>
+                                    <div class="p-t-10 pull-right">
+                                        <button type="submit" class="btn btn-sm btn-primary waves-effect waves-light">Reply</button>
+                                    </div>
+                                    <ul class="nav nav-pills profile-pills m-t-10">
+
+                                    </ul>
+                                </form>
+
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-box">
+                        			<h4 class="header-title m-t-0 m-b-30">Other Emails</h4>
+
+                                    <div>
+                                        {% if inbox_list %}
+                                            {% for inbox in inbox_list %}
+										        <div class="media m-b-10">
+											<div class="media-left">
+												<a href="#"> <img class="media-object img-circle thumb-sm" alt="64x64" src="{{ inbox.sender.image_url|default_if_none:'/static/img/default_user.png' }}"> </a>
+											</div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading">{{ inbox.sender.username | capfirst}}</h4>
+                                                <p class="font-13 text-muted m-b-0">
+                                                    {{ inbox.subject }}
+                                                </p>
+                                                <p>
+                                                    {{ inbox.body }}
+                                                </p>
+                                                <a href="{% url 'dashboard:view_message' inbox.id %}" class="text-success font-13">Reply</a>
+                                            </div>
+										</div>
+                                            {% endfor %}
+                                            {% else %}
+                                                <h3>You currently have no other email(s)</h3>
+										{% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+{% include 'dashboard/footer.html' %}

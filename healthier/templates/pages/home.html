@@ -9,9 +9,7 @@
   </div>
 
   <main class="main-wrapper">
-
     {% include 'nav.html' %}
-
       <div class="content-wrapper">
 
       <!-- Hero -->
@@ -35,7 +33,7 @@
               {% for service in services %}
                     <div class="col-md-3">
                       <a href="{% url 'service:service' service.id %}" class="article box-shadow">
-                        <i class="ui-computer-screen-1 article__icon"></i>
+                        <i class="fa fa-{{ service_icon | random}} fa-5x"></i>
                         <h3 class="article__title">{{ service.service_name }}</h3>
                       </a>
                     </div>

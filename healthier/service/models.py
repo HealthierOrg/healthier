@@ -51,20 +51,18 @@ class BaseHealthierService(models.Model):
 
 class OrderedService(models.Model):
     """A paid for service request to the service organization"""
-    ordered_by = models.ForeignKey(Consumer)
-    service = models.ForeignKey(BaseHealthierService, on_delete=models.CASCADE)
-    provided_by = models.ForeignKey(Provider, on_delete=models.CASCADE, blank=True, null=True)
-    payment_status = models.CharField(max_length=200,
-                                      choices=(("", "Payment Status"), ('Paid', "P"), ('Not Paid', "NP"),), blank=True)
+    ordered_by = models.ForeignKey(Consumer, on_delete=models.CASCADE)
+    service = models.OneToOneField(BaseHealthierService, on_delete=models.CASCADE, unique=True)
+    provided_by = models.ForeignKey(Provider, on_delete=models.CASCADE, blank=True)
+    payment_status = models.BooleanField(default=False)
     order_id = models.CharField(max_length=200, default=generate_id("order"))
-    preferred_date = models.DateField(auto_now=False, auto_now_add=False, default=DAYS_AVAILABLE_TUPLE)
-    preferred_time = models.CharField(max_length=200)
     promo_code = models.CharField(max_length=200)
-    order_date = models.DateTimeField(auto_now=False, auto_now_add=False)
+    order_date = models.DateTimeField(auto_now=False, default=now)
+    price = PriceField(currency='NGN', decimal_places=2, max_digits=12, default=0.00)
 
     def __str__(self):
         """Return a string representation of the model."""
-        return str(self.ordered_by)
+        return "Service Ordered by : {0}".format(self.ordered_by_id)
 
 
 class ServiceRequests(models.Model):

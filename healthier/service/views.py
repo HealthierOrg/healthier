@@ -10,6 +10,11 @@ class ServicesListView(ListView):
     context_object_name = 'services'
     model = BaseHealthierService
 
+    def get_context_data(self, **kwargs):
+        context = super(ServicesListView, self).get_context_data(**kwargs)
+        context['service_icon'] = ['deaf', 'ellipsis-h', 'eyedropper', 'bullseye']
+        return context
+
     def get_queryset(self):
         return BaseHealthierService.objects.all()
 
