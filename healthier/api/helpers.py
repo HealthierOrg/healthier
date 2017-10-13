@@ -67,3 +67,7 @@ class EmailTest(APIView):
         send_mail("Subject", "text body", "from@example.com",
                   ["davash001@gmail.com"], html_message="<html>html body</html>")
         return Response({'success': 'sent'})
+
+
+class ServiceDetail(APIView):
+    pass
