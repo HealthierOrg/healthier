@@ -8,10 +8,12 @@ from rest_framework_swagger import renderers
 from healthier.user.models import HealthierUser
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
-from .serializers import UserSerializer, ConsumerSerializer, ProviderSerializer
+from healthier.service.models import BaseHealthierService, ServiceGroupCategory, ServiceGroup
+from .serializers import UserSerializer, ConsumerSerializer, ProviderSerializer, BaseServiceSerializer
+from .serializers import ServiceGroupSerializer, ServiceGroupCategorySerializer
 
 # app
-from .helpers import AbstractDetail
+from .helpers import AbstractDetail, EmailTest
 
 
 class SwaggerSchemaView(APIView):
@@ -118,3 +120,96 @@ class UserDetail(AbstractDetail):
         """
         return AbstractDetail.put(self, request, format=None)
 
+
+class ServiceDetails(AbstractDetail):
+    def __init__(self):
+        self.MODEL = BaseHealthierService
+        self.SERIALIZER = BaseServiceSerializer
+        self.ID_NAME = 'service_name'
+        self.ID_VALUE = None
+        AbstractDetail.__init__(self)
+
+    def get(self, request, format=None):
+        """
+        This endpoint retrieves service details
+        - If service_name is passed as argument, details of the particular service is returned.
+        - If no user service_name is passed, returns details of all services in the database.
+        """
+        return AbstractDetail.get(self, request, format=None)
+
+    def post(self, request, format=None):
+        """
+        ** Expected details **
+
+        ```
+        {
+            "service_name": "random",
+            "details": "some random description",
+            "group": "a valid group_name"
+        }
+        ```
+        """
+        try:
+            service_group = request.data.get('group', None)
+        except KeyError:
+            return Response({'error': 'group must be specified'})
+
+        try:
+            group = ServiceGroup.objects.get(group_name=service_group)
+        except ServiceGroup.DoesNotExist:
+            return Response({'error': 'group does not exist'})
+        request.data['group'] = group.id
+        return AbstractDetail.post(self, request, format=None)
+
+
+class ServiceGroupDetail(AbstractDetail):
+    def __init__(self):
+        self.MODEL = ServiceGroup
+        self.SERIALIZER = ServiceGroupSerializer
+        self.ID_NAME = 'group_name'
+        self.ID_VALUE = None
+        AbstractDetail.__init__(self)
+
+    def post(self, request, format=None):
+        """
+        ** Expected details **
+
+        ```
+        {
+            "group_name": "random",
+            "group_description": "some random description",
+            "category": "a valid category_name"
+        }
+        ```
+        """
+        service_group_category = request.data.get('category', None)
+
+        try:
+            category = ServiceGroupCategory.objects.get(category_name=service_group_category)
+        except ServiceGroupCategory.DoesNotExist:
+            return Response({'error': 'category does not exist'})
+
+        request.data['category'] = category.id
+        return AbstractDetail.post(self, request, format=None)
+
+
+class ServiceGroupCategoryDetail(AbstractDetail):
+    def __init__(self):
+        self.MODEL = ServiceGroupCategory
+        self.SERIALIZER = ServiceGroupCategorySerializer
+        self.ID_NAME = 'category_name'
+        self.ID_VALUE = None
+        AbstractDetail.__init__(self)
+
+    def post(self, request, format=None):
+        """
+        ** Expected details **
+
+        ```
+        {
+            "category_name": "random",
+            "category_description": "some random description"
+        }
+        ```
+        """
+        return AbstractDetail.post(self, request, format=None)
