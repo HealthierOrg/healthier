@@ -18,7 +18,8 @@ class SignupForm(forms.ModelForm):
         healthier_user = HealthierUser.objects.get(email=user.email)
         print(healthier_user.id)
         print(type(healthier_user))
-        account_details = Provider(user_details_id=healthier_user) if user.account_type == "PRO" else Consumer(user_details_id=healthier_user)
+        account_details = Provider(healthier_id=healthier_user) if user.account_type\
+                                                                   == "PRO" else Consumer(healthier_id=healthier_user)
         account_details.save()
 
 

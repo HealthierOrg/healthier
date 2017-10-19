@@ -19,11 +19,11 @@
                                                         {{ service.provision_description }}
                                                     </p>
                                                     <div class="text-left">
-                                                        <p class="text-muted font-13"><strong>Provider Name :</strong> <span class="m-l-15">{{ service.requested_by.user_details_id.username }}</span></p>
+                                                        <p class="text-muted font-13"><strong>Provider Name :</strong> <span class="m-l-15">{{ service.requested_by.healthier_id.username }}</span></p>
 
                                                         <p class="text-muted font-13"><strong>Service Price :</strong><span class="m-l-15">&#8358; {{ service.price.gross }}</span></p>
                                                     </div>
-                                                    <a href="{% url 'dashboard:order_service_step' 'addCartCheckout' %}?service={{  service.service_id }}&provider={{ service.requested_by.user_details_id.id }}" class="btn btn-googleplus"><span>Select Provider</span></a>
+                                                    <a href="{% url 'dashboard:order_service_step' 'addCartCheckout' %}?service={{  service.service_id }}&provider={{ service.requested_by.healthier_id.id }}" class="btn btn-googleplus"><span>Select Provider</span></a>
                                                     <a href="{% url 'dashboard:provider_details' service.requested_by.id %}" class="btn btn-success"><span>View Full Details</span></a>
                                                 </div>
                                             </div>

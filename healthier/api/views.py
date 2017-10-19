@@ -8,7 +8,7 @@ from rest_framework_swagger import renderers
 from healthier.user.models import HealthierUser
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
-from healthier.service.models import BaseHealthierService, ServiceGroupCategory, ServiceGroup
+from healthier.service.models import HealthierService, ServiceGroupCategory, ServiceGroup
 from .serializers import UserSerializer, ConsumerSerializer, ProviderSerializer, BaseServiceSerializer
 from .serializers import ServiceGroupSerializer, ServiceGroupCategorySerializer
 
@@ -123,7 +123,7 @@ class UserDetail(AbstractDetail):
 
 class ServiceDetails(AbstractDetail):
     def __init__(self):
-        self.MODEL = BaseHealthierService
+        self.MODEL = HealthierService
         self.SERIALIZER = BaseServiceSerializer
         self.ID_NAME = 'service_name'
         self.ID_VALUE = None

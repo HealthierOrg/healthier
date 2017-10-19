@@ -1,18 +1,8 @@
-from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
-from django.views import View
 from django.views.generic import DetailView
 from django.views.generic import ListView
-from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
 from healthier.service.models import ServiceRequests
-
-
-class DashboardView(View):
-    template_name = "dashboard/index.html"
-
-    def get(self, request):
-        return render(request, self.template_name)
+from healthier.user.models import FAQ
 
 
 class ProviderListView(ListView):
@@ -22,6 +12,12 @@ class ProviderListView(ListView):
 
     def get_queryset(self):
         return Provider.objects.all()
+
+    def get_context_data(self, **kwargs):
+        super(ProviderListView, self).__init__()
+        context = super(ProviderListView, self).get_context_data(**kwargs)
+        context['faqs'] = FAQ.objects.all()
+        return context
 
 
 class ProviderDetailView(DetailView):
@@ -41,37 +37,9 @@ class ProviderDetailView(DetailView):
         return context
 
 
-class FinancesView(View):
-    template_name = "dashboard/index.html"
-
-    def get(self, request):
-        return render(request, self.template_name)
-
-
-class CustomerListView(ListView):
-    template_name = 'dashboard/customers.html'
-    context_object_name = 'providers'
-    model = Consumer
+class FAQView(ListView):
+    context_object_name = 'faqs'
+    model = FAQ
 
     def get_queryset(self):
-        return Consumer.objects.all()
-
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, {"has_tables": True, "current_page_title": "Customers"})
-
-
-class ServicesListView(ListView):
-    template_name = 'dashboard/services.html'
-    context_object_name = 'providers'
-    model = Consumer
-
-    def get_queryset(self):
-        return Consumer.objects.all()
-
-
-class SettingsView(View):
-    template_name = "dashboard/index.html"
-
-    def get(self, request):
-        return render(request, self.template_name)
-
+        return FAQ.objects.all()

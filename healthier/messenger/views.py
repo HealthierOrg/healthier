@@ -5,13 +5,15 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.utils import timezone
 from django_messages.models import Message
-from healthier.service.models import OrderedService
+
+from healthier.consumers.models import Consumer
+from healthier.providers.models import Provider
 from healthier.user.models import HealthierUser
 
 
 @login_required
-def compose(request, template_name=None, recipient=None):
-    template_name = template_name if template_name else 'dashboard/messages/compose_message.html'
+def compose(request, recipient=None):
+    template_name = 'dashboard/messages/compose_message.html'
     context = {}
     if request.method == "POST":
         sender = request.user
@@ -25,15 +27,16 @@ def compose(request, template_name=None, recipient=None):
         response_obj.set_cookie('message', "Your message has been successfully sent.")
         return response_obj
     context['current_page_title'] = "Message Composer"
-    context['recipient'] = OrderedService.objects \
-        .select_related('ordered_by__user_details_id__consumer_details') \
-        .filter(provided_by__user_details_id_id=request.user.id)
+    print(request.user.account_type)
+    context['recipient'] = Consumer.objects.all() if request.user.account_type == "PRO" else Provider.objects.all()
+    print(context['recipient'])
     return render(request, template_name, context)
 
 
 @login_required
 def inbox(request, template_name='dashboard/messages/message_inbox.html'):
     message_list = Message.objects.inbox_for(request.user)
+    print(message_list)
     return render(request, template_name, {
         'message_list': message_list,
         'current_page_title': 'Inbox'

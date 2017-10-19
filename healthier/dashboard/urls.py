@@ -2,7 +2,7 @@ from django.conf.urls import url
 from django.contrib.auth.decorators import login_required
 
 from .views import DashboardView, FinancesView, CustomerListView, AccountSettingsView, \
-    ServiceConfiguration, ProfileView, ServiceRequestConfiguration, UserServicesListView, AllServiceListView, \
+    ServiceConfiguration, ProfileView, OrderServiceConfigurationView, UserServicesListView, AllServiceListView, \
     ServiceDetailView, SuggestServiceView, AllProviderListView, ProviderDetailView, OrderServiceStepView, \
     AllServiceReportView
 from healthier.messenger.views import compose, inbox, view, outbox
@@ -23,8 +23,10 @@ urlpatterns = [
         name='dashboard_all_services'),
     url(r'^service/report/all$', login_required(AllServiceReportView.as_view()), name='service_report'),
     url(r'^service/report/$', login_required(AllServiceReportView.as_view()), name='service_report'),
-    url(r'^service/render(?P<service_id>\d+)$', login_required(ServiceRequestConfiguration.as_view()),
+    url(r'^service/render/(?P<service_id>\d+)$', login_required(OrderServiceConfigurationView.as_view()),
         name='render_service'),
+    url(r'^service/render/alt/$', login_required(OrderServiceConfigurationView.as_view()),
+        name='render_service_alt'),
     url(r'^service/order_service/checkout$', login_required(ServiceConfiguration.as_view()),
         name='order_service'),
     url(r'^service/order_service/(?P<action>[\w\-]+)/$', login_required(OrderServiceStepView.as_view()),

@@ -5,13 +5,13 @@ from django_countries.serializers import CountryFieldMixin
 # local
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
-from healthier.service.models import ServiceGroupCategory, ServiceGroup, BaseHealthierService
+from healthier.service.models import ServiceGroupCategory, ServiceGroup, HealthierService
 from healthier.user.models import HealthierUser
 
 
 class HealthServiceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = BaseHealthierService
+        model = HealthierService
         fields = (
             'Category',
             'Service',
@@ -100,7 +100,7 @@ class ServiceGroupSerializer(serializers.ModelSerializer):
 
 class BaseServiceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = BaseHealthierService
+        model = HealthierService
         fields = (
             'group',
             'service_name',

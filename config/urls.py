@@ -4,17 +4,23 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
-from healthier.service.views import ServicesListView
+
+from healthier.providers.views import FAQView
+from healthier.service.views import AllServiceListView
+
 
 urlpatterns = [
-    url(r'^$', ServicesListView.as_view(template_name='pages/home.html'), name='home'),
+    url(r'^$', AllServiceListView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^about/', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
-    # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
 
     url(r'^auth/', include('allauth.urls')),
     url(r'how/', TemplateView.as_view(template_name='pages/how.html'), name="how"),
+    url(r'help/', TemplateView.as_view(template_name='pages/how.html'), name="help"),
+    url(r'support/', TemplateView.as_view(template_name='pages/how.html'), name="support"),
+    url(r'faq/', FAQView.as_view(template_name='pages/faq.html'), name="faq"),
+    url(r'privacy/', TemplateView.as_view(template_name='pages/how.html'), name="privacy"),
     url(r'^dashboard/', include('healthier.dashboard.urls', namespace='dashboard')),
     url(r'^providers/', include('healthier.providers.urls', namespace='provider')),
     url(r'^services/', include('healthier.service.urls', namespace='service')),
@@ -38,6 +44,3 @@ if settings.DEBUG:
         urlpatterns = [
             url(r'^__debug__/', include(debug_toolbar.urls)),
         ] + urlpatterns
-
-
-print('debug_toolbar' in settings.INSTALLED_APPS)

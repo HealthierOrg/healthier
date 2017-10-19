@@ -73,7 +73,7 @@
 									<div class="inbox-widget nicescroll" style="height: 160px;">
                                     {% if inbox %}
                                         {% for message in inbox %}
-                                        <a href="#">
+                                        <a href="{% url 'dashboard:view_message' message.id %}">
                                             <div class="inbox-item">
                                                 <div class="inbox-item-img"><img src="{{ message.sender.image_url|default_if_none:'/static/img/default_user.png' }}" class="img-circle" alt=""></div>
                                                 <p class="inbox-item-author">{{ message.sender.username }}</p>
