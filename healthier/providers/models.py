@@ -11,11 +11,11 @@ from healthier.user.models import HealthierUser
 class Provider(models.Model):
     """Organization providing health services and sending reports to users"""
 
-    user_details_id = models.OneToOneField(HealthierUser, on_delete=models.CASCADE, related_name="consumer_details")
-    healthier_id = models.CharField(blank=False, max_length=30, default=generate_id("provider"))
+    healthier_id = models.OneToOneField(HealthierUser, on_delete=models.CASCADE, related_name="providers_detail")
+    healthier_provider_id = models.CharField(blank=False, max_length=30, default=generate_id("provider"))
 
     def __str__(self):
-        return "Provider with email: {0}".format(self.user_details_id.email)
+        return "Provider with email: {0}".format(self.healthier_id.email)
 
 
 class ProviderRating(models.Model):

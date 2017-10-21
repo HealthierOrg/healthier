@@ -20,7 +20,7 @@
                         			<h4 class="header-title m-t-0 m-b-30">{{ service_details.service_name }}</h4>
                         			<div class="row">
                         				<div class="col-lg-12">
-                                               			<form class="form-horizontal" role="form" method="POST" action="{% url 'dashboard:service_request_configuration' %}?service={{ service_details.id }}">
+                                               			<form class="form-horizontal" role="form" method="POST" action="{% url 'dashboard:render_service_alt' %}?service={{ service_details.id }}">
                                                                           {% csrf_token %}
                                                  <div class="form-group">
 	                                                <label class="col-md-2 control-label">{{ form.price.label }}(In Naira)</label>

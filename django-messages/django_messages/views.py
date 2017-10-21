@@ -91,6 +91,7 @@ def compose(request, recipient=None, form_class=ComposeForm,
         'form': form,
     })
 
+
 @login_required
 def reply(request, message_id, form_class=ComposeForm,
         template_name='django_messages/compose.html', success_url=None,

@@ -7,10 +7,10 @@
                 <div class="widget widget-links">
                   <h5 class="widget-title">Product</h5>
                   <ul class="list-no-dividers">
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Providers</a></li>
-                    <li><a href="#">Consumers</a></li>
-                    <li><a href="#">Suggest Service</a></li>
+                    <li><a href="{%  url 'service:all' %}">Services</a></li>
+                    <li><a href="{% url 'provider:providers' %}">Providers</a></li>
+                    <li><a href="{% url 'consumer:consumers' %}">Consumers</a></li>
+                    <li><a href="{% url 'dashboard:dashboard_suggest_new_service' %}">Suggest Service</a></li>
                   </ul>
                 </div>
               </div>
@@ -19,10 +19,10 @@
                 <div class="widget widget-links">
                   <h5 class="widget-title">Support</h5>
                   <ul class="list-no-dividers">
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Support Policy</a></li>
-                    <li><a href="#">F.A.Q</a></li>
-                    <li><a href="#">Privacy &amp; Terms</a></li>
+                    <li><a href="{% url 'help' %}">Help Center</a></li>
+                    <li><a href="{% url 'support' %}">Support Policy</a></li>
+                    <li><a href="{% url 'faq' %}">F.A.Q</a></li>
+                    <li><a href="{% url 'privacy' %}">Privacy &amp; Terms</a></li>
                   </ul>
                 </div>
               </div>

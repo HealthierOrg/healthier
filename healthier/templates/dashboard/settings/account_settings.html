@@ -6,19 +6,20 @@
 
 {% include 'dashboard/dashboard_nav.html' %}
             <div class="content-page">
-                <!-- Start content -->
                 <div class="content">
                     <input type="hidden" value="{{ user }}" id="user_details">
                     <div class="container">
                         <div class="row">
                         	<div class="col-sm-12">
-                        		<div class="card-box">
                                 <form class="form-horizontal" role="form" method="POST" action="{% url 'dashboard:account_settings' %}">
                                                                           {% csrf_token %}
-                        			<h4 class="header-title m-t-0 m-b-30">Edit your account details</h4>
                         			<div class="row">
-                        				<div class="col-lg-12">
-                                                 <div class="form-group">
+                                       <div id="custom-modal">
+                                            <h4 class="custom-modal-title">Basic Account Details</h4>
+                                            <div class="custom-modal-text text-left">
+                                                <form role="form" method="POST" action="{% url 'dashboard:add_family' %}">
+                                                    {% csrf_token %}
+                                                <div class="form-group">
 	                                                <label class="col-md-2 control-label">Username</label>
 	                                                <div class="col-md-10">
 	                                                    <input type="text" name="username" id="username" placeholder="{{ user.username }}" class="form-control">
@@ -74,14 +75,27 @@
                                                         </div>
 	                                                </div>
                                                     <button type="submit" class="btn btn-lg btn-googleplus waves-effect waves-light">Update Details</button>
+                                                </form>
+                                            </div>
                                         </div>
-                        			</div>
+                                    </div>
                                 </form>
                         		</div>
-                        	</div><!-- end col -->
+                        	</div>
                         </div>
                     </div>
 
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+                        			<h4 class="header-title m-t-0 m-b-30">Change your account image</h4>
+                                    <input type="file" class="dropify" data-height="300" />
+                                    <button type="submit" class="btn btn-lg btn-googleplus waves-effect waves-light">Update Image</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 {% include 'dashboard/footer.html' %}

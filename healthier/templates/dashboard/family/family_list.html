@@ -1,0 +1,40 @@
+ {% load static %}
+
+{% include 'registration/header.html' %}
+
+<body class="fixed-left">
+
+{% include 'dashboard/dashboard_nav.html' %}
+ <div class="content-page">
+                <div class="content">
+                    <div class="container">
+
+                        <div class="row">
+                        	<div class="col-sm-4">
+                        		 <a href="{% url 'dashboard:add_family' %}"
+                                    class="btn btn-success btn-md waves-effect waves-light m-b-30" data-animation="fadein" data-plugin="custommodal"
+                                    data-overlaySpeed="200" data-overlayColor="#36404a"><i class="md md-add"></i> Add Member</a>
+                        	</div>
+                        </div>
+                        <div class="row">
+                            {% for member in family_members %}
+                        	<div class="col-md-4">
+                        		<div class="text-center card-box">
+                                    <div>
+                                        <div class="text-left">
+                                            <p class="text-muted font-13"><strong>Full Name :</strong> <span class="m-l-15">{{ member.username }}</span></p>
+
+                                            <p class="text-muted font-13"><strong>Mobile :</strong><span class="m-l-15">{{ member.phone_number }}</span></p>
+
+                                            <p class="text-muted font-13"><strong>Email :</strong> <span class="m-l-15">{{ member.email }}</span></p>
+                                        </div>
+                                        <button type="button" href="{% url 'dashboard:remove_family' %}" class="btn btn-googleplus waves-effect waves-light">Remove Member</button>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% include 'dashboard/footer.html' %}

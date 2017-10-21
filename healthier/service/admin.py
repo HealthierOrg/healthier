@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import BaseHealthierService, \
+from .models import HealthierService, \
             MeasuredTest, ServiceRequests, \
             ServiceGroup, OrderedService, \
             ServiceReport, ServiceReportGroup,\
             ServiceGroupCategory, SuggestService
 
-admin.site.register(BaseHealthierService)
+admin.site.register(HealthierService)
 admin.site.register(MeasuredTest)
 admin.site.register(ServiceReport)
 admin.site.register(ServiceReportGroup)

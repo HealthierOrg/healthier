@@ -5,20 +5,11 @@
           </div>
           <div class="row">
 
-            <div class="col-sm-5 col-sm-offset-1">
-              <h4 class="faq__title">14-day trial</h4>
-              <p class="faq__text">Our Theme is a very slick and clean e-commerce template with endless possibilities. Creating an awesome website with this Theme is easy than you can imagine. Our Theme is a very slick and clean e-commerce template.</p>
-
-              <h4 class="faq__title">Recovering an expired account</h4>
-              <p class="faq__text">Our Theme is a very slick and clean e-commerce template with endless possibilities. Creating an awesome website with this Theme is easy than you can imagine. Our Theme is a very slick and clean e-commerce template.</p>
-            </div>
-
-            <div class="col-sm-5">
-              <h4 class="faq__title">Payments</h4>
-              <p class="faq__text">Our Theme is a very slick and clean e-commerce template with endless possibilities. Creating an awesome website with this Theme is easy than you can imagine. Our Theme is a very slick and clean e-commerce template.</p>
-
-              <h4 class="faq__title">Canceling subscription</h4>
-              <p class="faq__text">Our Theme is a very slick and clean e-commerce template with endless possibilities. Creating an awesome website with this Theme is easy than you can imagine. Our Theme is a very slick and clean e-commerce template.</p>
+            <div class="col-sm-12 col-sm-offset-1">
+                {% for faq in faqs %}
+              <h4 class="faq__title">{{ faq.question }}</h4>
+              <p class="faq__text">{{ faq.answer }}</p>
+                {% endfor %}
             </div>
 
           </div>

@@ -33,11 +33,11 @@
                                             </div>
                                         <br>
                                         {% if user.account_type == "PRO" %}
-                                        <a href="{% url 'dashboard:service_request_configuration' %}?service={{ service.id }}" class="btn btn-small btn-googleplus waves-effect waves-light">Render Service</a>
+                                        <a href="{% url 'dashboard:render_service' service_id=service.id %}" class="btn btn-small btn-googleplus waves-effect waves-light">Offer Service</a>
                                         {% else %}
-                                        <a href="{% url 'dashboard:order_service_step' 1 service.id  %}" class="btn btn-small btn-dropbox waves-effect waves-light">Order Service</a>
+                                        <a href="{% url 'dashboard:order_service_step' 'chooseProvider' %}?service={{ service.id }}" class="btn btn-small btn-googleplus waves-effect waves-light">Order Service</a>
                                         {% endif%}
-                                        <a href="{% url 'dashboard:service_details' service_id=service.id  %}" class="btn btn-small btn-dropbox waves-effect waves-light">Full  Service Details </a>
+                                        <a href="{% url 'dashboard:service_details' service_id=service.id  %}" class="btn btn-small btn-dropbox waves-effect waves-light">Full Service Details </a>
                                     </ul>
                                 </div>
                             </div>

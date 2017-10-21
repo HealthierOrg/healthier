@@ -1,24 +1,20 @@
 from django.contrib.auth.models import User, AbstractUser, PermissionsMixin
+from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import (AbstractBaseUser,
                                         BaseUserManager)
-
+from django_prices.models import PriceField
 from model_utils.managers import InheritanceManager
+from config.utils import generate_id
 
 
-class BaseHealthierUserManager(BaseUserManager, InheritanceManager):
-    """
-    Manager for all Users types
-    create_user() and create_superuser() must be overriden as we do not use
-    unique username but unique email.
-    """
-
+class HealthierUserManager(BaseUserManager, InheritanceManager):
     def create_user(self, email=None, password=None, **extra_fields):
         now = timezone.now()
         email = self.normalize_email(email)
-        u = HealthierUser(email=email, is_admin=False, last_login=now,
+        u = HealthierUser(email=email, last_login=now,
                           **extra_fields)
         u.set_password(password)
         u.save(using=self._db)
@@ -34,19 +30,14 @@ class BaseHealthierUserManager(BaseUserManager, InheritanceManager):
 
 
 class HealthierUser(AbstractBaseUser, PermissionsMixin):
-    """
-    Here are the fields that are shared among specific User subtypes.
-    Making it abstract makes 1 email possible in each User subtype.
-    """
-
     def get_full_name(self):
-        pass
+        return str(self.username)
 
     def get_short_name(self):
-        pass
+        return str(self.username)
 
     email = models.EmailField(unique=True)
-    objects = BaseHealthierUserManager()
+    objects = HealthierUserManager()
 
     account_choices = (
         ('PRO', 'Provider'),
@@ -74,9 +65,11 @@ class HealthierUser(AbstractBaseUser, PermissionsMixin):
     is_logged_in = models.BooleanField(_('Logged In'), default=False)
     is_superuser = models.BooleanField(_('Superuser'), default=True)
     has_configured_account = models.BooleanField(_('Has Configured Account'), default=False)
+    total_money = PriceField(currency='NGN', decimal_places=2, max_digits=12, default=0.00)
+    healthier_id = models.CharField(max_length=50, default=generate_id("healthier_user"), blank=True)
 
     def __unicode__(self):
-        return self.email
+        return self.username
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELD = ['account_type']
@@ -85,3 +78,32 @@ class HealthierUser(AbstractBaseUser, PermissionsMixin):
     def image_url(self):
         if self.image and hasattr(self.image, 'url'):
             return self.image.url
+
+
+class FAQ(models.Model):
+    question = models.CharField(max_length=500, blank=False, default='')
+    answer = models.TextField(max_length=3000, blank=False, default='')
+    added_on = models.DateTimeField(default=now)
+
+    def __unicode__(self):
+        return self.question
+
+    def __str__(self):
+        return self.question
+
+
+class Family(models.Model):
+    head = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="family_head")
+    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, null=True,
+                              blank=True)
+    username = models.CharField(_('Username'), blank=True, max_length=50)
+    phone_number = models.CharField(max_length=200)
+    description = models.TextField(max_length=1000, blank=True)
+    healthier_id = models.CharField(max_length=50, default=generate_id("healthier_family_member"), blank=True)
+    email = models.EmailField(unique=True)
+
+    def __unicode__(self):
+        return self.username
+
+    def __str__(self):
+        return self.username

@@ -1,43 +1,42 @@
+from django.contrib.auth.decorators import login_required
+from django.db import IntegrityError
+from django.db.models import Sum
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from django.views import View
 from django.views.generic import DetailView, FormView, ListView, TemplateView
 from django_messages.models import Message
-
+from django.contrib import messages
+from config.utils import generate_order_id
 from healthier.consumers.models import Consumer
 from healthier.dashboard.forms import AccountDetailForm, ServiceRequestConfigurationForm
 from healthier.messenger.views import compose
 from healthier.providers.models import Provider
-from healthier.service.models import BaseHealthierService, ServiceRequests, OrderedService, SuggestService
-from healthier.user.models import HealthierUser
+from healthier.service.models import HealthierService, ServiceRequests, OrderedService, SuggestService
+from healthier.user.models import HealthierUser, Family
+from django.db import models
 
 
 class DashboardView(View):
     provider_dashboard = "dashboard/provider/provider_index.html"
     consumer_dashboard = "dashboard/consumer/consumer_index.html"
-    template_context = {}
+    template_context = {'current_page_title': 'Dashboard'}
 
     def get(self, request):
-        self.template_context["current_page_title"] = "Dashboard"
+        storage = messages.get_messages(request)
+        storage.used = True
+        user_specific_template = self.provider_dashboard if request.user.id == "PRO" else self.consumer_dashboard
         if request.user.account_type == "PRO":
-            user_specific_template = self.provider_dashboard
             self.template_context["provider_customers"] = OrderedService.objects \
-                .select_related('ordered_by__user_details_id__consumer_details') \
-                .filter(provided_by__user_details_id_id=request.user.id)
-            if request.user.account_type == "PRO":
-                self.template_context["provider_services"] = ServiceRequests.objects.filter(
-                    requested_by__user_details_id=request.user.id)
-            self.template_context['consumer_services'] = OrderedService.objects.filter(ordered_by__user_details_id=
-                                                                                       request.user.id)
-            print(self.request.user.account_type)
-            try:
-                self.template_context['inbox'] = Message.objects.filter(recipient=request.user.id)[3]
-            except IndexError:
-                self.template_context['inbox'] = Message.objects.filter(recipient=request.user.id)
-
-        else:
-            user_specific_template = self.consumer_dashboard
+                .filter(provided_by_id=request.user.id)
+            self.template_context["provider_services"] = ServiceRequests.objects.filter(
+                requested_by__healthier_id=request.user.id)
+        self.template_context['consumer_services'] = OrderedService.objects.filter(ordered_by_id=request.user.id)
+        try:
+            self.template_context['inbox'] = Message.objects.filter(recipient=request.user.id)[3]
+        except IndexError:
+            self.template_context['inbox'] = Message.objects.filter(recipient=request.user.id)
         if not request.user.has_configured_account:
             response_obj = HttpResponseRedirect(reverse("dashboard:account_settings"))
             response_obj.delete_cookie('messages')
@@ -57,15 +56,15 @@ class FinancesView(View):
 class CustomerListView(ListView):
     template_name = 'dashboard/consumer/consumer.html'
     detail_template_name = 'dashboard/consumer/consumer_detail.html'
-    compose_message_template_name = 'dashboard/messages/compose_message.html'
     context_data = {}
     context_object_name = 'consumers'
     model = Consumer
 
     def get(self, request, *args, **kwargs):
-        self.context_data["consumers"] = OrderedService.objects \
-            .select_related('ordered_by__user_details_id__consumer_details') \
-            .filter(provided_by__user_details_id_id=self.request.user.id)
+        print(request.user.id)
+        consumer_map = OrderedService.objects \
+            .filter(provided_by_id=request.user.id).values("ordered_by_id").annotate(n=models.Count('pk'))
+        print(consumer_map)
         self.context_data['has_tables'] = 'True'
         self.context_data['current_page_title'] = 'Customers'
         action = request.GET.get('action', None)
@@ -77,7 +76,7 @@ class CustomerListView(ListView):
                 (ordered_by__user_details_id=customer_id)
             return render(request, self.detail_template_name, self.context_data)
         elif action == 'sendMessage':
-            return compose(request, template_name=self.compose_message_template_name, recipient=customer_id)
+            return compose(request, recipient=customer_id)
         elif action == "block":
             pass
         return render(request, self.template_name, self.context_data)
@@ -90,33 +89,28 @@ class UserServicesListView(ListView):
     def get_context_data(self, **kwargs):
         super(UserServicesListView, self).__init__()
         context = super(UserServicesListView, self).get_context_data(**kwargs)
-        user_details = Provider.objects.get(user_details_id_id=self.request.user.id) if self.request.user.account_type \
-                                                                                        == "PRO" else Consumer.objects. \
-            get(
-            user_details_id_id=self.request.user.id)
+        user_details = Provider.objects.get(healthier_id=self.request.user.id) \
+            if self.request.user.account_type == "PRO" else Consumer.objects.get(healthier_id=self.request.user.id)
         context['current_page_title'] = "My Services"
         context['user_services'] = ServiceRequests.objects.filter(
             requested_by_id=user_details.id) if self.request.user.account_type == "PRO" \
-            else OrderedService.objects.filter(ordered_by__user_details_id=self.request.user.id)
-        context["all_services"] = BaseHealthierService.objects.all()
-        a = OrderedService.objects.filter(ordered_by__user_details_id=self.request.user.id)
-        b = a[0]
-        print("Service name is", b.service.service_name)
+            else OrderedService.objects.filter(ordered_by_id=self.request.user.id)
+        context["all_services"] = HealthierService.objects.all()
         return context
 
 
 class ServiceDetailView(DetailView):
     template_name = "dashboard/services/service.html"
-    model = BaseHealthierService
+    model = HealthierService
     context_object_name = "service"
 
     def get_object(self, queryset=None):
         print(self.kwargs)
-        return BaseHealthierService.objects.get(id=self.kwargs["service_id"])
+        return HealthierService.objects.get(id=self.kwargs["service_id"])
 
     def get_context_data(self, **kwargs):
         context = super(ServiceDetailView, self).get_context_data(**kwargs)
-        context["service"] = BaseHealthierService.objects.get(id=self.kwargs["service_id"])
+        context["service"] = HealthierService.objects.get(id=self.kwargs["service_id"])
         context["providers"] = ServiceRequests.objects.filter(service_id=self.kwargs["service_id"])
         return context
 
@@ -126,9 +120,9 @@ class AllServiceListView(ListView):
     context_object_name = "all_services"
 
     def get_queryset(self):
-        not_rendered_services = BaseHealthierService.objects.exclude(
-            servicerequests__requested_by__user_details_id=self.request.user.id)
-        all_services = BaseHealthierService.objects.all()
+        not_rendered_services = HealthierService.objects.exclude(
+            servicerequests__requested_by__healthier_id=self.request.user.id)
+        all_services = HealthierService.objects.all()
         queryset = not_rendered_services if self.request.user.account_type == "PRO" else all_services
         return queryset
 
@@ -205,18 +199,21 @@ class AccountSettingsView(TemplateView):
 
 
 class ServiceConfiguration(TemplateView):
-    template_name = 'dashboard/services/configure_service.html'
+    template_name = 'dashboard/services/checkout_cart.html'
+    template_context = {}
 
     def get(self, request, **kwargs):
-        service_id = request.GET.get('service', request.COOKIES.get('service_id'))
-        service_details = ServiceRequests.objects.get(service_id=service_id)
-
+        self.template_context['service_details'] = OrderedService.objects.filter(ordered_by_id=request.user.id,
+                                                                                 payment_status=False). \
+            annotate(sum_total=Sum('price'))
+        members_count = [len(i.members.split(' ')) for i in self.template_context['service_details']]
+        total = [i.price.gross * members_count[0] for i in self.template_context['service_details']]
+        self.template_context['members_count'] = members_count[0]
+        self.template_context['total'] = total[0]
+        self.template_context['order_check_out_id'] = generate_order_id()
+        self.template_context['price_sum'] = self.template_context['service_details'].aggregate(Sum('price'))
         return render(request, self.template_name,
-                      {'service_details': service_details, 'current_page_title':
-                          "CheckOut Service"})
-
-    def post(self, request, *args, **kwargs):
-        pass
+                      self.template_context)
 
 
 class OrderServiceStepView(TemplateView):
@@ -224,19 +221,22 @@ class OrderServiceStepView(TemplateView):
     context = {}
 
     def get(self, request, *args, **kwargs):
-        step_number = int(self.kwargs.get('action'))
-        service_id = self.kwargs.get('service_id')
-        if step_number == 1:
+        action = self.kwargs.get('action')
+        service_id = request.GET.get('service')
+        if action == "chooseProvider":
             self.template_name = 'dashboard/provider/select_provider.html'
             self.context['current_page_title'] = 'Choose Provider'
             service_providers = ServiceRequests.objects.filter(service_id=service_id)
             if not service_providers:
-                self.context['all_services'] = BaseHealthierService.objects.all()
+                self.context['all_services'] = HealthierService.objects.all()
             self.context['service_providers'] = service_providers
             return render(request, self.template_name, self.context)
-        response_obj = HttpResponseRedirect(reverse('dashboard:order_service'))
-        response_obj.set_cookie('service_id', service_id)
-        return response_obj
+        elif action == "configureCheckout":
+            self.template_name = 'dashboard/provider/configure_checkout.html'
+            self.context['current_page_title'] = 'Configure Service for checkout'
+            self.context['family_members'] = Family.objects.filter(head=self.request.user.id)
+            self.context['service_details'] = ServiceRequests.objects.get(service_id=service_id)
+            return render(request, self.template_name, self.context)
 
 
 class ProfileView(TemplateView):
@@ -244,17 +244,17 @@ class ProfileView(TemplateView):
         return HttpResponse("I got here")
 
 
-class ServiceRequestConfiguration(TemplateView):
+class OrderServiceConfigurationView(TemplateView):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.template_name = "dashboard/services/render_service.html"
         self.form_class = ServiceRequestConfigurationForm
 
     def get(self, request, *args, **kwargs):
-        service_id = self.request.GET.get('service', None)
+        service_id = kwargs.get('service_id', None)
         if not service_id:
-            return HttpResponseRedirect(reverse('dashboard:services'))
-        service_details = BaseHealthierService.objects.get(id=service_id)
+            return HttpResponseRedirect(reverse('dashboard:dashboard_all_services'))
+        service_details = HealthierService.objects.get(id=service_id)
         return render(request, self.template_name,
                       {'service_details': service_details, 'form': self.form_class,
                        'current_page_title': "Service Configuration"})
@@ -262,7 +262,7 @@ class ServiceRequestConfiguration(TemplateView):
     def post(self, request):
         response = request.POST.dict()
         response.pop('csrfmiddlewaretoken')
-        user_id = Provider.objects.get(user_details_id_id=request.user.id)
+        user_id = Provider.objects.get(healthier_id=request.user.id)
         service_id = self.request.GET.get('service', None)
         requested_service = ServiceRequests(is_ordered=True, requested_by=user_id, service_id=service_id, **response)
         requested_service.save()
@@ -289,3 +289,71 @@ class ProviderDetailView(DetailView):
         context = super(ProviderDetailView, self).get_context_data(**kwargs)
         context["services"] = ServiceRequests.objects.filter(requested_by_id=self.kwargs["pk"])
         return context
+
+
+class AllServiceReportView(ListView):
+    template_name = 'dashboard/services/report.html'
+    queryset = HealthierService.objects.all()
+
+
+class UserFamilyListView(ListView):
+    template_name = "dashboard/family/family_list.html"
+    context_object_name = "all_services"
+    model = Family
+
+    def get_context_data(self, **kwargs):
+        super(UserFamilyListView, self).__init__()
+        context = super(UserFamilyListView, self).get_context_data(**kwargs)
+        context['current_page_title'] = "My Family"
+        context['has_modal'] = True
+        context['family_members'] = Family.objects.filter(head=self.request.user.id)
+        return context
+
+
+class AddFamilyView(TemplateView):
+    template_name = "dashboard/family/add_member.html"
+    template_context = {}
+
+    def get(self, request, **kwargs):
+        return render(request, self.template_name,
+                      self.template_context)
+
+    def post(self, request):
+        response = request.POST.dict()
+        response.pop('csrfmiddlewaretoken')
+        user_id = HealthierUser.objects.get(id=request.user.id)
+        member = Family(head=user_id, **response)
+        member.save()
+        response_obj = HttpResponseRedirect(reverse('dashboard:family'))
+        response_obj.set_cookie('status', True)
+        response_obj.set_cookie('message', "New Family Member Added.")
+        return response_obj
+
+
+def remove_family(request):
+    pass
+
+
+@login_required
+def configure_service(request):
+    if request.method == "POST":
+        response = request.POST.dict()
+        response.pop('csrfmiddlewaretoken')
+        members = response.pop('members')
+        service_id = request.GET.get('service_id')
+        provider_id = request.GET.get('provider_id')
+        service_details = ServiceRequests.objects.get(service_id=service_id)
+        try:
+            OrderedService(ordered_by_id=request.user.id, service_id=service_id, provided_by_id=provider_id,
+                           price=service_details.price,
+                           **response, members=members).save()
+            consumer = HealthierUser.objects.get(id=request.user.id)
+            provider = HealthierUser.objects.get(id=provider_id)
+            consumer.total_money += service_details.price
+            provider.total_money += service_details.price
+            consumer.save(), provider.save()
+        except IntegrityError:
+            messages.add_message(request, messages.INFO, 'Hello world.')
+            response_obj = HttpResponseRedirect(reverse('dashboard:order_service'))
+            response_obj.set_cookie('service_id', service_id)
+            return response_obj

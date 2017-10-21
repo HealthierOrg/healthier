@@ -20,7 +20,7 @@
                                                 <div class="pull-right m-t-30">
                                                     <p><strong>Order Date: </strong>{% now "" %} </p>
                                                     <p class="m-t-10"><strong>Order Status: </strong> <span class="label label-pink">Pending</span></p>
-                                                    <p class="m-t-10"><strong>Order ID: </strong> #123456</p>
+                                                    <p class="m-t-10"><strong>Order ID: </strong> #{{ order_check_out_id }}</p>
                                                 </div>
                                             </div><!-- end col -->
                                         </div>
@@ -34,15 +34,27 @@
                                                             <tr><th>#</th>
                                                             <th>Service</th>
                                                             <th>Description</th>
+                                                            <th>Added On</th>
                                                             <th>Unit Cost</th>
+                                                            <th>Count</th>
+                                                            <th>Total</th>
+                                                            <th>Action</th>
                                                         </tr></thead>
                                                         <tbody>
+                                                            {% for details in service_details %}
                                                             <tr>
                                                                 <td>1</td>
-                                                                <td>{{ service_details.service.service_name }}</td>
-                                                                <td>{{ service_details.service.details }}</td>
-                                                                <td>&#8358;{{ service_details.price.gross }}</td>
+                                                                <td>{{ details.service.service_name }}</td>
+                                                                <td>{{ details.service.details }}</td>
+                                                                <td>{{ details.order_date  | date }}</td>
+                                                                <td>&#8358;{{ details.price.gross }}</td>
+                                                                <td>{{ members_count }}</td>
+                                                                <td>{{ total }}</td>
+                                                                <td>
+                                                                    <a href="#" class="btn btn-danger waves-effect waves-light">Remove</a>
+                                                                </td>
                                                             </tr>
+                                                            {% endfor %}
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -63,10 +75,9 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3 col-sm-6 col-xs-6 col-md-offset-3">
-                                                <p class="text-right"><b>Sub-total:</b> 2930.00</p>
-                                                <p class="text-right">VAT: 12.9%</p>
+                                                <p class="text-right"><b>Sub-total:</b>&#8358; {{ price_sum.price__sum.gross }} </p>
                                                 <hr>
-                                                <h3 class="text-right">&#8358; 2930.00</h3>
+                                                <h3 class="text-right">&#8358; {{ price_sum.price__sum.gross }} </h3>
                                             </div>
                                         </div>
                                         <hr>

@@ -25,7 +25,7 @@
                                         <tbody>
                                               {% for consumer in consumers %}
                                             <tr>
-                                                <td>{{ consumer.ordered_by.user_details_id.username | capfirst }}</td>
+                                                <td>{{ consumer.ordered_by_id }}</td>
                                                 <td>{{ consumer.ordered_by.user_details_id.email }}</td>
                                                 <td>{{ consumer.ordered_by.user_details_id.phone_number }}</td>
                                                 <td>
