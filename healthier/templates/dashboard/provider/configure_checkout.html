@@ -1,0 +1,72 @@
+{% load static %}
+
+{% include 'registration/header.html' %}
+
+
+<body class="fixed-left" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+{% include 'dashboard/dashboard_nav.html' %}
+
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+                                                <div id="custom-modal">
+                                            <h4 class="custom-modal-title">Configure the "{{ service_details }}" service </h4>
+                                            <div class="custom-modal-text text-left">
+                                                <form role="form" method="POST" action="{% url 'dashboard:order_service_configure' %}?service_id={{ service_details.service_id }}&provider_id={{ service_details.requested_by.healthier_id.id }}">
+                                                    {% csrf_token %}
+                                                     <div class="form-group">
+                                                        <label>Date</label>
+                                                        <div class="input-group m-b-15">
+                                                            <div class="bootstrap-timepicker">
+                                                                <input id="" type="text" class="form-control" name="arrival_date" placeholder="What date would you be available for this service?">
+                                                            </div>
+                                                            <span class="input-group-addon bg-primary b-0 text-white"><i class="glyphicon glyphicon-calendar"></i></span>
+                                                        </div>
+                                                     </div>
+                                                    <div class="form-group">
+                                                        <label>Arrival Time</label>
+                                                        <div class="input-group m-b-15">
+                                                            <div class="bootstrap-timepicker">
+                                                                <input id="" name="arrival_time" type="text" class="form-control" placeholder="What time would you be available for this service?">
+                                                            </div>
+                                                            <span class="input-group-addon bg-primary b-0 text-white"><i class="glyphicon glyphicon-time"></i></span>
+                                                        </div>
+                                                     </div>
+                                                    <div class="form-group">
+                                                        <label>Cancellation Time</label>
+                                                        <div class="input-group m-b-15">
+                                                            <div class="bootstrap-timepicker">
+                                                                <input id="timepicker2" type="text" class="form-control" name="cancellation_time" placeholder="How many hours after the time above should the service be cancelled if you don't show up?">
+                                                            </div>
+                                                            <span class="input-group-addon bg-primary b-0 text-white"><i class="glyphicon glyphicon-time"></i></span>
+                                                        </div>
+                                                     </div>
+                                                    <div class="form-group">
+                                                        <label for="company">Family Member</label>
+                                                        <select multiple="multiple" class="multi-select" id="my_multi_select1" name="members" data-plugin="multiselect">
+                                                            {% for member in family_members %}
+                                                            <option>{{ member.username }}</option>
+                                                            {% endfor %}
+                                                        </select>
+                                                        <span>Which of your family members would be showing up with you?</span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="comment">Comment</label>
+                                                        <div class="col-md-12">
+                                                            <textarea rows="6" name="comment" id="comment" class="form-control" placeholder=""></textarea>
+                                                             <span class="help-block"><small>Any comment for the service provider?</small></span>
+                                                        </div>
+	                                                </div>
+                                                        <button type="submit" class="btn btn-googleplus waves-effect waves-light">Save</button>
+                                                </form>
+                                            </div>
+                                                </div>
+                                        </div></div>
+                 </div>
+
+                </div> <!-- content -->
+
+            </div>
+
+{% include 'registration/footer.html' %}

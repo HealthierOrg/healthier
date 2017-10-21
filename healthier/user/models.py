@@ -91,4 +91,19 @@ class FAQ(models.Model):
     def __str__(self):
         return self.question
 
-z
+
+class Family(models.Model):
+    head = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="family_head")
+    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, null=True,
+                              blank=True)
+    username = models.CharField(_('Username'), blank=True, max_length=50)
+    phone_number = models.CharField(max_length=200)
+    description = models.TextField(max_length=1000, blank=True)
+    healthier_id = models.CharField(max_length=50, default=generate_id("healthier_family_member"), blank=True)
+    email = models.EmailField(unique=True)
+
+    def __unicode__(self):
+        return self.username
+
+    def __str__(self):
+        return self.username

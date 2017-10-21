@@ -63,12 +63,8 @@
                             </li>
                             {% endif %}
                             {% if user.account_type == "CON" %}
-                              <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-account-box"></i><span> Family </span> <span class="menu-arrow"></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="{% url 'dashboard:dashboard_my_services' %}">View Family </a></li>
-                                    <li><a href="{% url 'dashboard:dashboard_all_services' %}">Add Family Member</a></li>
-                                </ul>
+                              <li>
+                                <a href="{% url 'dashboard:family' %}" class="waves-effect"><i class="zmdi zmdi-group"></i><span> Family </span></a>
                             </li>
                             {% endif %}
 

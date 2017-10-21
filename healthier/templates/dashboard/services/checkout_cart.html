@@ -36,6 +36,8 @@
                                                             <th>Description</th>
                                                             <th>Added On</th>
                                                             <th>Unit Cost</th>
+                                                            <th>Count</th>
+                                                            <th>Total</th>
                                                             <th>Action</th>
                                                         </tr></thead>
                                                         <tbody>
@@ -46,6 +48,8 @@
                                                                 <td>{{ details.service.details }}</td>
                                                                 <td>{{ details.order_date  | date }}</td>
                                                                 <td>&#8358;{{ details.price.gross }}</td>
+                                                                <td>{{ members_count }}</td>
+                                                                <td>{{ total }}</td>
                                                                 <td>
                                                                     <a href="#" class="btn btn-danger waves-effect waves-light">Remove</a>
                                                                 </td>

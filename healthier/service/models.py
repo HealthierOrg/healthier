@@ -7,6 +7,7 @@ from config.utils import generate_id
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
 from django_prices.models import PriceField
+from annoying.fields import JSONField
 
 DAYS_AVAILABLE_TUPLE = (
     ('EVR', 'EVERYDAY'),
@@ -59,6 +60,11 @@ class OrderedService(models.Model):
     promo_code = models.CharField(max_length=200)
     order_date = models.DateTimeField(auto_now=False, default=now)
     price = PriceField(currency='NGN', decimal_places=2, max_digits=12, default=0.00)
+    cancellation_time = models.CharField(default='', max_length=50)
+    arrival_time = models.CharField(default='', max_length=50)
+    arrival_date = models.CharField(default='', max_length=50)
+    members = JSONField(default='', max_length=300)
+    comment = models.TextField(default='', max_length=1000)
 
     def __str__(self):
         """Return a string representation of the model."""

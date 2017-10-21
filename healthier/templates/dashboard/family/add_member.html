@@ -1,0 +1,34 @@
+ {% load static %}
+
+{% include 'registration/header.html' %}
+
+<body class="fixed-left">
+
+{% include 'dashboard/dashboard_nav.html' %}
+ <div class="content-page">
+                <div class="content">
+                    <div class="container">
+                            <div id="custom-modal">
+                                            <h4 class="custom-modal-title">Add New Member</h4>
+                                            <div class="custom-modal-text text-left">
+                                                <form role="form" method="POST" action="{% url 'dashboard:add_family' %}">
+                                                    {% csrf_token %}
+                                                    <div class="form-group">
+                                                        <label for="name">Name</label>
+                                                        <input type="text" class="form-control" name="username" id="name" placeholder="Enter name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="position">Email</label>
+                                                        <input type="email" class="form-control" id="position" name="email" placeholder="Enter Email">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="company">Mobile</label>
+                                                        <input type="text" class="form-control" id="mobile" name="phone_number" placeholder="Enter Mobile Number">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-googleplus waves-effect waves-light">Save</button>
+                                                </form>
+                                            </div>
+                                        </div></div>
+                </div>
+            </div>
+{% include 'dashboard/footer.html' %}

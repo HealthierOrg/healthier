@@ -1,10 +1,6 @@
 from django.conf.urls import url
 from django.contrib.auth.decorators import login_required
-
-from .views import DashboardView, FinancesView, CustomerListView, AccountSettingsView, \
-    ServiceConfiguration, ProfileView, OrderServiceConfigurationView, UserServicesListView, AllServiceListView, \
-    ServiceDetailView, SuggestServiceView, AllProviderListView, ProviderDetailView, OrderServiceStepView, \
-    AllServiceReportView
+from .views import *
 from healthier.messenger.views import compose, inbox, view, outbox
 
 urlpatterns = [
@@ -31,6 +27,8 @@ urlpatterns = [
         name='order_service'),
     url(r'^service/order_service/(?P<action>[\w\-]+)/$', login_required(OrderServiceStepView.as_view()),
         name='order_service_step'),
+    url(r'^service/checkout_configure/$', configure_service,
+        name='order_service_configure'),
     url(r'^services/suggest_new$', login_required(SuggestServiceView.as_view()),
         name='dashboard_suggest_new_service'),
 
@@ -47,5 +45,12 @@ urlpatterns = [
     url(r'^messages/outbox/$', outbox, name='message_outbox'),
     url(r'^messages/inbox/$', inbox, name='message_inbox'),
 
-    # Cart URLs
+    # Family URLs
+
+    url(r'^family/$', login_required(UserFamilyListView.as_view()),
+        name='family'),
+    url(r'^family/add/$', login_required(AddFamilyView.as_view()),
+        name='add_family'),
+    url(r'^family/remove/$', login_required(remove_family),
+        name='remove_family'),
 ]
