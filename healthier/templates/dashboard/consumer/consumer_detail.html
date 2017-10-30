@@ -35,12 +35,15 @@
                                 </div>
                                 <!--/ meta -->
 
-                                <form method="post" class="card-box">
+                                <form method="post" class="card-box" action="{% url 'dashboard:compose_message'%}">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="{{  base_consumer_info.id }}" name="recipient">
+                                    <input type="hidden" value="Message From {{ request.user.username }}" name="subject">
                                     <span class="input-icon icon-right">
-                                        <textarea rows="2" class="form-control" placeholder="Send a message to this user."></textarea>
+                                        <textarea rows="2" class="form-control" name="body" placeholder="Send a message to this user."></textarea>
                                     </span>
                                     <div class="p-t-10 pull-right">
-                                        <a class="btn btn-sm btn-primary waves-effect waves-light">Send</a>
+                                        <button type="submit" class="btn btn-sm btn-primary waves-effect waves-light">Send</button>
                                     </div>
                                     <ul class="nav nav-pills profile-pills m-t-10">
                                         <li>

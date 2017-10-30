@@ -36,8 +36,9 @@
               {% for service in services %}
                     <div class="col-md-3">
                       <a href="{% url 'service:service' service.id %}" class="article box-shadow">
-                        <i class="fa fa-{{ service_icon | random}} fa-5x"></i>
+                        <i class="fa fa-{{ service_icon | random}} fa-3x"></i>
                         <h3 class="article__title">{{ service.service_name }}</h3>
+                          <p class="faq__text">{{ service.details }}</p>
                       </a>
                     </div>
               {% endfor %}

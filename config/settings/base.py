@@ -10,6 +10,8 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 import environ
 import os
 
+from pygments.lexer import default
+
 ROOT_DIR = environ.Path(__file__) - 3  # (healthier/config/settings/base.py - 3 = healthier/)
 APPS_DIR = ROOT_DIR.path('healthier')
 
@@ -73,6 +75,9 @@ THIRD_PARTY_APPS = [
     'webpack_loader',
     'django_messages',
     'debug_toolbar',
+    'paystack',
+    'huey.contrib.djhuey',
+    'mailqueue',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -231,7 +236,7 @@ STATICFILES_FINDERS = [
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = str(APPS_DIR('media/image_uploads/'))
+MEDIA_ROOT = str(APPS_DIR('media'))
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
@@ -282,14 +287,6 @@ AUTHENTICATION_BACKENDS = [
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 
-########## CELERY
-INSTALLED_APPS += ['healthier.taskapp.celery.CeleryConfig']
-CELERY_BROKER_URL = env('CELERY_BROKER_URL', default='django://')
-if CELERY_BROKER_URL == 'django://':
-    CELERY_RESULT_BACKEND = 'redis://'
-else:
-    CELERY_RESULT_BACKEND = CELERY_BROKER_URL
-########## END CELERY
 # django-compressor
 # ------------------------------------------------------------------------------
 INSTALLED_APPS += ['compressor']
@@ -329,3 +326,44 @@ LOGIN_URL = "account_login"
 DJANGO_MESSAGES_NOTIFY = False
 
 ACCOUNT_MESSAGES_NOTIFY = False
+
+PAYSTACK_SECRET_KEY = env("PAYSTACK_SECRET_KEY", default="sk_test_c7a653a53722b84dc6360a56326e2d5224bfea97")
+
+PAYSTACK_PUBLIC_KEY = env("PAYSTACK_PUBLIC_KEY", default="pk_test_1fcc720e3c4c0b2cf640d7a830472215da1f524b")
+
+PAYSTACK_FAILED_URL = "dahsboard:order_service_checkout_failed"
+
+
+HUEY = {
+    'name': DATABASES['default']['NAME'],  # Use db name for huey.
+    'result_store': True,  # Store return values of tasks.
+    'events': True,  # Consumer emits events allowing real-time monitoring.
+    'store_none': False,  # If a task returns None, do not save to results.
+    'always_eager': False,  # If DEBUG=True, run synchronously.
+    'store_errors': True,  # Store error info if task throws exception.
+    'blocking': False,  # Poll the queue rather than do blocking pop.
+    'connection': {
+        'host': 'localhost',
+        'port': 6379,
+        'db': 0,
+        'connection_pool': None,  # Definitely you should use pooling!
+        # ... tons of other options, see redis-py for details.
+
+        # huey-specific connection parameters.
+        'read_timeout': 1,  # If not polling (blocking pop), use timeout.
+        'max_errors': 1000,  # Only store the 1000 most recent errors.
+        'url': None,  # Allow Redis config via a DSN.
+    },
+    'consumer': {
+        'workers': 1,
+        'worker_type': 'thread',
+        'initial_delay': 0.1,  # Smallest polling interval, same as -d.
+        'backoff': 1.15,  # Exponential backoff using this rate, -b.
+        'max_delay': 10.0,  # Max possible polling interval, -m.
+        'utc': True,  # Treat ETAs and schedules as UTC datetimes.
+        'scheduler_interval': 1,  # Check schedule every second, -s.
+        'periodic': True,  # Enable crontab feature.
+        'check_worker_health': True,  # Enable worker health checks.
+        'health_check_interval': 1,  # Check worker health every second.
+    },
+}

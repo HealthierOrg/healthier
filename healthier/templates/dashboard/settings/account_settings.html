@@ -17,7 +17,7 @@
                                        <div id="custom-modal">
                                             <h4 class="custom-modal-title">Basic Account Details</h4>
                                             <div class="custom-modal-text text-left">
-                                                <form role="form" method="POST" action="{% url 'dashboard:add_family' %}">
+                                                <form role="form" method="POST" action="{% url 'dashboard:add_family' %}" enctype="multipart/form-data">
                                                     {% csrf_token %}
                                                 <div class="form-group">
 	                                                <label class="col-md-2 control-label">Username</label>
@@ -67,11 +67,20 @@
                                                              <span class="help-block"><small>Do you have a personal website?</small></span>
                                                         </div>
 	                                                </div>
+
                                                    <div class="form-group">
 	                                                <label class="col-md-2 control-label">Description</label>
                                                         <div class="col-md-10">
                                                             <textarea rows="6" name="description" id="description" class="form-control" placeholder="{% if not user.description %} Description {% else %} {{ user.description }}{% endif %}"></textarea>
                                                              <span class="help-block"><small>Describe yourself and how you render your services</small></span>
+                                                        </div>
+	                                                </div>
+                                                    <div class="form-group">
+	                                                <label class="col-md-2 control-label">Image</label>
+                                                        <div class="col-md-10">
+                                                            <div class="card-box">
+                                                                <input type="file" name="profile_image" class="dropify" data-height="100" />
+                                                            </div>
                                                         </div>
 	                                                </div>
                                                     <button type="submit" class="btn btn-lg btn-googleplus waves-effect waves-light">Update Details</button>
@@ -82,18 +91,6 @@
                                 </form>
                         		</div>
                         	</div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card-box">
-                        			<h4 class="header-title m-t-0 m-b-30">Change your account image</h4>
-                                    <input type="file" class="dropify" data-height="300" />
-                                    <button type="submit" class="btn btn-lg btn-googleplus waves-effect waves-light">Update Image</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

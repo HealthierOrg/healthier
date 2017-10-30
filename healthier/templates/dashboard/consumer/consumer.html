@@ -25,15 +25,15 @@
                                         <tbody>
                                               {% for consumer in consumers %}
                                             <tr>
-                                                <td>{{ consumer.ordered_by_id }}</td>
-                                                <td>{{ consumer.ordered_by.user_details_id.email }}</td>
-                                                <td>{{ consumer.ordered_by.user_details_id.phone_number }}</td>
+                                                <td>{{ consumer }}</td>
+                                                <td>{{ consumer.email }}</td>
+                                                <td>{{ consumer.phone_number }}</td>
                                                 <td>
-                                                    <a href="{% url 'dashboard:consumer' %}?action=info&id={{  consumer.ordered_by.user_details_id.id}}">
+                                                    <a href="{% url 'dashboard:consumer' %}?action=info&id={{  consumer.id}}">
                                                         <button type="button"  class="btn btn-small btn-success waves-effect waves-light">View Complete Details</button></a>
-                                                    <a href="{% url 'dashboard:consumer' %}?action=sendMessage&id={{  consumer.ordered_by.user_details_id.id}}">
+                                                    <a href="{% url 'dashboard:consumer' %}?action=sendMessage&id={{  consumer.id}}">
                                                         <button type="button"  class="btn btn-small btn-apple waves-effect waves-light">Message User</button></a>
-                                                    <a href="{% url 'dashboard:consumer' %}?action=block&id={{  consumer.ordered_by.user_details_id.id}}">
+                                                    <a href="{% url 'dashboard:consumer' %}?action=block&id={{  consumer.id}}">
                                                         <button type="button"  class="btn btn-small btn-danger waves-effect waves-light">Block User</button></a>
                                                 </td>
                                             </tr>
