@@ -8,9 +8,7 @@
 
 
     <div class="content-wrapper oh ">
-
-      <!-- Page Title -->
-      <section class="page-title bottom-divider text-center">
+        <section class="page-title bottom-divider text-center">
         <div class="container">
 
           <div class="page-title__outer">
@@ -23,9 +21,8 @@
           </div>
 
         </div>
-      </section> <!-- end page title -->
+      </section>
 
-      <!-- Features -->
       <section class="section-wrap pt-70 pb-130 bg-light">
         <div class="container">
           <div class="row row-60 items-grid">
@@ -33,14 +30,14 @@
                     <div class="col-md-4 col-xs-6 col-xxs-12">
                       <a href="{% url 'dashboard:provider_details'  provider.id %}" class="box-shadow">
                         <div class="feature-1__icon-holder feature-1__icon-holder--green text-center">
-                          <i class="ui-cog feature-1__icon"></i>
+                        <i class="fa fa-{{ icons | random}} feature-1__icon fa-5x"></i>
                         </div>
                         <div class="feature-1__base">
-                          <h3 class="feature-1__title">{{ provider.user_details_id.username | capfirst }}</h3>
-                          <p class="feature-1__paragraph">{{ provider.user_details_id.description }}.</p>
+                          <h3 class="feature-1__title">{{ provider.healthier_id.username | capfirst }}</h3>
+                          <p class="feature-1__paragraph">{{ provider.healthier_id.description }}</p>
                         </div>
                       </a>
-                    </div> <!-- end col -->
+                    </div>
                   {% endfor %}
           </div>
         </div>
@@ -49,14 +46,11 @@
     {% include 'faq.html' %}
 
     {% include "newsletter.html" %}
-
-
       <div id="back-to-top">
         <a href="#top"><i class="ui-arrow-up"></i></a>
       </div>
-
     </div>
-  </main> <!-- end main wrapper -->
+  </main>
 
 
 {% include "footer.html" %}

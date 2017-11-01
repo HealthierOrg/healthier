@@ -8,7 +8,6 @@
                 <div class="navbar navbar-default" role="navigation">
                     <div class="container">
 
-                        <!-- Page title -->
                         <ul class="nav navbar-nav navbar-left">
                             <li>
                                 <button class="button-menu-mobile open-left">
@@ -20,15 +19,13 @@
                             </li>
 
                         </ul>
-                    </div><!-- end container -->
-                </div><!-- end navbar -->
+                    </div>
+                </div>
 
             </div>
 
             <div class="left side-menu">
                 <div class="sidebar-inner slimscrollleft">
-
-                    <!-- User -->
                     <div class="user-box">
                         <div class="user-img">
                             <img src="{{ user.image_url|default_if_none:'/static/img/default_user.png' }}"
@@ -63,7 +60,14 @@
                             </li>
                             {% endif %}
                             {% if user.account_type == "CON" %}
-                              <li>
+                                <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-hospital"></i><span> Health </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{% url 'dashboard:view_health_info' %}">View Health Information</a></li>
+                                    <li><a href="{% url 'dashboard:set_health_info' %}">Edit Health Information</a></li>
+                                </ul>
+                            </li>
+                                <li>
                                 <a href="{% url 'dashboard:family' %}" class="waves-effect"><i class="zmdi zmdi-group"></i><span> Family </span></a>
                             </li>
                             {% endif %}

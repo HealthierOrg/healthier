@@ -1,0 +1,190 @@
+ {% load static %}
+
+{% include 'registration/header.html' %}
+
+ <body class="fixed-left" xmlns="http://www.w3.org/1999/html">
+
+{% include 'dashboard/dashboard_nav.html' %}
+
+    <div class="content-page">
+        <div class="content">
+                    <div class="container">
+                        <div class="row">
+                            <div id="custom-modal">
+                            <div class="col-lg-6">
+                                    <div class="">
+                                        <h4 class="custom-modal-title">Clinic Data</h4>
+                                    </div>
+                                    <div class="custom-modal-text text-left">
+                                    <form class="form-horizontal" role="form" method="POST" action="{% url 'dashboard:set_health_info' %}?save_for=clinic_detail">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label  class="col-sm-4 control-label">Name</label>
+                                            <div class="col-sm-7">
+                                                <input type="text"   class="form-control"
+                                                        name="clinic_name">
+                                                <span class="help-block"><small>The name of the clinic you're a patient of.</small></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label  class="col-sm-4 control-label"> Address </label>
+                                            <div class="col-sm-7">
+                                                <input id="hori-pass1" type="text"
+                                                       class="form-control" name="clinic_address">
+                                                <span class="help-block"><small>The clinic's address.</small></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="hori-pass2" class="col-sm-4 control-label">Email</label>
+                                            <div class="col-sm-7">
+                                                <input  type="email"
+                                                       class="form-control"name="clinic_email">
+                                                <span class="help-block"><small>The clinic's email address.</small></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-4 col-sm-8">
+                                                <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                                    Save
+                                                </button>
+                                        </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                    </div>
+                            </div>
+                            <div class="col-lg-6">
+                                    <h4 class="custom-modal-title">Ailment Data</h4>
+                                    <div class="custom-modal-text text-left">
+                                    <form class="form-horizontal" role="form" method="POST" action="{% url 'dashboard:set_health_info' %}?save_for=ailment_detail">
+                                                                                {% csrf_token %}
+
+                                        <div class="form-group">
+                                            <label  class="col-sm-4 control-label">Ailment Name</label>
+                                            <div class="col-sm-7">
+                                                <input type="text" class="form-control"
+                                                       name="ailment_name">
+                                                <span class="help-block"><small>The name of an ailment you've had at any point in time.</small></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label  class="col-sm-4 control-label">Description</label>
+                                            <div class="col-sm-7">
+                                                <textarea id="hori-pass1"
+                                                       class="form-control" name="ailment_description"></textarea>
+                                                   <span class="help-block"><small>Briefly describe this email</small></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="hori-pass2" class="col-sm-4 control-label">Ailment Medication
+                                                </label>
+                                            <div class="col-sm-7">
+                                                <input type="text" name="ailment_medication" class="form-control" id="hori-pass2">
+                                                <span class="help-block"><small></small>List any drug prescribed to you for this ailment. If more than one, seperate with a comma.</span>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-4 col-sm-8">
+                                                <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                                    Save
+                                                </button>
+                                        </div>
+                                        </div>
+                                    </form>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-6">
+                                    <h4 class="custom-modal-title">Blood Detail</h4>
+                                    <div class="custom-modal-text text-left">
+                                    <form class="form-horizontal" role="form" method="POST" action="{% url 'dashboard:set_health_info' %}?save_for=blood_detail">
+                                                                                {% csrf_token %}
+
+                                        <div class="form-group">
+                                            <label  class="col-sm-4 control-label">Systolic Blood Pressure</label>
+                                            <div class="col-sm-7">
+                                                <input type="text" class="form-control" name="sys_blood">
+                                                <span class="help-block"><small>Your systolic blood pressure count.</small></span>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label  class="col-sm-4 control-label">Diastolic Blood Pressure</label>
+                                            <div class="col-sm-7">
+                                                <input id="hori-pass1" type="text"
+                                                       class="form-control" name="dia_blood"                           >
+                                                <span class="help-block">
+                                                    <small>Your diastolic blood pressure count.</small></span>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="hori-pass2" class="col-sm-4 control-label">Random Blood Sugar
+                                                </label>
+                                            <div class="col-sm-7">
+                                                <input class="form-control" id="hori-pass2" name="random_blood">
+                                                 <span class="help-block"><small>Your last random blood sugar count.</small></span>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="hori-pass2" class="col-sm-4 control-label">Fasting Blood Sugar
+                                                </label>
+                                            <div class="col-sm-7">
+                                                <input class="form-control" id="hori-pass2" name="fasting_blood">
+                                                <span class="help-block"><small>Your last fasting blood sugar count.</small></span>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-4 col-sm-8">
+                                                <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                                    Save
+                                                </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                    </div></div>
+                            <div class="col-lg-6">
+                                    <h4 class="custom-modal-title">Miscellaneous Details</h4>
+                                    <div class="custom-modal-text text-left">
+                                    <form class="form-horizontal" method="POST" action="{% url 'dashboard:set_health_info' %}?save_for=misc_detail">
+                                                                                {% csrf_token %}
+
+                                        <div class="form-group">
+                                            <label  class="col-sm-4 control-label">Weight</label>
+                                            <div class="col-sm-7">
+                                                <input type="text"   class="form-control"
+                                                         name="user_weight">
+                                                <span class="help-block"><small>Your weight.</small></span>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label  class="col-sm-4 control-label">Cholesterol</label>
+                                            <div class="col-sm-7">
+                                                <input id="hori-pass1" type="text"
+                                                       class="form-control" name="user_cholesterol">
+                                                <span class="help-block"><small>Your cholesterol level</small></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-4 col-sm-8">
+                                                <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                                    Save
+                                                </button>
+                                        </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                         </div>
+                        </div>
+                    </div>
+
+                </body>
+    </div>
+
+{% include 'dashboard/footer.html' %}

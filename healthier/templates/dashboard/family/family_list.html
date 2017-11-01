@@ -28,7 +28,7 @@
 
                                             <p class="text-muted font-13"><strong>Email :</strong> <span class="m-l-15">{{ member.email }}</span></p>
                                         </div>
-                                        <button type="button" href="{% url 'dashboard:remove_family' %}" class="btn btn-googleplus waves-effect waves-light">Remove Member</button>
+                                        <a href="{% url 'dashboard:remove_family' member.id %}" class="btn btn-googleplus waves-effect waves-light">Remove Member</a>
                                     </div>
                                 </div>
                             </div>

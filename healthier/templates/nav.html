@@ -32,12 +32,9 @@
                   <a href="{% url 'provider:providers' %}">Providers</a>
                 </li>
                 <li>
-                  <a href="{% url 'consumer:consumers' %}">Consumers</a>
+                  <a href="{% url 'how' %}">How It Works</a>
                 </li>
-                <li>
-                  <a href="{% url 'how' %}">How it works</a>
-                </li>
-              </ul> <!-- end menu -->
+              </ul>
 
                 {% if user.is_authenticated %}
                        <div class="nav__btn-holder">
@@ -54,10 +51,9 @@
                 {% endif %}
 
 
-            </nav> <!-- end nav-wrap -->
-
-          </div> <!-- end flex-parent -->
-        </div> <!-- end container -->
+            </nav>
+          </div>
+        </div>
 
       </div>
-    </header> <!-- end navigation -->
+    </header>

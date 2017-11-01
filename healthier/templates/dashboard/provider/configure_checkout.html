@@ -13,7 +13,7 @@
                                                 <div id="custom-modal">
                                             <h4 class="custom-modal-title">Configure the "{{ service_details }}" service </h4>
                                             <div class="custom-modal-text text-left">
-                                                <form role="form" method="POST" action="{% url 'dashboard:order_service_configure' %}?service_id={{ service_details.service_id }}&provider_id={{ service_details.requested_by.healthier_id.id }}">
+                                                <form role="form" method="POST" action="{% url 'dashboard:order_service' %}?service_id={{ service_details.service_id }}&provider_id={{ service_details.requested_by.healthier_id.id }}">
                                                     {% csrf_token %}
                                                      <div class="form-group">
                                                         <label>Date</label>

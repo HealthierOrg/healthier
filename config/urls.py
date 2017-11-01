@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
-from healthier.providers.views import FAQView
+from healthier.providers.views import FAQView, TsAndCs
 from healthier.service.views import AllServiceListView
 
 
@@ -16,16 +16,17 @@ urlpatterns = [
     url(settings.ADMIN_URL, admin.site.urls),
 
     url(r'^auth/', include('allauth.urls')),
-    url(r'how/', TemplateView.as_view(template_name='pages/how.html'), name="how"),
+    url(r'how/', FAQView.as_view(template_name='pages/how.html'), name="how"),
     url(r'help/', TemplateView.as_view(template_name='pages/how.html'), name="help"),
     url(r'support/', TemplateView.as_view(template_name='pages/how.html'), name="support"),
     url(r'faq/', FAQView.as_view(template_name='pages/faq.html'), name="faq"),
-    url(r'privacy/', TemplateView.as_view(template_name='pages/how.html'), name="privacy"),
+    url(r'privacy/', TsAndCs.as_view(template_name='pages/how.html'), name="privacy"),
     url(r'^dashboard/', include('healthier.dashboard.urls', namespace='dashboard')),
     url(r'^providers/', include('healthier.providers.urls', namespace='provider')),
     url(r'^services/', include('healthier.service.urls', namespace='service')),
     url(r'^consumers/', include('healthier.consumers.urls', namespace='consumer')),
     url(r'^api/', include('healthier.api.urls', namespace='api')),
+    url(r'^payment/', include('paystack.urls', namespace='paystack')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

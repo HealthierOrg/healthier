@@ -1,4 +1,8 @@
+import os
+
+from django.conf import settings
 from django.contrib.auth.models import User, AbstractUser, PermissionsMixin
+from django.core.files.storage import FileSystemStorage
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
@@ -29,6 +33,11 @@ class HealthierUserManager(BaseUserManager, InheritanceManager):
         return u
 
 
+def user_directory_path(instance, filename):
+        # file will be uploaded to MEDIA_ROOT/username/<filename>
+        return 'user_{0}/{1}'.format(instance.username, filename)
+
+
 class HealthierUser(AbstractBaseUser, PermissionsMixin):
     def get_full_name(self):
         return str(self.username)
@@ -44,7 +53,7 @@ class HealthierUser(AbstractBaseUser, PermissionsMixin):
         ('CON', 'Consumer'),
     )
     account_type = models.CharField(max_length=3, choices=account_choices)
-    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, null=True,
+    image = models.ImageField(upload_to=user_directory_path, height_field=None, width_field=None, max_length=100, null=True,
                               blank=True)
     address = models.CharField(max_length=100)
     description = models.TextField(max_length=1000, blank=True)
@@ -101,9 +110,48 @@ class Family(models.Model):
     description = models.TextField(max_length=1000, blank=True)
     healthier_id = models.CharField(max_length=50, default=generate_id("healthier_family_member"), blank=True)
     email = models.EmailField(unique=True)
+    active = models.BooleanField(default=True)
+    added_on = models.DateField(default=now, blank=False)
 
     def __unicode__(self):
         return self.username
 
     def __str__(self):
         return self.username
+
+
+class TermsAndCondition(models.Model):
+    added_on = models.DateField(default=now, blank=False)
+    text = models.TextField(max_length=5000, default='')
+
+
+class HealthierUserClinicalData(models.Model):
+    user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="clinical_data")
+    clinic_name = models.CharField(_('Clinic Name'), blank=True, max_length=500)
+    clinic_address = models.CharField(_('Clinic Address'), blank=True, max_length=500)
+    clinic_email = models.EmailField(_('Clinic Email'), blank=True, max_length=500)
+
+
+class HealthierUserAilmentData(models.Model):
+    user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="ailment_data")
+    ailment_name = models.CharField(_('Clinic Name'), blank=True, max_length=500)
+    ailment_description = models.CharField(_('Clinic Address'), blank=True, max_length=500)
+    ailment_medication = models.EmailField(_('Clinic Email'), blank=True, max_length=500)
+
+
+class HealthierUserBloodData(models.Model):
+    user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="blood_data")
+    sys_blood = models.CharField(_('Systolic Blood'), blank=True, max_length=50)
+    dia_blood = models.CharField(_('Diastolic Blood'), blank=True, max_length=50)
+    random_blood = models.EmailField(_('Random Blood'), blank=True, max_length=50)
+    fasting_blood = models.CharField(_('Fasting Blood'), blank=True, max_length=50)
+
+
+class HealthierUserMiscData(models.Model):
+    user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="misc_data")
+    user_cholesterol = models.CharField(_('Systolic Blood'), blank=True, max_length=50)
+    user_weight = models.CharField(_('Diastolic Blood'), blank=True, max_length=50)
+
+
+
+

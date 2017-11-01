@@ -1,4 +1,5 @@
  {% load static %}
+{% load paystack %}
 {% load widget_tweaks %}
 
 {% include 'registration/header.html' %}
@@ -6,7 +7,6 @@
 
 {% include 'dashboard/dashboard_nav.html' %}
              <div class="content-page">
-                <!-- Start content -->
                 <div class="content">
                     <div class="container">
 
@@ -22,10 +22,8 @@
                                                     <p class="m-t-10"><strong>Order Status: </strong> <span class="label label-pink">Pending</span></p>
                                                     <p class="m-t-10"><strong>Order ID: </strong> #{{ order_check_out_id }}</p>
                                                 </div>
-                                            </div><!-- end col -->
+                                            </div>
                                         </div>
-                                        <!-- end row -->
-
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="table-responsive">
@@ -84,8 +82,11 @@
                                         <div class="hidden-print">
                                             <div class="pull-right">
                                                 <a href="{% url 'dashboard:dashboard_all_services' %}" class="btn btn-primary waves-effect waves-light">Browse More Services</a>
-                                                <a href="javascript:window.print()" class="btn btn-inverse waves-effect waves-light"><i class="fa fa-print"></i> Print </a>
-                                                <a href="#" class="btn btn-success waves-effect waves-light">Checkout</a>
+                                                <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light"><i class="fa fa-print"></i> Print </a>
+
+                                                <br>
+                                                <br>
+                                                {% paystack_button button_class="btn btn-googleplus waves-effect waves-light" amount=price_sum.price__sum.gross email=request.user.email %}
                                             </div>
                                         </div>
                                     </div>
@@ -94,7 +95,6 @@
                             </div>
 
                         </div>
-                        <!-- end row -->
 
 
                     </div> <!-- container -->

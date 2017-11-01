@@ -45,6 +45,8 @@ class HealthierService(models.Model):
     service_name = models.CharField(max_length=200)
     details = models.CharField(max_length=1000, blank=False, default='')
     service_id = models.CharField(max_length=200, default=generate_id("service"))
+    orders = models.CharField(max_length=300, default=0)
+    views = models.CharField(max_length=300, default=0)
 
     def __str__(self):
         return self.service_name
