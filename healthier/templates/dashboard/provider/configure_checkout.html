@@ -10,16 +10,16 @@
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
-                                                <div id="custom-modal">
+                                            <div id="custom-modal">
                                             <h4 class="custom-modal-title">Configure the "{{ service_details }}" service </h4>
                                             <div class="custom-modal-text text-left">
-                                                <form role="form" method="POST" action="{% url 'dashboard:order_service' %}?service_id={{ service_details.service_id }}&provider_id={{ service_details.requested_by.healthier_id.id }}">
+                                                <form role="form" method="POST" action="{% url 'dashboard:order_service_step' "checkCart" %}?service={{ service_details.service_id }}&provider={{ service_details.requested_by.healthier_id.id }}">
                                                     {% csrf_token %}
                                                      <div class="form-group">
                                                         <label>Date</label>
                                                         <div class="input-group m-b-15">
                                                             <div class="bootstrap-timepicker">
-                                                                <input id="" type="text" class="form-control" name="arrival_date" placeholder="What date would you be available for this service?">
+                                                                <input id="" type="text" class="form-control" name="arrival_date" placeholder="What date would you be available for this service?" required>
                                                             </div>
                                                             <span class="input-group-addon bg-primary b-0 text-white"><i class="glyphicon glyphicon-calendar"></i></span>
                                                         </div>
@@ -28,7 +28,7 @@
                                                         <label>Arrival Time</label>
                                                         <div class="input-group m-b-15">
                                                             <div class="bootstrap-timepicker">
-                                                                <input id="" name="arrival_time" type="text" class="form-control" placeholder="What time would you be available for this service?">
+                                                                <input id="" name="arrival_time" type="text" class="form-control" placeholder="What time would you be available for this service?" required>
                                                             </div>
                                                             <span class="input-group-addon bg-primary b-0 text-white"><i class="glyphicon glyphicon-time"></i></span>
                                                         </div>
@@ -37,7 +37,7 @@
                                                         <label>Cancellation Time</label>
                                                         <div class="input-group m-b-15">
                                                             <div class="bootstrap-timepicker">
-                                                                <input id="timepicker2" type="text" class="form-control" name="cancellation_time" placeholder="How many hours after the time above should the service be cancelled if you don't show up?">
+                                                                <input id="timepicker2" type="text" class="form-control" name="cancellation_time" placeholder="How many hours after the time above should the service be cancelled if you don't show up?" required>
                                                             </div>
                                                             <span class="input-group-addon bg-primary b-0 text-white"><i class="glyphicon glyphicon-time"></i></span>
                                                         </div>

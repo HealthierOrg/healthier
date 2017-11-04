@@ -10,14 +10,19 @@
                 <div class="content">
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-md-12">
                                 <div class="card-box table-responsive">
                                     <table id="datatable-buttons" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
+                                                <th>Service Name</th>
+                                                <th>Ordered By</th>
                                                 <th>Email</th>
                                                 <th>Mobile Number</th>
+                                                <th>Payment Status</th>
+                                                <th>Service Cost</th>
+                                                <th>Preferred Date</th>
+                                                <th>Preferred Time</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -25,12 +30,17 @@
                                         <tbody>
                                               {% for consumer in consumers %}
                                             <tr>
-                                                <td>{{ consumer }}</td>
-                                                <td>{{ consumer.email }}</td>
-                                                <td>{{ consumer.phone_number }}</td>
+                                                <td>{{ consumer.service.service_name }}</td>
+                                                <td>{{ consumer.ordered_by.healthier_id.username  | capfirst}}</td>
+                                                <td>{{ consumer.ordered_by.healthier_id.email }}</td>
+                                                <td>{{ consumer.ordered_by.healthier_id.phone_number }}</td>
+                                                <td>{% if consumer.payment_status %} Paid {% else %}Not Paid{% endif %}</td>
+                                                <td>&#8358;{{ consumer.price.gross }}</td>
+                                                <td>{{ consumer.arrival_date }}</td>
+                                                <td>{{ consumer.arrival_time }}</td>
                                                 <td>
                                                     <a href="{% url 'dashboard:consumer' %}?action=info&id={{  consumer.id}}">
-                                                        <button type="button"  class="btn btn-small btn-success waves-effect waves-light">View Complete Details</button></a>
+                                                        <button type="button"  class="btn btn-small btn-success waves-effect waves-light">Confirm time and date</button></a>
                                                     <a href="{% url 'dashboard:consumer' %}?action=sendMessage&id={{  consumer.id}}">
                                                         <button type="button"  class="btn btn-small btn-apple waves-effect waves-light">Message User</button></a>
                                                     <a href="{% url 'dashboard:consumer' %}?action=block&id={{  consumer.id}}">

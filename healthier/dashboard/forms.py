@@ -14,9 +14,6 @@ class AccountDetailForm(forms.ModelForm):
         self.fields['phone_number'].widgets = forms.TextInput(attrs={
             'class': 'form-control',
         })
-        self.fields['country'].widgets = forms.TextInput(attrs={
-            'class': 'form-control',
-        })
         self.fields['description'].widgets = forms.Textarea(attrs={
             'class': 'form-control',
         })
@@ -29,7 +26,7 @@ class AccountDetailForm(forms.ModelForm):
 
     class Meta:
         model = HealthierUser
-        fields = ('username', 'country', 'city', 'phone_number', 'description', 'image', 'website', 'address')
+        fields = ('username','city', 'phone_number', 'description', 'image', 'website', 'address')
 
     def clean_username(self):
         if not self.cleaned_data["username"]:

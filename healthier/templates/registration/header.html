@@ -9,6 +9,10 @@
         <meta name="author" content="Coderthemes">
 
 
+        {% if has_chart %}
+        		<link rel="stylesheet" href="{% static 'dash/plugins/chartist/dist/chartist.min.css' %}">
+        {% endif %}
+
         <link href="{% static 'dash/plugins/toastr/toastr.min.css' %}" rel="stylesheet" type="text/css" />
 
         <link href="{% static 'dash/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css' %}" rel="stylesheet" />

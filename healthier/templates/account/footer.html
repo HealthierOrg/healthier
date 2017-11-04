@@ -40,6 +40,12 @@
         <!-- Datatable init js -->
         <script src="{% static 'dash/pages/datatables.init.js' %}"></script>
 
+        {% if has_chart %}
+		<script src="{% static 'dash/plugins/chartist/dist/chartist.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/chartist/dist/chartist-plugin-tooltip.min.js' %}"></script>
+		<script src="{% static 'dash/pages/jquery.chartist.init.js' %}"></script>
+        {% endif %}
+
         <!-- App js -->
         <script src="{% static 'dash/js/jquery.dash.js' %}"></script>
         <script src="{% static 'dash/js/jquery.app.js' %}"></script>

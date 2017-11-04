@@ -34,8 +34,8 @@ class HealthierUserManager(BaseUserManager, InheritanceManager):
 
 
 def user_directory_path(instance, filename):
-        # file will be uploaded to MEDIA_ROOT/username/<filename>
-        return 'user_{0}/{1}'.format(instance.username, filename)
+    # file will be uploaded to MEDIA_ROOT/username/<filename>
+    return 'user_{0}/{1}'.format(instance.username, filename)
 
 
 class HealthierUser(AbstractBaseUser, PermissionsMixin):
@@ -53,12 +53,12 @@ class HealthierUser(AbstractBaseUser, PermissionsMixin):
         ('CON', 'Consumer'),
     )
     account_type = models.CharField(max_length=3, choices=account_choices)
-    image = models.ImageField(upload_to=user_directory_path, height_field=None, width_field=None, max_length=100, null=True,
+    image = models.ImageField(upload_to=user_directory_path, height_field=None, width_field=None, max_length=100,
+                              null=True,
                               blank=True)
     address = models.CharField(max_length=100)
     description = models.TextField(max_length=1000, blank=True)
     city = models.CharField(max_length=200)
-    country = models.CharField(max_length=200)
     phone_number = models.CharField(max_length=200)
     website = models.URLField(blank=True, null=True)
     username = models.CharField(_('Username'), blank=True, max_length=50)
@@ -76,6 +76,11 @@ class HealthierUser(AbstractBaseUser, PermissionsMixin):
     has_configured_account = models.BooleanField(_('Has Configured Account'), default=False)
     total_money = PriceField(currency='NGN', decimal_places=2, max_digits=12, default=0.00)
     healthier_id = models.CharField(max_length=50, default=generate_id("healthier_user"), blank=True)
+    first_name = models.CharField(_('First Name'), max_length=200, blank=True)
+    last_name = models.CharField(_('Last Name'), max_length=200, blank=True)
+    bank_account_name = models.CharField(_('Bank Account Name'), max_length=400, blank=True)
+    bank_name = models.CharField(_('Bank Name'), max_length=500, blank=True)
+    bank_account_number = models.CharField(_('Account Number'), max_length=30, blank=True)
 
     def __unicode__(self):
         return self.username
@@ -151,7 +156,3 @@ class HealthierUserMiscData(models.Model):
     user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="misc_data")
     user_cholesterol = models.CharField(_('Systolic Blood'), blank=True, max_length=50)
     user_weight = models.CharField(_('Diastolic Blood'), blank=True, max_length=50)
-
-
-
-

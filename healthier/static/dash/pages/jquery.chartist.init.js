@@ -7,6 +7,147 @@
 //smil-animations Chart
 
 
+    // alert('I fucking got here.');
+
+    const  a = $('#blood').val();
+    c = JSON.parse(a);
+
+    console.log(c)
+
+    b = new Array(Object.keys(c).length)
+
+  len = Array.from(Array(10).keys())
+
+    d = []
+
+   for (var key in c) {
+    // skip loop if the property is from prototype
+    if (!c.hasOwnProperty(key)) continue;
+
+       var obj = c[key];
+      for (var prop in obj) {
+      if (prop == "fields"){
+          // skip loop if the property is from prototype
+          if(!obj.hasOwnProperty(prop)) continue;
+
+          // your code
+          console.log(prop + " = " + obj[prop]);
+          for(var now in prop){
+            console.log(now);
+          }
+      }
+    }
+}
+    // console.log(d);
+
+      new Chartist.Line('#sys_blood', {
+          labels: len,
+          series: [
+            [50, 10],
+          ]
+        }, {
+          low: 0,
+          showArea: true,
+          plugins: [
+            Chartist.plugins.tooltip()
+          ]
+    });
+
+    new Chartist.Line('#dia_blood', {
+          labels: len,
+          series: [
+            [45, 50, 10],
+          ]
+        }, {
+          low: 0,
+          showArea: true,
+          plugins: [
+            Chartist.plugins.tooltip()
+          ]
+    });
+
+    new Chartist.Line('#rand_blood', {
+          labels: len,
+          series: [
+            [7, 10, '44'],
+          ]
+        }, {
+          low: 0,
+          showArea: true,
+          plugins: [
+            Chartist.plugins.tooltip()
+          ]
+    });
+
+    new Chartist.Line('#fast_blood', {
+          labels: len,
+          series: [
+            [7, 10],
+          ]
+        }, {
+          low: 0,
+          showArea: true,
+          plugins: [
+            Chartist.plugins.tooltip()
+          ]
+    });
+
+
+
+    new Chartist.Bar('#extreme-chart', {
+      labels: ['Systolic Blood Pressure', 'Diastolic Blood Pressure', 'Quarter 3'],
+      series: [
+        [5, 4, 3, 7],
+        [3, 2, 9, 5],
+        [1, 5, 8, 4],
+        [2, 3, 4, 6],
+        [4, 1, 2, 1]
+      ]
+    }, {
+      // Default mobile configuration
+      stackBars: true,
+      axisX: {
+        labelInterpolationFnc: function(value) {
+          return value.split(/\s+/).map(function(word) {
+            return word[0];
+          }).join('');
+        }
+      },
+      axisY: {
+        offset: 20
+      },
+      plugins: [
+        Chartist.plugins.tooltip()
+      ]
+    }, [
+      // Options override for media > 400px
+      ['screen and (min-width: 400px)', {
+        reverseData: true,
+        horizontalBars: true,
+        axisX: {
+          labelInterpolationFnc: Chartist.noop
+        },
+        axisY: {
+          offset: 60
+        }
+      }],
+      // Options override for media > 800px
+      ['screen and (min-width: 800px)', {
+        stackBars: false,
+        seriesBarDistance: 10
+      }],
+      // Options override for media > 1000px
+      ['screen and (min-width: 1000px)', {
+        reverseData: false,
+        horizontalBars: false,
+        seriesBarDistance: 15
+      }]
+    ]);
+
+
+
+
+
   var chart = new Chartist.Line('#smil-animations', {
   labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
   series: [
@@ -254,18 +395,6 @@ $chart.on('mousemove', function(event) {
 
 //Line chart with area
 
-new Chartist.Line('#chart-with-area', {
-  labels: [1, 2, 3, 4, 5, 6, 7, 8],
-  series: [
-    [5, 9, 7, 8, 5, 3, 5, 4]
-  ]
-}, {
-  low: 0,
-  showArea: true,
-  plugins: [
-    Chartist.plugins.tooltip()
-  ]
-});
 
 
 //Bi-polar Line chart with area only
@@ -504,58 +633,6 @@ new Chartist.Bar('#horizontal-bar-chart', {
 
 
 // Extreme responsive configuration
-
-new Chartist.Bar('#extreme-chart', {
-  labels: ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4'],
-  series: [
-    [5, 4, 3, 7],
-    [3, 2, 9, 5],
-    [1, 5, 8, 4],
-    [2, 3, 4, 6],
-    [4, 1, 2, 1]
-  ]
-}, {
-  // Default mobile configuration
-  stackBars: true,
-  axisX: {
-    labelInterpolationFnc: function(value) {
-      return value.split(/\s+/).map(function(word) {
-        return word[0];
-      }).join('');
-    }
-  },
-  axisY: {
-    offset: 20
-  },
-  plugins: [
-    Chartist.plugins.tooltip()
-  ]
-}, [
-  // Options override for media > 400px
-  ['screen and (min-width: 400px)', {
-    reverseData: true,
-    horizontalBars: true,
-    axisX: {
-      labelInterpolationFnc: Chartist.noop
-    },
-    axisY: {
-      offset: 60
-    }
-  }],
-  // Options override for media > 800px
-  ['screen and (min-width: 800px)', {
-    stackBars: false,
-    seriesBarDistance: 10
-  }],
-  // Options override for media > 1000px
-  ['screen and (min-width: 1000px)', {
-    reverseData: false,
-    horizontalBars: false,
-    seriesBarDistance: 15
-  }]
-]);
-
-
 
 
 //Distributed series
