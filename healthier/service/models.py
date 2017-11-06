@@ -54,9 +54,9 @@ class HealthierService(models.Model):
 
 class OrderedService(models.Model):
     """A paid for service request to the service organization"""
-    ordered_by = models.ForeignKey(Consumer, on_delete=models.CASCADE)
-    service = models.OneToOneField(HealthierService, on_delete=models.CASCADE, unique=True)
-    provided_by = models.ForeignKey(Provider, on_delete=models.CASCADE, blank=True)
+    ordered_by = models.ForeignKey(Consumer, on_delete=models.CASCADE,null=True)
+    service = models.OneToOneField(HealthierService, on_delete=models.CASCADE,null=True)
+    provided_by = models.ForeignKey(Provider, on_delete=models.CASCADE, blank=True, null=True)
     payment_status = models.BooleanField(default=False)
     order_id = models.CharField(max_length=200, default=generate_id("order"))
     promo_code = models.CharField(max_length=200)
@@ -67,6 +67,8 @@ class OrderedService(models.Model):
     arrival_date = models.CharField(default='', max_length=50)
     members = JSONField(default='', max_length=300)
     comment = models.TextField(default='', max_length=1000)
+    is_active = models.BooleanField(default=True)
+    confirmed = models.BooleanField(default=False)
 
     def __str__(self):
         """Return a string representation of the model."""

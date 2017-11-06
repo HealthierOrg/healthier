@@ -35,7 +35,7 @@
                             {% endfor %}
                                 {% else %}
                                     {% for service in user_services %}
-                            <div class="col-lg-4">
+                            <div class="col-lg-6">
                                 <div class="card-box project-box">
                         			<h4 class="m-t-0 m-b-5"><a href="#" class="text-inverse">{{ service.service.service_name }}</a></h4>
                                     <p class="text-success text-uppercase m-b-20 font-13">{{ service.service.group.group_name }}</p>
@@ -48,11 +48,14 @@
                                             <p class="text-muted">Orders</p>
                                         </li>
                                         <li>
-                                            <h3 class="m-b-0">&#8358; {{ service.service.orders }}</h3>
-                                            <p class="text-muted">Income Generated</p>
+                                            {% if service.is_active %}
+                                                <h3 class="m-b-0">Active</h3>
+                                            {% else %} Inactive {% endif %}
+                                            <p class="text-muted">Status</p>
                                         </li>
                                         <li>
-                                           <a href="{% url 'dashboard:service_report' %}?service={{ service.service.id }}" class="btn btn-small btn-success waves-effect waves-light">View Complete Service Report</a>
+                                           <a href="{% url 'dashboard:service_report' %}?service={{ service.service.id }}" class="btn btn-small btn-success">View Complete Service Report</a>
+                                           <a href="{% url 'dashboard:service_report' %}?service={{ service.service.id }}" class="btn btn-small btn-danger">Make new order</a>
                                         </li>
                                     </ul>
                                 </div>

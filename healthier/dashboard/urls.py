@@ -7,7 +7,7 @@ urlpatterns = [
     url(r'^$', DashboardView.as_view(), name='dashboard'),
     url(r'profile^$', login_required(ProfileView.as_view()), name='profile'),
     url(r'^finances$', login_required(FinancesView.as_view()), name='finance'),
-    url(r'^customers$', login_required(CustomerListView.as_view()), name='consumer'),
+    url(r'^orders', login_required(OrderListView.as_view()), name='consumer'),
     url(r'^providers$', login_required(AllProviderListView.as_view()), name='provider'),
     url(r'^providers/(?P<pk>\d+)/$', login_required(ProviderDetailView.as_view()), name='provider_details'),
 
@@ -35,9 +35,8 @@ urlpatterns = [
     # Settings URLs
     url(r'^settings/account$', login_required(AccountSettingsView.as_view()),
         name='account_settings'),
-    url(r'^settings/finance$', login_required(AccountSettingsView.as_view()), name='finance_settings'),
-    url(r'^settings/consumer$', login_required(AccountSettingsView.as_view()), name='consumer_settings'),
-    url(r'^settings/service$', login_required(AccountSettingsView.as_view()), name='service_settings'),
+    url(r'^settings/finance$', login_required(FinanceSettingsView.as_view()), name='finance_settings'),
+    url(r'^settings/service$', login_required(ServiceSettingsView.as_view()), name='service_settings'),
 
     # Message URLs
     url(r'^messages/view/(?P<message_id>\d+)$', view, name='view_message'),

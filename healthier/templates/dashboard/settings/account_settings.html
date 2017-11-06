@@ -17,38 +17,27 @@
                                        <div id="custom-modal">
                                             <h4 class="custom-modal-title">Basic Account Details</h4>
                                             <div class="custom-modal-text text-left">
-                                                <form role="form" method="POST" action="{% url 'dashboard:add_family' %}" enctype="multipart/form-data">
-                                                    {% csrf_token %}
                                                 <div class="form-group">
 	                                                <label class="col-md-2 control-label">Username</label>
 	                                                <div class="col-md-10">
-	                                                    <input type="text" name="username" id="username" placeholder="{{ user.username }}" class="form-control">
-	                                                     <span class="help-block"><small>Your username is the name consumers see you as.</small></span>
+	                                                    <input type="text" name="username" id="username" placeholder="{{ user.username | capfirst}}" class="form-control">
+	                                                     <span class="help-block"><small>Your username is the name of your health facility.</small></span>
                                                     </div>
 	                                            </div>
                                                 <div class="form-group">
 	                                                <label class="col-md-2 control-label">Address</label>
 	                                                <div class="col-md-10">
 	                                                    <input type="text" name="address" id="address" placeholder="{% if not user.address %} Address {% else %} {{ user.address }}{% endif %}" class="form-control">
-	                                                     <span class="help-block"><small>You facility's location</small></span>
+	                                                     <span class="help-block"><small>Your health facility's address</small></span>
                                                     </div>
 	                                            </div>
                                                <div class="form-group">
 	                                                <label class="col-md-2 control-label">City</label>
 	                                                <div class="col-md-10">
-	                                                    <input type="text" name="city" id="city" placeholder="{% if not user.city %} Address {% else %} {{ user.city }}{% endif %}" class="form-control">
-	                                                     <span class="help-block"><small>You facility's location</small></span>
+	                                                    <input type="text" name="city" id="city" placeholder="{% if not user.city %} City {% else %} {{ user.city }}{% endif %}" class="form-control">
+	                                                     <span class="help-block"><small>Your health facility's city</small></span>
                                                     </div>
 	                                            </div>
-                                                    <div class="form-group">
-	                                                <label class="col-md-2 control-label">Country</label>
-                                                        <div class="col-md-10">
-                                                            <input type="text" name="country" id="country" class="form-control"
-                                                                   placeholder="{% if not user.country %} Country {% else %}
-                                                                           {{ user.country }}{% endif %}"/>
-                                                             <span class="help-block"><small>Country</small></span>
-                                                        </div>
-	                                                </div>
                                                  <div class="form-group">
 	                                                <label class="col-md-2 control-label">Mobile Number</label>
                                                         <div class="col-md-10">
@@ -62,7 +51,7 @@
 	                                                <label class="col-md-2 control-label">Website</label>
                                                         <div class="col-md-10">
                                                             <input type="text" name="website" id="website" class="form-control"
-                                                                   placeholder="{% if not user.website %} Website {% else %}
+                                                                   placeholder="{% if not user.website %} http://example.com {% else %}
                                                                            {{ user.website }}{% endif %}"/>
                                                              <span class="help-block"><small>Do you have a personal website?</small></span>
                                                         </div>
@@ -72,7 +61,7 @@
 	                                                <label class="col-md-2 control-label">Description</label>
                                                         <div class="col-md-10">
                                                             <textarea rows="6" name="description" id="description" class="form-control" placeholder="{% if not user.description %} Description {% else %} {{ user.description }}{% endif %}"></textarea>
-                                                             <span class="help-block"><small>Describe yourself and how you render your services</small></span>
+                                                             <span class="help-block"><small>Describe your facility and how you render your services</small></span>
                                                         </div>
 	                                                </div>
                                                     <div class="form-group">
@@ -84,7 +73,6 @@
                                                         </div>
 	                                                </div>
                                                     <button type="submit" class="btn btn-lg btn-googleplus waves-effect waves-light">Update Details</button>
-                                                </form>
                                             </div>
                                         </div>
                                     </div>

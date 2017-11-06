@@ -16,7 +16,7 @@
 
                                     <div class="widget-box-2">
                                         <div class="widget-detail-2">
-                                            <span class="badge badge-success pull-left m-t-20">32% <i class="zmdi zmdi-trending-up"></i> </span>
+                                            <span class="badge badge-success">32% <i class="zmdi zmdi-trending-up"></i> </span>
                                             <h2 class="m-b-0">&#8358; {{ request.user.total_money.gross }} </h2>
                                             <p class="text-muted m-b-25">Total Income Made</p>
                                         </div>
@@ -31,8 +31,8 @@
 
                                     <div class="widget-box-2">
                                         <div class="widget-detail-2">
-                                            <span class="badge badge-success pull-left m-t-20">32% <i class="zmdi zmdi-trending-up"></i> </span>
-                                            <h2 class="m-b-0"> {{ provider_customers | length }} </h2>
+                                            <span class="badge badge-success ">32% <i class="zmdi zmdi-trending-up"></i> </span>
+                                            <h2 class="m-b-0"> {{ customer_count }} </h2>
                                             <p class="text-muted m-b-25">Customer(s)</p>
                                         </div>
                                     </div>
@@ -41,12 +41,12 @@
 
                             <div class="col-lg-3 col-md-6">
                         		<div class="card-box">
-                        			<h4 class="header-title m-t-0 m-b-30">Sales Today</h4>
+                        			<h4 class="header-title m-t-0 m-b-30">Service Sales Today</h4>
 
                                     <div class="widget-box-2">
                                         <div class="widget-detail-2">
-                                            <span class="badge badge-pink pull-left m-t-20">32% <i class="zmdi zmdi-trending-up"></i> </span>
-                                            <h2 class="m-b-0">&#8358; 158 </h2>
+                                            <span class="badge badge-pink ">{{ rand_today }}% <i class="zmdi zmdi-trending-up"></i> </span>
+                                            <h2 class="m-b-0">{{ rand_today }} </h2>
                                             <p class="text-muted m-b-25">Income today</p>
                                         </div>
                                     </div>
@@ -54,11 +54,11 @@
                             </div>
                             <div class="col-lg-3 col-md-6">
                         		<div class="card-box">
-                        			<h4 class="header-title m-t-0 m-b-30">Sales this month</h4>
+                        			<h4 class="header-title m-t-0 m-b-30">Service Sales this month</h4>
                                     <div class="widget-box-2">
                                         <div class="widget-detail-2">
-                                            <span class="badge badge-pink pull-left m-t-20">32% <i class="zmdi zmdi-trending-up"></i> </span>
-                                            <h2 class="m-b-0">&#8358; 158 </h2>
+                                            <span class="badge badge-pink ">{{ rand_month }}% <i class="zmdi zmdi-trending-up"></i> </span>
+                                            <h2 class="m-b-0">{{ rand_month }} </h2>
                                             <p class="text-muted m-b-25">Income this month</p>
                                         </div>
                                     </div>

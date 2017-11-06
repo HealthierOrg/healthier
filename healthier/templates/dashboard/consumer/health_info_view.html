@@ -72,38 +72,32 @@
 
 						</div>
                         <div class="row">
-							<div class="col-lg-6">
+                        	<div class="col-lg-6">
 								<div class="card-box">
-                        			<h4 class="header-title m-t-0 m-b-30">Blood Data</h4>
-
-                                    <p class="text-muted font-13 m-b-15">
-                                        Data about your details over data
-                                    </p>
-
-                                    <table class="table table-striped m-0">
-
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Systolic Blood Pressure</th>
-                                                <th>Diastolic Blood Pressure</th>
-                                                <th>Random Blood Sugar</th>
-                                                <th>Fasting Blood Sugar</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                           {% for data in blood_detail %}
-                                            <tr>
-                                                <th scope="row">{{ data.id }}</th>
-                                                <td>{{ data.sys_blood }}</td>
-                                                <td>{{ data.dia_blood }}</td>
-                                                <td>{{ data.random_blood }}</td>
-                                                <td>{{ data.fasting_blood }}</td>
-                                            </tr>
-                                        {% endfor %}
-                                        </tbody>
-                                    </table>
-
+                        			<h4 class="header-title m-t-0 m-b-30">Systolic Blood Graph</h4>
+                                        <input type="hidden" value="{{ blood_detail }}" id="blood">
+									<div id="dia_blood" class="ct-chart ct-golden-section"></div>
+								</div>
+							</div>
+                            <div class="col-lg-6">
+								<div class="card-box">
+                        			<h4 class="header-title m-t-0 m-b-30">Diastolic Blood Graph</h4>
+                                        <input type="hidden" value="{{ blood_detail }}" id="blood">
+									<div id="sys_blood" class="ct-chart ct-golden-section"></div>
+								</div>
+							</div>
+                            <div class="col-lg-6">
+								<div class="card-box">
+                        			<h4 class="header-title m-t-0 m-b-30">Random Blood Sugar Graph</h4>
+                                        <input type="hidden" value="{{ blood_detail }}" id="blood">
+									<div id="rand_blood" class="ct-chart ct-golden-section"></div>
+								</div>
+							</div>
+                            <div class="col-lg-6">
+								<div class="card-box">
+                        			<h4 class="header-title m-t-0 m-b-30">Fasting Blood Sugar</h4>
+                                        <input type="hidden" value="{{ blood_detail }}" id="blood">
+									<div id="fast_blood" class="ct-chart ct-golden-section"></div>
 								</div>
 							</div>
                             <div class="col-lg-6">
