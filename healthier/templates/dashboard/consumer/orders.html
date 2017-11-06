@@ -26,24 +26,24 @@
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-                                        {% if consumers %}
+                                        {% if orders %}
                                         <tbody>
-                                              {% for consumer in consumers %}
+                                              {% for order in orders %}
                                             <tr>
-                                                <td>{{ consumer.service.service_name }}</td>
-                                                <td>{{ consumer.ordered_by.healthier_id.username  | capfirst}}</td>
-                                                <td>{{ consumer.ordered_by.healthier_id.email }}</td>
-                                                <td>{{ consumer.ordered_by.healthier_id.phone_number }}</td>
-                                                <td>{% if consumer.payment_status %} Paid {% else %}Not Paid{% endif %}</td>
-                                                <td>&#8358;{{ consumer.price.gross }}</td>
-                                                <td>{{ consumer.arrival_date }}</td>
-                                                <td>{{ consumer.arrival_time }}</td>
+                                                <td>{{ order.service.service_name }}</td>
+                                                <td>{{ order.ordered_by.healthier_id.username  | capfirst}}</td>
+                                                <td>{{ order.ordered_by.healthier_id.email }}</td>
+                                                <td>{{ order.ordered_by.healthier_id.phone_number }}</td>
+                                                <td>{% if order.payment_status %} Paid {% else %}Not Paid{% endif %}</td>
+                                                <td>&#8358;{{ order.price.gross }}</td>
+                                                <td>{{ order.arrival_date }}</td>
+                                                <td>{{ order.arrival_time }}</td>
                                                 <td>
-                                                    <a href="{% url 'dashboard:consumer' %}?action=info&id={{  consumer.id}}">
+                                                    <a href="{% url 'dashboard:consumer' %}?action=confirm&order={{  order.id}}&customer={{ order.ordered_by.healthier_id.id }}">
                                                         <button type="button"  class="btn btn-small btn-success waves-effect waves-light">Confirm time and date</button></a>
-                                                    <a href="{% url 'dashboard:consumer' %}?action=sendMessage&id={{  consumer.id}}">
+                                                    <a href="{% url 'dashboard:consumer' %}?action=sendMessage&order={{  order.id}}&customer={{ order.ordered_by.healthier_id.id }}">
                                                         <button type="button"  class="btn btn-small btn-apple waves-effect waves-light">Message User</button></a>
-                                                    <a href="{% url 'dashboard:consumer' %}?action=block&id={{  consumer.id}}">
+                                                    <a href="{% url 'dashboard:consumer' %}?action=block&order={{  order.id}}&customer={{ order.ordered_by.healthier_id.id }}">
                                                         <button type="button"  class="btn btn-small btn-danger waves-effect waves-light">Block User</button></a>
                                                 </td>
                                             </tr>

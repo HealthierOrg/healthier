@@ -68,6 +68,7 @@ class OrderedService(models.Model):
     members = JSONField(default='', max_length=300)
     comment = models.TextField(default='', max_length=1000)
     is_active = models.BooleanField(default=True)
+    confirmed = models.BooleanField(default=False)
 
     def __str__(self):
         """Return a string representation of the model."""

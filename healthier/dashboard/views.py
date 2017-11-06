@@ -1,3 +1,5 @@
+import random
+
 from django.core import serializers
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
@@ -10,7 +12,6 @@ from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
 from healthier.consumers.models import Consumer
 from healthier.dashboard.forms import AccountDetailForm, ServiceRequestConfigurationForm
-from healthier.messenger.views import compose
 from healthier.providers.models import Provider
 from healthier.service.models import HealthierService, ServiceRequests, OrderedService, SuggestService
 from healthier.user.models import HealthierUser, Family, HealthierUserAilmentData, HealthierUserClinicalData, \
@@ -25,14 +26,20 @@ class DashboardView(View):
     def get(self, request):
         storage = messages.get_messages(request)
         storage.used = True
+        self.context['rand_today'] = random.randint(20, 50)
+        self.context['rand_month'] = random.randint(20, 50)
         user_specific_template = self.provider_dashboard if request.user.account_type == "PRO" else \
             self.consumer_dashboard
         if request.user.account_type == "PRO":
-            self.context["provider_customers"] = OrderedService.objects \
-                .filter(provided_by_id=request.user.id)
+            print(self.request.user.id)
+            orders = OrderedService.objects.filter(provided_by__healthier_id_id=self.request.user.id).distinct()
+            print(orders)
+            self.context['customer_count'] = len(set(orders))
             self.context["provider_services"] = ServiceRequests.objects.filter(
                 requested_by__healthier_id=request.user.id)
-        self.context['consumer_services'] = OrderedService.objects.filter(ordered_by_id=request.user.id)
+        self.context['consumer_services'] = OrderedService.objects.filter(ordered_by__healthier_id_id=request.user.id)
+        orders = self.context['consumer_services'].distinct()
+        self.context['services_count'] = len(set(orders))
         try:
             self.context['inbox'] = Message.objects.filter(recipient=request.user.id)[3]
         except IndexError:
@@ -53,33 +60,48 @@ class FinancesView(View):
         return render(request, self.template_name)
 
 
-class OrderListView(ListView):
+class OrderListView(TemplateView):
     template_name = 'dashboard/consumer/orders.html'
     detail_template_name = 'dashboard/consumer/consumer_detail.html'
-    context_object_name = 'consumers'
+    context_object_name = 'orders'
     model = Consumer
+    context = {}
 
-    def get_queryset(self):
-        queryset = OrderedService.objects.filter(provided_by__healthier_id_id=self.request.user.id)
-        return queryset
+    def get(self, request, *args, **kwargs):
+        self.context['has_tables'] = 'True'
+        self.context['current_page_title'] = 'Orders'
+        self.context['orders'] = OrderedService.objects.filter(provided_by__healthier_id_id=self.request.user.id)
+        action = self.request.GET.get('action', None)
+        order_id = self.request.GET.get('order', None)
+        if action == 'confirm':
+            response_obj = HttpResponseRedirect(reverse('dashboard:consumer'))
+            order = OrderedService.objects.get(id=order_id)
+            if order.confirmed:
+                response_obj = HttpResponseRedirect(reverse('dashboard:consumer'))
+                response_obj.set_cookie('status', True)
+                response_obj.set_cookie('message', "Order has been previously confirmed")
+                return response_obj
+            else:
+                response_obj.set_cookie('status', True)
+                response_obj.set_cookie('message', "The order has been successfully confirmed")
+                return response_obj
+        elif action == 'sendMessage':
+            return HttpResponseRedirect(reverse('dashboard:compose_message'))
+        elif action == "block":
+            response_obj = HttpResponseRedirect(reverse('dashboard:consumer'))
+            order = OrderedService.objects.get(id=order_id)
+            order.is_active = False
+            order.save()
+            response_obj.set_cookie('status', True)
+            response_obj.set_cookie('message', "The order has been blocked.")
+            return response_obj
+        return render(request, self.template_name, self.context)
 
     def get_context_data(self, **kwargs):
         super(OrderListView, self).__init__()
         context = super(OrderListView, self).get_context_data(**kwargs)
         context['has_tables'] = 'True'
         context['current_page_title'] = 'Orders'
-        action = self.request.GET.get('action', None)
-        customer_id = self.request.GET.get('id', None)
-        if action == "info":
-            context["current_page_title"] = "Customer Detail"
-            context["base_consumer_info"] = HealthierUser.objects.get(id=customer_id)
-            context["registered_services"] = OrderedService.objects.filter\
-                (ordered_by__id=customer_id)
-            return render(self.request, self.detail_template_name, context)
-        elif action == 'sendMessage':
-            return compose(self.request, recipient=customer_id)
-        elif action == "block":
-            pass
         return context
 
 
@@ -249,6 +271,7 @@ class ServiceSettingsView(TemplateView):
         response_obj.set_cookie('status', True)
         response_obj.set_cookie('message', "Your account has been successfully updated")
         return response_obj
+
 
 class ServiceConfiguration(TemplateView):
     template_name = 'dashboard/services/checkout_cart.html'
