@@ -150,7 +150,7 @@ class ServiceDetails(AbstractDetail):
         ```
         """
         try:
-            service_group = request.data.get('group', None)
+            service_group = request.data.get('group')
         except KeyError:
             return Response({'error': 'group must be specified'})
 
@@ -182,7 +182,7 @@ class ServiceGroupDetail(AbstractDetail):
         }
         ```
         """
-        service_group_category = request.data.get('category', None)
+        service_group_category = request.data.get('category')
 
         try:
             category = ServiceGroupCategory.objects.get(category_name=service_group_category)

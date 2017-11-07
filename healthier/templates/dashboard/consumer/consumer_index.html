@@ -2,11 +2,13 @@
 
 {% include 'registration/header.html' %}
 
-<body class="fixed-left">
+    <body class="fixed-left">
 
-{% include 'dashboard/dashboard_nav.html' %}
+        <!-- Begin page -->
+        <div id="wrapper">
+            {% include 'dashboard/dashboard_nav.html' %}
 
-    <div class="content-page">
+                <div class="content-page">
                 <div class="content">
                     <div class="container">
                         <div class="row">
@@ -127,8 +129,8 @@
 
                     </div> <!-- container -->
 
-                </div> <!-- content -->
+                </div>
 
             </div>
-
-{% include 'dashboard/footer.html' %}
+        </div>
+        {% include 'dashboard/footer.html' %}

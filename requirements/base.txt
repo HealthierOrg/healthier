@@ -71,3 +71,5 @@ django-webpack-loader
 
 django-annoying
 
+django-bulk-update
+

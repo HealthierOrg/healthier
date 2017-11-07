@@ -1,26 +1,31 @@
  <footer class="footer">
                     2017 © Healthier.
  </footer>
+
+</div>
  {% load static %}
 
+        <script>
+            var resizefunc = [];
+        </script>
 
-
-        <!-- jQuery  -->
         <script src="{% static 'dash/js/jquery.min.js' %}"></script>
-        <script src="{% static 'dash/plugins/toastr/toastr.min.js' %}"></script>
-        <script src="{% static 'js/bootstrap-notify.js' %}"></script>
         <script src="{% static 'dash/js/bootstrap.min.js' %}"></script>
         <script src="{% static 'dash/js/detect.js' %}"></script>
         <script src="{% static 'dash/js/fastclick.js' %}"></script>
         <script src="{% static 'dash/js/jquery.slimscroll.js' %}"></script>
         <script src="{% static 'dash/js/jquery.blockUI.js' %}"></script>
         <script src="{% static 'dash/js/waves.js' %}"></script>
-        <script src="{% static 'dash/js/wow.min.js' %}"></script>
         <script src="{% static 'dash/js/jquery.nicescroll.js' %}"></script>
         <script src="{% static 'dash/js/jquery.scrollTo.min.js' %}"></script>
+	    <script src="{% static 'dash/plugins/morris/morris.min.js' %}"></script>
+		<script src="{% static 'dash/plugins/raphael/raphael-min.js' %}"></script>
+		<script src="{% static 'dash/pages/jquery.morris.init.js' %}"></script>
+        <script src="{% static 'dash/js/jquery.core.js' %}"></script>
+        <script src="{% static 'dash/js/jquery.app.js' %}"></script>
         <script src="{% static 'dash/js/js.cookie.js' %}"></script>
-
-
+        <script src="{% static 'dash/plugins/toastr/toastr.min.js' %}"></script>
+        <script src="{% static 'js/main.healthier.js' %}"></script>
 
         {% if has_chart %}
 		<script src="{% static 'dash/plugins/chartist/dist/chartist.min.js' %}"></script>
@@ -28,12 +33,7 @@
 		<script src="{% static 'dash/pages/jquery.chartist.init.js' %}"></script>
         {% endif %}
 
-        <!-- App js -->
-        <script src="{% static 'dash/js/jquery.app.js' %}"></script>
-        <script src="{% static 'js/main.healthier.js' %}"></script>
-
-
-                    <script src="{% static 'dash/plugins/switchery/switchery.min.js' %}"></script>
+        <script src="{% static 'dash/plugins/switchery/switchery.min.js' %}"></script>
         <script src="{% static 'dash/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'dash/plugins/multiselect/js/jquery.multi-select.js' %}"></script>
         <script type="text/javascript" src="{% static 'dash/plugins/jquery-quicksearch/jquery.quicksearch.js' %}"></script>

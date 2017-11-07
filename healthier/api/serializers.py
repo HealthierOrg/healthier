@@ -54,7 +54,7 @@ class UserSerializer(CountryFieldMixin, serializers.ModelSerializer):
         # Save the default User fields first, so you can get the User instance
         user.save()
 
-        healthier_user = HealthierUser.objects.get(email=user.email)
+        healthier_user = HealthierUser.objects.get(request=user.email)
         print(healthier_user.id)
         print(type(healthier_user))
         account_details = Provider(user_details_id=healthier_user) if user.account_type == "PRO" else Consumer(user_details_id=healthier_user)
