@@ -3,7 +3,7 @@ import random
 from django.core import serializers
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.urls import reverse
 from django.views import View
 from django.views.generic import DetailView, FormView, ListView, TemplateView
@@ -18,12 +18,12 @@ from healthier.user.models import HealthierUser, Family, HealthierUserAilmentDat
     HealthierUserBloodData, HealthierUserMiscData
 
 
-class DashboardView(View):
+class DashboardView(TemplateView):
     provider_dashboard = "dashboard/provider/provider_index.html"
     consumer_dashboard = "dashboard/consumer/consumer_index.html"
     context = {'current_page_title': 'Dashboard'}
 
-    def get(self, request):
+    def get(self, request, **kwargs):
         storage = messages.get_messages(request)
         storage.used = True
         self.context['rand_today'] = random.randint(20, 50)
@@ -31,13 +31,12 @@ class DashboardView(View):
         user_specific_template = self.provider_dashboard if request.user.account_type == "PRO" else \
             self.consumer_dashboard
         if request.user.account_type == "PRO":
-            print(self.request.user.id)
             orders = OrderedService.objects.filter(provided_by__healthier_id_id=self.request.user.id).distinct()
-            print(orders)
             self.context['customer_count'] = len(set(orders))
             self.context["provider_services"] = ServiceRequests.objects.filter(
                 requested_by__healthier_id=request.user.id)
-        self.context['consumer_services'] = OrderedService.objects.filter(ordered_by__healthier_id_id=request.user.id)
+        self.context['consumer_services'] = OrderedService.objects.filter(ordered_by__healthier_id_id=request.user.id
+                                                                          , payment_status=True)
         orders = self.context['consumer_services'].distinct()
         self.context['services_count'] = len(set(orders))
         try:
@@ -71,8 +70,8 @@ class OrderListView(TemplateView):
         self.context['has_tables'] = 'True'
         self.context['current_page_title'] = 'Orders'
         self.context['orders'] = OrderedService.objects.filter(provided_by__healthier_id_id=self.request.user.id)
-        action = self.request.GET.get('action', None)
-        order_id = self.request.GET.get('order', None)
+        action = self.request.GET.get('action')
+        order_id = self.request.GET.get('order')
         if action == 'confirm':
             response_obj = HttpResponseRedirect(reverse('dashboard:consumer'))
             order = OrderedService.objects.get(id=order_id)
@@ -117,7 +116,7 @@ class UserServicesListView(ListView):
         context['current_page_title'] = "My Services"
         context['user_services'] = ServiceRequests.objects.filter(
             requested_by_id=user_details.id) if self.request.user.account_type == "PRO" \
-            else OrderedService.objects.filter(ordered_by_id=self.request.user.id)
+            else OrderedService.objects.filter(ordered_by_id=self.request.user.id, payment_status=True, is_active=True)
         context["all_services"] = HealthierService.objects.all()
         return context
 
@@ -194,7 +193,7 @@ class BaseSettingsView(FormView):
 
     def form_valid(self, form):
         healthier_user_id = form.cleaned_data["id"]
-        healthier_user = self.form_class.objects.get(id=healthier_user_id)
+        healthier_user = self.form_class.objects.get(request=healthier_user_id)
         return HttpResponse(healthier_user)
 
     def form_invalid(self, form):
@@ -273,21 +272,25 @@ class ServiceSettingsView(TemplateView):
         return response_obj
 
 
-class ServiceConfiguration(TemplateView):
+class OrderCheckoutView(TemplateView):
     template_name = 'dashboard/services/checkout_cart.html'
     context = {}
 
     def get(self, request, **kwargs):
         self.context['current_page_title'] = "Checkout Service"
         self.context['keep_page_title'] = True
-        self.context['service_details'] = OrderedService.objects.filter(ordered_by__healthier_id_id=request.user.id)
+        self.context['service_details'] = OrderedService.objects.filter(ordered_by__healthier_id_id=request.user.id, payment_status=False)
         members_count = [len(i.members) for i in self.context['service_details']]
-        total = set([i.price.gross * (a+1) for a in members_count for i in self.context['service_details']])
+        total = set([i.price.gross * (a + 1) for a in members_count for i in self.context['service_details']])
         self.context['members_count'] = members_count
         self.context['total'] = total
         self.context['price_sum'] = sum(total)
-        return render(request, self.template_name,
-                      self.context)
+        self.context['request'] = request
+        response = render_to_response(self.template_name,
+                                      self.context)
+        service_ids = [i.order_id for i in self.context.get('service_details')]
+        request.session['order_ids'] = service_ids
+        return response
 
 
 class OrderServiceStepView(TemplateView):
@@ -337,10 +340,11 @@ class OrderServiceStepView(TemplateView):
             OrderedService(ordered_by=consumer_details, service=service_details, provided_by=provider_details,
                            price=service_request_details.price,
                            **response, members=members).save()
-            consumer = HealthierUser.objects.get(id=request.user.id)
-            provider = HealthierUser.objects.get(id=provider_id)
-            HealthierService.objects.filter(id=service_id).update(orders=int(service_request_details.service.orders) + 1,
-                                                                  views=int(service_request_details.service.views) + 1)
+            consumer = HealthierUser.objects.get(request=request.user.id)
+            provider = HealthierUser.objects.get(request=provider_id)
+            HealthierService.objects.filter(id=service_id).update(
+                orders=int(service_request_details.service.orders) + 1,
+                views=int(service_request_details.service.views) + 1)
             consumer.total_money += service_request_details.price
             provider.total_money += service_request_details.price
             consumer.save(), provider.save()
@@ -376,7 +380,7 @@ class OrderServiceConfigurationView(TemplateView):
         response = request.POST.dict()
         response.pop('csrfmiddlewaretoken')
         user_id = Provider.objects.get(healthier_id=request.user.id)
-        service_id = self.request.GET.get('service', None)
+        service_id = self.request.GET.get('service')
         requested_service = ServiceRequests(is_ordered=True, requested_by=user_id, service_id=service_id, **response)
         requested_service.save()
         response_obj = HttpResponseRedirect(reverse('dashboard:dashboard_my_services'))
@@ -434,7 +438,7 @@ class AddFamilyView(TemplateView):
     def post(self, request):
         response = request.POST.dict()
         response.pop('csrfmiddlewaretoken')
-        user_id = HealthierUser.objects.get(id=request.user.id)
+        user_id = HealthierUser.objects.get(request=request.user.id)
         member = Family(head=user_id, **response)
         member.save()
         response_obj = HttpResponseRedirect(reverse('dashboard:family'))
@@ -453,6 +457,26 @@ def remove_family(request, member_id):
 
 class FailedPaymentView(TemplateView):
     pass
+
+
+class SuccessPaymentView(TemplateView):
+    template_name = 'dashboard/consumer/success_billing.html'
+    context = {}
+
+    def get(self, request, *args, **kwargs):
+        self.context['current_page_title'] = "Payments"
+        self.context['request'] = request
+        response = render_to_response(self.template_name, self.context)
+        order_ids = request.session.get('order_ids')
+        for order_id in order_ids:
+            service = OrderedService.objects.get(order_id=order_id)
+            service.payment_status = True
+            service.save()
+        self.context['paid_services'] = OrderedService.objects.filter(ordered_by__healthier_id_id=request.user.id,
+                                                                      payment_status=True)
+        response.set_cookie('status', True)
+        response.set_cookie('message', "Your payment was successful.")
+        return response
 
 
 class HealthDataUpload(TemplateView):

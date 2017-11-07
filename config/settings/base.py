@@ -331,7 +331,9 @@ PAYSTACK_SECRET_KEY = env("PAYSTACK_SECRET_KEY", default="sk_test_c7a653a53722b8
 
 PAYSTACK_PUBLIC_KEY = env("PAYSTACK_PUBLIC_KEY", default="pk_test_1fcc720e3c4c0b2cf640d7a830472215da1f524b")
 
-PAYSTACK_FAILED_URL = "dahsboard:order_service_checkout_failed"
+PAYSTACK_FAILED_URL = "dashboard:billing_failure"
+
+PAYSTACK_SUCCESS_URL = "dashboard:billing_success"
 
 
 HUEY = {

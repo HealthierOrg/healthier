@@ -25,7 +25,7 @@ class AbstractDetail(APIView):
         return self.MODEL.objects.all()
 
     def get(self, request, format=None):
-        id = request.query_params.get(self.ID_NAME, None)
+        id = request.query_params.get(self.ID_NAME)
         if id:
             matching_object = self.get_object(id)
             serializer = self.SERIALIZER(matching_object)
@@ -43,7 +43,7 @@ class AbstractDetail(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def put(self, request, format=None):
-        id = request.data.get(self.ID_NAME, None)
+        id = request.data.get(self.ID_NAME)
         try:
             matching_object = self.get_object(id)
         except self.MODEL.DoesNotExist:
@@ -56,7 +56,7 @@ class AbstractDetail(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, format=None):
-        id = request.data.get(self.ID_NAME, None)
+        id = request.data.get(self.ID_NAME)
         matching_object = self.get_object(id)
         matching_object.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

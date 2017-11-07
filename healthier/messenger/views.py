@@ -19,7 +19,7 @@ def compose(request, recipient=None):
         sender = request.user
         form_response = request.POST.dict()
         print(form_response['recipient'])
-        form_response['recipient'] = HealthierUser.objects.get(id=form_response.get('recipient'))
+        form_response['recipient'] = HealthierUser.objects.get(request=form_response.get('recipient'))
         form_response.pop('csrfmiddlewaretoken')
         message_obj = Message(sender=sender, **form_response)
         message_obj.save()

@@ -20,17 +20,16 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
 
             <div class="left side-menu">
                 <div class="sidebar-inner slimscrollleft">
                     <div class="user-box">
                         <div class="user-img">
-                            <img src="{{ user.image_url|default_if_none:'/static/img/default_user.png' }}"
-                                             class="img-circle img-thumbnail img-responsive" alt="profile-image">
+                               <img src="{% if request.user.image_url %}{{ request.user.image_url }}{% else %} /static/img/default_user.png {% endif %}"
+                                    alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                         </div>
-                        <h5><a href="#">{{ user.username | capfirst }}</a> </h5>
+                        <h5><a href="#">{{ request.user.username | capfirst }}</a> </h5>
                         <ul class="list-inline">
                             {% if request.user.account_type == "CON" %}
                             <li>
@@ -54,12 +53,12 @@
                                 <a href="{% url 'dashboard:dashboard' %}" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
                             </li>
 
-                            {% if user.account_type == "PRO" %}
+                            {% if request.user.account_type == "PRO" %}
                             <li>
                                 <a href="{% url 'dashboard:consumer' %}" class="waves-effect"><i class="zmdi zmdi-group"></i><span> Orders </span></a>
                             </li>
                             {% endif %}
-                            {% if user.account_type == "CON" %}
+                            {% if request.user.account_type == "CON" %}
                                 <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-hospital"></i><span> Health Manager </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
