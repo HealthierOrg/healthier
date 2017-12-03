@@ -33,7 +33,7 @@
                                             </div>
                                         <br>
                                         {% if user.account_type == "PRO" %}
-                                        <a href="{% url 'dashboard:render_service' service_id=service.id %}" class="btn btn-small btn-googleplus waves-effect waves-light">Offer Service</a>
+                                        <a href="{% url 'dashboard:render_service' %}?service_id={{ service.id }}" class="btn btn-small btn-googleplus waves-effect waves-light">Offer Service</a>
                                         {% else %}
                                         <a href="{% url 'dashboard:order_service_step' 'chooseProvider' %}?service={{ service.id }}" class="btn btn-small btn-googleplus waves-effect waves-light">Order Service</a>
                                         {% endif%}

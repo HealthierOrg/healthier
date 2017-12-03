@@ -4006,3 +4006,24 @@ img.alignright {
   margin: 10px 0 10px 20px; }
 
 /*# sourceMappingURL=style.css.map */
+
+.wrapper{
+  margin: 60px auto;
+  text-align: center;
+}
+
+#pagination-demo{
+  display: inline-block;
+  margin-bottom: 1.75em;
+}
+#pagination-demo li{
+  display: inline-block;
+}
+
+.page-content{
+  background: #eee;
+  display: inline-block;
+  padding: 10px;
+  width: 100%;
+  max-width: 660px;
+}

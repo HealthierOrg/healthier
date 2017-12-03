@@ -1,0 +1,866 @@
+category_id,group_id,service_name, details,id, orders, views
+1,1,CT 3 D Reconstruction,,,,,,
+1,1,CT 3DCT
+1,1,CT Abdomen
+1,1,CT Abdomen and Pelvis
+1,1,CT angiogram-aortici
+1,1,CT Ankel Joint Left
+1,1,CT Ankel Joint Right
+1,1,CT Ankle Joint
+1,1,CT Ankle Joint (Plain)
+1,1,CT Brain
+1,1,CT Brain (Plain)
+1,1,CT BRAIN + CONTRAST
+1,1,CT Brain Angiography
+1,1,CT Brain With Sella (Plain)
+1,1,CT CALCIUM SCORING
+1,1,CT CARDIAC
+1,1,CT Cardiac With Coronary Vessels
+1,1,CT Carotid Angiography
+1,1,CT CERVICAL SPINE
+1,1,CT CERVICO-DORSAL SPINE
+1,1,CT Chest
+1,1,CT Chest (Plain)
+1,1,CT Chest / Abdomen and Pelvis (Plain)
+1,1,CT Chest / Thorax (Plain)
+1,1,CT Chest with Abdomen (Plain)
+1,1,CT CRANIOFACIAL
+1,1,CT DORSAL SPINE
+1,1,CT DORSO-LUMAR SPINE
+1,1,CT Elbow
+1,1,CT Elbow (Plain)
+1,1,CT Elbow Left
+1,1,CT Elbow Right
+1,1,CT Extended Peripheral Angiography
+1,1,CT Extremity (Plain)
+1,1,CT Extremity (Plain+Contrast)
+1,1,CT FINGER
+1,1,CT GUIDED BIOPSY
+1,1,CT Hand
+1,1,CT Hand (Plain)
+1,1,CT Hand Left
+1,1,CT Hand Right
+1,1,CT Hip Joint
+1,1,CT Hip Joint (Plain)
+1,1,CT HIP JOINT LEFT
+1,1,CT HIP JOINT RIGHT
+1,1,CT HR Chest
+1,1,CT HR Chest (Plain)
+1,1,CT HR Temporal Bone
+1,1,CT IAM Cuts Plain
+1,1,CT IVP / IVU
+1,1,CT Joints
+1,1,CT Knee
+1,1,CT KNEE (LEFT)
+1,1,CT KNEE (RIGHT)
+1,1,CT Leg
+1,1,CT Leg (Plain)
+1,1,CT LEG LEFT
+1,1,CT LEG RIGHT
+1,1,CT Lower Abdomen and Pelvis
+1,1,CT Lumbar Spine
+1,1,CT Mandible Bone
+1,1,CT MASTDIN
+1,1,CT Maxilla Contrast
+1,1,CT Maxilla Plain
+1,1,CT MAXILLOFACIAL
+1,1,CT Myelogram
+1,1,CT NASOPHARYNX
+1,1,CT Nasopharynx & Base of Skull
+1,1,CT Neck
+1,1,CT Neck (Plain)
+1,1,CT NECK + CONTRAST
+1,1,CT Orbit
+1,1,CT Orbit (Plain)
+1,1,CT Para Nasal Sinuses (Limited)
+1,1,CT Pelvimetry
+1,1,CT Pelvis
+1,1,CT Pelvis (Plain)
+1,1,CT Peripheral Angiography-Lower Extremity
+1,1,CT Peripheral Angiography-Upper Extremity
+1,1,CT Pulmonary Angiography
+1,1,CT Renal Angiography
+1,1,CT RIBS
+1,1,CT Sacro-iliac Joint
+1,1,CT Sacro-iliac Joint (Plain)
+1,1,CT Scanogram
+1,1,CT Sella Contrast
+1,1,CT Sella Plain
+1,1,CT Shoulder Joint
+1,1,CT Shoulder Joint (Plain)
+1,1,CT SHOULDER JOINT LEFT
+1,1,CT SHOULDER JOINT RIGHT
+1,1,CT Spine
+1,1,CT Spine (3 Level) Contrast
+1,1,CT Spine (Plain)
+1,1,CT Spine(3 level) Plain
+1,1,CT Upper Abdomen (Plain)
+1,1,CT Venography
+1,1,CT Wrist
+1,1,CT Wrist (Plain)
+1,1,CT WRIST LEFT
+1,1,CT WRIST RIGHT
+1,1,HRCT CHEST
+1,3,MRI Abdomen & Pelvis - [1.5 Tesla]
+1,3,MRI Abdomen - [1.5 Tesla]
+1,3,MRI Ankle Joint (LEFT) - [1.5 Tesla]
+1,3,MRI Ankle Joint (RIGHT) - [1.5 Tesla]
+1,3,MRI ANKLE JOINT LEFT - [1.5 Tesla]
+1,3,MRI ANKLE JOINT RIGHT - [1.5 Tesla]
+1,3,MRI Arm (Right) - [1.5 Tesla]
+1,3,MRI ARM LEFT - [1.5 Tesla]
+1,3,MRI ARM RIGHT - [1.5 Tesla]
+1,3,MRI Brain & Angiography - [1.5 Tesla]
+1,3,MRI Brain & Venogram - [1.5 Tesla]
+1,3,MRI Brain - [1.5 Tesla]
+1,3,MRI Brain With Contrast - [1.5 Tesla]
+1,3,MRI Brain With Pituitary - [1.5 Tesla]
+1,3,MRI BREAST
+1,3,MRI Cervical Spine - [1.5 Tesla]
+1,3,MRI Chest - [1.5 Tesla]
+1,3,MRI CRANIOFACIAL - [1.5 Tesla]
+1,3,MRI Dorsal Spine - [1.5 Tesla]
+1,3,MRI DORSO-LUMBAR - [1.5 Tesla]
+1,3,MRI Elbow - [1.5 Tesla]
+1,3,MRI ELBOW LEFT - [1.5 Tesla]
+1,3,MRI ELBOW RIGHT - [1.5 Tesla]
+1,3,MRI Femur - [1.5 Tesla]
+1,3,MRI FEMUR LEFT - [1.5 Tesla]
+1,3,MRI FEMUR RIGHT - [1.5 Tesla]
+1,3,MRI Hand - [1.5 Tesla]
+1,3,MRI HAND LEFT - [1.5 Tesla]
+1,3,MRI HAND RIGHT - [1.5 Tesla]
+1,3,MRI Hip Joint - [1.5 Tesla]
+1,3,MRI HIP JOINT LEFT - [1.5 Tesla]
+1,3,MRI HIP JOINT RIGHT - [1.5 Tesla]
+1,3,MRI KNEE (LEFT) - [1.5 Tesla]
+1,3,MRI KNEE (RIGHT) - [1.5 Tesla]
+1,3,MRI Knee - [1.5 Tesla]
+1,3,MRI KNEE LEFT - [1.5 Tesla]
+1,3,MRI KNEE RIGHT - [1.5 Tesla]
+1,3,MRI Leg - [1.5 Tesla]
+1,3,MRI LEG LEFT - [1.5 Tesla]
+1,3,MRI LEG RIGHT - [1.5 Tesla]
+1,3,MRI Lumbar Spine - [1.5 Tesla]
+1,3,MRI MAXILLOFACIAL - [1.5 Tesla]
+1,3,MRI MRCP Abdomen with Contrast - [1.5 Tesla]
+1,3,MRI NECK + CONTRAST - [1.5 Tesla]
+1,3,MRI Neck - [1.5 Tesla]
+1,3,MRI Orbits - [1.5 Tesla]
+1,3,MRI PAEDIATRICS [1.5 Tesla]
+1,3,MRI Pelvis - [1.5 Tesla]
+1,3,MRI Pitutary - [1.5 Tesla]
+1,3,MRI PNS - [1.5 Tesla]
+1,3,MRI Prostate - [1.5 Tesla]
+1,3,MRI Sacro Iliac joints - [1.5 Tesla]
+1,3,MRI Screening - [1.5 Tesla]
+1,3,MRI Shoulder Joint (Left) - [1.5 Tesla]
+1,3,MRI Shoulder Joint (Right) - [1.5 Tesla]
+1,3,MRI SHOULDER JOINT LEFT - [1.5 Tesla]
+1,3,MRI SHOULDER JOINT RIGHT - [1.5 Tesla]
+1,3,MRI TOE/FOOT LEFT - [1.5 Tesla]
+1,3,MRI TOE/FOOT RIGHT - [1.5 Tesla]
+1,3,MRI Whole Body Scan
+1,3,MRI Whole Body Scan - [1.5 Tesla]
+1,3,MRI Wrist - [1.5 Tesla]
+1,3,MRI WRIST LEFT - [1.5 Tesla]
+1,3,MRI WRIST RIGHT - [1.5 Tesla]
+1,4,Abdomen Scan
+1,4,Gynaecology Scan
+1,4,Pelvic Scan
+1,4,Breast Scan
+1,4,Testes Scan
+1,4,Thyroid Scan
+1,4,Prostate Scan
+1,4,Ovulometry/TV Scan
+1,4,Bladder Scan
+1,4,Transvaginal/Folliculometry Scan
+1,4,Dental-Intra-Oral Periapical Scan
+1,4,Obstetric Scan
+1,5,Angiography
+1,5,Arthrogram
+1,5,Barium Enema
+1,5,Barium Meal With Gastrografin
+1,5,Barium Meal/Follow Through
+1,5,Barium Swallow
+1,5,Cholecytogram
+1,5,Cysto-Urethrogram
+1,5,Deep Venogram
+1,5,Fistulogram
+1,5,Hysterosalpingogram
+1,5,Intravenous Cholangiogram
+1,5,Intravenous Urogram
+1,5,Intravenous Pyelogram
+1,5,Mammography
+1,5,Micturating Cystourethrogram (MCUG)
+1,5,Retrograde urethrogram (RCUG)
+1,5,Venogram (One Leg)
+1,5,Myelogram
+1,5,Oral Cholecytogram
+1,5,Percutenous Transphepatic Cholangiogram
+1,5,Peripheral Arteriography
+1,5,Phlebogram
+1,5,Sialogram
+1,5,Fistulogram/Sinogram
+1,5,Cyst-Urethrogram
+1,5,Oral Cholecystogram
+1,5,Intravenous Cholangiogram
+1,5,Fluoroscopy
+1,5,Sinography/ Fistulography
+1,5,Sinuses
+1,5,Skeletal Survey
+1,5,Skeletal survey (Adult)
+1,5,Hand/Finger
+1,5,Wrist
+1,5,Forearm (Radius And Ulna)
+1,5,Elbow
+1,5,Humerus
+1,5,Shoulder
+1,5,Clavicle
+1,5,Foot/Toe
+1,5,Ankle
+1,5,Leg (Tibia/Fibula)
+1,5,Knee
+1,5,Thigh(Femur)
+1,5,Hip
+1,5,Pelvis( AP)
+1,5,Pelvis & Hip
+1,5,Chest (PA/AP)
+1,5,Chest (PA/Lateral)
+1,5,Chest For Ribs (Oblique)
+1,5,Apical/Lordotic
+1,5,Sternum
+1,5,Thoracic Inlet
+1,5,Cervical Spine
+1,5,Lateral Neck (Soft Tissue)
+1,5,Thoracic Spine
+1,5,Thoraco- Lumbar Spine
+1,5,Lumbar Spine
+1,5,Lumbo- Sacral Spine
+1,5,Sacrum
+1,5,Coccyx
+1,5,Sacro- Iliac Joint (SIJ)
+1,5,Cervical Spine (Oblique)
+1,5,Plain Abdomen
+1,5,Erect/Supine Abdomen
+1,5,Pelvimetry
+1,5,Mastoids
+1,5,Mandibles (Jaw)
+1,5,X-Ray Sinuses Ap/Lnt/Om
+1,5,X-Ray Skull (AP/LAT)
+1,5,X-Ray Skull (Pa/Lat/Townes)
+1,5,X-Ray Sternum
+1,5,X-Ray Tagential
+1,5,X-Ray Temporo-Mandibular Joints (TMJ)
+1,6,ECG
+1,6,Post Exercise ECG
+1,7,Color Doppler
+1,8,EEG
+1,9,Chromosomal Analysis-High resolution banding - [Blood]
+1,9,HBV-DNA Quantification (Viral load) - [Serum or plasma]
+1,9,Sigmoidoscopy
+1,10,Biopsy- Large specimen for histology - [Tissue]
+1,10,Biopsy- Large and Complex specimen for histology - [Tissue]
+1,10,Biopsy- Medium specimen for histology - [Tissue]
+1,10,Biopsy- Small specimen for histology - [Tissue]
+1,10,Biopsy-Second opinion slides/blocks for histopathological examination. - [Block/ Slide]
+1,10,Biopsy-Skin biopsy for histology with special stain (SOS) - [Tissue]
+1,10,"Body fluid,Rt Exam With cytology and 14 - [Body fluid]"
+1,10,FNAC - cytological examination - [FNAC fluid]
+1,10,FNAC procedure charges - [Walk in patient]
+1,10,Giemsa Stain for histopathology - [Tissue]
+1,10,Histopathology- BILATERAL BREAST LUMPS - [Tissue]
+1,10,Histopathology- Large specimen - [Tissue]
+1,10,Histopathology- Large and Complex specimen - [Tissue]
+1,10,Histopathology- Medium specimen - [Tissue]
+1,10,Histopathology- Small specimen - [Tissue]
+1,10,Histopathology-GASTRIC BIOPSY - [Tissue]
+1,10,Histopathology-Liver Biopsy
+1,10,Histopathology-Skin biopsy with special stain (SOS) - [Tissue]
+1,10,Masson Trichrome stain for histopathology - [Tissue]
+1,10,PAS stain for histopathology - [Tissue]
+1,10,PTAH Stain for histopathology - [Tissue]
+1,10,Reticulin Stain (For histopathology) - [Tissue]
+1,10,"Routine examination, Sputum, Comprehensive (Includes cytology and 14) - [Sputum]"
+1,11,Cytology - [Aspirates]
+1,11,Cytology - [Body fluid]
+1,11,Cytology - [Sputum]
+1,11,Cytology - [Urine]
+1,11,Cytology - [Washing fluid]
+1,12,Alanine Transaminase (SGPT)
+1,12,Albumin
+1,12,Alkaline Phosphatase
+1,12,Aspartate Transaminase (SGOT)
+1,12,Fasting Blood Sugar
+1,12,Random Blood Sugar
+1,12,Calcium
+1,12,Creatinine
+1,12,Creatinine Clearance
+1,12,CSF Protein
+1,12,CSF Sugar
+1,12,Electrolyte - Na+
+1,12,Electrolyte - K+
+1,12,Electrolyte - CL-
+1,12,Electrolyte - HCO3-
+1,12,Electrolyte and Urea
+1,12,"Electrolyte, Urea & Creatinine"
+1,12,Glucose6-Phosphate-dehydrogenase
+1,12,Lipid profile
+1,12,Liver function Test
+1,12,Phosphorus
+1,12,Pregnancy Test (Beta HCG - Blood)
+1,12,"Protein, Total"
+1,12,Urea
+1,12,Uric arid
+1,12,Urinalysis dipstick
+1,12,24hr Post Prandial
+1,12,Glucose Tolerance Test
+1,12,Total Bilirubim
+1,12,Direct Bilirubim
+1,12,Total Protein
+1,12,Uric Acid
+1,12,Calcium
+1,12,Prostatic Acid Phosphates
+1,12,Total Acid Phosphates
+1,12,Amylase
+1,12,Cholesterol
+1,12,Triglyceride
+1,12,CSF Glucose
+1,12,CSF Protein
+1,12,CSF Chloride
+1,12,HDL/LDL Cholesterol
+1,12,Gamma Gt
+1,12,CK Amylase
+1,12,Protein Electrophoresis + Report
+1,12,Oral Glucose Tolerance Test(OGTT)
+1,13,Bleeding Time
+1,13,Blood film report
+1,13,Blood grouping + Rh
+1,13,Clotting Time
+1,13,C-Reactive protein (CRP)
+1,13,Cross matching
+1,13,Direct Coombs test
+1,13,ESR
+1,13,Fibrinogen
+1,13,G6PD qualitative
+1,13,G6PD quantitative
+1,13,Genotype
+1,13,Haemoglobin
+1,13,HIV Confirmation (Western Blot)
+1,13,HIV Screening (HIV 1 & 11) antibodies
+1,13,Indirect Coombs test
+1,13,INR
+1,13,Malaria ICT
+1,13,Malaria parasites (QBC Malaria)
+1,13,MCH
+1,13,MCHC
+1,13,MCV
+1,13,O+ve pint of blood
+1,13,O-ve pint of blood
+1,13,Packed Cell Volume (PCV)
+1,13,Platelet count
+1,13,Prothombin Time (PT)
+1,13,PTTK
+1,13,Reticulocyte count
+1,13,sickle Cell screening
+1,13,WBC Differential - (FBC)
+1,13,WBC Total
+1,14,Adenovirus
+1,14,Blood culture and sensitivity
+1,14,CSF M/C/S
+1,14,Hepatitis B DNA viral load
+1,14,Hepatitis B surface antigen (HBsAg)
+1,14,Hepatitis C
+1,14,Hepatitis C DNA viral load
+1,14,HVS MCS
+1,14,Mantoux (Tuberculin Test)
+1,14,Rapid TB Test
+1,14,Rotavirus
+1,14,Sputum M/C/S
+1,14,Sputum ZN stain for AFB
+1,14,Stool M/C/S
+1,14,Stool microscopy
+1,14,Stool Occult blood
+1,14,"Swab M/C/S (wound eye, ear, urethra, etc)"
+1,14,TB Quantiferon
+1,14,TPHA
+1,14,Urine M/C/S
+1,14,Urine Microscopy
+1,14,VDRL
+1,14,Widal test
+1,14,Urinalysis
+1,14,Semen Culture And Sensitivity
+1,14,Semen Analysis
+1,14,Aspirate Pus M/C/S
+1,14,Microfilaria
+1,14,Urethral And Wound M/C/S
+1,14,Skin Snip
+1,14,Skin Scraping For Fungal Elements
+1,14,Sputum AFB For Tuberculosis X3
+1,15,Urine Pregnancy Test
+1,15,ASO Titre (nephrology)
+1,15,ASO Titre/anti DnascB
+1,15,C-Reactive protein (CRP)
+1,15,Helicobacter pylori (serum)
+1,15,Helicobacter pylori (stool antigen)
+1,15,Herpes Simplex 1 & 11 (1gm/1gG)
+1,15,TORCH Screen
+1,15,Widal
+1,15,Vdrl
+1,15,Australian Antigen
+1,15,Rheumatoid Factor
+1,15,Pregnancy Test HCG (Blood)
+1,15,R.f. Coombs
+1,15,ASO Heaf Test
+1,15,HbsAg
+1,15,Screening For HIV 1 & 2
+1,15,Confirmatory Test For HIV 1 & 2
+2,16,TYPHIM Vi (1 dose syringe) for 1 Adult
+2,16,TYPHIM Vi (20 dose syringe) for 20 Adult
+2,16,TYPHERIX (1 dose syringe) for 1 Adult
+2,16,TYPBAR (1 dose vial) for 1 Adult
+2,16,TYPBAR (5 dose vial) for 5 Adults
+2,17,HAVRIX (1 dose syringe) for 1 Adult
+2,17,ENGERIX B 20mcg (1 dose syringe) for 1 Adult
+2,17,REVAC B+ (1ml vial X 1 dose) for 1 Adult
+2,17,GENEVAC B+ (1ml vial X 1 dose) for 1 Adult
+2,17,SHANVAC B 20mcg (1 dose) for 1 Adult
+2,17,REVAC 10ml vial for 10 Adult doses
+2,18, TETANUS PERTUSIS IPV,ADACEL (1 dose syringe) for 1 Adult
+2,18, TETANUS IPV ,DULTAVAX (1 dose syringe) for 1 Adult
+2,19,PNEUMO-23 (1 dose syringe) for 1 Adult
+2,20,VERORAB (1 dose syringe) for 1 Adult
+2,20,INDIRAB for 1 Adult
+2,5,VANXIGRIP 1 dose syringe for 1 Adult
+2,5,CERVARIX for 1 Adult
+2,,GARDASIL for 1 Adult
+2,5,TRIMOVAX (1 dose syringe) for 1 Paediatric Dose
+2,5,PRIORIX (1 dose vial) for 1 Paediatric Dose
+2,5,TRESIVAC (1 dose vial) for 1 Paediatric Dose
+2,CHICKEN POX VACCINE,VARILRIX (1 dose syringe) for 1 Paediatric Dose
+2,CHICKEN POX VACCINE,VARICELLA VACCINE (1 dose vial) for 1 Paediatric Dose
+2,5 + CHICKEN POX VACCINE,PRIORIX TETRA (1 dose syringe) for 1 Paediatric Dose
+2,5,MVAC (1 dose vial) for 1 Paediatric Dose
+2,5,ENGERIX B 10mcg (1 dose syringe) for 1 Paediatric Dose
+2,5,REVAC B+ (0.5ml vial X 1 dose) for 1 Paediatric Dose
+2,5,GENEVAC B (0.5ml vial X 1 dose) for 1 Paediatric Dose
+2,5,SHANVAC B 10mcg (1 dose) for 1 Paediatric Dose
+2,5,(5ml vial for 10 Paediatric Doses)
+2,5,NIMENRIX (1 dose syringe) for 1 Paediatric Dose
+2,5,MENCEVAX (1 dose vial) for 1 Paediatric Dose
+2,"MENINGOCOCCAL Vaccine ( A,C,W,V)",
+2,11,HIBERIX (1 dose syringe) for 1 Paediatric Dose
+2,11,PENTAVALENT (1 vial for 10 Paediatric Doses)
+2,11,PENTAVALENT (1 dose syringe) for 1 Paediatric Dose
+2,11,PENTAXIM (1 dose syringe) for 1 Paediatric Dose
+2,11,TETRAXIM (1 dose syringe) for 1 Paediatric Dose
+2,11,TETRAVALENT ( 1 dose syringe) for 1 Paediatric Dose
+2,11,ROTARIX (1 dose syringe) for 1 Paediatric Dose
+2,11,SYNFLORIX (1 dose syringe) for 1 Paediatric Dose
+2,11,PREVENER 13 (1 dose syringe) for 1 Paediatric Dose
+2,11,PREVENER 13 (1 dose syringe for 10 Paediatric Doses)
+3,11,Consultation
+3,11,Follow Consultation
+3,11,Consultation
+3,11,Follow-up Consultation
+3,11,Consultation
+3,11,Follow-up Consultation
+3,10,Consultation
+3,10,Follow-up Consultation
+3,10,Consultation
+3,10,Follow-up Consultation
+3,10,Consultation
+3,10,Follow-up Consultation
+3,10,Consultation
+3,10,Follow-up Consultation
+3,10,Consultation
+3,10,Follow-up Consultation
+3,10,Consultation
+3,10,Follow-up Consultation
+3,10,Consultation
+3,10,Follow-up Consultation
+3,1,Consultation
+3,1,Follow-up Consultation
+3,1,Consultation
+3,1,Follow-up Consultation
+3,1,Consultation
+3,1,Follow-up Consultation
+3,1,Consultation
+3,1,Follow-up Consultation
+3,1,Consultation
+3,1,Follow-up Consultation
+3,1,Consultation
+3,1,Follow-up Consultation
+3,1,Consultation
+3,1,Follow-up Consultation
+3,1,Consultation
+3,1 Consultation,Consultation
+3,1 Consultation,Follow-up Consultation
+3,1,Consultation
+3,1,Follow-up Consultation
+3,1,ENT Consultation
+3,1,Follow-up Consultation
+3,10,Dermatology Consultation
+3,10,Follow-up Consultation
+3,10,Paediatric Surgeon Consultation
+3,10,Follow-up Consultation
+3,10,Orthopaedic Surgeon Consultation
+3,10,Follow-up Consultation
+3,1,1 Consultation
+3,1,Follow-up Consultation
+3,Sleep Clinic,Sleep Therapy
+4,5,Dental Apicectomy
+4,5,Dental Alveoloplasty
+4,5,Dental Bite Plane
+4,5,Dental Bleaching (Tooth Whitening) - Full Mouth
+4,5,Dental Bleaching (Tooth Whitening) - Single Arch
+4,5,Dental Crown - Full Ceramic
+4,5,Dental Crown - Metal
+4,5,Dental Crown - Metal Ceramic
+4,5,Dental Cyst Removal - Big
+4,5,Dental Cyst Removal - Small
+4,5,Dental Fillings - Silver Amalgam
+4,5,Dental Fillings - Tooth Color Filling
+4,5,Dental Flap Surgery With Grafting (Per Quadran)
+4,5,Dental Fracture Reduction (WO OT Charges)
+4,5,Dental Full Denture - Flexible
+4,5,Dental Gingivectomy / Gingivoplasty
+4,5,Dental IMF
+4,5,Dental Implant - With Crown
+4,5,Dental IOPA -Small Dental Xray
+4,5,Dental OPG
+4,5,Dental Orthodontic - Invisaline
+4,5,Dental Orthodontic -Regular
+4,5,5 ORTHODONTICS TOOTH COLORED SINGLE ARCH
+4,5,Dental Othodontic - Lingual
+4,5,Dental Othodontic - Tooth Colored
+4,5,Dental Partial Denture - Cast Partial (Per Tooth)
+4,5,Dental Partial Denture - Regular (Per Tooth)
+4,5,Dental Post and Core
+4,5,Dental Registration
+4,5,Dental Root Canal Anteriors
+4,5,Dental Root Canel Posteriors
+4,5,Dental Single Arch Denture
+4,5,Dental Single Arch Orthodontics
+4,5,Dental Single Jaw Flexible Denture
+4,5,Dental Single Jaw Metallic
+4,5,Dental Single Jaw Tooth Colored
+4,5,Dental Tooth Cleaning (Full Mouth)
+4,5,Dental Tooth Removal - Milk Tooth
+4,5,Dental Tooth Removal - Normal
+4,5,Dental Tooth Removal - Wisdom
+4,5,Dental Tooth Tatoo
+4,5,Dental Zirconia Diamond Studs
+4,5,Surgical Extraction
+4,5,Dental Crowns
+4,5,Bridgeworks
+4,5,Implants
+4,5,Braces
+4,5,Root Canal Therapy
+4,10,Lenses & Frames
+4,10,Visual Acuity
+4,3,Excision of tumour on abdominal wall
+4,3,Biopsy Of Tumor Of Abdominal Wall
+4,3,Breast Lump Excision (Excluding Histology)
+4,3,Ganglion Excision
+4,3,Injection Sclerotherapy Of Varicose Veins
+4,3,Incision & Drainage (I & D)
+4,3,Ingrowing Nail (Excision)
+4,3,Keloid Excision (Minor)
+4,3,Lumps Excision(Lumpectomy)
+4,3,Excisional Biopsy(Excluding Histology)
+4,3,Cystic Hygroma Excision
+4,3,Small Cyst Excision
+4,3,Keloid Excision (Major)
+4,3,Liver/Kidney/Bone Marrow Biopsy
+4,3,Thyroglossal Cysts And Fistula Excision
+4,3,Excision Of Intrascrotal Mass
+4,Endoscopy,Bronchoscopy
+4,Endoscopy,Endoscopy Of The GIT
+4,Endoscopy,Oesophagoscopy
+4,Endoscopy,Proctoscopy
+4,Endoscopy,Sigmoidoscopy
+4,Endoscopy,Colonscopy
+4,Endoscopy,Hysteroscopy
+4,4,Proctoscopy
+4,10,Intercostal Drainage Insertion(Thoracostomy)
+4,10,Major Surgical Incision And Drainage
+4,10,Suprapubic Cystostomy
+4,10,Surgical Release In Stenosing Tenosynovitis
+4,10,Synovectomy
+4,10,Tracheostomy
+4,10,Abdominal Rectopexy
+4,10,Anal Fistulectomy Repair
+4,10,Anal Spincteroplasty
+4,10,Appendicectomy
+4,,
+4,10,Dissection Of Femoral Triangle
+4,10,Epigastric Herniorrhaphy
+4,10,Fistula In-Ano Repair
+4,10,Haemorrhoidectomy
+4,10,Herniorraphy _ Inguinal/7
+4,10,Hydrocoelectomy
+4,10,Multiple Ligation Of Veins
+4,10,Orchidectomy/Orchidopexy
+4,10,Pericardiocentesis
+4,10,Surgery Of Torsion Of Spermatic Cord
+4,10,Surgical Correction Of Dupuytrens Contracture
+4,10,Surgical Drainage Of Anal Abscess
+4,10,Synovectomy
+4,10,Thoracotomy
+4,10,Varicocoelectomy
+4,10,Vasectomy
+4,10,Cavernospongiosum Shunt
+4,10,Colostomy Construction/Closure
+4,10,Diverticulectomy
+4,10,Hiatus Herniorrphaphy
+4,10,Laparotomy
+4,10,Local Resection Of Pelvic Tumor
+4,10,Oesophagostomy
+4,10,Oophorectomy
+4,10,Retroperitoneal Drainage Of Perinephric Abscess
+4,10,Surgery Of Uncomplicated Intestinal Obstruction Without Resection
+4,10,Transrectal Biopsy Of Prostate/Prostatectomy
+4,10,Uretherectomy
+4,10,Acute Intra Abdominal Vascular Disease Surgery
+4,10,Axillary Dissection Of Breast
+4,10,Bowel Resection And Anastomosis
+4,10,Cholecystectomy
+4,10,Choledochojejunostomy
+4,10,Cystectomy Partial/Total
+4,10,Diaphragmatic Hernia Repair
+4,10,Excision Of Lymphoedematous Lymph Tissues
+4,10,Exploratory Laparotomy/Lysis Of Adhensions
+4,10,Gastroenterostomy
+4,10,Intussusception Operation
+4,10,Meckels Diverticulectomy
+4,10,Pyeloroplasty
+4,10,Pyelotomy
+4,10,Renal Cystectomy
+4,10,Repair Of Gastric Lacerations
+4,10,Repair Of Oesophageal Lacerations
+4,10,Resection And Anstomoses (Small/Large Intestines)
+4,10,Roux-En-Y Pancreaticojejunostomy
+4,10,Splenorrhaphy/ Splenectomy
+4,10,Surgery Of Complications Of Appendicitis
+4,10,Surgery Of Hepatic Trauma
+4,10,Surgery Of Small/Large Bowel Perforations
+4,10,Abdomino-Perineal Resection
+4,10,Adrenalectomy
+4,10,Decortication
+4,10,Encephalocoele Excision
+4,10,Extended Radical Mastectomy
+4,10,Gastrectomy/Colectomy-Partial Or Total
+4,10,Mammoplasty
+4,10,Nephrectomy
+4,10,Nephrolithotomy/Urethrotomy/Urethroplasty
+4,10,Oesophagectomy
+4,10,Pancreatectomy
+4,10,Pelvic Evisceration
+4,10,Pericardiectomy
+4,10,Pleurectomy
+4,10,Pneumonectomy
+4,10,"Prostatectomy, Retropubic/Transvesical"
+4,10,Radical Mastectomy
+4,10,Splenectomy
+4,10,Submandibular Sialoadenectomy
+4,10,Thoracectomy/Thoracoplasty
+4,10,Thyroidectomy
+4,10,Vagotomy/Pyloroplasty
+4,5,Close Reduction Of Fracture And Application Cast
+4,5,Amputation And Disarticulation Of Joints.
+4,5,Amputation And Limb Substitution
+4,5,Arthroplasty/Arthrodesis
+4,5,Bone Grafting
+4,5,Chondromectomy
+4,5,Congenital Talipes Equanovarus/Valgus Surgical Repair
+4,5,ORIF with Implant (with hospitalisation)
+4,5,Removal of Implant
+4,5,Sequestrectomy
+4,5,Subperiosteal Drainage Of Acute Osteomyelitis
+4,5,Tendon Transplant/Tenoplasty
+4,5,Close Reduction Of Fracture And Application Cast
+4,5,Drainage Of Septic 1
+4,5,Skin Traction(Procedure+Material)
+4,5,Simple Congenital Talipes Repair
+4,5,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF:
+4,5,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF PECTORAL GIRDLE
+4,5,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF FORE-ARM
+4,5,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF HAND
+4,5,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF PELVIC GIRDLE
+4,5,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF THIGH
+4,5,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF LEG
+4,5,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF FOOT
+4,5,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF RIBS
+4,5,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF SPINAL COLUMN
+4,5,"OSTEOCLASIS, INTERNAL FIXATION OF MALUNION"
+4,5,BONE GRAFTING
+4,5,AMPUTATION AND LIMB SUBSTITUTION
+4,25,Salpingectomy
+4,25,Ultrasound Scan (Obstetric)
+4,25,IUCD Insertion
+4,25,IUCD Removal
+4,25,Excision/Diathermy Of Warts
+4,25,Cervical Cautery
+4,25,Cervical Cone/Punch Biopsy
+4,25,Colposcopy
+4,25,ARTIFICIAL INSEMINATION
+4,25,MVA/ERCP/Evacuation
+4,25,Cervical Laceration Repair
+4,25,Removal Of IUCD Under General Anaesthesia
+4,25,Examination Under Anaesthesia (EUA)
+4,25,Repair Of Third Degree Tear
+4,25,Excision Of Vaginal Septum
+4,25,Hydrotubation
+4,25,Marsupialisation
+4,25,Pelvic/abdominal abscess drainage
+4,25,Hysteroscopy
+4,25,Laparoscopy & Dye Test
+4,25,Bilateral Tubal Ligation
+4,25,Cervical Cerclage/Shirodkar Suture
+4,25,Destructive Delivery (Craniotomy-Embryotomy)
+4,25,1 Laparoscopy
+4,25,Caesarean section
+4,25,Repair of ruptured uterus
+4,25,Colporrhaphy/colpoperineorrhaphy
+4,25,Ectopic pregnancy
+4,25,Hysterectomy
+4,25,Hysterectomy and bilateral salpingooophorectomy
+4,25,Myomectomy
+4,25,Salpingo-oophorectomy
+4,25,Ovarectomy/ovarian cysts
+4,25,Vesicovaginal/Rectovaginal fistula repair
+4,25,Rhogam Injection
+4,2,ANC Care
+4,2,Normal Delivery
+4,2,Assisted Delivery
+4,2,"(Forceps,Vaccum etc)"
+4,2,Twin Delivery
+4,24,"Foreign Body Removal From The Ear, Nose And Throat"
+4,24,Electrocautery Of Nose
+4,24,Nasal Packing
+4,24,Aural And Nasal Suction/Clearance
+4,24,Incision And Drainage Of Abscess
+4,24,Debridement And Toilet Of Wounds
+4,24,Suturing Of Lacerations
+4,24,Manipulation Of Nose
+4,24,Pure Tone Audiometry
+4,24,Tympanometry
+4,24,Aesthetic And Reconstructive Surgery
+4,24,Antral Larvage
+4,24,Cystic/Fibrous Dysplasia/ Cancer Surgery
+4,24,Indirect Laryngoscopy
+4,24,Laryngeal Surgery
+4,24,Mastoid Surgery
+4,24,Multiple Nasal Polypectomy
+4,24,Nasal Sinus Surgery E.G Caldwell Luc
+4,24,Odontogenic Tumours.
+4,24,Parotidectomy
+4,24,Submandibular Gland Excision
+4,24,Tympanoplasty
+4,24,CLEFT LIP AND PALATE REPAIRS.
+4,24,TRACHEOSTOMY
+4,24,TONSILECTOMY
+4,24,ADENOIDECTOMY
+4,24,REMOVAL OF IMPACTED CERUMEN (SYRINGING/TOILETING)
+4,21,Granuloma Excision
+4,21,Chalazion Surgery
+4,21,Pterygium Excision
+4,21,Corneal Laceration Repair
+4,21,Glaucoma (Trabeculectomy)
+4,21,Extracapsular/Intracapsular Cataract Extraction
+4,21,Minor
+4,21,Bowman's Cautery
+4,21,Conjunctival Laceration Repair
+4,21,Diode Laser Cycloablation
+4,21,Entropion And Ectropion Repairs
+4,21,Syringing And Probing
+4,21,Traumatic Lid Laceration Repair
+4,21,Tumor Excision From Lid
+4,21,Conjuctivectomy And Cryoapplication
+4,21,Dacrocystorhinostomy
+4,21,Evisceration/Enucleation/Exenteration
+4,21,Intraocular Lens Implantation
+4,21,Paracentesis (A/C Washout)
+4,21,Penetrating Keratoplasty (PKP)
+4,21,Ptosis Repair
+4,21,Retinal Detachment Surgery
+4,21,Squint Surgery
+4,21,Traumatic Cannalicular Repair
+4,21,Traumatic Corneal And/or Scleral Laceration Repair
+4,21,DIODE LASER PANRETINAL PHOTOCOAGULATION
+4,22,CRITICAL CARE (IN ICU)
+4,22,OXYGEN THERAPY
+4,22,CRITICAL CARE (IN ICU) PER DAY
+4,22,OXYGEN THERAPY
+4,22,NEBULISATION
+4,22,GASTRIC LAVAGE
+4,23,ELECTRO-CONVULSIVE THERAPY per treatment
+4,23,ELECTRO-NARCOSIS per COURSE
+4,23,SLEEP (REM) DEPRIVATION THERAPY
+4,23,MANAGEMENT OF DRUG USE PROBLEMS
+4,23,DETOXIFICATION IN HOSPITAL FOR 7-10 DAYS
+4,23,"MANAGEMENT OF DRUG PROBLEMS _ MEDICATION,"
+4,23,"PSYCHOTHERAPY, FAMILY INTERVENTION"
+4,23,COMPREHENSIVE PSYCHIATRIC ASSESSMENT
+4,23,"PSYCHOMETRIC ASSESSMENT, SCORING & INTERPRETATION"
+4,23,PSYCHOTHERAPIES per session
+4,5,Craniotomy
+4,5,Subdural Tap
+4,20,Renal dialysis
+4,20,Audiometry
+4,20,Skin Grafting
+4,20,Aspirations / Paracentesis
+4,20,Evacuation Of Impacted Feaces
+4,20,Gastric Lavage
+4,20,Incubator Care / Day
+4,20,Lumbar Puncture
+4,20,Nebulisation
+4,20,Oxygen Therapy / Day
+4,20,Phototherapy / Day
+4,20,Cauterization
+4,20,Circumcision
+4,20,Clucthes
+4,20,Congenital Multiple Digits Or Syndactyly
+4,20,Ear Piercing
+4,20,Knee Effusion Taps
+4,20,Major Wound Dressing
+4,20,Minor Wound Dressing
+4,20,Tongue Tie Release
+4,20,Minor Debridement Of Burns
+4,20,Relase Of Chordate
+4,20,Repair Of Minor Laceration
+4,20,Exchange Blood Transfusion (Rh +Ve Blood With Set)
+4,20,Exchange Blood Transfusion (Rh -Ve Blood With Set)
+4,20,6 Courses of Podophyllin 10ting X for Perineal Warts
+10,Breast Cancer,Mammography
+10,Cervical Cancer,PAP Smears for cytological examination - [Pap smear]
+10,10,Prostate Cancer
+10,10,Colon Cancer
+10,10,Uterine Cancer
+10,10,Liver Cancer
+10,10,Lung Cancer
+10,10,Stomach Cancer
+10,10,Brain Cancer
+5,5,Glaucoma Eye Test
+5,5,Audiological Ear Assessment
+5,5,Liver Test
+5,5,Kidney Test
+5,5,Thyroid Test
+5,5,Hepatitis B Test
+5,5,Basic Health Check
+5,5,Comprehensive Health Check
+5,5,10 HbAic Test
+5,5,Pre Employment Tests
+13,Heart Tracker,Heart Tracker
+14,Foreign Medical Treatment,Foreign Medical Treatment
+12,Medical Concierge,Medical Concierge
+7,Health Insurance,Health Insurance
+8,Talk To A Doctor,Talk To A Doctor
+11,Gym & Fitness Services,Gym & Fitness Services
+9,Weight loss counselling and wellness,Weight loss counselling and wellness
+9,5,5
+6,5,Evacuation from Home to Hospital
+6,5,Evacuation from hospital to hospital
+6,5,Evacuation from accident site to hospital
+6,10,Air Ambulance

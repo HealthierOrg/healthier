@@ -16,11 +16,9 @@ from .base import *  # noqa
 DEBUG = env.bool('DJANGO_DEBUG', default=True)
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 
-
 # django-extensions
 # ------------------------------------------------------------------------------
 INSTALLED_APPS += ['django_extensions', 'djcelery_email']
-
 
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -37,7 +35,6 @@ EMAIL_HOST = 'localhost'
 EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
                     default='djcelery_email.backends.CeleryEmailBackend')
 
-
 # CACHING
 # ------------------------------------------------------------------------------
 CACHES = {
@@ -52,7 +49,7 @@ CACHES = {
 MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
 
 INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
-ALLOWED_HOSTS = [".herokuapp.com", 'localhost', '91ab82f3.ngrok.io', '127.0.0.1']
+ALLOWED_HOSTS = [".herokuapp.com", 'localhost', '0cf557bc.ngrok.io', '127.0.0.1']
 
 DEBUG_TOOLBAR_CONFIG = {
     'DISABLE_PANELS': [
@@ -78,4 +75,3 @@ ACCOUNT_ID_LENGTH = 20
 ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = "account_login"
 
 ACCOUNT_EMAIL_VERIFICATION = "optional"
-

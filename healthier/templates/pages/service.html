@@ -17,8 +17,8 @@
           <div class="page-title__outer">
             <div class="page-title__inner">
               <div class="page-title__holder">
-                <h1 class="page-title__title">{{ service.service_name }}</h1>
-                <p class="page-title__subtitle lead">{{ service.details }}</p>
+                <h1 class="page-title__title">{{ category.category_name }}</h1>
+                <p class="page-title__subtitle lead">{{ category.category_description }}</p>
               </div>
             </div>
           </div>
@@ -26,48 +26,44 @@
         </div>
       </section>
      <section class="section-wrap bg-light bottom-divider">
-         {% if not providers %}
+         {% if not services %}
              <div class="container">
-                            <h5 class="text-center">There is currently no provider rendering this service.</h5>
+                            <h5 class="text-center">There is currently no service in this category.</h5>
              </div>
-             <section class="section-wrap newsletter bg-img bg-overlay white-text relative">
-             <div class="container">
-                  <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                      <h2 class="newsletter__title">Click the button below to become a provider for this service.</h2>
-                      <a href="{% url "dashboard:service_request_configuration" %}?service={{ service.id }}" class="btn btn--sm btn--color"><span>Become a provider</span></a>
-                    </div>
-          </div>
-        </div>
-      </section>
          {% else %}
-         <h1 class="text-center bg-light">This service is offered by</h1>
+         <h1 class="text-center bg-light">Services in this Category</h1>
              <div class="container">
           <div class="row">
+              {% for service in services %}
             <div class="col-md-4 mb-md-20">
               <div class="testimonial box-shadow text-center clearfix">
                 <div class="testimonial__body">
-                  <p class="testimonial__text">{{ providers.requested_by.user_details_id.username | capfirst}}</p>
+                  <p class="testimonial__text">{{  service.service_name | capfirst}}</p>
                 </div>
                 <div class="testimonial__info">
                   <span class="testimonial__author">Price:</span>
                   <span class="testimonial__company">&#8358; {{ providers.price.gross }}</span>
                 </div>
                  <div class="testimonial__info">
-                      <span class="testimonial__author">Days Available:</span>
-                      <span class="testimonial__company">{{ providers.days_available }}</span>
+                      <span class="testimonial__author">Orders:</span>
+                      <span class="testimonial__company">{{ service.orders }}</span>
                 </div>
                    <div class="testimonial__info">
-                      <span class="testimonial__author">Time Available:</span>
-                      <span class="testimonial__company">{{ providers.start_time_available |time:"H:i" }} -:- {{ providers.end_time_available |time:"H:i" }}</span>
+                      <span class="testimonial__author">Views:</span>
+                      <span class="testimonial__company">{{service.views}}</span>
                 </div>
                   <br>
                   <div class="btn--google align-bottom">
-                    <a href="{% url 'dashboard:order_service' %}?service={{ service.id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg"><span>Select Provider</span></a>
+                    <a href="{% url 'dashboard:render_service' %}?service={{ service.id }}" class="btn btn--lg"><span>Render Service</span></a>
+                  </div>
+                  <br>
+                  <div class="btn--google align-bottom">
+                    <a href="{% url 'dashboard:order_service_step' action="chooseProvider" %}?service={{ service.id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg"><span>Request Service</span></a>
                   </div>
               </div>
 
             </div>
+                {% endfor %}
           </div>
         </div>
          {% endif %}

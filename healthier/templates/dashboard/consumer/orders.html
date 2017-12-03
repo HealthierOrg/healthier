@@ -20,9 +20,8 @@
                                                 <th>Email</th>
                                                 <th>Mobile Number</th>
                                                 <th>Payment Status</th>
-                                                <th>Service Cost</th>
-                                                <th>Preferred Date</th>
-                                                <th>Preferred Time</th>
+                                                <th>Service Price</th>
+
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -35,16 +34,14 @@
                                                 <td>{{ order.ordered_by.healthier_id.email }}</td>
                                                 <td>{{ order.ordered_by.healthier_id.phone_number }}</td>
                                                 <td>{% if order.payment_status %} Paid {% else %}Not Paid{% endif %}</td>
-                                                <td>&#8358;{{ order.price.gross }}</td>
-                                                <td>{{ order.arrival_date }}</td>
-                                                <td>{{ order.arrival_time }}</td>
+                                                <td>{{ order.price.gross }}</td>
                                                 <td>
                                                     <a href="{% url 'dashboard:consumer' %}?action=confirm&order={{  order.id}}&customer={{ order.ordered_by.healthier_id.id }}">
-                                                        <button type="button"  class="btn btn-small btn-success waves-effect waves-light">Confirm time and date</button></a>
+                                                        <button type="button"  class="btn btn-success waves-effect waves-light">Confirm time and date</button></a>
                                                     <a href="{% url 'dashboard:consumer' %}?action=sendMessage&order={{  order.id}}&customer={{ order.ordered_by.healthier_id.id }}">
-                                                        <button type="button"  class="btn btn-small btn-apple waves-effect waves-light">Message User</button></a>
-                                                    <a href="{% url 'dashboard:consumer' %}?action=block&order={{  order.id}}&customer={{ order.ordered_by.healthier_id.id }}">
-                                                        <button type="button"  class="btn btn-small btn-danger waves-effect waves-light">Block User</button></a>
+                                                        <button type="button"  class="btn waves-effect waves-light">Message User</button></a>
+                                                    <a href="{% url 'dashboard:generate_report' %}?order={{  order.id }}">
+                                                        <button type="button"  class="btn btn-small btn-info waves-effect waves-light">Generate Report</button></a>
                                                 </td>
                                             </tr>
                                                 {% endfor %}

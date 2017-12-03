@@ -93,36 +93,26 @@ class ServiceRequests(models.Model):
         return str(self.service)
 
 
-class ServiceReportGroup(models.Model):
-    group_name = models.CharField(max_length=200)
-    category = models.CharField(max_length=200)
-    group_description = models.CharField(max_length=1000)
-
-    def __str__(self):
-        """Return a string representation of the model."""
-        return self.servicename
-
-
 class ServiceReport(models.Model):
-    group = models.ForeignKey(ServiceGroup, on_delete=models.CASCADE)
-    service_details = models.ForeignKey(HealthierService, on_delete=models.CASCADE)
-    extra_fields = JSONField()
     generated_on = models.DateTimeField(default=now)
-    generated_by = models.ForeignKey(Provider)
-    is_sent = models.BooleanField(default=False)
-    file_upload = models.FileField(upload_to='uploads/%Y/%m/%d/', null=True)
+    generated_for = models.ForeignKey(OrderedService)
+    report_file = models.FileField(upload_to='uploads/%Y/%m/%d/', null=True)
+    lower_range_measured = models.CharField(max_length=200)
+    upper_range_measured = models.CharField(max_length=200)
+    measured_value_value = models.CharField(max_length=200)
+    measured_value_key = models.CharField(max_length=200)
+    fillers_name = models.CharField(max_length=500, blank=False)
+    fillers_designation = models.CharField(max_length=300, blank=False)
+    report_summary = models.CharField(max_length=500, blank=False)
+    service_rendering_date = models.CharField(max_length=500, blank='')
 
     def __str__(self):
         return self.service_details
 
-
-class MeasuredTest(models.Model):
-    service_details = models.ForeignKey(HealthierService, on_delete=models.CASCADE)
-    lower_range = models.CharField(max_length=200)
-    upper_range = models.CharField(max_length=200)
-    measure_value = models.CharField(max_length=200)
-    measured_by = models.ForeignKey(Provider, on_delete=models.CASCADE)
-    measured_for = models.ForeignKey(Consumer, on_delete=models.CASCADE)
+    @property
+    def file_url(self):
+        if self.report_file and hasattr(self.report_file, 'url'):
+            return self.report_file.url
 
 
 class SuggestService(models.Model):
@@ -130,3 +120,6 @@ class SuggestService(models.Model):
     service_group = models.CharField(max_length=300, default='', blank=False)
     service_description = models.CharField(max_length=3000, default='', blank=False)
     service_suggestion_reason = models.CharField(max_length=3000, default='', blank=False)
+
+    def __str__(self):
+        return "Suggested service: {}".format(self.service_name)

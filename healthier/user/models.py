@@ -1,8 +1,4 @@
-import os
-
-from django.conf import settings
 from django.contrib.auth.models import User, AbstractUser, PermissionsMixin
-from django.core.files.storage import FileSystemStorage
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 from django.db import models

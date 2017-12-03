@@ -32,12 +32,14 @@ class ProviderDetailView(DetailView):
     context_object_name = "provider"
 
     def get_object(self, queryset=None):
+        print(Provider.objects.get(id=self.kwargs["id"]))
         return Provider.objects.get(id=self.kwargs["id"])
 
     def get_context_data(self, **kwargs):
         super(ProviderDetailView, self).__init__()
         context = super(ProviderDetailView, self).get_context_data(**kwargs)
         context['services'] = ServiceRequests.objects.filter(requested_by_id=self.kwargs["id"])
+        print(context)
         return context
 
 
