@@ -78,6 +78,8 @@ THIRD_PARTY_APPS = [
     'paystack',
     'huey.contrib.djhuey',
     'mailqueue',
+    'csvimport',
+    'bootstrap_pagination',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

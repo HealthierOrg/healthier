@@ -1,0 +1,124 @@
+ {% load static %}
+
+{% include 'registration/header.html' %}
+
+ <body class="fixed-left" xmlns="http://www.w3.org/1999/html">
+
+{% include 'dashboard/dashboard_nav.html' %}
+
+<div class="content-page">
+                <div class="content">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="card-box task-detail">
+                                    <div class="media m-b-20">
+                                        <div class="media-left">
+                                            <a href="#"> <img class="media-object img-circle" alt="64x64"
+                                                              src="{% if report_detail.generated_for.ordered_by.healthier_id.image_url %}{{ report_detail.generated_for.ordered_by.healthier_id.image_url }}{% else %} /static/img/default_user.png {% endif %}" style="width: 48px; height: 48px;"> </a>
+                                        </div>
+                                        <div class="media-body">
+
+                                            <h4 class="media-heading m-b-0">{{ report_detail.generated_for.ordered_by.healthier_id.username | capfirst}}</h4>
+                                            <span class="label label-danger">{% if report_detail.generated_for.ordered_by.healthier_id.is_active %}Active {% else %} Not Active {% endif %}</span>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="font-600 m-b-20">Report for {{ report_detail.generated_for.service.service_name }}</h4>
+
+                                    <p class="text-muted">
+                                        {{ report_detail.report_summary }}
+                                    </p>
+
+                                    <ul class="list-inline task-dates m-b-1 m-t-15">
+                                        <li>
+                                            <h5 class="font-600 m-b-3">Service Request Date</h5>
+                                            <p> {{ report_detail.generated_for.order_date | date}}</p>
+                                        </li>
+
+                                        <li>
+                                            <h5 class="font-600 m-b-3">Service Rendering Date</h5>
+                                            <p> 17 April 2016 <small class="text-muted">{{ report_detail.service_rendering_date }}</small></p>
+                                        </li>
+
+                                        <li>
+                                            <h5 class="font-600 m-b-3">Service Rendering Date</h5>
+                                            <p> {{ report_detail.generated_on | date}}</p>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+
+                                     <div class="task-tags m-t-20">
+                                         <h5 class="font-600">Tags</h5>
+                                        <input type="text" value="Amsterdam,Washington,Sydney" data-role="tagsinput" placeholder="add tags"/>
+                                    </div>
+
+                                    <div class="attached-files m-t-30">
+                                        <h5 class="font-600">Attached Files </h5>
+
+                                        <div class="files-list">
+                                            {% if report_detail.file_url %}
+                                            <div class="file-box">
+                                                <a href="#"><img src="{{ report_detail.file_url }}" class="img-responsive img-thumbnail" alt="attached-img"></a>
+                                                <p class="font-13 m-b-5 text-muted"><small>File one</small></p>
+                                            </div>
+                                                {% else %}
+                                                    <h3>No file is attached to the report</h3>
+                                             {% endif %}
+                                            <div class="file-box m-l-15">
+                                                <div class="fileupload add-new-plus">
+                                                    <span><i class="zmdi-plus zmdi"></i></span>
+                                                    <input type="file" class="upload">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="text-right m-t-30">
+                                                    <button type="submit" class="btn btn-success waves-effect waves-light">
+                                                        Save
+                                                    </button>
+                                                    <button type="button"
+                                                            class="btn btn-default waves-effect">Cancel
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-box">
+                        			<h4 class="header-title m-t-0 m-b-30">Measured Values</h4>
+
+                                    <div>
+                                        {% for item in report_detail.measured_values %}
+										<div class="media m-b-12">
+                                            <div class="media-body">
+                                                <h4 class="media-heading">Mat Helme</h4>
+                                                <p class="font-13 text-muted m-b-0">
+                                                    <a href="#" class="text-primary">@Michael</a>
+                                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                                ante sollicitudin commodo. Cras purus odio.
+                                                </p>
+                                                <a href="#" class="text-success font-13">Reply</a>
+                                            </div>
+										</div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+            </div>
+
+{% include 'dashboard/footer.html' %}

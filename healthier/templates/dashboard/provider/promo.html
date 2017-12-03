@@ -7,37 +7,39 @@
 {% include 'dashboard/dashboard_nav.html' %}
 
    <div class="content-page">
-                <!-- Start content -->
                 <div class="content">
                     <div class="container">
 
                         <div class="row">
                             <div class="col-sm-4">
-                                <a href="{% url 'dashboard:consumer' %}" type="button" class="btn btn-purple w-md waves-effect waves-light m-b-20">View Orders</a>
+                                <a href="{% url 'dashboard:create_promo' %}" type="button" class="btn btn-purple w-md waves-effect waves-light m-b-20">Create Promo</a>
                             </div>
                         </div>
 
                         <div class="row">
                             {% if reports %}
-                                {% for report in reports %}
+                                {% for promo in promo_list %}
                                     <div class="col-lg-4">
                                         <div class="card-box project-box">
-                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-inverse">Report Generated for {{ report.generated_for.ordered_by.healthier_id.username | capfirst }}</a></h4>
+                                            <h4 class="m-t-0 m-b-5"><a href="#" class="text-inverse">Promo Generated
+                                                for {{ promo.services }}</a></h4>
 
-                                            <p class="text-success text-uppercase m-b-20 font-13">{{ report.generated_on }}</p>
-                                            <p class="text-muted font-13">{{ report.report_summary }}
+                                            <p class="text-success text-uppercase m-b-20 font-13">
+                                                {{ promo.added_on }}</p>
+                                            <p class="text-muted font-13">{{ report.promo_message }}
                                             </p>
 
                                             <ul class="list-inline">
                                                 <li>
-                                                    <h3 class="m-b-0">56</h3>
-                                                    <p class="text-muted">Views</p>
+                                                    <h3 class="m-b-0">0</h3>
+                                                    <p class="text-muted">Successful Usage(s)</p>
                                                 </li>
                                                 <li>
-                                                    <h3 class="m-b-0">452</h3>
-                                                    <p class="text-muted">Downloads</p>
+                                                    <h3 class="m-b-0">0</h3>
+                                                    <p class="text-muted">Failed Usage</p>
                                                 </li>
-                                                  <a href="{% url 'dashboard:service_report_details' report.id %}" type="button" class="btn btn-purple w-md waves-effect waves-light m-b-20">Full Report</a>
+                                                  <a href="{% url 'dashboard:service_report_details' report.id %}" type="button" class="btn btn-purple w-md waves-effect waves-light m-b-20">Edit Promo</a>
+                                                <a href="{% url 'dashboard:service_report_details' report.id %}" type="button" class="btn btn-purple w-md waves-effect waves-light m-b-20">Delete Promo</a>
                                             </ul>
 
                                             <div class="col-md-5">

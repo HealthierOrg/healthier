@@ -7,6 +7,14 @@
             <div class="content-page">
                 <div class="content">
                     <div class="container">
+                     <div class="row">
+                        	<div class="col-sm-4">
+                        		 <a href="{% url 'dashboard:dashboard_all_services' %}"
+                                    class="btn btn-success btn-md waves-effect waves-light m-b-30" data-animation="fadein" data-plugin="custommodal"
+                                    data-overlaySpeed="200" data-overlayColor="#36404a"><i class="md md-add"></i> Add
+                                     Service</a>
+                        	</div>
+                        </div>
                         <div class="row">
                             {% if user.account_type == "PRO" %}
                             {% for service in user_services %}
@@ -55,7 +63,7 @@
                                         </li>
                                         <li>
                                            <a href="{% url 'dashboard:service_report' %}?service={{ service.service.id }}" class="btn btn-small btn-success">View Complete Service Report</a>
-                                           <a href="{% url 'dashboard:service_report' %}?service={{ service.service.id }}" class="btn btn-small btn-danger">Make new order</a>
+                                           <a href="{% url 'dashboard:order_service_step' 'confirmRenew' %}?service={{  service.service_id }}&provider={{ service.requested_by.healthier_id.id }}"  class="btn btn-small btn-danger makeNewOrder">Make new order</a>
                                         </li>
                                     </ul>
                                 </div>

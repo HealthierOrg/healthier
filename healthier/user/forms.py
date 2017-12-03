@@ -18,3 +18,4 @@ class SignupForm(forms.ModelForm):
         account_details = Provider(healthier_id=healthier_user) if user.account_type \
                                                                    == "PRO" else Consumer(healthier_id=healthier_user)
         account_details.save()
+

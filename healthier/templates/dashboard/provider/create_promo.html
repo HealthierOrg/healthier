@@ -1,0 +1,48 @@
+ {% load static %}
+{% load widget_tweaks %}
+
+{% include 'registration/header.html' %}
+ <body class="fixed-left" xmlns="http://www.w3.org/1999/html">
+
+{% include 'dashboard/dashboard_nav.html' %}
+            <div class="content-page">
+                <div class="content">
+                    <input type="hidden" value="{{ user }}" id="user_details">
+                    <div class="container">
+                        <div class="row">
+                        	<div class="col-sm-12">
+                                <form class="form-horizontal" role="form" method="POST" action="{% url 'dashboard:account_settings' %}" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                        			<div class="row">
+                                       <div id="custom-modal">
+                                            <h4 class="custom-modal-title">Fill the form below to create a promo</h4>
+                                            <div class="custom-modal-text text-left">
+                                                <div class="form-group">
+	                                                <label class="col-md-2 control-label">Duration</label>
+	                                                <div class="col-md-10">
+	                                                    <input type="text" name="duration" id="username" placeholder="{{ promo.duration | capfirst}}" class="form-control">
+	                                                     <span class="help-block"><small>How long should
+                                                             the promo last for.</small></span>
+                                                    </div>
+	                                            </div>
+                                                <div class="form-group">
+	                                                <label class="col-md-2 control-label">Promo Message</label>
+	                                                <div class="col-md-10">
+	                                                    <textarea  name="promo_message"  placeholder="{{ promo.promo_message | capfirst}}" class="form-control"></textarea>
+                                                        <span class="help-block"><small>A short message describing
+                                                            the promo
+                                                            .</small></span>
+                                                    </div>
+	                                            </div>
+                                                    <button type="submit" class="btn btn-lg btn-googleplus waves-effect waves-light">Update Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                        		</div>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% include 'dashboard/footer.html' %}

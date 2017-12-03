@@ -12,5 +12,9 @@ def generate_id(account_type):
 
 
 def generate_order_id():
-    return int(''.join([str(random.randint(0,10)) for _ in range(7)]))
+    return int(''.join([str(random.randint(0, 10)) for _ in range(7)]))
 
+
+def generate_promo_id():
+    chars = string.ascii_uppercase + string.digits
+    return str(''.join([(random.choice(chars)) for _ in range(7)]))

@@ -1,12 +1,13 @@
 {% load static %}
+{% load bootstrap_pagination %}
 
 {% include "header.html" %}
 
-  <div class="loader-mask">
-    <div class="loader">
-      "Loading..."
-    </div>
-  </div>
+{#  <div class="loader-mask">#}
+{#    <div class="loader">#}
+{#      "Loading..."#}
+{#    </div>#}
+{#  </div>#}
 
   <main class="main-wrapper">
     {% include 'nav.html' %}
@@ -19,7 +20,7 @@
           <div class="row hero__outer flex-vertical-align-center">
             <div class="col-lg-12  col-md-5 col-xs-12">
               <div class="optin optin--mt-minus-30 text-center">
-                <h1 class="optin__title">Enjoy the best health care services from seasoned service providers.</h1>
+                <h1 class="optin__title">Your Passport to Great Health</h1>
                   <p class="optin__text lead">Healthier provides you a state of the art platform to help you offer you medical services to users
                   seamlessly.</p>
             </div>
@@ -30,21 +31,37 @@
         <section class="section-wrap pt-70 pb-120 bg-light" id="services">
         <div class="container">
          <div class="heading-row text-center">
-            <h2 class="heading">Currently available Services</h2>
+            <h2 class="heading">Available Service Categories</h2>
           </div>
           <div class="row items-grid">
-              {% for service in services %}
-                    <div class="col-md-3">
-                      <a href="{% url 'service:service' service.id %}" class="article box-shadow">
-                        <i class="fa fa-{{ service_icon | random}} fa-3x"></i>
-                        <h3 class="article__title">{{ service.service_name }}</h3>
-                          <p class="faq__text">{{ service.details }}</p>
+              {% for category in categories %}
+                    <div class="col-md-4 col-xs-4 col-xxs-12">
+                      <a href="{% url 'service:categories' category.id %}" class="box-shadow">
+                        <div class="feature-1__icon-holder feature-1__icon-holder--blue text-center">
+                            <i class="fa fa-deaf feature-1__icon fa-5x"></i>
+                        </div>
+                        <div class="col-xs-12 feature-1__base">
+                          <h3 class="feature-1__title">{{ category.category_name }}</h3>
+                          <p class="feature-1__paragraph">{{ category.details }}</p>
+                        </div>
                       </a>
                     </div>
               {% endfor %}
           </div>
         </div>
+        <div class="wrapper">
+              <div class="container">
+
+                <div class="row">
+                  <div class="col-sm-12">
+                      <a href="{% url 'dashboard:dashboard_all_services' %}" class="btn btn--lg
+                      btn--windows"><span>View All Categories</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
       </section>
+
 
        <section class="section-wrap section-wrap--sm bg-dark white-text">
         <div class="container">

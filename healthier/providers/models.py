@@ -2,7 +2,9 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
-from config.utils import generate_id
+from django.utils.timezone import now
+from django.utils.translation import ugettext_lazy as _
+from config.utils import generate_id, generate_promo_id
 from healthier.consumers.models import Consumer
 from healthier.user.models import HealthierUser
 
@@ -29,3 +31,12 @@ class ProviderRating(models.Model):
     def __str__(self):
         """Return a string representation of the model."""
         return "Provider with email: {0}".format(self.provider.email)
+
+
+class Promo(models.Model):
+    promo_provider = models.ForeignKey(Provider, on_delete=models.CASCADE, related_name="promo_provider")
+    promo_message = models.CharField(_('Promo Message'), blank=False, max_length=2000)
+    promo_code = models.CharField(_('Promo Code'), blank=False, default=generate_promo_id, max_length=5)
+    added_on = models.DateField(default=now, blank=False)
+    duration = models.CharField(_('Promo Expiration Duration'), blank=False, max_length=30)
+    active = models.BooleanField(default=True)

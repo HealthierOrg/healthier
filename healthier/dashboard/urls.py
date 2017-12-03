@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .views import *
 from healthier.messenger.views import compose, inbox, view, outbox
 
+
 urlpatterns = [
     url(r'^$', DashboardView.as_view(), name='dashboard'),
     url(r'profile^$', login_required(ProfileView.as_view()), name='profile'),
@@ -17,9 +18,11 @@ urlpatterns = [
         name='dashboard_my_services'),
     url(r'^services/all$', login_required(AllServiceListView.as_view()),
         name='dashboard_all_services'),
-    url(r'^service/report/all$', login_required(AllServiceReportView.as_view()), name='service_report'),
-    url(r'^service/report/$', login_required(AllServiceReportView.as_view()), name='service_report'),
-    url(r'^service/render/(?P<service_id>\d+)$', login_required(OrderServiceConfigurationView.as_view()),
+    url(r'^service/report/all/$', login_required(AllServiceReportView.as_view()), name='service_report'),
+    url(r'^service/report/details/(?P<pk>\d+)$', login_required(ReportDetailsView.as_view()),
+        name='service_report_details'),
+    url(r'^service/report/generate/$', login_required(GenerateReportView.as_view()), name='generate_report'),
+    url(r'^service/render/$', login_required(OrderServiceConfigurationView.as_view()),
         name='render_service'),
     url(r'^service/render/alt/$', login_required(OrderServiceConfigurationView.as_view()),
         name='render_service_alt'),
@@ -56,5 +59,9 @@ urlpatterns = [
         name='remove_family'),
 
     url(r'^health_info/view/$', login_required(HealthDataView.as_view()), name='view_health_info'),
-    url(r'^health_info/set/$', login_required(HealthDataUpload.as_view()), name='set_health_info')
+    url(r'^health_info/set/$', login_required(HealthDataUpload.as_view()), name='set_health_info'),
+
+    ##Extras
+    url(r'^promo$', login_required(PromoListView.as_view()), name='promo_list'),
+    url(r'^promo/create/$', login_required(PromoCreateView.as_view()), name='create_promo')
 ]

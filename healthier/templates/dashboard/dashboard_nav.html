@@ -59,7 +59,7 @@
                             </li>
                             {% endif %}
                             {% if request.user.account_type == "CON" %}
-                                <li class="has_sub">
+                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-hospital"></i><span> Health Manager </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{% url 'dashboard:view_health_info' %}">View Health Information</a></li>
@@ -74,16 +74,20 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-account-add"></i><span> Services </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{% url 'dashboard:dashboard_my_services' %}">My services</a></li>
-                                    <li><a href="{% url 'dashboard:order_service' %}">Service Cart</a></li>
-                                    <li><a href="{% url 'dashboard:dashboard_all_services' %}">All Services</a></li>
-                                    <li><a href="{% url 'dashboard:dashboard_suggest_new_service' %}">Suggest a new service</a></li>
+                                        <li><a href="{% url 'dashboard:dashboard_my_services' %}">My services</a></li>
+                                    {% if request.user.account_type  == "CON"%}
+                                        <li><a href="{% url 'dashboard:order_service' %}">Service Cart</a></li>
+                                    {% endif %}
+                                        <li><a href="{% url 'dashboard:dashboard_all_services' %}">All Services</a></li>
+                                        <li><a href="{% url 'dashboard:dashboard_suggest_new_service' %}">Suggest a new service</a></li>
                                 </ul>
                             </li>
-
+                {% if request.user.account_type == "PRO"%}
                             <li>
-                                <a href="{% url 'dashboard:service_report' %}" class="waves-effect"><i class="zmdi zmdi-book"></i><span> Reports </span></a>
+                                <a href="{% url 'dashboard:service_report' %}" class="waves-effect"><i class="zmdi zmdi-book"></i>
+                                    <span> Reports </span></a>
                             </li>
+                {% endif %}
 
                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-inbox"></i><span> Messages </span> <span class="menu-arrow"></span></a>
@@ -95,6 +99,13 @@
                             </li>
 
                         {% if request.user.account_type == "PRO" %}
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-plaster"></i><span> Extra </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{% url 'dashboard:promo_list' %}">Promo</a></li>
+                                </ul>
+                            </li>
+
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-account-add"></i><span> Settings </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
