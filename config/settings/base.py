@@ -371,3 +371,6 @@ HUEY = {
         'health_check_interval': 1,  # Check worker health every second.
     },
 }
+
+
+ACCOUNT_LOGOUT_REDIRECT_URL = "/auth/login"

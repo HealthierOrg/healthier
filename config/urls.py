@@ -6,11 +6,11 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
 from healthier.providers.views import FAQView, TsAndCs
-from healthier.service.views import AllServiceListView
+from healthier.service.views import PaginatedCategoriesListView
 
 
 urlpatterns = [
-    url(r'^$', AllServiceListView.as_view(template_name='pages/home.html'), name='home'),
+    url(r'^$', PaginatedCategoriesListView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^about/', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
     url(settings.ADMIN_URL, admin.site.urls),

@@ -1,0 +1,839 @@
+2,CT 3DCT,,service_z6mk0m7qs2asxfj6emes,0,0,1
+3,CT Abdomen,,service_z6mk0m7qs2asxfj6emes,0,1,1
+4,CT Abdomen and Pelvis,,service_z6mk0m7qs2asxfj6emes,0,4,1
+5,CT angiogram-aortici,,service_z6mk0m7qs2asxfj6emes,0,0,1
+6,CT Ankel Joint Left,,service_z6mk0m7qs2asxfj6emes,0,0,1
+7,CT Ankel Joint Right,,service_z6mk0m7qs2asxfj6emes,0,0,1
+8,CT Ankle Joint,,service_z6mk0m7qs2asxfj6emes,0,0,1
+9,CT Ankle Joint (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+10,CT Brain,,service_z6mk0m7qs2asxfj6emes,0,0,1
+11,CT Brain (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+12,CT BRAIN + CONTRAST,,service_z6mk0m7qs2asxfj6emes,0,0,1
+13,CT Brain Angiography,,service_z6mk0m7qs2asxfj6emes,0,0,1
+14,CT Brain With Sella (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+15,CT CALCIUM SCORING,,service_z6mk0m7qs2asxfj6emes,0,0,1
+16,CT CARDIAC,,service_z6mk0m7qs2asxfj6emes,0,0,1
+17,CT Cardiac With Coronary Vessels,,service_z6mk0m7qs2asxfj6emes,0,0,1
+18,CT Carotid Angiography,,service_z6mk0m7qs2asxfj6emes,0,0,1
+19,CT CERVICAL SPINE,,service_z6mk0m7qs2asxfj6emes,0,0,1
+20,CT CERVICO-DORSAL SPINE,,service_z6mk0m7qs2asxfj6emes,0,0,1
+21,CT Chest,,service_z6mk0m7qs2asxfj6emes,0,0,1
+22,CT Chest (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+23,CT Chest / Abdomen and Pelvis (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+24,CT Chest / Thorax (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+25,CT Chest with Abdomen (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+26,CT CRANIOFACIAL,,service_z6mk0m7qs2asxfj6emes,0,0,1
+27,CT DORSAL SPINE,,service_z6mk0m7qs2asxfj6emes,0,0,1
+28,CT DORSO-LUMAR SPINE,,service_z6mk0m7qs2asxfj6emes,0,0,1
+29,CT Elbow,,service_z6mk0m7qs2asxfj6emes,0,0,1
+30,CT Elbow (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+31,CT Elbow Left,,service_z6mk0m7qs2asxfj6emes,0,0,1
+32,CT Elbow Right,,service_z6mk0m7qs2asxfj6emes,0,0,1
+33,CT Extended Peripheral Angiography,,service_z6mk0m7qs2asxfj6emes,0,1,1
+34,CT Extremity (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+35,CT Extremity (Plain+Contrast),,service_z6mk0m7qs2asxfj6emes,0,0,1
+36,CT FINGER,,service_z6mk0m7qs2asxfj6emes,0,0,1
+37,CT GUIDED BIOPSY,,service_z6mk0m7qs2asxfj6emes,0,0,1
+38,CT Hand,,service_z6mk0m7qs2asxfj6emes,0,0,1
+39,CT Hand (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+40,CT Hand Left,,service_z6mk0m7qs2asxfj6emes,0,0,1
+41,CT Hand Right,,service_z6mk0m7qs2asxfj6emes,0,0,1
+42,CT Hip Joint,,service_z6mk0m7qs2asxfj6emes,0,0,1
+43,CT Hip Joint (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+44,CT HIP JOINT LEFT,,service_z6mk0m7qs2asxfj6emes,0,0,1
+45,CT HIP JOINT RIGHT,,service_z6mk0m7qs2asxfj6emes,0,0,1
+46,CT HR Chest,,service_z6mk0m7qs2asxfj6emes,0,0,1
+47,CT HR Chest (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+48,CT HR Temporal Bone,,service_z6mk0m7qs2asxfj6emes,0,0,1
+49,CT IAM Cuts Plain,,service_z6mk0m7qs2asxfj6emes,0,0,1
+50,CT IVP / IVU,,service_z6mk0m7qs2asxfj6emes,0,0,1
+51,CT Joints,,service_z6mk0m7qs2asxfj6emes,0,0,1
+52,CT Knee,,service_z6mk0m7qs2asxfj6emes,0,0,1
+53,CT KNEE (LEFT),,service_z6mk0m7qs2asxfj6emes,0,0,1
+54,CT KNEE (RIGHT),,service_z6mk0m7qs2asxfj6emes,0,0,1
+55,CT Leg,,service_z6mk0m7qs2asxfj6emes,0,0,1
+56,CT Leg (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+57,CT LEG LEFT,,service_z6mk0m7qs2asxfj6emes,0,1,1
+58,CT LEG RIGHT,,service_z6mk0m7qs2asxfj6emes,0,0,1
+59,CT Lower Abdomen and Pelvis,,service_z6mk0m7qs2asxfj6emes,0,0,1
+60,CT Lumbar Spine,,service_z6mk0m7qs2asxfj6emes,0,0,1
+61,CT Mandible Bone,,service_z6mk0m7qs2asxfj6emes,0,0,1
+62,CT MASTDIN,,service_z6mk0m7qs2asxfj6emes,0,0,1
+63,CT Maxilla Contrast,,service_z6mk0m7qs2asxfj6emes,0,0,1
+64,CT Maxilla Plain,,service_z6mk0m7qs2asxfj6emes,0,0,1
+65,CT MAXILLOFACIAL,,service_z6mk0m7qs2asxfj6emes,0,0,1
+66,CT Myelogram,,service_z6mk0m7qs2asxfj6emes,0,0,1
+67,CT NASOPHARYNX,,service_z6mk0m7qs2asxfj6emes,0,0,1
+68,CT Nasopharynx & Base of Skull,,service_z6mk0m7qs2asxfj6emes,0,0,1
+69,CT Neck,,service_z6mk0m7qs2asxfj6emes,0,0,1
+70,CT Neck (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+71,CT NECK + CONTRAST,,service_z6mk0m7qs2asxfj6emes,0,0,1
+72,CT Orbit,,service_z6mk0m7qs2asxfj6emes,0,0,1
+73,CT Orbit (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+74,CT Para Nasal Sinuses (Limited),,service_z6mk0m7qs2asxfj6emes,0,0,1
+75,CT Pelvimetry,,service_z6mk0m7qs2asxfj6emes,0,0,1
+76,CT Pelvis,,service_z6mk0m7qs2asxfj6emes,0,0,1
+77,CT Pelvis (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+78,CT Peripheral Angiography-Lower Extremity,,service_z6mk0m7qs2asxfj6emes,0,0,1
+79,CT Peripheral Angiography-Upper Extremity,,service_z6mk0m7qs2asxfj6emes,0,0,1
+80,CT Pulmonary Angiography,,service_z6mk0m7qs2asxfj6emes,0,0,1
+81,CT Renal Angiography,,service_z6mk0m7qs2asxfj6emes,0,0,1
+82,CT RIBS,,service_z6mk0m7qs2asxfj6emes,0,0,1
+83,CT Sacro-iliac Joint,,service_z6mk0m7qs2asxfj6emes,0,0,1
+84,CT Sacro-iliac Joint (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+85,CT Scanogram,,service_z6mk0m7qs2asxfj6emes,0,0,1
+86,CT Sella Contrast,,service_z6mk0m7qs2asxfj6emes,0,0,1
+87,CT Sella Plain,,service_z6mk0m7qs2asxfj6emes,0,0,1
+88,CT Shoulder Joint,,service_z6mk0m7qs2asxfj6emes,0,0,1
+89,CT Shoulder Joint (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+90,CT SHOULDER JOINT LEFT,,service_z6mk0m7qs2asxfj6emes,0,0,1
+91,CT SHOULDER JOINT RIGHT,,service_z6mk0m7qs2asxfj6emes,0,0,1
+92,CT Spine,,service_z6mk0m7qs2asxfj6emes,0,0,1
+93,CT Spine (3 Level) Contrast,,service_z6mk0m7qs2asxfj6emes,0,0,1
+94,CT Spine (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+95,CT Spine(3 level) Plain,,service_z6mk0m7qs2asxfj6emes,0,0,1
+96,CT Upper Abdomen (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+97,CT Venography,,service_z6mk0m7qs2asxfj6emes,0,0,1
+98,CT Wrist,,service_z6mk0m7qs2asxfj6emes,0,0,1
+99,CT Wrist (Plain),,service_z6mk0m7qs2asxfj6emes,0,0,1
+100,CT WRIST LEFT,,service_z6mk0m7qs2asxfj6emes,0,0,1
+101,CT WRIST RIGHT,,service_z6mk0m7qs2asxfj6emes,0,0,1
+102,HRCT CHEST,,service_z6mk0m7qs2asxfj6emes,0,0,1
+103,MRI Abdomen & Pelvis - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+104,MRI Abdomen - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+105,MRI Ankle Joint (LEFT) - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+106,MRI Ankle Joint (RIGHT) - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+107,MRI ANKLE JOINT LEFT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+108,MRI ANKLE JOINT RIGHT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+109,MRI Arm (Right) - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+110,MRI ARM LEFT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+111,MRI ARM RIGHT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+112,MRI Brain & Angiography - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+113,MRI Brain & Venogram - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+114,MRI Brain - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+115,MRI Brain With Contrast - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+116,MRI Brain With Pituitary - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+117,MRI BREAST,,service_z6mk0m7qs2asxfj6emes,0,0,3
+118,MRI Cervical Spine - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+119,MRI Chest - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+120,MRI CRANIOFACIAL - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+121,MRI Dorsal Spine - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+122,MRI DORSO-LUMBAR - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+123,MRI Elbow - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+124,MRI ELBOW LEFT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+125,MRI ELBOW RIGHT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+126,MRI Femur - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+127,MRI FEMUR LEFT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+128,MRI FEMUR RIGHT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+129,MRI Hand - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+130,MRI HAND LEFT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+131,MRI HAND RIGHT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+132,MRI Hip Joint - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+133,MRI HIP JOINT LEFT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+134,MRI HIP JOINT RIGHT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+135,MRI KNEE (LEFT) - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+136,MRI KNEE (RIGHT) - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+137,MRI Knee - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+138,MRI KNEE LEFT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+139,MRI KNEE RIGHT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+140,MRI Leg - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+141,MRI LEG LEFT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+142,MRI LEG RIGHT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+143,MRI Lumbar Spine - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+144,MRI MAXILLOFACIAL - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+145,MRI MRCP Abdomen with Contrast - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+146,MRI NECK + CONTRAST - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+147,MRI Neck - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+148,MRI Orbits - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+149,MRI PAEDIATRICS [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+150,MRI Pelvis - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+151,MRI Pitutary - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+152,MRI PNS - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+153,MRI Prostate - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+154,MRI Sacro Iliac joints - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+155,MRI Screening - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+156,MRI Shoulder Joint (Left) - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+157,MRI Shoulder Joint (Right) - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+158,MRI SHOULDER JOINT LEFT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+159,MRI SHOULDER JOINT RIGHT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+160,MRI TOE/FOOT LEFT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+161,MRI TOE/FOOT RIGHT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+162,MRI Whole Body Scan,,service_z6mk0m7qs2asxfj6emes,0,0,3
+163,MRI Whole Body Scan - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+164,MRI Wrist - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+165,MRI WRIST LEFT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+166,MRI WRIST RIGHT - [1.5 Tesla],,service_z6mk0m7qs2asxfj6emes,0,0,3
+167,Abdomen Scan,,service_z6mk0m7qs2asxfj6emes,0,0,4
+168,Gynaecology Scan,,service_z6mk0m7qs2asxfj6emes,0,0,4
+169,Pelvic Scan,,service_z6mk0m7qs2asxfj6emes,0,0,4
+170,Breast Scan,,service_z6mk0m7qs2asxfj6emes,0,0,4
+171,Testes Scan,,service_z6mk0m7qs2asxfj6emes,0,0,4
+172,Thyroid Scan,,service_z6mk0m7qs2asxfj6emes,0,0,4
+173,Prostate Scan,,service_z6mk0m7qs2asxfj6emes,0,0,4
+174,Ovulometry/TV Scan,,service_z6mk0m7qs2asxfj6emes,0,0,4
+175,Bladder Scan,,service_z6mk0m7qs2asxfj6emes,0,0,4
+176,Transvaginal/Folliculometry Scan,,service_z6mk0m7qs2asxfj6emes,0,0,4
+177,Dental-Intra-Oral Periapical Scan,,service_z6mk0m7qs2asxfj6emes,0,0,4
+178,Obstetric Scan,,service_z6mk0m7qs2asxfj6emes,0,0,4
+179,Angiography,,service_z6mk0m7qs2asxfj6emes,0,0,5
+180,Arthrogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+181,Barium Enema,,service_z6mk0m7qs2asxfj6emes,0,0,5
+182,Barium Meal With Gastrografin,,service_z6mk0m7qs2asxfj6emes,0,0,5
+183,Barium Meal/Follow Through,,service_z6mk0m7qs2asxfj6emes,0,0,5
+184,Barium Swallow,,service_z6mk0m7qs2asxfj6emes,0,0,5
+185,Cholecytogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+186,Cysto-Urethrogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+187,Deep Venogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+188,Fistulogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+189,Hysterosalpingogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+190,Intravenous Cholangiogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+191,Intravenous Urogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+192,Intravenous Pyelogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+193,Mammography,,service_z6mk0m7qs2asxfj6emes,0,0,5
+194,Micturating Cystourethrogram (MCUG),,service_z6mk0m7qs2asxfj6emes,0,0,5
+195,Retrograde urethrogram (RCUG),,service_z6mk0m7qs2asxfj6emes,0,0,5
+196,Venogram (One Leg),,service_z6mk0m7qs2asxfj6emes,0,0,5
+197,Myelogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+198,Oral Cholecytogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+199,Percutenous Transphepatic Cholangiogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+200,Peripheral Arteriography,,service_z6mk0m7qs2asxfj6emes,0,0,5
+201,Phlebogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+202,Sialogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+203,Fistulogram/Sinogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+204,Cyst-Urethrogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+205,Oral Cholecystogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+206,Intravenous Cholangiogram,,service_z6mk0m7qs2asxfj6emes,0,0,5
+207,Fluoroscopy,,service_z6mk0m7qs2asxfj6emes,0,0,5
+208,Sinography/ Fistulography,,service_z6mk0m7qs2asxfj6emes,0,0,5
+209,Sinuses,,service_z6mk0m7qs2asxfj6emes,0,0,5
+210,Skeletal Survey,,service_z6mk0m7qs2asxfj6emes,0,0,5
+211,Skeletal survey (Adult),,service_z6mk0m7qs2asxfj6emes,0,0,5
+212,Hand/Finger,,service_z6mk0m7qs2asxfj6emes,0,0,5
+213,Wrist,,service_z6mk0m7qs2asxfj6emes,0,0,5
+214,Forearm (Radius And Ulna),,service_z6mk0m7qs2asxfj6emes,0,0,5
+215,Elbow,,service_z6mk0m7qs2asxfj6emes,0,0,5
+216,Humerus,,service_z6mk0m7qs2asxfj6emes,0,0,5
+217,Shoulder,,service_z6mk0m7qs2asxfj6emes,0,0,5
+218,Clavicle,,service_z6mk0m7qs2asxfj6emes,0,0,5
+219,Foot/Toe,,service_z6mk0m7qs2asxfj6emes,0,0,5
+220,Ankle,,service_z6mk0m7qs2asxfj6emes,0,0,5
+221,Leg (Tibia/Fibula),,service_z6mk0m7qs2asxfj6emes,0,0,5
+222,Knee,,service_z6mk0m7qs2asxfj6emes,0,0,5
+223,Thigh(Femur),,service_z6mk0m7qs2asxfj6emes,0,0,5
+224,Hip,,service_z6mk0m7qs2asxfj6emes,0,0,5
+225,Pelvis( AP),,service_z6mk0m7qs2asxfj6emes,0,0,5
+226,Pelvis & Hip,,service_z6mk0m7qs2asxfj6emes,0,0,5
+227,Chest (PA/AP),,service_z6mk0m7qs2asxfj6emes,0,0,5
+228,Chest (PA/Lateral),,service_z6mk0m7qs2asxfj6emes,0,0,5
+229,Chest For Ribs (Oblique),,service_z6mk0m7qs2asxfj6emes,0,0,5
+230,Apical/Lordotic,,service_z6mk0m7qs2asxfj6emes,0,0,5
+231,Sternum,,service_z6mk0m7qs2asxfj6emes,0,0,5
+232,Thoracic Inlet,,service_z6mk0m7qs2asxfj6emes,0,0,5
+233,Cervical Spine,,service_z6mk0m7qs2asxfj6emes,0,0,5
+234,Lateral Neck (Soft Tissue),,service_z6mk0m7qs2asxfj6emes,0,0,5
+235,Thoracic Spine,,service_z6mk0m7qs2asxfj6emes,0,0,5
+236,Thoraco- Lumbar Spine,,service_z6mk0m7qs2asxfj6emes,0,0,5
+237,Lumbar Spine,,service_z6mk0m7qs2asxfj6emes,0,0,5
+238,Lumbo- Sacral Spine,,service_z6mk0m7qs2asxfj6emes,0,0,5
+239,Sacrum,,service_z6mk0m7qs2asxfj6emes,0,0,5
+240,Coccyx,,service_z6mk0m7qs2asxfj6emes,0,0,5
+241,Sacro- Iliac Joint (SIJ),,service_z6mk0m7qs2asxfj6emes,0,0,5
+242,Cervical Spine (Oblique),,service_z6mk0m7qs2asxfj6emes,0,0,5
+243,Plain Abdomen,,service_z6mk0m7qs2asxfj6emes,0,0,5
+244,Erect/Supine Abdomen,,service_z6mk0m7qs2asxfj6emes,0,0,5
+245,Pelvimetry,,service_z6mk0m7qs2asxfj6emes,0,0,5
+246,Mastoids,,service_z6mk0m7qs2asxfj6emes,0,0,5
+247,Mandibles (Jaw),,service_z6mk0m7qs2asxfj6emes,0,0,5
+248,X-Ray Sinuses Ap/Lnt/Om,,service_z6mk0m7qs2asxfj6emes,0,0,5
+249,X-Ray Skull (AP/LAT),,service_z6mk0m7qs2asxfj6emes,0,0,5
+250,X-Ray Skull (Pa/Lat/Townes),,service_z6mk0m7qs2asxfj6emes,0,0,5
+251,X-Ray Sternum,,service_z6mk0m7qs2asxfj6emes,0,0,5
+252,X-Ray Tagential,,service_z6mk0m7qs2asxfj6emes,0,0,5
+253,X-Ray Temporo-Mandibular Joints (TMJ),,service_z6mk0m7qs2asxfj6emes,0,0,5
+254,ECG,,service_z6mk0m7qs2asxfj6emes,0,0,6
+255,Post Exercise ECG,,service_z6mk0m7qs2asxfj6emes,0,0,6
+256,Color Doppler,,service_z6mk0m7qs2asxfj6emes,0,0,7
+257,EEG,,service_z6mk0m7qs2asxfj6emes,0,0,8
+258,Chromosomal Analysis-High resolution banding - [Blood],,service_z6mk0m7qs2asxfj6emes,0,0,9
+259,HBV-DNA Quantification (Viral load) - [Serum or plasma],,service_z6mk0m7qs2asxfj6emes,0,0,9
+260,Sigmoidoscopy,,service_z6mk0m7qs2asxfj6emes,0,0,9
+261,Biopsy- Large specimen for histology - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+262,Biopsy- Large and Complex specimen for histology - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+263,Biopsy- Medium specimen for histology - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+264,Biopsy- Small specimen for histology - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+265,Biopsy-Second opinion slides/blocks for histopathological examination. - [Block/ Slide],,service_z6mk0m7qs2asxfj6emes,0,0,10
+266,Biopsy-Skin biopsy for histology with special stain (SOS) - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+267,"Body fluid,Rt Exam With cytology and 14 - [Body fluid]",,service_z6mk0m7qs2asxfj6emes,0,0,10
+268,FNAC - cytological examination - [FNAC fluid],,service_z6mk0m7qs2asxfj6emes,0,0,10
+269,FNAC procedure charges - [Walk in patient],,service_z6mk0m7qs2asxfj6emes,0,0,10
+270,Giemsa Stain for histopathology - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+271,Histopathology- BILATERAL BREAST LUMPS - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+272,Histopathology- Large specimen - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+273,Histopathology- Large and Complex specimen - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+274,Histopathology- Medium specimen - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+275,Histopathology- Small specimen - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+276,Histopathology-GASTRIC BIOPSY - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+277,Histopathology-Liver Biopsy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+278,Histopathology-Skin biopsy with special stain (SOS) - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+279,Masson Trichrome stain for histopathology - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+280,PAS stain for histopathology - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+281,PTAH Stain for histopathology - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+282,Reticulin Stain (For histopathology) - [Tissue],,service_z6mk0m7qs2asxfj6emes,0,0,10
+283,"Routine examination, Sputum, Comprehensive (Includes cytology and 14) - [Sputum]",,service_z6mk0m7qs2asxfj6emes,0,0,10
+284,Cytology - [Aspirates],,service_z6mk0m7qs2asxfj6emes,0,0,11
+285,Cytology - [Body fluid],,service_z6mk0m7qs2asxfj6emes,0,0,11
+286,Cytology - [Sputum],,service_z6mk0m7qs2asxfj6emes,0,0,11
+287,Cytology - [Urine],,service_z6mk0m7qs2asxfj6emes,0,0,11
+288,Cytology - [Washing fluid],,service_z6mk0m7qs2asxfj6emes,0,0,11
+289,Alanine Transaminase (SGPT),,service_z6mk0m7qs2asxfj6emes,0,0,12
+290,Albumin,,service_z6mk0m7qs2asxfj6emes,0,0,12
+291,Alkaline Phosphatase,,service_z6mk0m7qs2asxfj6emes,0,0,12
+292,Aspartate Transaminase (SGOT),,service_z6mk0m7qs2asxfj6emes,0,0,12
+293,Fasting Blood Sugar,,service_z6mk0m7qs2asxfj6emes,0,0,12
+294,Random Blood Sugar,,service_z6mk0m7qs2asxfj6emes,0,0,12
+295,Calcium,,service_z6mk0m7qs2asxfj6emes,0,0,12
+296,Creatinine,,service_z6mk0m7qs2asxfj6emes,0,0,12
+297,Creatinine Clearance,,service_z6mk0m7qs2asxfj6emes,0,0,12
+298,CSF Protein,,service_z6mk0m7qs2asxfj6emes,0,0,12
+299,CSF Sugar,,service_z6mk0m7qs2asxfj6emes,0,0,12
+300,Electrolyte - Na+,,service_z6mk0m7qs2asxfj6emes,0,0,12
+301,Electrolyte - K+,,service_z6mk0m7qs2asxfj6emes,0,0,12
+302,Electrolyte - CL-,,service_z6mk0m7qs2asxfj6emes,0,0,12
+303,Electrolyte - HCO3-,,service_z6mk0m7qs2asxfj6emes,0,0,12
+304,Electrolyte and Urea,,service_z6mk0m7qs2asxfj6emes,0,0,12
+305,"Electrolyte, Urea & Creatinine",,service_z6mk0m7qs2asxfj6emes,0,0,12
+306,Glucose6-Phosphate-dehydrogenase,,service_z6mk0m7qs2asxfj6emes,0,0,12
+307,Lipid profile,,service_z6mk0m7qs2asxfj6emes,0,0,12
+308,Liver function Test,,service_z6mk0m7qs2asxfj6emes,0,0,12
+309,Phosphorus,,service_z6mk0m7qs2asxfj6emes,0,0,12
+310,Pregnancy Test (Beta HCG - Blood),,service_z6mk0m7qs2asxfj6emes,0,0,12
+311,"Protein, Total",,service_z6mk0m7qs2asxfj6emes,0,0,12
+312,Urea,,service_z6mk0m7qs2asxfj6emes,0,0,12
+313,Uric arid,,service_z6mk0m7qs2asxfj6emes,0,0,12
+314,Urinalysis dipstick,,service_z6mk0m7qs2asxfj6emes,0,0,12
+315,24hr Post Prandial,,service_z6mk0m7qs2asxfj6emes,0,0,12
+316,Glucose Tolerance Test,,service_z6mk0m7qs2asxfj6emes,0,0,12
+317,Total Bilirubim,,service_z6mk0m7qs2asxfj6emes,0,0,12
+318,Direct Bilirubim,,service_z6mk0m7qs2asxfj6emes,0,0,12
+319,Total Protein,,service_z6mk0m7qs2asxfj6emes,0,0,12
+320,Uric Acid,,service_z6mk0m7qs2asxfj6emes,0,0,12
+321,Calcium,,service_z6mk0m7qs2asxfj6emes,0,0,12
+322,Prostatic Acid Phosphates,,service_z6mk0m7qs2asxfj6emes,0,0,12
+323,Total Acid Phosphates,,service_z6mk0m7qs2asxfj6emes,0,0,12
+324,Amylase,,service_z6mk0m7qs2asxfj6emes,0,0,12
+325,Cholesterol,,service_z6mk0m7qs2asxfj6emes,0,0,12
+326,Triglyceride,,service_z6mk0m7qs2asxfj6emes,0,0,12
+327,CSF Glucose,,service_z6mk0m7qs2asxfj6emes,0,0,12
+328,CSF Protein,,service_z6mk0m7qs2asxfj6emes,0,0,12
+329,CSF Chloride,,service_z6mk0m7qs2asxfj6emes,0,0,12
+330,HDL/LDL Cholesterol,,service_z6mk0m7qs2asxfj6emes,0,0,12
+331,Gamma Gt,,service_z6mk0m7qs2asxfj6emes,0,0,12
+332,CK Amylase,,service_z6mk0m7qs2asxfj6emes,0,0,12
+333,Protein Electrophoresis + Report,,service_z6mk0m7qs2asxfj6emes,0,0,12
+334,Oral Glucose Tolerance Test(OGTT),,service_z6mk0m7qs2asxfj6emes,0,0,12
+335,Bleeding Time,,service_z6mk0m7qs2asxfj6emes,0,0,13
+336,Blood film report,,service_z6mk0m7qs2asxfj6emes,0,0,13
+337,Blood grouping + Rh,,service_z6mk0m7qs2asxfj6emes,0,0,13
+338,Clotting Time,,service_z6mk0m7qs2asxfj6emes,0,0,13
+339,C-Reactive protein (CRP),,service_z6mk0m7qs2asxfj6emes,0,0,13
+340,Cross matching,,service_z6mk0m7qs2asxfj6emes,0,0,13
+341,Direct Coombs test,,service_z6mk0m7qs2asxfj6emes,0,0,13
+342,ESR,,service_z6mk0m7qs2asxfj6emes,0,0,13
+343,Fibrinogen,,service_z6mk0m7qs2asxfj6emes,0,0,13
+344,G6PD qualitative,,service_z6mk0m7qs2asxfj6emes,0,0,13
+345,G6PD quantitative,,service_z6mk0m7qs2asxfj6emes,0,0,13
+346,Genotype,,service_z6mk0m7qs2asxfj6emes,0,0,13
+347,Haemoglobin,,service_z6mk0m7qs2asxfj6emes,0,0,13
+348,HIV Confirmation (Western Blot),,service_z6mk0m7qs2asxfj6emes,0,0,13
+349,HIV Screening (HIV 1 & 11) antibodies,,service_z6mk0m7qs2asxfj6emes,0,0,13
+350,Indirect Coombs test,,service_z6mk0m7qs2asxfj6emes,0,0,13
+351,INR,,service_z6mk0m7qs2asxfj6emes,0,0,13
+352,Malaria ICT,,service_z6mk0m7qs2asxfj6emes,0,0,13
+353,Malaria parasites (QBC Malaria),,service_z6mk0m7qs2asxfj6emes,0,0,13
+354,MCH,,service_z6mk0m7qs2asxfj6emes,0,0,13
+355,MCHC,,service_z6mk0m7qs2asxfj6emes,0,0,13
+356,MCV,,service_z6mk0m7qs2asxfj6emes,0,0,13
+357,O+ve pint of blood,,service_z6mk0m7qs2asxfj6emes,0,0,13
+358,O-ve pint of blood,,service_z6mk0m7qs2asxfj6emes,0,0,13
+359,Packed Cell Volume (PCV),,service_z6mk0m7qs2asxfj6emes,0,0,13
+360,Platelet count,,service_z6mk0m7qs2asxfj6emes,0,0,13
+361,Prothombin Time (PT),,service_z6mk0m7qs2asxfj6emes,0,0,13
+362,PTTK,,service_z6mk0m7qs2asxfj6emes,0,0,13
+363,Reticulocyte count,,service_z6mk0m7qs2asxfj6emes,0,0,13
+364,sickle Cell screening,,service_z6mk0m7qs2asxfj6emes,0,0,13
+365,WBC Differential - (FBC),,service_z6mk0m7qs2asxfj6emes,0,0,13
+366,WBC Total,,service_z6mk0m7qs2asxfj6emes,0,0,13
+367,Adenovirus,,service_z6mk0m7qs2asxfj6emes,0,0,14
+368,Blood culture and sensitivity,,service_z6mk0m7qs2asxfj6emes,0,0,14
+369,CSF M/C/S,,service_z6mk0m7qs2asxfj6emes,0,0,14
+370,Hepatitis B DNA viral load,,service_z6mk0m7qs2asxfj6emes,0,0,14
+371,Hepatitis B surface antigen (HBsAg),,service_z6mk0m7qs2asxfj6emes,0,0,14
+372,Hepatitis C,,service_z6mk0m7qs2asxfj6emes,0,0,14
+373,Hepatitis C DNA viral load,,service_z6mk0m7qs2asxfj6emes,0,0,14
+374,HVS MCS,,service_z6mk0m7qs2asxfj6emes,0,0,14
+375,Mantoux (Tuberculin Test),,service_z6mk0m7qs2asxfj6emes,0,0,14
+376,Rapid TB Test,,service_z6mk0m7qs2asxfj6emes,0,0,14
+377,Rotavirus,,service_z6mk0m7qs2asxfj6emes,0,0,14
+378,Sputum M/C/S,,service_z6mk0m7qs2asxfj6emes,0,0,14
+379,Sputum ZN stain for AFB,,service_z6mk0m7qs2asxfj6emes,0,0,14
+380,Stool M/C/S,,service_z6mk0m7qs2asxfj6emes,0,0,14
+381,Stool microscopy,,service_z6mk0m7qs2asxfj6emes,0,0,14
+382,Stool Occult blood,,service_z6mk0m7qs2asxfj6emes,0,0,14
+383,"Swab M/C/S (wound eye, ear, urethra, etc)",,service_z6mk0m7qs2asxfj6emes,0,0,14
+384,TB Quantiferon,,service_z6mk0m7qs2asxfj6emes,0,0,14
+385,TPHA,,service_z6mk0m7qs2asxfj6emes,0,0,14
+386,Urine M/C/S,,service_z6mk0m7qs2asxfj6emes,0,0,14
+387,Urine Microscopy,,service_z6mk0m7qs2asxfj6emes,0,0,14
+388,VDRL,,service_z6mk0m7qs2asxfj6emes,0,0,14
+389,Widal test,,service_z6mk0m7qs2asxfj6emes,0,0,14
+390,Urinalysis,,service_z6mk0m7qs2asxfj6emes,0,0,14
+391,Semen Culture And Sensitivity,,service_z6mk0m7qs2asxfj6emes,0,0,14
+392,Semen Analysis,,service_z6mk0m7qs2asxfj6emes,0,0,14
+393,Aspirate Pus M/C/S,,service_z6mk0m7qs2asxfj6emes,0,0,14
+394,Microfilaria,,service_z6mk0m7qs2asxfj6emes,0,0,14
+395,Urethral And Wound M/C/S,,service_z6mk0m7qs2asxfj6emes,0,0,14
+396,Skin Snip,,service_z6mk0m7qs2asxfj6emes,0,0,14
+397,Skin Scraping For Fungal Elements,,service_z6mk0m7qs2asxfj6emes,0,0,14
+398,Sputum AFB For Tuberculosis X3,,service_z6mk0m7qs2asxfj6emes,0,0,14
+399,Urine Pregnancy Test,,service_z6mk0m7qs2asxfj6emes,0,0,15
+400,ASO Titre (nephrology),,service_z6mk0m7qs2asxfj6emes,0,0,15
+401,ASO Titre/anti DnascB,,service_z6mk0m7qs2asxfj6emes,0,0,15
+402,C-Reactive protein (CRP),,service_z6mk0m7qs2asxfj6emes,0,0,15
+403,Helicobacter pylori (serum),,service_z6mk0m7qs2asxfj6emes,0,0,15
+404,Helicobacter pylori (stool antigen),,service_z6mk0m7qs2asxfj6emes,0,0,15
+405,Herpes Simplex 1 & 11 (1gm/1gG),,service_z6mk0m7qs2asxfj6emes,0,0,15
+406,TORCH Screen,,service_z6mk0m7qs2asxfj6emes,0,0,15
+407,Widal,,service_z6mk0m7qs2asxfj6emes,0,0,15
+408,Vdrl,,service_z6mk0m7qs2asxfj6emes,0,0,15
+409,Australian Antigen,,service_z6mk0m7qs2asxfj6emes,0,0,15
+410,Rheumatoid Factor,,service_z6mk0m7qs2asxfj6emes,0,0,15
+411,Pregnancy Test HCG (Blood),,service_z6mk0m7qs2asxfj6emes,0,0,15
+412,R.f. Coombs,,service_z6mk0m7qs2asxfj6emes,0,0,15
+413,ASO Heaf Test,,service_z6mk0m7qs2asxfj6emes,0,0,15
+414,HbsAg,,service_z6mk0m7qs2asxfj6emes,0,0,15
+415,Screening For HIV 1 & 2,,service_z6mk0m7qs2asxfj6emes,0,0,15
+416,Confirmatory Test For HIV 1 & 2,,service_z6mk0m7qs2asxfj6emes,0,0,15
+417,TYPHIM Vi (1 dose syringe) for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,16
+418,TYPHIM Vi (20 dose syringe) for 20 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,16
+419,TYPHERIX (1 dose syringe) for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,16
+420,TYPBAR (1 dose vial) for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,16
+421,TYPBAR (5 dose vial) for 5 Adults,,service_z6mk0m7qs2asxfj6emes,0,0,16
+422,HAVRIX (1 dose syringe) for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,17
+423,ENGERIX B 20mcg (1 dose syringe) for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,17
+424,REVAC B+ (1ml vial X 1 dose) for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,17
+425,GENEVAC B+ (1ml vial X 1 dose) for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,17
+426,SHANVAC B 20mcg (1 dose) for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,17
+427,REVAC 10ml vial for 10 Adult doses,,service_z6mk0m7qs2asxfj6emes,0,0,17
+428,PNEUMO-23 (1 dose syringe) for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,19
+429,VERORAB (1 dose syringe) for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,20
+430,INDIRAB for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,20
+431,VANXIGRIP 1 dose syringe for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,5
+432,CERVARIX for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,5
+433,GARDASIL for 1 Adult,,service_z6mk0m7qs2asxfj6emes,0,0,
+434,TRIMOVAX (1 dose syringe) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,5
+435,PRIORIX (1 dose vial) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,5
+436,TRESIVAC (1 dose vial) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,5
+437,MVAC (1 dose vial) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,5
+438,ENGERIX B 10mcg (1 dose syringe) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,5
+439,REVAC B+ (0.5ml vial X 1 dose) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,5
+440,GENEVAC B (0.5ml vial X 1 dose) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,5
+441,SHANVAC B 10mcg (1 dose) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,5
+442,(5ml vial for 10 Paediatric Doses),,service_z6mk0m7qs2asxfj6emes,0,0,5
+443,NIMENRIX (1 dose syringe) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,5
+444,MENCEVAX (1 dose vial) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,5
+445,HIBERIX (1 dose syringe) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,11
+446,PENTAVALENT (1 vial for 10 Paediatric Doses),,service_z6mk0m7qs2asxfj6emes,0,0,11
+447,PENTAVALENT (1 dose syringe) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,11
+448,PENTAXIM (1 dose syringe) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,11
+449,TETRAXIM (1 dose syringe) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,11
+450,TETRAVALENT ( 1 dose syringe) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,11
+451,ROTARIX (1 dose syringe) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,11
+452,SYNFLORIX (1 dose syringe) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,11
+453,PREVENER 13 (1 dose syringe) for 1 Paediatric Dose,,service_z6mk0m7qs2asxfj6emes,0,0,11
+454,PREVENER 13 (1 dose syringe for 10 Paediatric Doses),,service_z6mk0m7qs2asxfj6emes,0,0,11
+455,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,11
+456,Follow Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,11
+457,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,11
+458,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,11
+459,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,11
+460,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,11
+461,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+462,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+463,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+464,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+465,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+466,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+467,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+468,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+469,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+470,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+471,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+472,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+473,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+474,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+475,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+476,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+477,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+478,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+479,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+480,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+481,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+482,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+483,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+484,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+485,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+486,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+487,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+488,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+489,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+490,Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+491,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+492,ENT Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+493,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+494,Dermatology Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+495,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+496,Paediatric Surgeon Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+497,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+498,Orthopaedic Surgeon Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+499,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+500,1 Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+501,Follow-up Consultation,,service_z6mk0m7qs2asxfj6emes,0,0,1
+502,Dental Apicectomy,,service_z6mk0m7qs2asxfj6emes,0,0,5
+503,Dental Alveoloplasty,,service_z6mk0m7qs2asxfj6emes,0,0,5
+504,Dental Bite Plane,,service_z6mk0m7qs2asxfj6emes,0,0,5
+505,Dental Bleaching (Tooth Whitening) - Full Mouth,,service_z6mk0m7qs2asxfj6emes,0,0,5
+506,Dental Bleaching (Tooth Whitening) - Single Arch,,service_z6mk0m7qs2asxfj6emes,0,0,5
+507,Dental Crown - Full Ceramic,,service_z6mk0m7qs2asxfj6emes,0,0,5
+508,Dental Crown - Metal,,service_z6mk0m7qs2asxfj6emes,0,0,5
+509,Dental Crown - Metal Ceramic,,service_z6mk0m7qs2asxfj6emes,0,0,5
+510,Dental Cyst Removal - Big,,service_z6mk0m7qs2asxfj6emes,0,0,5
+511,Dental Cyst Removal - Small,,service_z6mk0m7qs2asxfj6emes,0,0,5
+512,Dental Fillings - Silver Amalgam,,service_z6mk0m7qs2asxfj6emes,0,0,5
+513,Dental Fillings - Tooth Color Filling,,service_z6mk0m7qs2asxfj6emes,0,0,5
+514,Dental Flap Surgery With Grafting (Per Quadran),,service_z6mk0m7qs2asxfj6emes,0,0,5
+515,Dental Fracture Reduction (WO OT Charges),,service_z6mk0m7qs2asxfj6emes,0,0,5
+516,Dental Full Denture - Flexible,,service_z6mk0m7qs2asxfj6emes,0,0,5
+517,Dental Gingivectomy / Gingivoplasty,,service_z6mk0m7qs2asxfj6emes,0,0,5
+518,Dental IMF,,service_z6mk0m7qs2asxfj6emes,0,0,5
+519,Dental Implant - With Crown,,service_z6mk0m7qs2asxfj6emes,0,0,5
+520,Dental IOPA -Small Dental Xray,,service_z6mk0m7qs2asxfj6emes,0,0,5
+521,Dental OPG,,service_z6mk0m7qs2asxfj6emes,0,0,5
+522,Dental Orthodontic - Invisaline,,service_z6mk0m7qs2asxfj6emes,0,0,5
+523,Dental Orthodontic -Regular,,service_z6mk0m7qs2asxfj6emes,0,0,5
+524,5 ORTHODONTICS TOOTH COLORED SINGLE ARCH,,service_z6mk0m7qs2asxfj6emes,0,0,5
+525,Dental Othodontic - Lingual,,service_z6mk0m7qs2asxfj6emes,0,0,5
+526,Dental Othodontic - Tooth Colored,,service_z6mk0m7qs2asxfj6emes,0,0,5
+527,Dental Partial Denture - Cast Partial (Per Tooth),,service_z6mk0m7qs2asxfj6emes,0,0,5
+528,Dental Partial Denture - Regular (Per Tooth),,service_z6mk0m7qs2asxfj6emes,0,0,5
+529,Dental Post and Core,,service_z6mk0m7qs2asxfj6emes,0,0,5
+530,Dental Registration,,service_z6mk0m7qs2asxfj6emes,0,0,5
+531,Dental Root Canal Anteriors,,service_z6mk0m7qs2asxfj6emes,0,0,5
+532,Dental Root Canel Posteriors,,service_z6mk0m7qs2asxfj6emes,0,0,5
+533,Dental Single Arch Denture,,service_z6mk0m7qs2asxfj6emes,0,0,5
+534,Dental Single Arch Orthodontics,,service_z6mk0m7qs2asxfj6emes,0,0,5
+535,Dental Single Jaw Flexible Denture,,service_z6mk0m7qs2asxfj6emes,0,0,5
+536,Dental Single Jaw Metallic,,service_z6mk0m7qs2asxfj6emes,0,0,5
+537,Dental Single Jaw Tooth Colored,,service_z6mk0m7qs2asxfj6emes,0,0,5
+538,Dental Tooth Cleaning (Full Mouth),,service_z6mk0m7qs2asxfj6emes,0,0,5
+539,Dental Tooth Removal - Milk Tooth,,service_z6mk0m7qs2asxfj6emes,0,0,5
+540,Dental Tooth Removal - Normal,,service_z6mk0m7qs2asxfj6emes,0,0,5
+541,Dental Tooth Removal - Wisdom,,service_z6mk0m7qs2asxfj6emes,0,0,5
+542,Dental Tooth Tatoo,,service_z6mk0m7qs2asxfj6emes,0,0,5
+543,Dental Zirconia Diamond Studs,,service_z6mk0m7qs2asxfj6emes,0,0,5
+544,Surgical Extraction,,service_z6mk0m7qs2asxfj6emes,0,0,5
+545,Dental Crowns,,service_z6mk0m7qs2asxfj6emes,0,0,5
+546,Bridgeworks,,service_z6mk0m7qs2asxfj6emes,0,0,5
+547,Implants,,service_z6mk0m7qs2asxfj6emes,0,0,5
+548,Braces,,service_z6mk0m7qs2asxfj6emes,0,0,5
+549,Root Canal Therapy,,service_z6mk0m7qs2asxfj6emes,0,0,5
+550,Lenses & Frames,,service_z6mk0m7qs2asxfj6emes,0,0,10
+551,Visual Acuity,,service_z6mk0m7qs2asxfj6emes,0,0,10
+552,Excision of tumour on abdominal wall,,service_z6mk0m7qs2asxfj6emes,0,0,3
+553,Biopsy Of Tumor Of Abdominal Wall,,service_z6mk0m7qs2asxfj6emes,0,0,3
+554,Breast Lump Excision (Excluding Histology),,service_z6mk0m7qs2asxfj6emes,0,0,3
+555,Ganglion Excision,,service_z6mk0m7qs2asxfj6emes,0,0,3
+556,Injection Sclerotherapy Of Varicose Veins,,service_z6mk0m7qs2asxfj6emes,0,0,3
+557,Incision & Drainage (I & D),,service_z6mk0m7qs2asxfj6emes,0,0,3
+558,Ingrowing Nail (Excision),,service_z6mk0m7qs2asxfj6emes,0,0,3
+559,Keloid Excision (Minor),,service_z6mk0m7qs2asxfj6emes,0,0,3
+560,Lumps Excision(Lumpectomy),,service_z6mk0m7qs2asxfj6emes,0,0,3
+561,Excisional Biopsy(Excluding Histology),,service_z6mk0m7qs2asxfj6emes,0,0,3
+562,Cystic Hygroma Excision,,service_z6mk0m7qs2asxfj6emes,0,0,3
+563,Small Cyst Excision,,service_z6mk0m7qs2asxfj6emes,0,0,3
+564,Keloid Excision (Major),,service_z6mk0m7qs2asxfj6emes,0,0,3
+565,Liver/Kidney/Bone Marrow Biopsy,,service_z6mk0m7qs2asxfj6emes,0,0,3
+566,Thyroglossal Cysts And Fistula Excision,,service_z6mk0m7qs2asxfj6emes,0,0,3
+567,Excision Of Intrascrotal Mass,,service_z6mk0m7qs2asxfj6emes,0,0,3
+568,Proctoscopy,,service_z6mk0m7qs2asxfj6emes,0,0,4
+569,Intercostal Drainage Insertion(Thoracostomy),,service_z6mk0m7qs2asxfj6emes,0,0,10
+570,Major Surgical Incision And Drainage,,service_z6mk0m7qs2asxfj6emes,0,0,10
+571,Suprapubic Cystostomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+572,Surgical Release In Stenosing Tenosynovitis,,service_z6mk0m7qs2asxfj6emes,0,0,10
+573,Synovectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+574,Tracheostomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+575,Abdominal Rectopexy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+576,Anal Fistulectomy Repair,,service_z6mk0m7qs2asxfj6emes,0,0,10
+577,Anal Spincteroplasty,,service_z6mk0m7qs2asxfj6emes,0,0,10
+578,Appendicectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+579,,,service_z6mk0m7qs2asxfj6emes,0,0,
+580,Dissection Of Femoral Triangle,,service_z6mk0m7qs2asxfj6emes,0,0,10
+581,Epigastric Herniorrhaphy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+582,Fistula In-Ano Repair,,service_z6mk0m7qs2asxfj6emes,0,0,10
+583,Haemorrhoidectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+584,Herniorraphy _ Inguinal/7,,service_z6mk0m7qs2asxfj6emes,0,0,10
+585,Hydrocoelectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+586,Multiple Ligation Of Veins,,service_z6mk0m7qs2asxfj6emes,0,0,10
+587,Orchidectomy/Orchidopexy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+588,Pericardiocentesis,,service_z6mk0m7qs2asxfj6emes,0,0,10
+589,Surgery Of Torsion Of Spermatic Cord,,service_z6mk0m7qs2asxfj6emes,0,0,10
+590,Surgical Correction Of Dupuytrens Contracture,,service_z6mk0m7qs2asxfj6emes,0,0,10
+591,Surgical Drainage Of Anal Abscess,,service_z6mk0m7qs2asxfj6emes,0,0,10
+592,Synovectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+593,Thoracotomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+594,Varicocoelectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+595,Vasectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+596,Cavernospongiosum Shunt,,service_z6mk0m7qs2asxfj6emes,0,0,10
+597,Colostomy Construction/Closure,,service_z6mk0m7qs2asxfj6emes,0,0,10
+598,Diverticulectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+599,Hiatus Herniorrphaphy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+600,Laparotomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+601,Local Resection Of Pelvic Tumor,,service_z6mk0m7qs2asxfj6emes,0,0,10
+602,Oesophagostomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+603,Oophorectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+604,Retroperitoneal Drainage Of Perinephric Abscess,,service_z6mk0m7qs2asxfj6emes,0,0,10
+605,Surgery Of Uncomplicated Intestinal Obstruction Without Resection,,service_z6mk0m7qs2asxfj6emes,0,0,10
+606,Transrectal Biopsy Of Prostate/Prostatectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+607,Uretherectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+608,Acute Intra Abdominal Vascular Disease Surgery,,service_z6mk0m7qs2asxfj6emes,0,0,10
+609,Axillary Dissection Of Breast,,service_z6mk0m7qs2asxfj6emes,0,0,10
+610,Bowel Resection And Anastomosis,,service_z6mk0m7qs2asxfj6emes,0,0,10
+611,Cholecystectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+612,Choledochojejunostomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+613,Cystectomy Partial/Total,,service_z6mk0m7qs2asxfj6emes,0,0,10
+614,Diaphragmatic Hernia Repair,,service_z6mk0m7qs2asxfj6emes,0,0,10
+615,Excision Of Lymphoedematous Lymph Tissues,,service_z6mk0m7qs2asxfj6emes,0,0,10
+616,Exploratory Laparotomy/Lysis Of Adhensions,,service_z6mk0m7qs2asxfj6emes,0,0,10
+617,Gastroenterostomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+618,Intussusception Operation,,service_z6mk0m7qs2asxfj6emes,0,0,10
+619,Meckels Diverticulectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+620,Pyeloroplasty,,service_z6mk0m7qs2asxfj6emes,0,0,10
+621,Pyelotomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+622,Renal Cystectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+623,Repair Of Gastric Lacerations,,service_z6mk0m7qs2asxfj6emes,0,0,10
+624,Repair Of Oesophageal Lacerations,,service_z6mk0m7qs2asxfj6emes,0,0,10
+625,Resection And Anstomoses (Small/Large Intestines),,service_z6mk0m7qs2asxfj6emes,0,0,10
+626,Roux-En-Y Pancreaticojejunostomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+627,Splenorrhaphy/ Splenectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+628,Surgery Of Complications Of Appendicitis,,service_z6mk0m7qs2asxfj6emes,0,0,10
+629,Surgery Of Hepatic Trauma,,service_z6mk0m7qs2asxfj6emes,0,0,10
+630,Surgery Of Small/Large Bowel Perforations,,service_z6mk0m7qs2asxfj6emes,0,0,10
+631,Abdomino-Perineal Resection,,service_z6mk0m7qs2asxfj6emes,0,0,10
+632,Adrenalectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+633,Decortication,,service_z6mk0m7qs2asxfj6emes,0,0,10
+634,Encephalocoele Excision,,service_z6mk0m7qs2asxfj6emes,0,0,10
+635,Extended Radical Mastectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+636,Gastrectomy/Colectomy-Partial Or Total,,service_z6mk0m7qs2asxfj6emes,0,0,10
+637,Mammoplasty,,service_z6mk0m7qs2asxfj6emes,0,0,10
+638,Nephrectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+639,Nephrolithotomy/Urethrotomy/Urethroplasty,,service_z6mk0m7qs2asxfj6emes,0,0,10
+640,Oesophagectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+641,Pancreatectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+642,Pelvic Evisceration,,service_z6mk0m7qs2asxfj6emes,0,0,10
+643,Pericardiectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+644,Pleurectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+645,Pneumonectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+646,"Prostatectomy, Retropubic/Transvesical",,service_z6mk0m7qs2asxfj6emes,0,0,10
+647,Radical Mastectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+648,Splenectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+649,Submandibular Sialoadenectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+650,Thoracectomy/Thoracoplasty,,service_z6mk0m7qs2asxfj6emes,0,0,10
+651,Thyroidectomy,,service_z6mk0m7qs2asxfj6emes,0,0,10
+652,Vagotomy/Pyloroplasty,,service_z6mk0m7qs2asxfj6emes,0,0,10
+653,Close Reduction Of Fracture And Application Cast,,service_z6mk0m7qs2asxfj6emes,0,0,5
+654,Amputation And Disarticulation Of Joints.,,service_z6mk0m7qs2asxfj6emes,0,0,5
+655,Amputation And Limb Substitution,,service_z6mk0m7qs2asxfj6emes,0,0,5
+656,Arthroplasty/Arthrodesis,,service_z6mk0m7qs2asxfj6emes,0,0,5
+657,Bone Grafting,,service_z6mk0m7qs2asxfj6emes,0,0,5
+658,Chondromectomy,,service_z6mk0m7qs2asxfj6emes,0,0,5
+659,Congenital Talipes Equanovarus/Valgus Surgical Repair,,service_z6mk0m7qs2asxfj6emes,0,0,5
+660,ORIF with Implant (with hospitalisation),,service_z6mk0m7qs2asxfj6emes,0,0,5
+661,Removal of Implant,,service_z6mk0m7qs2asxfj6emes,0,0,5
+662,Sequestrectomy,,service_z6mk0m7qs2asxfj6emes,0,0,5
+663,Subperiosteal Drainage Of Acute Osteomyelitis,,service_z6mk0m7qs2asxfj6emes,0,0,5
+664,Tendon Transplant/Tenoplasty,,service_z6mk0m7qs2asxfj6emes,0,0,5
+665,Close Reduction Of Fracture And Application Cast,,service_z6mk0m7qs2asxfj6emes,0,0,5
+666,Drainage Of Septic 1,,service_z6mk0m7qs2asxfj6emes,0,0,5
+667,Skin Traction(Procedure+Material),,service_z6mk0m7qs2asxfj6emes,0,0,5
+668,Simple Congenital Talipes Repair,,service_z6mk0m7qs2asxfj6emes,0,0,5
+669,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF:,,service_z6mk0m7qs2asxfj6emes,0,0,5
+670,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF PECTORAL GIRDLE,,service_z6mk0m7qs2asxfj6emes,0,0,5
+671,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF FORE-ARM,,service_z6mk0m7qs2asxfj6emes,0,0,5
+672,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF HAND,,service_z6mk0m7qs2asxfj6emes,0,0,5
+673,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF PELVIC GIRDLE,,service_z6mk0m7qs2asxfj6emes,0,0,5
+674,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF THIGH,,service_z6mk0m7qs2asxfj6emes,0,0,5
+675,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF LEG,,service_z6mk0m7qs2asxfj6emes,0,0,5
+676,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF FOOT,,service_z6mk0m7qs2asxfj6emes,0,0,5
+677,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF RIBS,,service_z6mk0m7qs2asxfj6emes,0,0,5
+678,OPEN REDUCTION AND INTERNAL FIXATION OF FRACTURES OF SPINAL COLUMN,,service_z6mk0m7qs2asxfj6emes,0,0,5
+679,"OSTEOCLASIS, INTERNAL FIXATION OF MALUNION",,service_z6mk0m7qs2asxfj6emes,0,0,5
+680,BONE GRAFTING,,service_z6mk0m7qs2asxfj6emes,0,0,5
+681,AMPUTATION AND LIMB SUBSTITUTION,,service_z6mk0m7qs2asxfj6emes,0,0,5
+682,Salpingectomy,,service_z6mk0m7qs2asxfj6emes,0,0,25
+683,Ultrasound Scan (Obstetric),,service_z6mk0m7qs2asxfj6emes,0,0,25
+684,IUCD Insertion,,service_z6mk0m7qs2asxfj6emes,0,0,25
+685,IUCD Removal,,service_z6mk0m7qs2asxfj6emes,0,0,25
+686,Excision/Diathermy Of Warts,,service_z6mk0m7qs2asxfj6emes,0,0,25
+687,Cervical Cautery,,service_z6mk0m7qs2asxfj6emes,0,0,25
+688,Cervical Cone/Punch Biopsy,,service_z6mk0m7qs2asxfj6emes,0,0,25
+689,Colposcopy,,service_z6mk0m7qs2asxfj6emes,0,0,25
+690,ARTIFICIAL INSEMINATION,,service_z6mk0m7qs2asxfj6emes,0,0,25
+691,MVA/ERCP/Evacuation,,service_z6mk0m7qs2asxfj6emes,0,0,25
+692,Cervical Laceration Repair,,service_z6mk0m7qs2asxfj6emes,0,0,25
+693,Removal Of IUCD Under General Anaesthesia,,service_z6mk0m7qs2asxfj6emes,0,0,25
+694,Examination Under Anaesthesia (EUA),,service_z6mk0m7qs2asxfj6emes,0,0,25
+695,Repair Of Third Degree Tear,,service_z6mk0m7qs2asxfj6emes,0,0,25
+696,Excision Of Vaginal Septum,,service_z6mk0m7qs2asxfj6emes,0,0,25
+697,Hydrotubation,,service_z6mk0m7qs2asxfj6emes,0,0,25
+698,Marsupialisation,,service_z6mk0m7qs2asxfj6emes,0,0,25
+699,Pelvic/abdominal abscess drainage,,service_z6mk0m7qs2asxfj6emes,0,0,25
+700,Hysteroscopy,,service_z6mk0m7qs2asxfj6emes,0,0,25
+701,Laparoscopy & Dye Test,,service_z6mk0m7qs2asxfj6emes,0,0,25
+702,Bilateral Tubal Ligation,,service_z6mk0m7qs2asxfj6emes,0,0,25
+703,Cervical Cerclage/Shirodkar Suture,,service_z6mk0m7qs2asxfj6emes,0,0,25
+704,Destructive Delivery (Craniotomy-Embryotomy),,service_z6mk0m7qs2asxfj6emes,0,0,25
+705,1 Laparoscopy,,service_z6mk0m7qs2asxfj6emes,0,0,25
+706,Caesarean section,,service_z6mk0m7qs2asxfj6emes,0,0,25
+707,Repair of ruptured uterus,,service_z6mk0m7qs2asxfj6emes,0,0,25
+708,Colporrhaphy/colpoperineorrhaphy,,service_z6mk0m7qs2asxfj6emes,0,0,25
+709,Ectopic pregnancy,,service_z6mk0m7qs2asxfj6emes,0,0,25
+710,Hysterectomy,,service_z6mk0m7qs2asxfj6emes,0,0,25
+711,Hysterectomy and bilateral salpingooophorectomy,,service_z6mk0m7qs2asxfj6emes,0,0,25
+712,Myomectomy,,service_z6mk0m7qs2asxfj6emes,0,0,25
+713,Salpingo-oophorectomy,,service_z6mk0m7qs2asxfj6emes,0,0,25
+714,Ovarectomy/ovarian cysts,,service_z6mk0m7qs2asxfj6emes,0,0,25
+715,Vesicovaginal/Rectovaginal fistula repair,,service_z6mk0m7qs2asxfj6emes,0,0,25
+716,Rhogam Injection,,service_z6mk0m7qs2asxfj6emes,0,0,25
+717,ANC Care,,service_z6mk0m7qs2asxfj6emes,0,0,2
+718,Normal Delivery,,service_z6mk0m7qs2asxfj6emes,0,0,2
+719,Assisted Delivery,,service_z6mk0m7qs2asxfj6emes,0,0,2
+720,"(Forceps,Vaccum etc)",,service_z6mk0m7qs2asxfj6emes,0,0,2
+721,Twin Delivery,,service_z6mk0m7qs2asxfj6emes,0,0,2
+722,"Foreign Body Removal From The Ear, Nose And Throat",,service_z6mk0m7qs2asxfj6emes,0,0,24
+723,Electrocautery Of Nose,,service_z6mk0m7qs2asxfj6emes,0,0,24
+724,Nasal Packing,,service_z6mk0m7qs2asxfj6emes,0,0,24
+725,Aural And Nasal Suction/Clearance,,service_z6mk0m7qs2asxfj6emes,0,0,24
+726,Incision And Drainage Of Abscess,,service_z6mk0m7qs2asxfj6emes,0,0,24
+727,Debridement And Toilet Of Wounds,,service_z6mk0m7qs2asxfj6emes,0,0,24
+728,Suturing Of Lacerations,,service_z6mk0m7qs2asxfj6emes,0,0,24
+729,Manipulation Of Nose,,service_z6mk0m7qs2asxfj6emes,0,0,24
+730,Pure Tone Audiometry,,service_z6mk0m7qs2asxfj6emes,0,0,24
+731,Tympanometry,,service_z6mk0m7qs2asxfj6emes,0,0,24
+732,Aesthetic And Reconstructive Surgery,,service_z6mk0m7qs2asxfj6emes,0,0,24
+733,Antral Larvage,,service_z6mk0m7qs2asxfj6emes,0,0,24
+734,Cystic/Fibrous Dysplasia/ Cancer Surgery,,service_z6mk0m7qs2asxfj6emes,0,0,24
+735,Indirect Laryngoscopy,,service_z6mk0m7qs2asxfj6emes,0,0,24
+736,Laryngeal Surgery,,service_z6mk0m7qs2asxfj6emes,0,0,24
+737,Mastoid Surgery,,service_z6mk0m7qs2asxfj6emes,0,0,24
+738,Multiple Nasal Polypectomy,,service_z6mk0m7qs2asxfj6emes,0,0,24
+739,Nasal Sinus Surgery E.G Caldwell Luc,,service_z6mk0m7qs2asxfj6emes,0,0,24
+740,Odontogenic Tumours.,,service_z6mk0m7qs2asxfj6emes,0,0,24
+741,Parotidectomy,,service_z6mk0m7qs2asxfj6emes,0,0,24
+742,Submandibular Gland Excision,,service_z6mk0m7qs2asxfj6emes,0,0,24
+743,Tympanoplasty,,service_z6mk0m7qs2asxfj6emes,0,0,24
+744,CLEFT LIP AND PALATE REPAIRS.,,service_z6mk0m7qs2asxfj6emes,0,0,24
+745,TRACHEOSTOMY,,service_z6mk0m7qs2asxfj6emes,0,0,24
+746,TONSILECTOMY,,service_z6mk0m7qs2asxfj6emes,0,0,24
+747,ADENOIDECTOMY,,service_z6mk0m7qs2asxfj6emes,0,0,24
+748,REMOVAL OF IMPACTED CERUMEN (SYRINGING/TOILETING),,service_z6mk0m7qs2asxfj6emes,0,0,24
+749,Granuloma Excision,,service_z6mk0m7qs2asxfj6emes,0,0,21
+750,Chalazion Surgery,,service_z6mk0m7qs2asxfj6emes,0,0,21
+751,Pterygium Excision,,service_z6mk0m7qs2asxfj6emes,0,0,21
+752,Corneal Laceration Repair,,service_z6mk0m7qs2asxfj6emes,0,0,21
+753,Glaucoma (Trabeculectomy),,service_z6mk0m7qs2asxfj6emes,0,0,21
+754,Extracapsular/Intracapsular Cataract Extraction,,service_z6mk0m7qs2asxfj6emes,0,0,21
+755,Minor,,service_z6mk0m7qs2asxfj6emes,0,0,21
+756,Bowman's Cautery,,service_z6mk0m7qs2asxfj6emes,0,0,21
+757,Conjunctival Laceration Repair,,service_z6mk0m7qs2asxfj6emes,0,0,21
+758,Diode Laser Cycloablation,,service_z6mk0m7qs2asxfj6emes,0,0,21
+759,Entropion And Ectropion Repairs,,service_z6mk0m7qs2asxfj6emes,0,0,21
+760,Syringing And Probing,,service_z6mk0m7qs2asxfj6emes,0,0,21
+761,Traumatic Lid Laceration Repair,,service_z6mk0m7qs2asxfj6emes,0,0,21
+762,Tumor Excision From Lid,,service_z6mk0m7qs2asxfj6emes,0,0,21
+763,Conjuctivectomy And Cryoapplication,,service_z6mk0m7qs2asxfj6emes,0,0,21
+764,Dacrocystorhinostomy,,service_z6mk0m7qs2asxfj6emes,0,0,21
+765,Evisceration/Enucleation/Exenteration,,service_z6mk0m7qs2asxfj6emes,0,0,21
+766,Intraocular Lens Implantation,,service_z6mk0m7qs2asxfj6emes,0,0,21
+767,Paracentesis (A/C Washout),,service_z6mk0m7qs2asxfj6emes,0,0,21
+768,Penetrating Keratoplasty (PKP),,service_z6mk0m7qs2asxfj6emes,0,0,21
+769,Ptosis Repair,,service_z6mk0m7qs2asxfj6emes,0,0,21
+770,Retinal Detachment Surgery,,service_z6mk0m7qs2asxfj6emes,0,0,21
+771,Squint Surgery,,service_z6mk0m7qs2asxfj6emes,0,0,21
+772,Traumatic Cannalicular Repair,,service_z6mk0m7qs2asxfj6emes,0,0,21
+773,Traumatic Corneal And/or Scleral Laceration Repair,,service_z6mk0m7qs2asxfj6emes,0,0,21
+774,DIODE LASER PANRETINAL PHOTOCOAGULATION,,service_z6mk0m7qs2asxfj6emes,0,0,21
+775,CRITICAL CARE (IN ICU),,service_z6mk0m7qs2asxfj6emes,0,0,22
+776,OXYGEN THERAPY,,service_z6mk0m7qs2asxfj6emes,0,0,22
+777,CRITICAL CARE (IN ICU) PER DAY,,service_z6mk0m7qs2asxfj6emes,0,0,22
+778,OXYGEN THERAPY,,service_z6mk0m7qs2asxfj6emes,0,0,22
+779,NEBULISATION,,service_z6mk0m7qs2asxfj6emes,0,0,22
+780,GASTRIC LAVAGE,,service_z6mk0m7qs2asxfj6emes,0,0,22
+781,ELECTRO-CONVULSIVE THERAPY per treatment,,service_z6mk0m7qs2asxfj6emes,0,0,23
+782,ELECTRO-NARCOSIS per COURSE,,service_z6mk0m7qs2asxfj6emes,0,0,23
+783,SLEEP (REM) DEPRIVATION THERAPY,,service_z6mk0m7qs2asxfj6emes,0,0,23
+784,MANAGEMENT OF DRUG USE PROBLEMS,,service_z6mk0m7qs2asxfj6emes,0,0,23
+785,DETOXIFICATION IN HOSPITAL FOR 7-10 DAYS,,service_z6mk0m7qs2asxfj6emes,0,0,23
+786,"MANAGEMENT OF DRUG PROBLEMS _ MEDICATION,",,service_z6mk0m7qs2asxfj6emes,0,0,23
+787,"PSYCHOTHERAPY, FAMILY INTERVENTION",,service_z6mk0m7qs2asxfj6emes,0,0,23
+788,COMPREHENSIVE PSYCHIATRIC ASSESSMENT,,service_z6mk0m7qs2asxfj6emes,0,0,23
+789,"PSYCHOMETRIC ASSESSMENT, SCORING & INTERPRETATION",,service_z6mk0m7qs2asxfj6emes,0,0,23
+790,PSYCHOTHERAPIES per session,,service_z6mk0m7qs2asxfj6emes,0,0,23
+791,Craniotomy,,service_z6mk0m7qs2asxfj6emes,0,0,5
+792,Subdural Tap,,service_z6mk0m7qs2asxfj6emes,0,0,5
+793,Renal dialysis,,service_z6mk0m7qs2asxfj6emes,0,0,20
+794,Audiometry,,service_z6mk0m7qs2asxfj6emes,0,0,20
+795,Skin Grafting,,service_z6mk0m7qs2asxfj6emes,0,0,20
+796,Aspirations / Paracentesis,,service_z6mk0m7qs2asxfj6emes,0,0,20
+797,Evacuation Of Impacted Feaces,,service_z6mk0m7qs2asxfj6emes,0,0,20
+798,Gastric Lavage,,service_z6mk0m7qs2asxfj6emes,0,0,20
+799,Incubator Care / Day,,service_z6mk0m7qs2asxfj6emes,0,0,20
+800,Lumbar Puncture,,service_z6mk0m7qs2asxfj6emes,0,0,20
+801,Nebulisation,,service_z6mk0m7qs2asxfj6emes,0,0,20
+802,Oxygen Therapy / Day,,service_z6mk0m7qs2asxfj6emes,0,0,20
+803,Phototherapy / Day,,service_z6mk0m7qs2asxfj6emes,0,0,20
+804,Cauterization,,service_z6mk0m7qs2asxfj6emes,0,0,20
+805,Circumcision,,service_z6mk0m7qs2asxfj6emes,0,0,20
+806,Clucthes,,service_z6mk0m7qs2asxfj6emes,0,0,20
+807,Congenital Multiple Digits Or Syndactyly,,service_z6mk0m7qs2asxfj6emes,0,0,20
+808,Ear Piercing,,service_z6mk0m7qs2asxfj6emes,0,0,20
+809,Knee Effusion Taps,,service_z6mk0m7qs2asxfj6emes,0,0,20
+810,Major Wound Dressing,,service_z6mk0m7qs2asxfj6emes,0,0,20
+811,Minor Wound Dressing,,service_z6mk0m7qs2asxfj6emes,0,0,20
+812,Tongue Tie Release,,service_z6mk0m7qs2asxfj6emes,0,0,20
+813,Minor Debridement Of Burns,,service_z6mk0m7qs2asxfj6emes,0,0,20
+814,Relase Of Chordate,,service_z6mk0m7qs2asxfj6emes,0,0,20
+815,Repair Of Minor Laceration,,service_z6mk0m7qs2asxfj6emes,0,0,20
+816,Exchange Blood Transfusion (Rh +Ve Blood With Set),,service_z6mk0m7qs2asxfj6emes,0,0,20
+817,Exchange Blood Transfusion (Rh -Ve Blood With Set),,service_z6mk0m7qs2asxfj6emes,0,0,20
+818,6 Courses of Podophyllin 10ting X for Perineal Warts,,service_z6mk0m7qs2asxfj6emes,0,0,20
+819,Prostate Cancer,,service_z6mk0m7qs2asxfj6emes,0,0,10
+820,Colon Cancer,,service_z6mk0m7qs2asxfj6emes,0,0,10
+821,Uterine Cancer,,service_z6mk0m7qs2asxfj6emes,0,0,10
+822,Liver Cancer,,service_z6mk0m7qs2asxfj6emes,0,0,10
+823,Lung Cancer,,service_z6mk0m7qs2asxfj6emes,0,0,10
+824,Stomach Cancer,,service_z6mk0m7qs2asxfj6emes,0,0,10
+825,Brain Cancer,,service_z6mk0m7qs2asxfj6emes,0,1,10
+826,Glaucoma Eye Test,,service_z6mk0m7qs2asxfj6emes,0,0,5
+827,Audiological Ear Assessment,,service_z6mk0m7qs2asxfj6emes,0,0,5
+828,Liver Test,,service_z6mk0m7qs2asxfj6emes,0,0,5
+829,Kidney Test,,service_z6mk0m7qs2asxfj6emes,0,0,5
+830,Thyroid Test,,service_z6mk0m7qs2asxfj6emes,0,0,5
+831,Hepatitis B Test,,service_z6mk0m7qs2asxfj6emes,0,0,5
+832,Basic Health Check,,service_z6mk0m7qs2asxfj6emes,0,0,5
+833,Comprehensive Health Check,,service_z6mk0m7qs2asxfj6emes,0,0,5
+834,10 HbAic Test,,service_z6mk0m7qs2asxfj6emes,0,0,5
+835,Pre Employment Tests,,service_z6mk0m7qs2asxfj6emes,0,0,5
+836,5,,service_z6mk0m7qs2asxfj6emes,0,0,5
+837,Evacuation from Home to Hospital,,service_z6mk0m7qs2asxfj6emes,0,0,5
+838,Evacuation from hospital to hospital,,service_z6mk0m7qs2asxfj6emes,0,0,5
+839,Evacuation from accident site to hospital,,service_z6mk0m7qs2asxfj6emes,0,0,5
+840,Air Ambulance,,service_z6mk0m7qs2asxfj6emes,0,0,10
