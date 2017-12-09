@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^service/report/generate/$', login_required(GenerateReportView.as_view()), name='generate_report'),
     url(r'^service/render/$', login_required(OrderServiceConfigurationView.as_view()),
         name='render_service'),
-    url(r'^service/render/alt/$', login_required(OrderServiceConfigurationView.as_view()),
+    url(r'^service/render/alt/(?P<pk>\d+)$', login_required(OrderServiceConfigurationView.as_view()),
         name='render_service_alt'),
     url(r'^service/order_service/checkout/$', login_required(OrderCheckoutView.as_view()),
         name='order_service'),

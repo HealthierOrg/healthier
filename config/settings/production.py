@@ -8,6 +8,14 @@ Production Configurations
 
 - Use sentry for error logging
 
+mysql://be88e69410d561:e3936208@us-cdbr-iron-east-05.cleardb.net/heroku_3f523fa523496d4
+
+mysql -u be88e69410d561 -h us-cdbr-iron-east-05.cleardb.net -p e3936208 heroku_3f523fa523496d4 < /home/lekanterragon/Desktop/HealthierProjects/healthier/dump.sql
+
+LOAD DATA INFILE '/home/lekanterragon/Desktop/HealthierProjects/healthier/healthier_service_healthierservice.csv' INTO service_healthierservice
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
 
 """
 

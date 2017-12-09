@@ -49,16 +49,21 @@
                       <span class="testimonial__company">{{ service.orders }}</span>
                 </div>
                    <div class="testimonial__info">
-                      <span class="testimonial__author">Views:</span>
+                      <span class="testimonial__author">Likes:</span>
                       <span class="testimonial__company">{{service.views}}</span>
-                </div>
+                   </div>
+                  <div class="testimonial__info">
+                      <span class="testimonial__author">Dislike:</span>
+                      <span class="testimonial__company">{{service.views}}</span>
+                   </div>
                   <br>
                   <div class="btn--google align-bottom">
-                    <a href="{% url 'dashboard:render_service' %}?service={{ service.id }}" class="btn btn--lg"><span>Render Service</span></a>
+                    <a href="{% url 'dashboard:render_service' %}?service={{ service.id }}" class="btn
+                    btn--lg"><span>Offer Service</span></a>
                   </div>
                   <br>
                   <div class="btn--google align-bottom">
-                    <a href="{% url 'dashboard:order_service_step' action="chooseProvider" %}?service={{ service.id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg"><span>Request Service</span></a>
+                    <a href="{% url 'dashboard:order_service_step' action="chooseProvider" %}?service={{ service.id }}" class="btn btn--lg"><span>Buy Service</span></a>
                   </div>
               </div>
 

@@ -299,6 +299,11 @@ class OrderServiceStepView(TemplateView):
         action = self.kwargs.get('action')
         service_id = request.GET.get('service')
         self.context['service'] = HealthierService.objects.get(id=service_id)
+        if request.user.account_type != "CON":
+            response_obj = HttpResponseRedirect(reverse('account_logout'))
+            response_obj.set_cookie('status', "error")
+            response_obj.set_cookie('message', "You need a consumer account to access this page.")
+            return response_obj
         consumer_details = Consumer.objects.get(healthier_id_id=request.user.id)
         if action == "chooseProvider":
             self.template_name = 'dashboard/provider/select_provider.html'
@@ -374,15 +379,19 @@ class OrderServiceConfigurationView(TemplateView):
     form_class = ServiceRequestConfigurationForm
 
     def get(self, request, *args, **kwargs):
-        service_id = kwargs.get('service_id', None)
-        if not service_id:
-            response_obj = HttpResponseRedirect(reverse('dashboard:dashboard_all_services'))
-            response_obj.set_cookie('status', "error")
-            response_obj.set_cookie('message', "There is currently no provider for this service")
-            return response_obj
-        service_details = HealthierService.objects.get(id=service_id)
+        if not kwargs.get('id'):
+            service_id = kwargs.get('service_id', None)
+            if not service_id:
+                response_obj = HttpResponseRedirect(reverse('dashboard:dashboard_all_services'))
+                response_obj.set_cookie('status', "error")
+                response_obj.set_cookie('message', "There is currently no provider for this service")
+                return response_obj
+            service_details = HealthierService.objects.get(id=service_id)
+            return render(request, self.template_name,
+                          {'service_details': service_details, 'form': self.form_class,
+                           'current_page_title': "Service Configuration"})
         return render(request, self.template_name,
-                      {'service_details': service_details, 'form': self.form_class,
+                      {'form': self.form_class,
                        'current_page_title': "Service Configuration"})
 
     def post(self, request):
@@ -606,3 +615,4 @@ class PromoCreateView(TemplateView):
         response_obj.set_cookie('status', True)
         response_obj.set_cookie('message', "Promo successfully saved")
         return response_obj
+
