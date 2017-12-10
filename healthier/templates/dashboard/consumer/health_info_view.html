@@ -13,7 +13,7 @@
                         <div class="row">
 							<div class="col-lg-6">
 								<div class="card-box">
-                        			<h4 class="header-title m-t-0 m-b-30">Clinic Health Data</h4>
+                        			<h4 class="header-title m-t-0 m-b-30">Clinic Report</h4>
                                     <p class="text-muted font-13 m-b-15">
                                         This contains details about the clinic you have registered with over time.</p>
                                     <table class="table table-striped m-0">
@@ -40,36 +40,32 @@
 							</div>
                             <div class="col-lg-6">
 								<div class="card-box">
-                        			<h4 class="header-title m-t-0 m-b-30">Ailment Data</h4>
-
+                        			<h4 class="header-title m-t-0 m-b-30">Vaccine Report</h4>
                                     <p class="text-muted font-13 m-b-15">
-                                        Data about any ailment you uploaded at any point.
-                                    </p>
-
+                                        This contains details about the clinic you have registered with over time.</p>
                                     <table class="table table-striped m-0">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Ailment</th>
-                                                <th>Description</th>
-                                                <th>Drug</th>
+                                                <th>Date Taken</th>
+                                                <th>Vaccine Name </th>
+                                                <th>Vaccine Reason</th>
+                                                <th>Dispatcher </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {% for data in ailment_detail %}
+                                            {% for data in clinical_detail %}
                                             <tr>
                                                 <th scope="row">{{ data.id }}</th>
-                                                <td>{{ data.ailment_name }}</td>
-                                                <td>{{ data.ailment_description }}</td>
-                                                <td>{{ data.ailment_medication }}</td>
+                                                <td>{{ data.clinic_name }}</td>
+                                                <td>{{ data.clinic_email }}</td>
+                                                <td>{{ data.clinic_address }}</td>
                                             </tr>
                                         {% endfor %}
                                         </tbody>
                                     </table>
-
 								</div>
 							</div>
-
 						</div>
                         <div class="row">
                         	<div class="col-lg-6">
@@ -102,34 +98,49 @@
 							</div>
                             <div class="col-lg-6">
 								<div class="card-box">
-                        			<h4 class="header-title m-t-0 m-b-30">Miscellaneous Health Data</h4>
+                        			<h4 class="header-title m-t-0 m-b-30">Weight</h4>
+                                        <input type="hidden" value="30" id="blood">
+									<div id="rand_blood" class="ct-chart ct-golden-section"></div>
+								</div>
+							</div>
+                            <div class="col-lg-6">
+								<div class="card-box">
+                        			<h4 class="header-title m-t-0 m-b-30">Cholesterol</h4>
+                                        <input type="hidden" value="30" id="blood">
+									<div id="rand_blood" class="ct-chart ct-golden-section"></div>
+								</div>
+							</div>
+                            <div class="col-lg-6">
+								<div class="card-box">
+                        			<h4 class="header-title m-t-0 m-b-30">Drug History</h4>
 
                                     <p class="text-muted font-13 m-b-15">
-                                       Miscellaneous health data information
+                                        Data about any ailment you uploaded at any point.
                                     </p>
 
                                     <table class="table table-striped m-0">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Weight(kg)</th>
-                                                <th>Cholesterol</th>
+                                                <th>Ailment</th>
+                                                <th>Description</th>
+                                                <th>Drug</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {% for data in misc_detail %}
+                                            {% for data in ailment_detail %}
                                             <tr>
                                                 <th scope="row">{{ data.id }}</th>
-                                                <td>{{ data.user_weight }}</td>
-                                                <td>{{ data.user_cholesterol }}</td>
+                                                <td>{{ data.ailment_name }}</td>
+                                                <td>{{ data.ailment_description }}</td>
+                                                <td>{{ data.ailment_medication }}</td>
                                             </tr>
-                                            {% endfor %}
+                                        {% endfor %}
                                         </tbody>
                                     </table>
 
 								</div>
 							</div>
-
 						</div>
                     </div> <!-- container -->
 
