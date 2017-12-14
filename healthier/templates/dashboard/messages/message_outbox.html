@@ -27,7 +27,7 @@
                                             <tr>
                                                 <td>{{ message.subject | capfirst }}</td>
                                                 <td>{{ message.recipient.email | capfirst}}</td>
-                                                <td>{{ message.sent_at | date}}</td>
+                                                <td>{{ message.sent_at | date:'Y-m-d H:i'}}</td>
                                                 <td>
                                                     <a href="{% url 'dashboard:view_message' message.id %} ">
                                                         <button type="button"  class="btn btn-small btn-success waves-effect waves-light">Read Message</button></a>

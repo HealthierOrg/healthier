@@ -3,7 +3,6 @@ from celery import Celery
 from django.apps import apps, AppConfig
 from django.conf import settings
 
-from config.mailer import Mailer
 
 if not settings.configured:
     # set the default Django settings module for the 'celery' program.
@@ -44,13 +43,4 @@ class CeleryConfig(AppConfig):
 @app.task(bind=True)
 def debug_task(self):
     print('Request: {0!r}'.format(self.request))  # pragma: no cover
-
-
-@app.task(bind=True)
-def send_mail(self):
-    mail = Mailer()
-    mail.send_messages(subject='My App account verification',
-                              template='emails/customer_verification.html',
-                              context={'customer': "now"},
-                              to_emails=["olamyy53@gmail.com"])
 
