@@ -73,15 +73,10 @@ class OrderListView(TemplateView):
         if action == 'confirm':
             response_obj = HttpResponseRedirect(reverse('dashboard:consumer'))
             order = OrderedService.objects.get(id=order_id)
-            if order.confirmed:
-                response_obj = HttpResponseRedirect(reverse('dashboard:consumer'))
-                response_obj.set_cookie('status', True)
-                response_obj.set_cookie('message', "Order has been previously confirmed")
-                return response_obj
-            else:
-                response_obj.set_cookie('status', True)
-                response_obj.set_cookie('message', "The order has been successfully confirmed")
-                return response_obj
+            order.confirmed = True
+            response_obj.set_cookie('status', True)
+            response_obj.set_cookie('message', "The order has been successfully confirmed")
+            return response_obj
         elif action == 'sendMessage':
             return HttpResponseRedirect(reverse('dashboard:compose_message'))
         elif action == "block":
@@ -139,6 +134,7 @@ class ServiceDetailView(DetailView):
 class AllServiceListView(ListView):
     template_name = "dashboard/services/all_services.html"
     context_object_name = "all_services"
+    paginate_by = 9
 
     def get_queryset(self):
         not_rendered_services = HealthierService.objects.exclude(
@@ -353,8 +349,8 @@ class OrderServiceStepView(TemplateView):
             OrderedService(ordered_by=consumer_details, service=service_details, provided_by=provider_details,
                            price=service_request_details.price,
                            **response, members=members).save()
-            consumer = HealthierUser.objects.get(request=request.user.id)
-            provider = HealthierUser.objects.get(request=provider_id)
+            consumer = HealthierUser.objects.get(id=request.user.id)
+            provider = HealthierUser.objects.get(id=provider_id)
             HealthierService.objects.filter(id=service_id).update(
                 orders=int(service_request_details.service.orders) + 1,
                 views=int(service_request_details.service.views) + 1)
@@ -379,26 +375,23 @@ class OrderServiceConfigurationView(TemplateView):
     form_class = ServiceRequestConfigurationForm
 
     def get(self, request, *args, **kwargs):
-        if not kwargs.get('id'):
-            service_id = kwargs.get('service_id', None)
-            if not service_id:
-                response_obj = HttpResponseRedirect(reverse('dashboard:dashboard_all_services'))
-                response_obj.set_cookie('status', "error")
-                response_obj.set_cookie('message', "There is currently no provider for this service")
-                return response_obj
-            service_details = HealthierService.objects.get(id=service_id)
-            return render(request, self.template_name,
-                          {'service_details': service_details, 'form': self.form_class,
-                           'current_page_title': "Service Configuration"})
+        service_id = kwargs.get('pk', None)
+        print(service_id)
+        if not service_id:
+            response_obj = HttpResponseRedirect(reverse('dashboard:dashboard_all_services'))
+            response_obj.set_cookie('status', "error")
+            response_obj.set_cookie('message', "There is currently no provider for this service")
+            return response_obj
+        service_details = HealthierService.objects.get(id=service_id)
         return render(request, self.template_name,
-                      {'form': self.form_class,
+                      {'service_details': service_details, 'form': self.form_class,
                        'current_page_title': "Service Configuration"})
 
-    def post(self, request):
+    def post(self, request, **kwargs):
         response = request.POST.dict()
         response.pop('csrfmiddlewaretoken')
         user_id = Provider.objects.get(healthier_id=request.user.id)
-        service_id = self.request.GET.get('service')
+        service_id = kwargs.get('pk')
         requested_service = ServiceRequests(is_ordered=True, requested_by=user_id, service_id=service_id, **response)
         requested_service.save()
         response_obj = HttpResponseRedirect(reverse('dashboard:dashboard_my_services'))
@@ -470,7 +463,7 @@ class GenerateReportView(TemplateView):
         ServiceReport(**response_data, generated_for=gen_for).save() if not request.FILES.get(
             'report_file') \
             else ServiceReport(**response_data, generated_for=gen_for, report_file=
-        fs.url(fs.save(request.FILES['report_file'].name,
+            fs.url(fs.save(request.FILES['report_file'].name,
                        request.FILES['report_file']))).save()
         response_obj = HttpResponseRedirect(reverse('dashboard:service_report'))
         response_obj.set_cookie('status', True)
@@ -503,7 +496,7 @@ class AddFamilyView(TemplateView):
     def post(self, request):
         response = request.POST.dict()
         response.pop('csrfmiddlewaretoken')
-        user_id = HealthierUser.objects.get(request=request.user.id)
+        user_id = HealthierUser.objects.get(id=request.user.id)
         member = Family(head=user_id, **response)
         member.save()
         response_obj = HttpResponseRedirect(reverse('dashboard:family'))
@@ -534,13 +527,16 @@ class SuccessPaymentView(TemplateView):
         response = render_to_response(self.template_name, self.context)
         order_ids = request.session.get('order_ids')
         for order_id in order_ids:
-            service = OrderedService.objects.get(order_id=order_id)
+            print(request.user.id)
+            service = OrderedService.objects.get(ordered_by=request.user.id, order_id=order_id)
             service.payment_status = True
             service.save()
+            request.session['order_ids'] = []
         self.context['paid_services'] = OrderedService.objects.filter(ordered_by__healthier_id_id=request.user.id,
                                                                       payment_status=True)
-        response.set_cookie('status', True)
-        response.set_cookie('message', "Your payment was successful.")
+        if order_ids:
+            response.set_cookie('status', True)
+            response.set_cookie('message', "Your payment was successful.")
         return response
 
 
@@ -615,4 +611,3 @@ class PromoCreateView(TemplateView):
         response_obj.set_cookie('status', True)
         response_obj.set_cookie('message', "Promo successfully saved")
         return response_obj
-

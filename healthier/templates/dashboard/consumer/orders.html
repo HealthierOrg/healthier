@@ -36,8 +36,11 @@
                                                 <td>{% if order.payment_status %} Paid {% else %}Not Paid{% endif %}</td>
                                                 <td>{{ order.price.gross }}</td>
                                                 <td>
+                                                    {% if order.confirmed == "False"  %}
                                                     <a href="{% url 'dashboard:consumer' %}?action=confirm&order={{  order.id}}&customer={{ order.ordered_by.healthier_id.id }}">
-                                                        <button type="button"  class="btn btn-success waves-effect waves-light">Confirm time and date</button></a>
+                                                        <button type="button"  class="btn btn-success waves-effect
+                                                        waves-light">{{ order.confirmed }}</button></a>
+                                                    {% endif %}
                                                     <a href="{% url 'dashboard:consumer' %}?action=sendMessage&order={{  order.id}}&customer={{ order.ordered_by.healthier_id.id }}">
                                                         <button type="button"  class="btn waves-effect waves-light">Message User</button></a>
                                                     <a href="{% url 'dashboard:generate_report' %}?order={{  order.id }}">

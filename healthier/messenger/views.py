@@ -18,19 +18,16 @@ def compose(request, recipient=None):
     if request.method == "POST":
         sender = request.user
         form_response = request.POST.dict()
-        print(form_response['recipient'])
-        form_response['recipient'] = HealthierUser.objects.get(request=form_response.get('recipient'))
+        form_response['recipient'] = HealthierUser.objects.get(id=form_response.get('recipient'))
         form_response.pop('csrfmiddlewaretoken')
         message_obj = Message(sender=sender, **form_response)
         message_obj.save()
-        response_obj = HttpResponseRedirect(reverse('dashboard:message_inbox'))
+        response_obj = HttpResponseRedirect(reverse('dashboard:message_outbox'))
         response_obj.set_cookie('status', True)
         response_obj.set_cookie('message', "Your message has been successfully sent.")
         return response_obj
     context['current_page_title'] = "Message Composer"
-    print(request.user.account_type)
     context['recipient'] = Consumer.objects.all() if request.user.account_type == "PRO" else Provider.objects.all()
-    print(context['recipient'])
     return render(request, template_name, context)
 
 
