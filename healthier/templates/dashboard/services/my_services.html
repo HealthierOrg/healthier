@@ -11,8 +11,8 @@
                         	<div class="col-sm-4">
                         		 <a href="{% url 'dashboard:dashboard_all_services' %}"
                                     class="btn btn-success btn-md waves-effect waves-light m-b-30" data-animation="fadein" data-plugin="custommodal"
-                                    data-overlaySpeed="200" data-overlayColor="#36404a"><i class="md md-add"></i> Add
-                                     Service</a>
+                                    data-overlaySpeed="200" data-overlayColor="#36404a"><i class="md md-add"></i>
+                                     {% if user.account_type == 'CON'%}Buy {% else %} Offer {% endif %}More Services</a>
                         	</div>
                         </div>
                         <div class="row">

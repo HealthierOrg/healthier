@@ -1,15 +1,7 @@
 {% load static %}
 
 {% include "header.html" %}
-
-{##}
-{#  <div class="loader-mask">#}
-{#    <div class="loader">#}
-{#      "Loading..."#}
-{#    </div>#}
-{#  </div>#}
-
-  <main class="main-wrapper">
+<main class="main-wrapper">
     {% include 'nav.html' %}
       <div class="content-wrapper oh">
       <section class="page-title bottom-divider text-center">
@@ -18,11 +10,10 @@
           <div class="page-title__outer">
             <div class="page-title__inner">
               <div class="page-title__holder">
-                <h1 class="page-title__title">Healthier {% if categories %}
-                 Categories  {% else %}   Services {% endif %}</h1>
+                <h1 class="page-title__title">Healthier {% if categories %} Categories  {% else %}   Services
+                {% endif %}</h1>
                 <p class="page-title__subtitle lead">Below is a collection of currently available {% if categories %}
-                 categories  {% else %}   services {% endif %}
-                    .</p>
+                 categories  {% else %}   services {% endif %}.</p>
               </div>
             </div>
           </div>
