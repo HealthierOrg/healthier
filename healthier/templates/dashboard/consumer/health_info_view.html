@@ -19,7 +19,7 @@
                                     <table class="table table-striped m-0">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th><i class="fa fa-asterisk"></i></th>
                                                 <th>Clinic Name</th>
                                                 <th>Clinic Email</th>
                                                 <th>Clinic Address</th>
@@ -28,7 +28,7 @@
                                         <tbody>
                                             {% for data in clinical_detail %}
                                             <tr>
-                                                <th scope="row">{{ data.id }}</th>
+                                                <td>{{ data.id }}</td>
                                                 <td>{{ data.clinic_name }}</td>
                                                 <td>{{ data.clinic_email }}</td>
                                                 <td>{{ data.clinic_address }}</td>
@@ -46,7 +46,7 @@
                                     <table class="table table-striped m-0">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th><i class="fa fa-asterisk"></i></th>
                                                 <th>Date Taken</th>
                                                 <th>Vaccine Name </th>
                                                 <th>Vaccine Reason</th>
@@ -56,7 +56,7 @@
                                         <tbody>
                                             {% for data in clinical_detail %}
                                             <tr>
-                                                <th scope="row">{{ data.id }}</th>
+                                                <td>{{ data.id }}</td>
                                                 <td>{{ data.clinic_name }}</td>
                                                 <td>{{ data.clinic_email }}</td>
                                                 <td>{{ data.clinic_address }}</td>
@@ -121,7 +121,7 @@
                                     <table class="table table-striped m-0">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th><i class="fa fa-asterisk"></i></th>
                                                 <th>Ailment</th>
                                                 <th>Description</th>
                                                 <th>Drug</th>

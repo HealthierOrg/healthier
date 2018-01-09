@@ -1106,7 +1106,7 @@ File: Components
 .table > thead > tr.active > th,
 .table > tbody > tr.active > th,
 .table > tfoot > tr.active > th {
-  background-color: #f4f8fb !important;
+  background-color: transparent !important;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -1134,7 +1134,7 @@ tbody {
   color: #797979;
 }
 th {
-  color: #666666;
+  color: white;
   font-weight: 600;
 }
 .table-bordered {

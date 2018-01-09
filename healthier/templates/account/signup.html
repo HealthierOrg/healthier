@@ -8,13 +8,11 @@
 <div class="account-pages"></div>
         <div class="clearfix"></div>
         <div class="wrapper-page">
-            <div class="text-center">
-                <a href="/" class="logo"><span>Health<span>ier</span></span></a>
-            </div>
         	<div class="m-t-40 card-box">
                 <div class="text-center">
-                    <h4 class="text-uppercase font-bold m-b-0">Registration</h4>
+                    <a href="/"><h1 class="text-uppercase font-bold m-b-0 form-header">Healthier</h1></a>
                 </div>
+                <h4 class="text-center form-header-2">Registration</h4>
                 <div class="panel-body">
                     <form class="form-horizontal m-t-20" action="{% url "account_signup" %}" method="POST">
                           {% csrf_token %}
@@ -27,19 +25,17 @@
                                 <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" type="submit">Sign Up</button>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <p class="text-muted">Already have an account? <a href="{% url "account_login" %}"  class="text-primary m-l-5"><b>Sign In</b></a></p>
+                            </div>
+                        </div>
                     </form>
 
 
                 </div>
             </div>
             <!-- end card-box-->
-
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <p class="text-muted">Already have an account? <a href="{% url "account_login" %}"  class="text-primary m-l-5"><b>Sign In</b></a></p>
-                </div>
-            </div>
-
         </div>
 
 {% include 'account/footer.html' %}
