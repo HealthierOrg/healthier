@@ -23,7 +23,7 @@ File: Core
    Common
 ============= */
 body {
-  background: #ebeff2;
+  background: #48D2C2;
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding-bottom: 60px;
@@ -1211,4 +1211,97 @@ pre {
     margin-left: 0px;
     margin-top: 0px;
   }
+}
+
+.m-t-40{
+  margin-top: 100px !important;
+}
+
+.card-box{
+  background-color: #1D4A5F;
+  color: white !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 1, 1) !important;
+}
+
+.account-pages{
+  background-color: #44CCC0;
+}
+
+.waves-light{
+  background-color: #44CCC0 !important; 
+}
+
+.form-header{
+  color: white;
+}
+
+.form-control{
+  background-color: #102D3D !important;
+  color: white !important;
+  border: none !important;
+}
+
+.form-header-2{
+  color: #44CCC0;
+}
+
+.header-title, .m-b-0{
+  color: white;
+}
+
+.text-muted{
+  color: #44CCC0;
+}
+
+.card-box-text{
+  color: white;
+}
+
+.bg-major-color{
+  background-color: #48D2C2;
+}
+
+.footer{
+  background-color: #48D2C2;
+  color: #102D3D;
+}
+
+html{
+  background-color: #48D2C2;  
+}
+
+.title{
+  color: white !important;
+  text-transform: uppercase !important;
+}
+
+.custom-modal{
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 1, 1) !important;
+  padding: 0px;
+  margin: 5px;
+}
+
+.white-text{
+  color: white;
+}
+
+.color-text{
+ color: #44CCC0; 
+}
+
+.m-l-15{
+  color: white;
+}
+
+.tr{
+  background-color: transparent !important;
+}
+
+tbody{
+  color: white !important;
+}
+
+thead{
+  color: white !important;
 }

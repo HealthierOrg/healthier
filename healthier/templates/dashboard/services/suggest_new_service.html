@@ -14,10 +14,10 @@
                     <input type="hidden" value="{{ service }}" id="service_details">
                     <div class="container">
                         <div class="row">
-                        	<div class="col-sm-12">
+                        	<div class="col-md-12">
                         			<h4 class="header-title m-t-0 m-b-30">{{ service_details.service_name }}</h4>
                         			<div class="row">
-                                        <div id="custom-modal">
+                                        <div id="custom-modal" class="custom-modal">
                                             <h4 class="custom-modal-title">Fill the form below to suggest a new service</h4>
                                             <div class="custom-modal-text text-left">
                                               <form class="form-horizontal" role="form" method="POST" action="{% url 'dashboard:dashboard_suggest_new_service' %}">

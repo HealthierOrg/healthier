@@ -12,7 +12,7 @@ File: Menu
   z-index: 999;
 }
 .topbar .topbar-left {
-  background: #ffffff;
+  background: #1D4A5F;
   border-top: 3px solid #71b6f9;
   float: left;
   text-align: center;
@@ -42,9 +42,8 @@ File: Menu
   display: none;
 }
 .logo {
-  color: #188ae2 !important;
+  color: #ffffff !important;
   font-size: 32px;
-  font-family: 'Rancho', cursive;
 }
 .logo i {
   display: none;
@@ -55,6 +54,7 @@ File: Menu
 .user-box {
   text-align: center;
   padding: 30px 0px 20px 0px;
+  background-color: #1D4A5F;
 }
 .user-box .user-img {
   position: relative;
@@ -63,7 +63,7 @@ File: Menu
   margin: 0px auto;
 }
 .user-box h5 a {
-  color: #98a6ad;
+  color: #ffffff;
 }
 .user-box .user-status {
   height: 12px;
@@ -639,4 +639,13 @@ input.app-search-input::-moz-placeholder {
 }
 input.app-search-input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.menu-title{
+  color: #1D4A5F;
+  font-size: 200%; 
+}
+
+.bg-major-color{
+  background-color: #48D2C2 !important;
 }
