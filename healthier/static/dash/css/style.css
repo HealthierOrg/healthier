@@ -10,11 +10,12 @@
 /* ====================================================== */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 body {
+  font-family: 'Raleway', sans-serif;
   margin: 0;
 }
 article,

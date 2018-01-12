@@ -23,8 +23,8 @@ File: Core
    Common
 ============= */
 body {
-  background: #48D2C2;
-  font-family: 'Roboto', sans-serif;
+  background: #F5F5F5;
+  font-family: 'Raleway', sans-serif;
   margin: 0;
   padding-bottom: 60px;
   overflow-x: hidden;
@@ -1219,8 +1219,7 @@ pre {
 
 .card-box{
   background-color: #1D4A5F;
-  color: white !important;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 1, 1) !important;
+  color: white !important;  
 }
 
 .account-pages{
@@ -1235,7 +1234,7 @@ pre {
   color: white;
 }
 
-.form-control{
+.form-control-special{
   background-color: #102D3D !important;
   color: white !important;
   border: none !important;
@@ -1258,26 +1257,26 @@ pre {
 }
 
 .bg-major-color{
-  background-color: #48D2C2;
+  background-color: #F5F5F5;
 }
 
 .footer{
-  background-color: #48D2C2;
+  background-color: #F5F5F5;
   color: #102D3D;
 }
 
 html{
-  background-color: #48D2C2;  
+  background-color: #F5F5F5;  
 }
 
 .title{
-  color: white !important;
+  background-color: #F5F5F5;
+  color: #102D3D !important;
   text-transform: uppercase !important;
 }
 
 .custom-modal{
   background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 1, 1) !important;
   padding: 0px;
   margin: 5px;
 }
@@ -1305,3 +1304,4 @@ tbody{
 thead{
   color: white !important;
 }
+
