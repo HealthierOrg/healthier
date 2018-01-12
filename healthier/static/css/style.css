@@ -4027,3 +4027,212 @@ img.alignright {
   width: 100%;
   max-width: 660px;
 }
+
+.oh{
+  background-color: #44CCC0;
+}
+
+.optin__title, .optin__text{
+  color: darkgrey;
+}
+
+#faq{
+  background-color: #44CCC0;
+}
+
+#faq-header{
+  color: white;
+  font-size: 400%;
+}
+
+.benefit{
+  background-color: rgb(255, 255, 255) !important;
+  color: black;
+  padding: 50px;
+  box-shadow: 10px 10px grey;
+}
+
+.benefit__text{
+  font-size: 150%;
+}
+
+.heading{
+  font-size: 300%;
+}
+
+.how > .heading {
+  color: white !important;
+}
+
+.nav__btn-holder > .btn--google{
+  color: white;
+  background-color: #102D3D;
+  padding: 10% 20%;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: color .5s, background-color .5s;
+}
+
+.nav__btn-holder > .btn--color{
+  color: white;
+  background-color: #102D3D;
+  padding: 10% 20%;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: color .5s, background-color .5s; 
+}
+
+.nav__btn-holder > .btn--google:hover{
+  color: #102D3D;
+  background-color: white;
+}
+
+.nav__btn-holder > .btn--color:hover{
+  color: #102D3D;
+  background-color: white;
+}
+
+.nav--transparent .nav__menu > li > a {
+    color: white;
+    font-size: 150%;
+}
+
+
+.nav--transparent .logo--dark, .nav--transparent .nav__holder.scrolling .logo--light {
+    display: inline-block !important; 
+}
+
+.optin{
+  transition: opacity .5s, background 1s; 
+}
+
+.optin__title{
+  color: #3E4045
+}
+
+.optin:hover{
+  /*opacity: 0.5;*/
+  border: 1px solid rgba(255, 255, 255, .9);
+  background-color: rgba(0, 0, 0, .25);
+}
+
+.hero{
+   /* Set a specific height */
+    height: 600px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.optin:hover .optin__title {
+  color: white !important;
+  /*opacity: 1.0 !important;*/
+}
+
+.optin:hover .optin__text {
+  color: white !important;
+  /*opacity: 1.0 !important;*/
+}
+
+.btn--windows{
+  color: white;
+  background-color: #102D3D;
+  font-size: 150%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 2px 2px grey;
+  transition: color .5s, background-color .5s;
+}
+
+.btn--windows:hover{
+  color: #102D3D;
+  background-color: white;
+}
+
+.logo--dark{
+  height: 100px;
+  width: 150px;
+  max-height: 100px;
+  max-width: 150px;
+}
+
+
+.contactButton {
+border-radius: 50%;
+background-color: #102D3D;
+border: #ffffff;
+color: #ffffff;
+text-align: center;
+font-size: 15px;
+padding: 15px;
+margin-right: 20px;
+transition: all 0.5s;
+cursor: pointer;
+bottom: 5%;
+right: 0;
+position: fixed;
+z-index: 1;
+box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+transition: background-color 0.5s, color 0.5s ;
+}
+
+.contactButton:hover {
+  background-color: #ffffff;
+  color: #102D3D;
+}
+
+.page-title__title{
+  color: white;
+  font-size: 400%;
+}
+
+.page-title__subtitle{
+  color: white;
+}
+
+.testimonial{
+  background-color: #102D3D;
+  box-shadow: 5px 5px grey;
+  margin: 20px; 
+  transition: background-color 1s;
+}
+
+.testimonial__text, .testimonial__author, .testimonial__company{
+  color: white;
+  transition: color 1s;
+}
+
+
+.testimonial:hover{
+  background-color: #ffffff;
+}
+
+
+.testimonial:hover .testimonial__company{
+  color: #102D3D;
+}
+
+.testimonial:hover .testimonial__author{
+  color: #102D3D;
+}
+
+.testimonial:hover .testimonial__text{
+  color: #102D3D;
+}
+
+.section-wrap{
+  padding-top: 20px;
+}
+
+.btn-card{
+  background-color: #44CCC0;
+  transition:  background-color 1s;
+}
+
+.testimonial:hover .btn-card{
+  background-color: #102D3D;
+}

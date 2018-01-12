@@ -7,6 +7,8 @@
       <div class="content-wrapper">
 
       <section class="hero bg-green">
+      <!-- Hero -->
+      <section class="hero" style="background-image: url({% static 'img/jumbotron-bg-3.m-t.jpg' %}) !important;">
         <div class="container hero__container hero__container--720">
 
           <div class="row hero__outer flex-vertical-align-center">
@@ -22,7 +24,7 @@
         <section class="section-wrap pt-70 pb-120 bg-light" id="services">
         <div class="container">
          <div class="heading-row text-center">
-            <h2 class="heading">Available Service Categories</h2>
+            <h4 class="heading">AVAILABLE SERVICE CATEGORIES</h4>
           </div>
           <div class="row items-grid">
               {% for category in categories %}
@@ -46,7 +48,7 @@
                 <div class="row">
                   <div class="col-sm-12">
                       <a href="{% url 'service:all_categories' %}" class="btn btn--lg
-                      btn--windows"><span>View All Categories</span></a>
+                      btn--windows"><i class="fa fa-bars"></i>  View All Categories</a>
                   </div>
                 </div>
               </div>

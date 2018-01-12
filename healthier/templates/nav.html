@@ -1,14 +1,14 @@
   {% load static %}
  <header class="nav nav--transparent">
 
-      <div class="nav__holder bg-green" id="sticky-nav">
+      <div class="nav__holder" id="sticky-nav">
         <div class="container">
           <div class="flex-parent">
 
             <div class="nav__header clearfix">
               <div class="logo-wrap">
                 <a href="/" class="logo__link">
-                  <img class="logo logo--dark" src="{% static 'img/logo.jpeg' %}" alt="logo">
+                  <img class="logo logo--dark" src="{% static 'img/logo_demo.png' %}" alt="logo">
                 </a>
               </div>
 
@@ -40,10 +40,10 @@
               </div>
                 {% else %}
                 <div class="nav__btn-holder">
-                    <a href="{% url 'account_login' %}" class="btn btn--sm btn--google"><span>Login</span></a>
+                    <a href="{% url 'account_login' %}" class="btn btn--sm btn--google"><i class="fa fa-unlock"></i> Login</a>
               </div>
                 <div class="nav__btn-holder">
-                <a href="{% url "account_signup" %}" class="btn btn--sm btn--color"><span>SignUp</span></a>
+                <a href="{% url 'account_signup' %}" class="btn btn--sm btn--color"><i class="fa fa-lock"></i> SignUp</a>
               </div>
                 {% endif %}
 
@@ -54,3 +54,7 @@
 
       </div>
     </header>
+
+
+
+

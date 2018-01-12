@@ -3,10 +3,10 @@
 
             <div class="topbar">
                 <div class="topbar-left">
-                    <a href="/" class="logo"><span>Health<span>ier</span></span><i class="zmdi zmdi-layers"></i></a>
+                    <a href="/" class="logo">Healthier</a>
                 </div>
-                <div class="navbar navbar-default" role="navigation">
-                    <div class="container">
+                <div class="navbar navbar-default bg-major-color" role="navigation">
+                    <div class="container bg-major-color">
 
                         <ul class="nav navbar-nav navbar-left">
                             <li>
@@ -15,7 +15,7 @@
                                 </button>
                             </li>
                             <li>
-                                <h4 class="page-title" >{{ current_page_title }}</h4>
+                                <h2 class="page-title title" >{{ current_page_title }}</h2>
                             </li>
                         </ul>
                     </div>
@@ -34,23 +34,23 @@
                             {% if request.user.account_type == "CON" %}
                             <li>
                                 <a href="{% url 'dashboard:account_settings' %}">
-                                    <i class="zmdi zmdi-settings"></i>
+                                    <i class="fa fa-gear fa-3x"></i>
                                 </a>
                             </li>
                             {% endif %}
                             <li>
                                 <a href="{% url 'account_logout' %}" class="text-custom">
-                                    <i class="zmdi zmdi-power"></i>
+                                    <i class="fa fa-power-off fa-3x"></i>
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div id="sidebar-menu">
                         <ul>
-                        	<li class="text-muted menu-title">Navigation</li>
+                        	<li class="text-muted menu-title"><i class="fa fa-list"></i></li>
 
                             <li>
-                                <a href="{% url 'dashboard:dashboard' %}" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
+                                <a href="{% url 'dashboard:dashboard' %}" class="waves-effect"><i class="fa fa-dashboard fa-2x"></i> <span> Dashboard </span> </a>
                             </li>
 
                             {% if request.user.account_type == "PRO" %}

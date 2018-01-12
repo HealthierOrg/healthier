@@ -14,7 +14,7 @@
                                 <form class="form-horizontal" role="form" method="POST" action="{% url 'dashboard:finance_settings' %}">
                                                                           {% csrf_token %}
                         			<div class="row">
-                                       <div id="custom-modal">
+                                       <div id="custom-modal" class="custom-modal">
                                             <h4 class="custom-modal-title">{{ current_page_title }}</h4>
                                             <div class="custom-modal-text text-left">
                                                  <div class="form-group">

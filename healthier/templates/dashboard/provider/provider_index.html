@@ -78,14 +78,14 @@
                                         <a href="{% url 'dashboard:view_message' message.id %}">
                                             <div class="inbox-item">
                                                 <div class="inbox-item-img"><img src="{{ message.sender.image_url|default_if_none:'/static/img/default_user.png' }}" class="img-circle" alt=""></div>
-                                                <p class="inbox-item-author">{{ message.sender.username }}</p>
-                                                <p class="inbox-item-text">{{ message.subject }}</p>
-                                                <p class="inbox-item-date">{{ message.sent_at | date }}</p>
+                                                <p class="inbox-item-author card-box-text">{{ message.sender.username }}</p>
+                                                <p class="inbox-item-text card-box-text">{{ message.subject }}</p>
+                                                <p class="inbox-item-date card-box-text">{{ message.sent_at | date }}</p>
                                             </div>
                                         </a>
                                         {% endfor %}
                                         {% else %}
-                                        <h3>You currently have no messages</h3>
+                                        <h3 class="card-box-text">You currently have no messages</h3>
                                     {% endif %}
                                     </div>
 								</div>
@@ -94,33 +94,32 @@
                             <div class="col-lg-8">
                                 <div class="card-box">
                         			<h4 class="header-title m-t-0 m-b-30">Service List</h4>
-
+                                   {% if provider_services %}
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Service Name</th>
-                                                <th>Created On</th>
-                                                <th>Status</th>
+                                                <th class="card-box-text"><i class="fa fa-asterisk"></i></th>
+                                                <th class="card-box-text">Service Name</th>
+                                                <th class="card-box-text">Created On</th>
+                                                <th class="card-box-text">Status</th>
                                             </tr>
                                             </thead>
-                                           {% if provider_services %}
-                                            <tbody>
+                                                <tbody>
                                                 {% for service in provider_services %}
                                                 <tr>
-                                                    <td>{{ service.id }}</td>
-                                                    <td>{{ service.service.service_name }}</td>
-                                                    <td>{{ service.request_date | date }}</td>
+                                                    <td class="card-box-text">{{ service.id }}</td>
+                                                    <td class="card-box-text">{{ service.service.service_name }}</td>
+                                                    <td class="card-box-text">{{ service.request_date | date }}</td>
                                                     <td><span class="label {% if service.status %} label-success {% else %} label-danger {% endif %}"> {% if service.status %} Active {% else %} Not Active {% endif %}</span></td>
                                                 </tr>
                                                 {% endfor %}
-                                            </tbody>
-                                               {% else %}
-                                               <tbody><tr><h3>You currently have no active service</h3></tr></tbody>
-                                            {% endif %}
-                                        </table>
+                                                </tbody>
+                                            </table>
                                     </div>
+                                   {% else %}
+                                    <h3 class="card-box-text">You currently have no active service</h3>
+                                    {% endif %}
                                 </div>
                             </div><!-- end col -->
 

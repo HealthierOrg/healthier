@@ -10,10 +10,18 @@
           <div class="page-title__outer">
             <div class="page-title__inner">
               <div class="page-title__holder">
+<<<<<<< HEAD
                 <h1 class="page-title__title">Healthier {% if categories %} Categories  {% else %}   Services
                 {% endif %}</h1>
                 <p class="page-title__subtitle lead">Below is a collection of currently available {% if categories %}
                  categories  {% else %}   services {% endif %}.</p>
+=======
+                <h1 class="page-title__title">Healthier {% if categories %}
+                 Categories  {% else %}   Services {% endif %}</h1>
+                <p class="page-title__subtitle lead">BELOW IS A LIST OF CURRNETLY AVAILABLE {% if categories %}
+                 CATEGORIES  {% else %}   SERVICES {% endif %}
+                    .</p>
+>>>>>>> 50b8f1819dafbdb97c6f1b16e1bee61ca85c7800
               </div>
             </div>
           </div>
@@ -65,13 +73,13 @@
                                       <span class="testimonial__company">{{service.views}}</span>
                                    </div>
                                   <br>
-                                  <div class="btn--google align-bottom">
+                                  <div class="btn--google align-bottom btn-card">
                                     <a href="{% url 'dashboard:render_service_alt' 1 %}?service={{ service.id }}"
-                                       class="btn btn--lg"><span>Offer Service</span></a>
+                                       class="btn btn--lg btn-card"><span>Offer Service</span></a>
                                   </div>
                                   <br>
-                                  <div class="btn--google align-bottom">
-                                    <a href="{% url 'dashboard:order_service_step' action="chooseProvider" %}?service={{ service.id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg"><span>Buy Service</span></a>
+                                  <div class="btn--google align-bottom btn-card">
+                                    <a href="{% url 'dashboard:order_service_step' action="chooseProvider" %}?service={{ service.id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg btn-card"><span>Buy Service</span></a>
                                   </div>
                               </div>
 

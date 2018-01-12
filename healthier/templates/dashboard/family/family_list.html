@@ -22,11 +22,11 @@
                         		<div class="text-center card-box">
                                     <div>
                                         <div class="text-left">
-                                            <p class="text-muted font-13"><strong>Full Name :</strong> <span class="m-l-15">{{ member.username }}</span></p>
+                                            <p class="text-muted font-13"><strong class="color-text">Full Name :</strong> <span class="m-l-15">{{ member.username }}</span></p>
 
-                                            <p class="text-muted font-13"><strong>Mobile :</strong><span class="m-l-15">{{ member.phone_number }}</span></p>
+                                            <p class="text-muted font-13"><strong class="color-text">Mobile :</strong><span class="m-l-15">{{ member.phone_number }}</span></p>
 
-                                            <p class="text-muted font-13"><strong>Email :</strong> <span class="m-l-15">{{ member.email }}</span></p>
+                                            <p class="text-muted font-13"><strong class="color-text">Email :</strong> <span class="m-l-15">{{ member.email }}</span></p>
                                         </div>
                                         <a href="{% url 'dashboard:remove_family' member.id %}" class="btn btn-googleplus waves-effect waves-light">Remove Member</a>
                                     </div>

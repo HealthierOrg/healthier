@@ -7,13 +7,11 @@
 <div class="account-pages"></div>
         <div class="clearfix"></div>
         <div class="wrapper-page">
-            <div class="text-center">
-                <a href="/" class="logo"><span>Health<span>ier</span></span></a>
-            </div>
         	<div class="m-t-40 card-box">
                 <div class="text-center">
-                    <h4 class="text-uppercase font-bold m-b-0">Login</h4>
+                    <a href="/"><h2 class="text-uppercase font-bold m-b-0 form-header">Healthier</h2></a>
                 </div>
+                <h4 class="text-center form-header-2">Sign In</h4>
                 <div class="panel-body">
                  {% if messages %}
                       {% for message in messages %}
@@ -31,7 +29,7 @@
                           {{ form | crispy}}
 
                         {% if redirect_field_value %}
-                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                            <input  type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                         {% endif %}
 
                         <div class="form-group text-center m-t-30">
@@ -39,17 +37,14 @@
                                 <button  class="btn btn-custom btn-bordred btn-block waves-effect waves-light" type="submit">Login</button>
                             </div>
                         </div>
-
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <p class="text-muted">New User? <a href="{% url "account_signup" %}" class="text-primary m-l-5"><b>Sign Up</b></a></p>
+                                <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                            </div>
+                        </div>
                     </form>
 
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <p class="text-muted">New User? <a href="{% url "account_signup" %}" class="text-primary m-l-5"><b>Sign Up</b></a></p>
-                    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
                 </div>
             </div>
 

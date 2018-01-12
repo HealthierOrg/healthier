@@ -12,7 +12,7 @@
                 <div class="content">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-3 col-md-6">
+                            <!-- <div class="col-lg-3 col-md-6">
                         		<div class="card-box">
                         			<h4 class="header-title m-t-0 m-b-30">Total Money Spent</h4>
                                     <div class="widget-box-2">
@@ -23,8 +23,8 @@
                                         </div>
                                     </div>
                         		</div>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
+                            </div> -->
+                            <div class="col-lg-4 col-md-6">
                         		<div class="card-box">
                         			<h4 class="header-title m-t-0 m-b-30">Service Count</h4>
 
@@ -38,7 +38,7 @@
                         		</div>
                             </div>
 
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-lg-4 col-md-6">
                         		<div class="card-box">
                         			<h4 class="header-title m-t-0 m-b-30">Daily Service Usage</h4>
 
@@ -51,7 +51,7 @@
                                     </div>
                         		</div>
                             </div>
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-lg-4 col-md-6">
                         		<div class="card-box">
                         			<h4 class="header-title m-t-0 m-b-30">Monthly Service Usage</h4>
 
@@ -78,23 +78,23 @@
                                         <a href="{% url 'dashboard:view_message' message.id %}">
                                             <div class="inbox-item">
                                                 <div class="inbox-item-img"><img src="{{ message.sender.image_url|default_if_none:'/static/img/default_user.png' }}" class="img-circle" alt=""></div>
-                                                <p class="inbox-item-author">{{ message.sender.username }}</p>
-                                                <p class="inbox-item-text">{{ message.subject }}</p>
-                                                <p class="inbox-item-date">{{ message.sent_at | date }}</p>
+                                                <p class="inbox-item-author card-box-text">{{ message.sender.username }}</p>
+                                                <p class="inbox-item-text card-box-text">{{ message.subject }}</p>
+                                                <p class="inbox-item-date card-box-text">{{ message.sent_at | date }}</p>
                                             </div>
                                         </a>
                                         {% endfor %}
                                         {% else %}
-                                        <h3>You currently have no messages</h3>
+                                        <h3 class="card-box-text">You currently have no messages</h3>
                                     {% endif %}
                                     </div>
 								</div>
                             </div>
 
-                            <div class="col-lg-8">
+                            <div class="col-lg-6">
                                 <div class="card-box">
                         			<h4 class="header-title m-t-0 m-b-30">Service List</h4>
-
+                                   {% if consumer_services %}
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>
@@ -105,8 +105,7 @@
                                                 <th>Status</th>
                                             </tr>
                                             </thead>
-                                           {% if consumer_services %}
-                                            <tbody>
+                                                <tbody>
                                                 {% for service in consumer_services %}
                                                 <tr>
                                                     <td>{{ service.id }}</td>
@@ -116,11 +115,11 @@
                                                 </tr>
                                                 {% endfor %}
                                             </tbody>
-                                               {% else %}
-                                               <tbody><tr><h3>You currently have not ordered any service</h3></tr></tbody>
-                                            {% endif %}
                                         </table>
                                     </div>
+                                               {% else %}
+                                               <h3 class="card-box-text">You currently have not ordered any service</h3>
+                                            {% endif %}
                                 </div>
                             </div><!-- end col -->
 
