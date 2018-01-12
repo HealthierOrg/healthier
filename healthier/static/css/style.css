@@ -16,6 +16,7 @@
 /* General
 /*-------------------------------------------------------*/
 html {
+  font-family: 'Raleway', sans-serif;
   font-size: 100%; }
 
 .clearfix {
@@ -45,7 +46,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 14px;
   line-height: 1.5;
   font-smoothing: antialiased;
@@ -4118,7 +4119,7 @@ img.alignright {
 
 .hero{
    /* Set a specific height */
-    height: 600px; 
+    height: 800px; 
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -4154,6 +4155,7 @@ img.alignright {
 }
 
 .logo--dark{
+  margin-top: 20px;
   height: 100px;
   width: 150px;
   max-height: 100px;
@@ -4235,4 +4237,15 @@ transition: background-color 0.5s, color 0.5s ;
 
 .testimonial:hover .btn-card{
   background-color: #102D3D;
+}
+
+
+@media only screen and (max-width: 991px){
+  .nav__menu li a {
+    color: #204D62;
+  } 
+
+  .nav--transparent .nav__menu > li > a {
+    color: #204D62;
+  } 
 }
