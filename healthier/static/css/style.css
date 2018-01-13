@@ -2690,13 +2690,19 @@ screen and (max-height: 300px) {
 /*-------------------------------------------------------*/
 
 .feature-1__icon-holder {
-    background-color: #3f48c4;
+    background-color: #204D62;
     padding: 40px 0;
     border-radius: 5px 5px 0 0;
+    transition: color .2s;
 }
 
+.feature-1__icon-holder:hover {
+    background-color: #ffffff;
+}
+
+
 .feature-1__icon-holder--blue {
-    background-color: #3f48c4;
+    background-color: #204D62;
 }
 
 .feature-1__icon-holder--turquoise {
@@ -2722,7 +2728,14 @@ screen and (max-height: 300px) {
 .feature-1__icon {
     font-size: 90px;
     color: #fff;
+    transition: color .2s;
 }
+
+
+.feature-1__icon-holder:hover .feature-1__icon{
+    color: #204D62;
+}
+
 
 .feature-1__base {
     background-color: #fff;
@@ -5707,8 +5720,12 @@ img.alignright {
 }
 
 .nav--transparent .nav__menu>li>a {
-    color: white;
+    color: #102D3D;
     font-size: 150%;
+}
+
+.nav--transparent .nav__menu>li>a:hover {
+    color: grey;
 }
 
 .nav--transparent .logo--dark,
