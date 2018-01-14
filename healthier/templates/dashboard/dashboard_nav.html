@@ -1,123 +1,121 @@
-   {% load static %}
+ {% load static %}
 
 
-            <div class="topbar">
-                <div class="topbar-left">
-                    <a href="/" class="logo">Healthier</a>
-                </div>
-                <div class="navbar navbar-default bg-major-color" role="navigation">
-                    <div class="container bg-major-color">
+<div class="topbar">
+    <div class="topbar-left">
+        <a href="/" class="logo">Healthier</a>
+    </div>
+    <div class="navbar navbar-default bg-major-color" role="navigation">
+        <div class="container bg-major-color">
 
-                        <ul class="nav navbar-nav navbar-left">
-                            <li>
-                                <button class="button-menu-mobile open-left">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <button class="button-menu-mobile open-left">
                                     <i class="zmdi zmdi-menu"></i>
                                 </button>
-                            </li>
-                            <li>
-                                <h2 class="page-title title" >{{ current_page_title }}</h2>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                </li>
+                <li>
+                    <h2 class="page-title title">{{ current_page_title }}</h2>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="left side-menu">
+    <div class="sidebar-inner slimscrollleft">
+        <div class="user-box">
+            <div class="user-img">
+                <img src="{% if request.user.image_url %}{{ request.user.image_url }}{% else %} /static/img/default_user.png {% endif %}" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
             </div>
+            <h5><a href="#">{{ request.user.username | capfirst }}</a> </h5>
+            <ul class="list-inline">
+                {% if request.user.account_type == "CON" %}
+                <li>
+                    <a href="{% url 'dashboard:account_settings' %}">
+                        <i class="fa fa-gear fa-3x"></i>
+                    </a>
+                </li>
+                {% endif %}
+                <li>
+                    <a href="{% url 'account_logout' %}" class="text-custom">
+                        <i class="fa fa-power-off fa-3x"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="sidebar-menu">
+            <ul>
+                <li class="text-muted menu-title"><i class="fa fa-list"></i></li>
 
-            <div class="left side-menu">
-                <div class="sidebar-inner slimscrollleft">
-                    <div class="user-box">
-                        <div class="user-img">
-                               <img src="{% if request.user.image_url %}{{ request.user.image_url }}{% else %} /static/img/default_user.png {% endif %}"
-                                    alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
-                        </div>
-                        <h5><a href="#">{{ request.user.username | capfirst }}</a> </h5>
-                        <ul class="list-inline">
-                            {% if request.user.account_type == "CON" %}
-                            <li>
-                                <a href="{% url 'dashboard:account_settings' %}">
-                                    <i class="fa fa-gear fa-3x"></i>
-                                </a>
-                            </li>
-                            {% endif %}
-                            <li>
-                                <a href="{% url 'account_logout' %}" class="text-custom">
-                                    <i class="fa fa-power-off fa-3x"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="sidebar-menu">
-                        <ul>
-                        	<li class="text-muted menu-title"><i class="fa fa-list"></i></li>
+                <li>
+                    <a href="{% url 'dashboard:dashboard' %}" class="waves-effect"><i class="fa fa-dashboard fa-2x"></i> <span> Dashboard </span> </a>
+                </li>
 
-                            <li>
-                                <a href="{% url 'dashboard:dashboard' %}" class="waves-effect"><i class="fa fa-dashboard fa-2x"></i> <span> Dashboard </span> </a>
-                            </li>
-
-                            {% if request.user.account_type == "PRO" %}
-                            <li>
-                                <a href="{% url 'dashboard:consumer' %}" class="waves-effect"><i class="zmdi zmdi-group"></i><span> Orders </span></a>
-                            </li>
-                            {% endif %}
-                            {% if request.user.account_type == "CON" %}
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-hospital"></i><span> Health Manager </span> <span class="menu-arrow"></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="{% url 'dashboard:view_health_info' %}">View Health Information</a></li>
-                                    <li><a href="{% url 'dashboard:set_health_info' %}">Edit Health Information</a></li>
-                                </ul>
-                            </li>
-                                <li>
-                                <a href="{% url 'dashboard:family' %}" class="waves-effect"><i class="zmdi zmdi-group"></i><span> Family </span></a>
-                            </li>
-                            {% endif %}
-
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-account-add"></i><span> Services </span> <span class="menu-arrow"></span></a>
-                                <ul class="list-unstyled">
-                                        <li><a href="{% url 'dashboard:dashboard_my_services' %}">My services</a></li>
-                                    {% if request.user.account_type  == "CON"%}
-                                        <li><a href="{% url 'dashboard:order_service' %}">Service Cart</a></li>
-                                    {% endif %}
-                                        <li><a href="{% url 'dashboard:dashboard_all_services' %}">All Services</a></li>
-                                        <li><a href="{% url 'dashboard:dashboard_suggest_new_service' %}">Suggest a new service</a></li>
-                                </ul>
-                            </li>
-                {% if request.user.account_type == "PRO"%}
-                            <li>
-                                <a href="{% url 'dashboard:service_report' %}" class="waves-effect"><i class="zmdi zmdi-book"></i>
-                                    <span> Reports </span></a>
-                            </li>
+                {% if request.user.account_type == "PRO" %}
+                <li>
+                    <a href="{% url 'dashboard:consumer' %}" class="waves-effect"><i class="zmdi zmdi-group"></i><span> Orders </span></a>
+                </li>
+                {% endif %} {% if request.user.account_type == "CON" %}
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-hospital"></i><span> Health Manager </span> <span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'dashboard:view_health_info' %}">My Health Report</a></li>
+                        <li><a href="{% url 'dashboard:set_health_info' %}">Save Health Data</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{% url 'dashboard:family' %}" class="waves-effect"><i class="zmdi zmdi-group"></i><span> Family </span></a>
+                </li>
                 {% endif %}
 
-                           <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-inbox"></i><span> Messages </span> <span class="menu-arrow"></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="{% url 'dashboard:compose_message' %}">Compose</a></li>
-                                    <li><a href="{% url 'dashboard:message_inbox' %}">Inbox</a></li>
-                                    <li><a href="{% url 'dashboard:message_outbox' %}">Outbox</a></li>
-                                </ul>
-                            </li>
-
-                        {% if request.user.account_type == "PRO" %}
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-plaster"></i><span> Promotions </span> <span class="menu-arrow"></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="{% url 'dashboard:promo_list' %}">Promo</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-account-add"></i><span> Settings </span> <span class="menu-arrow"></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="{% url 'dashboard:account_settings' %}">Account Setting</a></li>
-                                    <li><a href="{% url 'dashboard:finance_settings' %}">Finance Setting</a></li>
-                            </li>
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-account-add"></i><span> Services </span> <span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'dashboard:dashboard_my_services' %}">My services</a></li>
+                        {% if request.user.account_type == "CON"%}
+                        <li><a href="{% url 'dashboard:order_service' %}">Service Cart</a></li>
                         {% endif %}
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
+                        <li><a href="{% url 'dashboard:dashboard_all_services' %}">All Services</a></li>
+                        <li><a href="{% url 'dashboard:dashboard_suggest_new_service' %}">Suggest a new service</a></li>
+                    </ul>
+                </li>
+                {% if request.user.account_type == "PRO"%}
+                <li>
+                    <a href="{% url 'dashboard:service_report' %}" class="waves-effect"><i class="zmdi zmdi-book"></i>
+                                    <span> Reports </span></a>
+                </li>
+                {% endif %}
 
-                </div>
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-inbox"></i><span> Messages </span> <span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'dashboard:compose_message' %}">Compose</a></li>
+                        <li><a href="{% url 'dashboard:message_inbox' %}">Inbox</a></li>
+                        <li><a href="{% url 'dashboard:message_outbox' %}">Outbox</a></li>
+                    </ul>
+                </li>
 
-            </div>
+                {% if request.user.account_type == "PRO" %}
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-plaster"></i><span> Promotions </span> <span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'dashboard:promo_list' %}">Promo</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-account-add"></i><span> Settings </span> <span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'dashboard:account_settings' %}">Account Setting</a></li>
+                        <li><a href="{% url 'dashboard:finance_settings' %}">Finance Setting</a></li>
+                </li>
+                {% endif %}
+                </ul>
+                <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+
+    </div>
+
+</div>

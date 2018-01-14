@@ -1,99 +1,90 @@
-{% load static %}
+{% load static %} {% include "header.html" %} {##} {#
+<div class="loader-mask">#} {#
+    <div class="loader">#} {# "Loading..."#} {# </div>#} {# </div>#}
 
-{% include "header.html" %}
-
-{##}
-{#  <div class="loader-mask">#}
-{#    <div class="loader">#}
-{#      "Loading..."#}
-{#    </div>#}
-{#  </div>#}
-
-  <main class="main-wrapper">
+<main class="main-wrapper">
     {% include 'nav.html' %}
-      <div class="content-wrapper oh">
-      <section class="page-title bottom-divider text-center">
-        <div class="container">
+    <div class="content-wrapper oh">
+        <section class="page-title bottom-divider text-center">
+            <div class="container">
 
-          <div class="page-title__outer">
-            <div class="page-title__inner">
-              <div class="page-title__holder">
-                <h1 class="page-title__title">Healthier {% if categories %}
-                 Categories  {% else %}   Services {% endif %}</h1>
-                <p class="page-title__subtitle lead">BELOW IS A LIST OF CURRNETLY AVAILABLE {% if categories %}
-                 CATEGORIES  {% else %}   SERVICES {% endif %}
-                    .</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-       <section class="section-wrap pt-70 pb-130 bg-light">
-        <div class="container">
-            {% if categories %}
-              <div class="row row-60 items-grid">
-              {% for category in categories %}
-                <div class="col-md-4 col-xs-4 col-xxs-12">
-                  <a href="{% url 'service:categories' category.id %}" class="box-shadow">
-                    <div class="feature-1__icon-holder feature-1__icon-holder--blue text-center">
-                        <i class="fa fa-deaf feature-1__icon fa-5x"></i>
+                <div class="page-title__outer">
+                    <div class="page-title__inner">
+                        <div class="page-title__holder">
+                            <h1 class="page-title__title">Healthier {% if categories %} Categories {% else %} Services {% endif %}</h1>
+                            <p class="page-title__subtitle lead">BELOW IS A LIST OF CURRNETLY AVAILABLE {% if categories %} CATEGORIES {% else %} SERVICES {% endif %} .
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-xs-12 feature-1__base">
-                      <h3 class="feature-1__title">{{ category.category_name }}</h3>
-                      <p class="feature-1__paragraph">{{ category.details }}</p>
-                    </div>
-                  </a>
                 </div>
-              {% endfor %}
-              </div>
-            {% else %}
+
+            </div>
+        </section>
+        <section class="section-wrap pt-70 pb-130 bg-light">
+            <div class="container">
+                {% if categories %}
+                <div class="row row-60 items-grid">
+                    {% for category in categories %}
+                    <div class="col-md-4 col-xs-4 col-xxs-12">
+                        <a href="{% url 'service:categories' category.id %}" class="box-shadow">
+                            <div class="feature-1__icon-holder feature-1__icon-holder--blue text-center">
+                                <i class="fa fa-deaf feature-1__icon fa-5x"></i>
+                            </div>
+                            <div class="col-xs-12 feature-1__base">
+                                <h3 class="feature-1__title">{{ category.category_name }}</h3>
+                                <p class="feature-1__paragraph">{{ category.details }}</p>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
                 <section class="section-wrap bg-light bottom-divider">
-                             <div class="container">
-                                <div class="row">
-                              {% for service in services %}
+                    <div class="container">
+                        <div class="row">
+                            {% for service in services %}
                             <div class="col-md-4 mb-md-20">
-                              <div class="testimonial box-shadow text-center clearfix">
-                                <div class="testimonial__body">
-                                  <p class="testimonial__text">{{  service.service_name | capfirst}}</p>
-                                </div>
-                                <div class="testimonial__info">
-                                  <span class="testimonial__author">Price:</span>
-                                  <span class="testimonial__company">&#8358; {{ providers.price.gross }}</span>
-                                </div>
-                                 <div class="testimonial__info">
-                                      <span class="testimonial__author">Orders:</span>
-                                      <span class="testimonial__company">{{ service.orders }}</span>
-                                </div>
-                                   <div class="testimonial__info">
-                                      <span class="testimonial__author">Likes:</span>
-                                      <span class="testimonial__company">{{service.views}}</span>
-                                   </div>
-                                  <div class="testimonial__info">
-                                      <span class="testimonial__author">Dislike:</span>
-                                      <span class="testimonial__company">{{service.views}}</span>
-                                   </div>
-                                  <br>
-                                  <div class="btn--google align-bottom btn-card">
+                                <div class="testimonial box-shadow text-center clearfix">
+                                    <div class="testimonial__body">
+                                        <p class="testimonial__text">{{ service.service_name | capfirst}}</p>
+                                    </div>
+                                    <div class="testimonial__info">
+                                        <span class="testimonial__author">Price:</span>
+                                        <span class="testimonial__company">&#8358; {{ providers.price.gross }}</span>
+                                    </div>
+                                    <div class="testimonial__info">
+                                        <span class="testimonial__author">Orders:</span>
+                                        <span class="testimonial__company">{{ service.orders }}</span>
+                                    </div>
+                                    <div class="testimonial__info">
+                                        <span class="testimonial__author">Likes:</span>
+                                        <span class="testimonial__company">{{service.views}}</span>
+                                    </div>
+                                    <div class="testimonial__info">
+                                        <span class="testimonial__author">Dislike:</span>
+                                        <span class="testimonial__company">{{service.views}}</span>
+                                    </div>
+                                    <br>
+                                    <!-- <div class="btn--google align-bottom btn-card">
                                     <a href="{% url 'dashboard:render_service_alt' 1 %}?service={{ service.id }}"
                                        class="btn btn--lg btn-card"><span>Offer Service</span></a>
                                   </div>
-                                  <br>
-                                  <div class="btn--google align-bottom btn-card">
-                                    <a href="{% url 'dashboard:order_service_step' action="chooseProvider" %}?service={{ service.id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg btn-card"><span>Buy Service</span></a>
-                                  </div>
-                              </div>
+                                  <br> -->
+                                    <div class="btn--google align-bottom btn-card">
+                                        <a href="{% url 'dashboard:order_service_step' action=" chooseProvider " %}?service={{ service.id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg btn-card"><span>Buy Service</span></a>
+                                    </div>
+                                </div>
 
                             </div>
-                                {% endfor %}
-                          </div>
-                             </div>
-        {% endif %}
-      </section>
-        </div>
-      </section>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </section>
+            </div>
+        </section>
 
 
 
 
-{% include "footer.html" %}
+        {% include "footer.html" %}
