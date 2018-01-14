@@ -1,4 +1,3 @@
-import random
 from django.core import serializers
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
@@ -24,8 +23,8 @@ class DashboardView(TemplateView):
     def get(self, request, **kwargs):
         storage = messages.get_messages(request)
         storage.used = True
-        self.context['rand_today'] = random.randint(0, 5)
-        self.context['rand_month'] = random.randint(0, 5)
+        self.context['rand_today'] = 0
+        self.context['rand_month'] = 0
         user_specific_template = self.provider_dashboard if request.user.account_type == "PRO" else \
             self.consumer_dashboard
         if request.user.account_type == "PRO":

@@ -2,11 +2,10 @@ from django.views.generic import DetailView
 from django.views.generic import ListView
 from healthier.service.models import HealthierService, ServiceRequests, ServiceGroupCategory
 
-
 service_icons = ['deaf', 'ellipsis-h', 'eyedropper', 'bullseye', 'anchor', 'arrows-h', 'asterik',
-                                   'arrows-v', 'deaf', 'ellipsis-h', 'eyedropper', 'bullseye', 'anchor', 'arrows-h',
-                                   'asterik', 'arrows-v', 'deaf', 'ellipsis-h', 'eyedropper', 'bullseye', 'anchor',
-                                   'arrows-h', 'asterik', 'arrows-v']
+                 'arrows-v', 'deaf', 'ellipsis-h', 'eyedropper', 'bullseye', 'anchor', 'arrows-h',
+                 'asterik', 'arrows-v', 'deaf', 'ellipsis-h', 'eyedropper', 'bullseye', 'anchor',
+                 'arrows-h', 'asterik', 'arrows-v']
 
 
 class PaginatedCategoriesListView(ListView):
@@ -60,4 +59,3 @@ class AllServiceListView(ListView):
         context = super(AllServiceListView, self).get_context_data(**kwargs)
         context['service_icon'] = service_icons
         return context
-

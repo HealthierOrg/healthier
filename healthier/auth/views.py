@@ -16,7 +16,6 @@ class RegistrationView(View):
     def post(self, request):
         account_type = request.POST['account_type']
         form = SignupForm(request.POST)
-        print(form)
         if form.is_valid():
             user = form.save(commit=False)
             user.set_password(form.cleaned_data.get('password'))
