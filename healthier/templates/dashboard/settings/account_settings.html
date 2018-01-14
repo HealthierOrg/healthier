@@ -53,6 +53,29 @@
                                             </div>
                                         </div>
 
+                                                   <div class="form-group">
+	                                                <label class="col-md-2 control-label">Description</label>
+                                                        <div class="col-md-10">
+                                                            <textarea rows="6" name="description" id="description" class="form-control" placeholder="{% if not user.description %} Description {% else %} {{ user.description }}{% endif %}"></textarea>
+                                                             <span class="help-block"><small>Describe your facility and how you render your services</small></span>
+                                                        </div>
+	                                                </div>
+                                                    <div class="form-group">
+	                                                <label class="col-md-2 control-label">Image</label>
+                                                        <div class="col-md-10">
+                                                            <div class="card-box">
+                                                                <input type="file" name="image" class="dropify" data-height="100" />
+                                                            </div>
+                                                        </div>
+	                                                </div>
+                                                    <button type="submit" class="btn btn-lg btn-success waves-effect
+                                                    waves-light">Update Details</button>
+                                                    <br>
+                                                    <br>
+                                                    <button type="submit" class="btn btn-lg btn-googleplus
+                                                    waves-effect waves-light">Change Password</button>
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label"><i class="fa fa-info-circle"></i>   Description</label>
                                             <div class="col-md-10">
@@ -70,12 +93,10 @@
                                         </div>
                                         <button type="submit" class="btn btn-lg btn-googleplus waves-effect waves-light"><i class="fa fa-check-square"></i>   Update Details</button>
                                     </div>
-                                </div>
                         </form>
+                                </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+                </div>
     {% include 'dashboard/footer.html' %}
