@@ -74,4 +74,4 @@ django-webpack-loader
 django-annoying
 
 django-bulk-update
-csvimport
+django-csvimport
