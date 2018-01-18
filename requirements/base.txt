@@ -19,6 +19,7 @@ django-crispy-forms==1.6.1
 pygments
 huey
 django-mail-queue
+django-bootstrap-pagination
 
 # Models
 django-model-utils==3.0.0
