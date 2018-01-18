@@ -18,6 +18,7 @@ django-crispy-forms==1.6.1
 
 pygments
 huey
+django-mail-queue
 
 # Models
 django-model-utils==3.0.0
@@ -48,8 +49,6 @@ redis>=2.10.5
 
 
 celery==3.1.25
-mailqueue
-
 
 rcssmin==1.0.6
 django-compressor==2.2
