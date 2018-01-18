@@ -17,6 +17,7 @@ whitenoise==3.3.0
 django-crispy-forms==1.6.1
 
 pygments
+huey
 
 # Models
 django-model-utils==3.0.0
