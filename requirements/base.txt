@@ -20,6 +20,7 @@ pygments
 huey
 django-mail-queue
 django-bootstrap-pagination
+django-celery-email
 
 # Models
 django-model-utils==3.0.0
