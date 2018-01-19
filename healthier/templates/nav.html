@@ -21,6 +21,40 @@
                 <span class="nav__icon-toggle-bar"></span>
                 <span class="nav__icon-toggle-bar"></span>
               </button>
+<<<<<<< HEAD
+                </div>
+                <!-- end nav-header -->
+
+                <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse ">
+                    <ul class="nav__menu nav__menu--inline ">
+                        <li>
+                            <a href="{% url 'service:all_services' %}"><i class="fa fa-wrench"></i>   Services</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'provider:providers' %}"><i class="fa fa-users"></i>   Providers</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'how' %}"><i class="fa fa-info-circle"></i>    How It Works</a>
+                        </li>
+                    </ul>
+
+                    {% if user.is_authenticated %}
+                    <div class="nav__btn-holder">
+                        <a href="{% url 'dashboard:dashboard' %}" class="btn btn--sm btn--google"><i class="fa fa-dashboard"></i>   Dashboard</a>
+                        <a href="{% url 'dashboard:order_service' %}" class="btn btn--sm btn--google"><i class="fa fa-unlock"></i>    Cart</a>
+                    </div>
+                    {% else %}
+                    <div class="nav__btn-holder">
+                        <a href="{% url 'account_login' %}" class="btn btn--sm btn--google"><i class="fa fa-unlock"></i> Login</a>
+                    </div>
+                    <div class="nav__btn-holder">
+                        <a href="{% url 'account_signup' %}" class="btn btn--sm btn--google"><si class="fa fa-lock"></i> SignUp</a>
+                    </div>
+                    {% endif %}
+
+
+                </nav>
+=======
             </div>
 
             <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse ">
@@ -59,6 +93,7 @@
     </header>
      </div>
 
+>>>>>>> 29f8eebb59585c1f6dbd59a903f8e9cf9be33e37
             </div>
         </div>
 

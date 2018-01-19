@@ -16,6 +16,12 @@ whitenoise==3.3.0
 # Forms
 django-crispy-forms==1.6.1
 
+pygments
+huey
+django-mail-queue
+django-bootstrap-pagination
+django-celery-email
+
 # Models
 django-model-utils==3.0.0
 
@@ -46,8 +52,6 @@ redis>=2.10.5
 
 celery==3.1.25
 
-
-
 rcssmin==1.0.6
 django-compressor==2.2
 
@@ -72,4 +76,4 @@ django-webpack-loader
 django-annoying
 
 django-bulk-update
-
+django-csvimport
