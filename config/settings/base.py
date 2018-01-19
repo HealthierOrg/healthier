@@ -132,26 +132,28 @@ MANAGERS = ADMINS
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'healthier',
-        'USER': 'root',
-        'PASSWORD': 'lekan',
-        'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-            "init_command": "SET foreign_key_checks = 0;",
-        },
-        'TEST': {
-            'CHARSET': 'utf8mb4',
-            'COLLATION': 'utf8mb4_unicode_ci',
-        },
-        'STORAGE_ENGINE': 'MyISAM / INNODB / ETC'
-    },
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'healthier',
+#         'USER': 'root',
+#         'PASSWORD': 'lekan',
+#         'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
+#         'PORT': '3306',
+#         'OPTIONS': {
+#             'charset': 'utf8mb4',
+#             "init_command": "SET foreign_key_checks = 0;",
+#         },
+#         'TEST': {
+#             'CHARSET': 'utf8mb4',
+#             'COLLATION': 'utf8mb4_unicode_ci',
+#         },
+#         'STORAGE_ENGINE': 'MyISAM / INNODB / ETC'
+#     },
+#
+# }
 
-}
+DATABASES = {'default': env.db('DATABASE_URL')}
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 # GENERAL CONFIGURATION
