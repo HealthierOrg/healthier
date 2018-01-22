@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "paginatejs": "^0.1.0",
+    "twbs-pagination": "^1.4.1"
+  }
+}
