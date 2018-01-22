@@ -69,8 +69,6 @@ django-datetime-widget
 
 django-webpack-loader
 
--e git://github.com/arneb/django-messages#egg=django-messages
-
 -e git://github.com/gbozee/django-paystack#egg=django-paystack
 
 django-annoying
