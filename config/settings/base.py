@@ -132,7 +132,7 @@ MANAGERS = ADMINS
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {'default': env.db('CLEARDB_DATABASE')}
+DATABASES = {'default': env.db('CLEARDB_DATABASE_URL')}
 
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
