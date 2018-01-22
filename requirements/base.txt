@@ -77,5 +77,3 @@ django-annoying
 
 django-bulk-update
 django-csvimport
-
-whitenoise
