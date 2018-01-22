@@ -20,6 +20,8 @@ from django.core.wsgi import get_wsgi_application
 
 # This allows easy placement of apps within the interior
 # healthier directory.
+from whitenoise.django import DjangoWhiteNoise
+
 app_path = os.path.dirname(os.path.abspath(__file__)).replace('/config', '')
 sys.path.append(os.path.join(app_path, 'healthier'))
 
@@ -36,3 +38,4 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.production")
 # file. This includes Django's development server, if the WSGI_APPLICATION
 # setting points here.
 application = get_wsgi_application()
+application = DjangoWhiteNoise(application)
