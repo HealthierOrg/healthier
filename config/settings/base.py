@@ -136,7 +136,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'healthier_new',
+        'NAME': 'healthier',
         'USER': 'root',
         'PASSWORD': 'lekan',
         'HOST': 'localhost',  # Or an IP Address that your DB is hosted on

@@ -127,21 +127,21 @@ class TermsAndCondition(models.Model):
 
 
 class HealthierUserClinicalData(models.Model):
-    user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="clinical_data")
+    healthier_user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="clinical_data")
     clinic_name = models.CharField(_('Clinic Name'), blank=True, max_length=500)
     clinic_address = models.CharField(_('Clinic Address'), blank=True, max_length=500)
     clinic_email = models.EmailField(_('Clinic Email'), blank=True, max_length=500)
 
 
 class HealthierUserAilmentData(models.Model):
-    user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="ailment_data")
+    healthier_user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="ailment_data")
     ailment_name = models.CharField(_('Clinic Name'), blank=True, max_length=500)
     ailment_description = models.CharField(_('Clinic Address'), blank=True, max_length=500)
     ailment_medication = models.EmailField(_('Clinic Email'), blank=True, max_length=500)
 
 
 class HealthierUserBloodData(models.Model):
-    user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="blood_data")
+    healthier_user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="blood_data")
     sys_blood = models.CharField(_('Systolic Blood'), blank=True, max_length=50)
     dia_blood = models.CharField(_('Diastolic Blood'), blank=True, max_length=50)
     random_blood = models.EmailField(_('Random Blood'), blank=True, max_length=50)
@@ -149,6 +149,6 @@ class HealthierUserBloodData(models.Model):
 
 
 class HealthierUserMiscData(models.Model):
-    user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="misc_data")
+    healthier_user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="misc_data")
     user_cholesterol = models.CharField(_('Systolic Blood'), blank=True, max_length=50)
     user_weight = models.CharField(_('Diastolic Blood'), blank=True, max_length=50)
