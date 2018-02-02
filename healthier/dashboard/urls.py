@@ -32,7 +32,7 @@ urlpatterns = [
         name='billing_failure'),
     url(r'^service/order_service/checkout/success/$', login_required(SuccessPaymentView.as_view()),
         name='billing_success'),
-    url(r'^service/order_service/(?P<action>[\w\-]+)/$', login_required(OrderServiceStepView.as_view()),
+    url(r'^service/order_service/$', login_required(OrderServiceStepView.as_view()),
         name='order_service_step'),
     url(r'^services/suggest_new$', login_required(SuggestServiceView.as_view()),
         name='dashboard_suggest_new_service'),

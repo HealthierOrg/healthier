@@ -136,9 +136,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'healthier',
+        'NAME': 'healthier_test',
         'USER': 'root',
-        'PASSWORD': 'lekan',
+        'PASSWORD': '',
         'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
         'PORT': '3306',
         'OPTIONS': {
@@ -354,7 +354,7 @@ ACCOUNT_LOGOUT_REDIRECT_URL = "/auth/login"
 
 SESSION_SAVE_EVERY_REQUEST = True
 
-CELERY_BROKER_URL = env('CLOUDAMQP_URL', default='amqp://guest:guest@localhost:5672/')
+CELERY_BROKER_URL = env('CLOUDAMQP_URL', default='amqp://guest:guest@localhost:15672/')
 
 ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = ''
 

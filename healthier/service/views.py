@@ -9,18 +9,17 @@ service_icons = ['deaf', 'ellipsis-h', 'eyedropper', 'bullseye', 'anchor', 'arro
 
 
 class PaginatedCategoriesListView(ListView):
-    template_name = 'pages/services.html'
+    template_name = 'pages/home.html'
     context_object_name = 'categories'
     paginate_by = 9
     model = ServiceGroupCategory
-
+    #
     # print(ServiceGroupCategory.objects.all())
-
-
-    def get_context_data(self, **kwargs):
-        context = super(PaginatedCategoriesListView, self).get_context_data(**kwargs)
-        context['service_icon'] = service_icons
-        return context
+    #
+    # def get_context_data(self, **kwargs):
+    #     context = super(PaginatedCategoriesListView, self).get_context_data(**kwargs)
+    #     context['service_icon'] = service_icons
+    #     return context
 
 
 class AllCategoriesListView(ListView):

@@ -18,23 +18,6 @@
             </div>
           </div>
 <main class="main-wrapper">
-    {% include 'nav.html' %}
-    <div class="content-wrapper oh">
-        <section class="page-title bottom-divider text-center">
-            <div class="container">
-
-                <div class="page-title__outer">
-                    <div class="page-title__inner">
-                        <div class="page-title__holder">
-                            <h1 class="page-title__title">Healthier {% if categories %} Categories {% else %} Services {% endif %}</h1>
-                            <p class="page-title__subtitle lead">BELOW IS A LIST OF CURRNETLY AVAILABLE {% if categories %} CATEGORIES {% else %} SERVICES {% endif %} .
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
         <section class="section-wrap pt-70 pb-130 bg-light">
             <div class="container">
                 {% if categories %}
@@ -86,7 +69,7 @@
                                   </div>
                                   <br> -->
                                     <div class="btn--google align-bottom btn-card">
-                                        <a href="{% url 'dashboard:order_service_step' action=" chooseProvider " %}?service={{ service.id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg btn-card"><span>Buy Service</span></a>
+                                        <a href="{% url 'dashboard:order_service_step' %}?action=chooseProvider&service={{ service.id }}&providers={{ providers.requested_by_id }}" class="btn btn--lg btn-card"><span>Buy Service</span></a>
                                     </div>
                                 </div>
 

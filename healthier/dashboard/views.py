@@ -291,7 +291,7 @@ class OrderServiceStepView(TemplateView):
     context = {}
 
     def get(self, request, *args, **kwargs):
-        action = self.kwargs.get('action')
+        action = request.GET.get('action')
         service_id = request.GET.get('service')
         self.context['service'] = HealthierService.objects.get(id=service_id)
         if request.user.account_type != "CON":

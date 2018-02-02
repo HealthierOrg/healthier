@@ -2,7 +2,6 @@ import datetime
 
 from django.db import models
 from django.utils.timezone import now
-from jsonfield import JSONField
 from config.utils import generate_id
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
@@ -45,8 +44,8 @@ class HealthierService(models.Model):
     service_name = models.CharField(max_length=200)
     details = models.CharField(max_length=1000, blank=False, default='')
     service_id = models.CharField(max_length=200, default=generate_id("service"))
-    orders = models.CharField(max_length=300, default=0)
-    views = models.CharField(max_length=300, default=0)
+    orders = models.IntegerField(max_length=300, default=0)
+    views = models.IntegerField(max_length=300, default=0)
 
     def __str__(self):
         return self.service_name
@@ -107,7 +106,7 @@ class ServiceReport(models.Model):
     service_rendering_date = models.CharField(max_length=500, blank='')
 
     def __str__(self):
-        return self.service_details
+        return self.report_summary
 
     @property
     def file_url(self):

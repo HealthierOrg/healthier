@@ -14,6 +14,7 @@ class Mailer:
         self.from_email = from_email
 
     def send_messages(self, subject, template, context, to_emails):
+        print(subject, template, context, to_emails)
         messages = self.__generate_messages(subject, template, context, to_emails)
         self.__send_mail(messages)
 
