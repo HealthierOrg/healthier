@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^consumers/', include('healthier.consumers.urls', namespace='consumer')),
     url(r'^api/', include('healthier.api.urls', namespace='api')),
     url(r'^payment/', include('paystack.urls', namespace='paystack')),
+    url(r'^user/', include('healthier.user.urls', namespace='user')),
 
 
 ] + static(settings.MEDIA_URL, django.views.static.serve, document_root=settings.MEDIA_ROOT)

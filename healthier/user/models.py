@@ -8,6 +8,7 @@ from django.contrib.auth.models import (AbstractBaseUser,
 from django_prices.models import PriceField
 from model_utils.managers import InheritanceManager
 from config.utils import generate_id
+from model_utils.models import TimeStampedModel
 
 
 class HealthierUserManager(BaseUserManager, InheritanceManager):
@@ -152,3 +153,15 @@ class HealthierUserMiscData(models.Model):
     healthier_user = models.ForeignKey(HealthierUser, on_delete=models.CASCADE, related_name="misc_data")
     user_cholesterol = models.CharField(_('Systolic Blood'), blank=True, max_length=50)
     user_weight = models.CharField(_('Diastolic Blood'), blank=True, max_length=50)
+
+
+class EmailList(TimeStampedModel):
+    email = models.EmailField()
+    is_user = models.BooleanField(default=False)
+
+    def __str__(self):
+        return str(self.email)
+
+    def __unicode__(self):
+        return self.email
+

@@ -2,6 +2,7 @@
 {% load bootstrap_pagination %}
 {% include "header.html" %}
   <main class="main-wrapper">
+
 <section class="main-wrapper">
     {% include 'nav.html' %}
     <div class="content-wrapper">
@@ -57,25 +58,38 @@
             </div>
         </section>
 
-
         <section class="section-wrap section-wrap--sm bg-dark white-text">
             <div class="container">
                 <div class="heading-row mb-30 text-center">
                     <h2 class="heading">Want to know when a new service is added?</h2>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <form class="optin__form">
-                            <input type="text" class="optin__input" placeholder="Your e-mail address">
+                      {% if messages %}
+                            {% for message in messages %}
+                              <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
+                              {% endfor %}
+                           {% endif %}
+                          {% if error %}
+                            <p class="text-danger text-center">
+                              {{ error }}
+                            </p>
+                        {%  endif %}
+                  <div class="col-md-4 col-md-offset-4">
+                        <form class="optin__form" action="{% url 'user:subscribe' %}" method="POST">
+                                                    {% csrf_token %}
+                            <input type="email" name="email" class="optin__input" placeholder="Your e-mail address">
                             <button class="optin__btn btn btn--lg btn--color btn--wide btn--button">Subscribe to update</button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
+
+
 </section>
     </div>
 
+</section>s
 </main>
 
 {% include "footer.html" %}
