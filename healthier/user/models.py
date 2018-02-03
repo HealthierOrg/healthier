@@ -165,3 +165,13 @@ class EmailList(TimeStampedModel):
     def __unicode__(self):
         return self.email
 
+
+class Testimonials(TimeStampedModel):
+    name = models.CharField(max_length=300)
+    testimonial = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return f'Testimonial by {self.name}.'
+
+    def __unicode__(self):
+        return self.name

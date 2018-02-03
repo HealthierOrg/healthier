@@ -16,7 +16,8 @@
                     <div class="col-sm-6">
                         <div class="benefit">
                             <i class="benefit__icon ui-check"></i>
-                            <p class="benefit__text lead">Healthier is your Passport to great health and being Healthy with the Personal Health Manager for all your health needs</p>
+                            <p class="benefit__text lead">Health is Wealth is the common saying, Healthier is going to become more important than your banking and finance apps. Users need the same kind of control over their health data.
+</p>
                         </div>
                     </div>
                     <!-- end col -->
@@ -25,8 +26,10 @@
                     <div class="col-sm-6 mb-sm-40">
                         <div class="benefit">
                             <i class="benefit__icon ui-check"></i>
-                            <p class="benefit__text lead">An idea that takes the parts of a structure and turns them into a whole system. Practice is the frequent and continued contemplation of the <strong>mode of executing</strong> any given work, or of the mere operation of the
-                                hands.
+                            <p class="benefit__text lead">Everyone should create an account on Healthier and use the Personal Health Manager. Healthier provide complete ownership of personal health information, on a secure platform.
+
+                              <br>
+
                             </p>
                         </div>
                     </div>
@@ -43,42 +46,18 @@
                 <div class="row">
 
                     <div id="owl-testimonials" class="owl-carousel owl-theme">
-
+                      {% for testimonial in testimonials %}
                         <div class="testimonial__wrap">
                             <div class="testimonial box-shadow text-center clearfix">
                                 <div class="testimonial__body">
-                                    <p class="testimonial__text">“I’am amazed, I should say thank you so much for your awesome template. Design is so good and neat.”</p>
+                                    <p class="testimonial__text">“{{  testimonial.testimonial }}" </p>
                                 </div>
                                 <div class="testimonial__info">
-                                    <span class="testimonial__author">Christine Clark</span>
+                                    <span class="testimonial__author">{{ testimonial.name }}</span>
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="testimonial__wrap">
-                            <div class="testimonial box-shadow text-center clearfix">
-                                <div class="testimonial__body">
-                                    <p class="testimonial__text">“I’am amazed, I should say thank you so much for your awesome template. Design is so good and neat.”</p>
-                                </div>
-                                <div class="testimonial__info">
-                                    <span class="testimonial__author">Christine Clark</span>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="testimonial__wrap">
-                            <div class="testimonial box-shadow text-center clearfix">
-                                <div class="testimonial__body">
-                                    <p class="testimonial__text">“I’am amazed, I should say thank you so much for your awesome template. Design is so good and neat.”</p>
-                                </div>
-                                <div class="testimonial__info">
-                                    <span class="testimonial__author">Christine Clark</span>
-                                </div>
-                            </div>
-                        </div>
-
+                      {% endfor %}
                     </div>
                     <!-- end of slider -->
 
