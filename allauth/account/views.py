@@ -624,6 +624,8 @@ class PasswordResetView(AjaxCapableProcessFormViewMixin, FormView):
     success_url = reverse_lazy("account_reset_password_done")
     redirect_field_name = "next"
 
+    print(template_name)
+
     def get_form_class(self):
         return get_form_class(app_settings.FORMS,
                               'reset_password',
