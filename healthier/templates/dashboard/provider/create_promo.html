@@ -11,20 +11,41 @@
                     <div class="container">
                         <div class="row">
                         	<div class="col-sm-12">
-                                <form class="form-horizontal" role="form" method="POST" action="{% url 'dashboard:account_settings' %}" enctype="multipart/form-data">
+                                <form class="form-horizontal" role="form" method="POST" action="{% url 'dashboard:agent_promo' %}" enctype="multipart/form-data">
                                     {% csrf_token %}
                         			<div class="row">
                                        <div id="custom-modal">
                                             <h4 class="custom-modal-title">Fill the form below to create a promo</h4>
                                             <div class="custom-modal-text text-left">
-                                                <div class="form-group">
+
+
+                                              <div class="form-group">
 	                                                <label class="col-md-2 control-label">Duration</label>
 	                                                <div class="col-md-10">
-	                                                    <input type="text" name="duration" id="username" placeholder="{{ promo.duration | capfirst}}" class="form-control">
+	                                                    <input type="text" name="duration" id="username" placeholder="" class="form-control">
 	                                                     <span class="help-block"><small>How long should
                                                              the promo last for.</small></span>
                                                     </div>
 	                                            </div>
+
+                                                <div class="form-group">
+	                                                <label class="col-md-2 control-label" for="promo_services">Promo Services</label>
+	                                                <div class="col-md-10">
+	                                                    <input type="text" name="promo_services" id="promo_services" placeholder="Services" class="form-control">
+	                                                     <span class="help-block"><small>Services the promo applies to.(Input the service ids and not names. Seperate multiple service ids by commas)</small></span>
+                                                    </div>
+                                                </div>
+
+                                              {% if 'agent' in  request.path %}
+                                                <div class="form-group">
+	                                                <label class="col-md-2 control-label" for="agent_name">Agent Name</label>
+	                                                <div class="col-md-10">
+	                                                    <input type="text" name="agent_name" id="agent_name" placeholder="" class="form-control">
+	                                                     <span class="help-block"><small>Agent Name.</small></span>
+                                                    </div>
+	                                            </div>
+                                              {% endif %}
+
                                                 <div class="form-group">
 	                                                <label class="col-md-2 control-label">Promo Message</label>
 	                                                <div class="col-md-10">

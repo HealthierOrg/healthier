@@ -63,5 +63,6 @@ urlpatterns = [
 
     ##Extras
     url(r'^promo$', login_required(PromoListView.as_view()), name='promo_list'),
-    url(r'^promo/create/$', login_required(PromoCreateView.as_view()), name='create_promo')
+    url(r'^promo/create/agent/$', login_required(PromoCreateView.as_view()), name='agent_promo'),
+    url(r'^promo/create/cost/$', login_required(PromoCreateView.as_view()), name='cost_promo')
 ]
