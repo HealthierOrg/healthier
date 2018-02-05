@@ -96,11 +96,13 @@
                     </ul>
                 </li>
 
-                {% if request.user.account_type == "PRO" %}
-                <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-plaster"></i><span> Promotions </span> <span class="menu-arrow"></span></a>
+
+              <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-inbox"></i><span> Promotions </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{% url 'dashboard:promo_list' %}">Promo</a></li>
+                        <li><a href="{% url 'dashboard:cost_promo' %}">Create Cost Promo</a></li>
+                        <li><a href="{% url 'dashboard:agent_promo' %}">Create Agent Promo</a></li>
+                        <li><a href="{% url 'dashboard:promo_list' %}">View Promo List</a></li>
                     </ul>
                 </li>
 
@@ -108,9 +110,9 @@
                     <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-account-add"></i><span> Settings </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{% url 'dashboard:account_settings' %}">Account Setting</a></li>
+                        <li><a href="{% url 'account_change_password' %}">Change Password</a></li>
                         <li><a href="{% url 'dashboard:finance_settings' %}">Finance Setting</a></li>
                 </li>
-                {% endif %}
                 </ul>
                 <div class="clearfix"></div>
         </div>

@@ -23,7 +23,8 @@ class Provider(models.Model):
 class ProviderRating(models.Model):
     """Organization providing health services and sending reports to users"""
     rated_by = models.OneToOneField(Consumer, on_delete=models.CASCADE, null=True, related_name='customer_rating')
-    provider = models.OneToOneField(Provider, on_delete=models.CASCADE, null=True, related_name="provider_rating", db_column="provider_id")
+    provider = models.OneToOneField(Provider, on_delete=models.CASCADE, null=True, related_name="provider_rating",
+                                    db_column="provider_id")
     comments = models.CharField(max_length=200, null=True, blank=True)
     dislikes = models.IntegerField(blank=True, default=0)
     likes = models.IntegerField(blank=True, default=0)
@@ -34,9 +35,18 @@ class ProviderRating(models.Model):
 
 
 class Promo(models.Model):
+    promo_type_choice = (
+        (
+            ('AGE', 'Agent Promo'),
+            ('PRI', 'Cost Promo')
+        )
+    )
+    promo_type = models.CharField(choices=promo_type_choice, max_length=3)
+    services = models.CharField(max_length=100, blank=True)
     promo_provider = models.ForeignKey(Provider, on_delete=models.CASCADE, related_name="promo_provider")
     promo_message = models.CharField(_('Promo Message'), blank=False, max_length=2000)
     promo_code = models.CharField(_('Promo Code'), blank=False, default=generate_promo_id, max_length=5)
     added_on = models.DateField(default=now, blank=False)
     duration = models.CharField(_('Promo Expiration Duration'), blank=False, max_length=30)
     active = models.BooleanField(default=True)
+    agent_name = models.CharField(_('Agent Name'), blank=True, max_length=200)

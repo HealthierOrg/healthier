@@ -1,6 +1,7 @@
 import random
 import string
 
+
 def generate_id(account_type):
     chars = string.ascii_uppercase + string.digits
     account_map = "{0}_".format(account_type)
