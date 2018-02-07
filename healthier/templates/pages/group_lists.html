@@ -1,0 +1,50 @@
+{% load static %} {% include "header.html" %}
+
+{% include "header.html" %}
+<main class="main-wrapper">
+    {% include 'nav.html' %}
+      <div class="content-wrapper oh">
+      <section class="page-title bottom-divider text-center">
+        <div class="container">
+
+          <div class="page-title__outer">
+            <div class="page-title__inner">
+              <div class="page-title__holder">
+                <h1 class="page-title__title">Healthier {% if categories %} Categories  {% else %}   Services
+                {% endif %}</h1>
+                <p class="page-title__subtitle lead">Below is a collection of currently available {% if categories %}
+                 categories  {% else %}   services {% endif %}.</p>
+              </div>
+            </div>
+          </div>
+<main class="main-wrapper">
+        <section class="section-wrap pt-70 pb-130">
+            <div class="container">
+              <section class="section-wrap bottom-divider">
+                    <div class="container">
+                        <div class="row">
+                            {% for group in groups %}
+                            <div class="col-md-4 mb-md-20">
+                                <div class="testimonial text-center clearfix">
+                                    <div class="testimonial__body">
+                                        <p class="testimonial__text">{{ group.group_name | capfirst}}</p>
+                                    </div>
+                                    <br>
+                                  {{ category_id }}
+                                    <div class="btn--google align-bottom btn-card">
+                                        <a href="{% url 'service:categories' group.id%}?c={{ category_id }}" class="btn btn--lg btn-card"><span>View Services in this group.</span></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+
+
+
+        {% include "footer.html" %}

@@ -17,8 +17,8 @@
           <div class="page-title__outer">
             <div class="page-title__inner">
               <div class="page-title__holder">
-                <h1 class="page-title__title">{{ category.category_name }}</h1>
-                <p class="page-title__subtitle lead">{{ category.category_description }}</p>
+                <h1 class="page-title__title">{{ group.category_name }}</h1>
+                <p class="page-title__subtitle lead">{{ group.group_description }}</p>
               </div>
             </div>
           </div>
@@ -28,10 +28,10 @@
      <section class="section-wrap bg-light bottom-divider">
          {% if not services %}
              <div class="container">
-                            <h5 class="text-center">There is currently no service in this category.</h5>
+                            <h5 class="text-center">There is currently no service in this group.</h5>
              </div>
          {% else %}
-         <h1 class="text-center bg-light">Services in this Category</h1>
+         <h1 class="text-center bg-light">Services in this Group</h1>
              <div class="container">
           <div class="row">
               {% for service in services %}
