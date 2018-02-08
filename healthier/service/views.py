@@ -1,6 +1,8 @@
 from django.views.generic import DetailView
 from django.views.generic import ListView
 from healthier.service.models import HealthierService, ServiceGroup, ServiceGroupCategory
+from django.core.exceptions import ObjectDoesNotExist
+
 
 service_icons = ['deaf', 'ellipsis-h', 'eyedropper', 'bullseye', 'anchor', 'arrows-h', 'asterik',
                  'arrows-v', 'deaf', 'ellipsis-h', 'eyedropper', 'bullseye', 'anchor', 'arrows-h',
@@ -33,7 +35,11 @@ class GroupDetails(DetailView):
     context_object_name = "groups"
 
     def get_object(self, queryset=None):
-        return ServiceGroupCategory.objects.get(id=self.kwargs["group_id"])
+        try:
+            group = ServiceGroupCategory.objects.get(id=self.kwargs["group_id"])
+            return group
+        except ObjectDoesNotExist:
+            return 1
 
     def get_context_data(self, **kwargs):
         context = super(GroupDetails, self).get_context_data(**kwargs)

@@ -37,7 +37,14 @@ class ProviderDetailView(DetailView):
     def get_context_data(self, **kwargs):
         super(ProviderDetailView, self).__init__()
         context = super(ProviderDetailView, self).get_context_data(**kwargs)
-        context['services'] = ServiceRequests.objects.filter(requested_by_id=self.kwargs["id"])
+        context['services'] = ServiceRequests.objects.filter(requested_by=self.kwargs.get('id'))
+        print(context)
+        context['icons'] = ['deaf', 'ellipsis-h', 'eyedropper', 'bullseye', 'anchor',
+                                   'arrows-h', 'asterik', 'arrows-v', 'deaf', 'ellipsis-h', 'eyedropper', 'bullseye',
+                                   'anchor',
+                                   'arrows-h', 'asterik', 'arrows-v',
+                                   'deaf', 'ellipsis-h', 'eyedropper', 'bullseye', 'anchor',
+                                   'arrows-h', 'asterik', 'arrows-v']
         return context
 
 

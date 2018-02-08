@@ -21,6 +21,10 @@
         <section class="section-wrap pt-70 pb-130">
             <div class="container">
               <section class="section-wrap bottom-divider">
+              {% if groups == 1 %}
+                  <p class="page-title__subtitle lead">Below is a collection of currently available {% if categories %}
+                 categories  {% else %}   services {% endif %}.</p>
+              {% else %}
                     <div class="container">
                         <div class="row">
                             {% for group in groups %}
@@ -40,6 +44,7 @@
                             {% endfor %}
                         </div>
                     </div>
+              {% endif %}
                 </section>
             </div>
         </section>

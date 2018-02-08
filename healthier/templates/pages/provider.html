@@ -5,58 +5,53 @@
   <main class="main-wrapper">
 
    {% include 'nav.html' %}
-            <section class="section-wrap bg-light bottom-divider" id="testimonials">
-                <div class="container">
-                  <div class="heading-row text-center">
-                    <h2 class="heading">Services</h2>
-                  </div>
-                {% if services %}
-                    {% for service in services %}
-                      <div class="row">
-                        <div id="owl-testimonials" class="owl-carousel owl-theme">
-                          <div class="testimonial__wrap">
-                            <div class="testimonial box-shadow text-center clearfix">
-                                <span class="testimonial__author">{{ service.service_id.email }}</span>
-                              <div class="testimonial__body">
-                                <p class="testimonial__text">{{ service.service_id.description }}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    {% endfor %}
-                {% else %}
-                    <h5 class="text-center">{{ provider.name }} currently has no services.</h5>
-                {% endif %}
-        </div>
-            </section>
 
-                  <section class="section-wrap pb-90" id="faq">
+
+    <div class="content-wrapper oh ">
+        <section class="page-title bottom-divider text-center">
         <div class="container">
-          <div class="heading-row text-center">
-            <h2 class="heading">Frequently asked provider question</h2>
-          </div>
-          <div class="row">
 
-            <div class="col-sm-5 col-sm-offset-1">
-              <h4 class="faq__title">14-day trial</h4>
-              <p class="faq__text">Our Theme is a very slick and clean e-commerce template with endless possibilities. Creating an awesome website with this Theme is easy than you can imagine. Our Theme is a very slick and clean e-commerce template.</p>
-
-              <h4 class="faq__title">Recovering an expired account</h4>
-              <p class="faq__text">Our Theme is a very slick and clean e-commerce template with endless possibilities. Creating an awesome website with this Theme is easy than you can imagine. Our Theme is a very slick and clean e-commerce template.</p>
+          <div class="page-title__outer">
+            <div class="page-title__inner">
+              <div class="page-title__holder">
+                <p class="page-title__subtitle lead">Services offered by {{ provider.healthier_id.username }}.</p>
+              </div>
             </div>
-
-            <div class="col-sm-5">
-              <h4 class="faq__title">Payments</h4>
-              <p class="faq__text">Our Theme is a very slick and clean e-commerce template with endless possibilities. Creating an awesome website with this Theme is easy than you can imagine. Our Theme is a very slick and clean e-commerce template.</p>
-
-              <h4 class="faq__title">Canceling subscription</h4>
-              <p class="faq__text">Our Theme is a very slick and clean e-commerce template with endless possibilities. Creating an awesome website with this Theme is easy than you can imagine. Our Theme is a very slick and clean e-commerce template.</p>
-            </div>
-
           </div>
+
         </div>
       </section>
+
+      <section class="section-wrap pt-70 pb-130 bg-light">
+        <div class="container">
+        {% if services %}
+          <div class="row row-60 items-grid">
+                  {% for service in services %}
+                    <div class="col-md-4 col-xs-6 col-xxs-12">
+                      <a href="{% url 'dashboard:render_service_alt' service.id  %}" class="box-shadow">
+                        <div class="feature-1__icon-holder feature-1__icon-holder--green text-center">
+                        <i class="fa fa-{{ icons | random}} feature-1__icon fa-5x"></i>
+                        </div>
+                        <div class="feature-1__base">
+                          <h3 class="feature-1__title">{{ service. | capfirst }}</h3>
+                          <p class="feature-1__paragraph">{{ service.service_id.description }}</p>
+                        </div>
+                      </a>
+                    </div>
+                  {% endfor %}
+          </div>
+        {% else %}
+                           <h5 class="text-center">{{ provider.healthier_id.username }} currently has no services.</h5>
+
+        {% endif %}
+        </div>
+      </section>
+
+    {% include "newsletter.html" %}
+      <div id="back-to-top">
+        <a href="#top"><i class="ui-arrow-up"></i></a>
+      </div>
+    </div>
   </main>
 
 

@@ -375,7 +375,6 @@ class OrderServiceConfigurationView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         service_id = kwargs.get('pk', None)
-        print(service_id)
         if not service_id:
             response_obj = HttpResponseRedirect(reverse('dashboard:dashboard_all_services'))
             response_obj.set_cookie('status', "error")
