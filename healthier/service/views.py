@@ -57,6 +57,7 @@ class GroupList(ListView):
     def get_context_data(self, **kwargs):
         context = super(GroupList, self).get_context_data(**kwargs)
         category_id = self.kwargs["id"]
+        context['category_name'] = ServiceGroupCategory.objects.get(id=category_id).category_name
         context["groups"] = ServiceGroup.objects.filter(category_id=category_id)
         self.request.session['category_id'] = category_id
         context['service_icon'] = service_icons

@@ -19,7 +19,7 @@ class Command(BaseCommand):
             for row in reader:
                 print((row[0]), (row[1]), (row[2]))
                 _, created = HealthierService.objects.get_or_create(
-                    group_id=row[1] if 'a' else 'b',
+                    group_id=row[1],
                     service_name=row[2],
                     details=row[3],
                     orders=row[4],

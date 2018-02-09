@@ -10,10 +10,7 @@
           <div class="page-title__outer">
             <div class="page-title__inner">
               <div class="page-title__holder">
-                <h1 class="page-title__title">Healthier {% if categories %} Categories  {% else %}   Services
-                {% endif %}</h1>
-                <p class="page-title__subtitle lead">Below is a collection of currently available {% if categories %}
-                 categories  {% else %}   services {% endif %}.</p>
+                <p class="page-title__subtitle lead">Service groups available in the {{ category_name }} category.</p>
               </div>
             </div>
           </div>
@@ -23,7 +20,7 @@
               <section class="section-wrap bottom-divider">
               {% if groups == 1 %}
                   <p class="page-title__subtitle lead">Below is a collection of currently available {% if categories %}
-                 categories  {% else %}   services {% endif %}.</p>
+                 groups in this category  {% else %}   services {% endif %}.</p>
               {% else %}
                     <div class="container">
                         <div class="row">
@@ -33,13 +30,15 @@
                                     <div class="testimonial__body">
                                         <p class="testimonial__text">{{ group.group_name | capfirst}}</p>
                                     </div>
+                                   <div class="testimonial__body">
+                                        <p class="testimonial__text">{{ group.group_description | capfirst}}</p>
+                                    </div>
                                     <br>
                                   {{ category_id }}
                                     <div class="btn--google align-bottom btn-card">
-                                        <a href="{% url 'service:categories' group.id%}?c={{ category_id }}" class="btn btn--lg btn-card"><span>View Services in this group.</span></a>
+                                        <a href="{% url 'service:categories' group.id%}?c={{ category_id }}" class="btn btn--lg btn-card"><span>View Services in this group</span></a>
                                     </div>
                                 </div>
-
                             </div>
                             {% endfor %}
                         </div>
