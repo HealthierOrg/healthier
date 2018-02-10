@@ -1,6 +1,7 @@
 from django.core import mail
 from django.core.mail import EmailMessage
 from django.template.loader import get_template
+from django.urls import reverse
 
 
 class Mailer:
@@ -15,6 +16,9 @@ class Mailer:
 
     def send_messages(self, subject, template, context, to_emails):
         print(subject, template, context, to_emails)
+        context['site_name'] = "Healthier"
+        context['site_domain'] = "healthier.download"
+        context['activate_url'] = reverse('account_confirm_email', kwargs={'key': 4})
         messages = self.__generate_messages(subject, template, context, to_emails)
         self.__send_mail(messages)
 

@@ -1,8 +1,8 @@
 Hello from {{ site_name }}!
 
-You're receiving this e-mail because user {{ user_display }} has given yours as an e-mail address to connect their account.
+You're receiving this e-mail because your email was used to sign up for an account on the platform.
 
 To confirm this is correct, go to {{ activate_url }}
 
-Thank you from {{ site_name }}!
+Thank you from !
 {{ site_domain }}
