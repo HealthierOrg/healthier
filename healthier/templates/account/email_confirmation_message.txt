@@ -1,8 +1,0 @@
-Hello from {{ site_name }}!
-
-You're receiving this e-mail because your email was used to sign up for an account on the platform.
-
-To confirm this is correct, go to {{ activate_url }}
-
-Thank you from !
-{{ site_domain }}

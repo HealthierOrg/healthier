@@ -5,7 +5,7 @@ from django.conf import settings
 
 class HealthierAuthAdapter(DefaultAccountAdapter):
     def send_mail(self, template_prefix, email, context):
-        template_folder = settings.TEMPLATES[0].get('DIRS')[0] + '/account/email_confirmation_message.txt'
+        template_folder = settings.TEMPLATES[0].get('DIRS')[0] + '/account/email/email_confirmation_message.txt'
         mail = Mailer()
         user = context.get('user')
         mail.send_messages(subject="Healthier | Verify your account.",

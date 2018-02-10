@@ -64,7 +64,7 @@ class AbstractDetail(APIView):
 
 class EmailTest(APIView):
     def get(self, request, format=None):
-        send_mail("Subject", "text body", "from@example.com",
+        send_mail("Subject", "text body", "from@healthier.download",
                   ["davash001@gmail.com"], html_message="<html>html body</html>")
         return Response({'success': 'sent'})
 
