@@ -84,7 +84,7 @@ class ServiceRequests(models.Model):
     days_available = models.CharField(max_length=200, choices=DAYS_AVAILABLE_TUPLE, default='EVR')
     start_time_available = models.TimeField(max_length=200, default=datetime.time(16, 00))
     end_time_available = models.TimeField(max_length=200, default=datetime.time(16, 00))
-    provision_description = models.TextField(max_length=500, default='')
+    provision_description = models.TextField(max_length=500, default="We provide the best of this service")
     status = models.BooleanField(default=True)
 
     def __str__(self):

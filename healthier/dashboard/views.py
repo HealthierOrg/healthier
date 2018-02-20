@@ -380,10 +380,19 @@ class OrderServiceConfigurationView(TemplateView):
             response_obj.set_cookie('status', "error")
             response_obj.set_cookie('message', "There is currently no provider for this service")
             return response_obj
-        service_details = HealthierService.objects.get(id=service_id)
-        return render(request, self.template_name,
-                      {'service_details': service_details, 'form': self.form_class,
-                       'current_page_title': "Service Configuration"})
+        if request.user.account_type == "PRO":
+            if ServiceRequests.objects.filter(service_id=service_id):
+                response_obj = HttpResponseRedirect(reverse('dashboard:dashboard_all_services'))
+                response_obj.set_cookie('status', "error")
+                response_obj.set_cookie('message', "You already provide this service")
+                return response_obj
+            else:
+                service_details = HealthierService.objects.get(id=service_id)
+                return render(request, self.template_name,
+                              {'service_details': service_details, 'form': self.form_class,
+                               'current_page_title': "Service Configuration"})
+        elif request.user == "CON":
+            return HttpResponseRedirect(reverse('dashboard:order_service_step'))
 
     def post(self, request, **kwargs):
         response = request.POST.dict()

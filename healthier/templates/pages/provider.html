@@ -33,8 +33,10 @@
                         <i class="fa fa-{{ icons | random}} feature-1__icon fa-5x"></i>
                         </div>
                         <div class="feature-1__base">
-                          <h3 class="feature-1__title">{{ service. | capfirst }}</h3>
-                          <p class="feature-1__paragraph">{{ service.service_id.description }}</p>
+                          <h3 class="feature-1__title">{{ service.service.service_name | capfirst }}</h3>
+                          <br>
+                          <h3 class="feature-1__title">Price : 	&#8358;{{ service.price.gross }}</h3>
+                          <p class="feature-1__paragraph">Description: {{ service.provision_description }}</p>
                         </div>
                       </a>
                     </div>

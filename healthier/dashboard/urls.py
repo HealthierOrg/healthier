@@ -3,7 +3,6 @@ from django.contrib.auth.decorators import login_required
 from .views import *
 from healthier.messenger.views import compose, inbox, view, outbox
 
-
 urlpatterns = [
     url(r'^$', DashboardView.as_view(), name='dashboard'),
     url(r'profile^$', login_required(ProfileView.as_view()), name='profile'),
@@ -12,7 +11,7 @@ urlpatterns = [
     url(r'^providers$', login_required(AllProviderListView.as_view()), name='provider'),
     url(r'^providers/(?P<pk>\d+)/$', login_required(ProviderDetailView.as_view()), name='provider_details'),
 
-    ### Service URLs
+    # Service URLs
     url(r'^services/(?P<service_id>\d+)$', ServiceDetailView.as_view(), name='service_details'),
     url(r'^services/me$', login_required(UserServicesListView.as_view()),
         name='dashboard_my_services'),
