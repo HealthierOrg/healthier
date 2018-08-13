@@ -2550,7 +2550,7 @@ th {
 .fa-wifi:before {
   content: "\f1eb";
 }
-.fa-calculator:before {
+.fa-calcuOpen Sansr:before {
   content: "\f1ec";
 }
 .fa-paypal:before {
@@ -2776,7 +2776,7 @@ hr {
 .left-side header span {
   margin-bottom: 6px;
   display: block;
-  font-family: 'lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   font-size: 13px;
   color: #999;
@@ -2812,7 +2812,7 @@ hr {
   color: #fff;
   display: inline-block;
   background: #ff5500;
-  font-family: 'lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 0.12em;
@@ -2830,7 +2830,7 @@ hr {
   display: inline-block;
 }
 .right-side .cta span a {
-  font-family: 'lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   font-size: 13px;
   color: #999;
@@ -2855,7 +2855,7 @@ hr {
   color: #ff5500;
 }
 .right-side .social li a {
-  font-family: 'lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   font-size: 13px;
   color: #999;

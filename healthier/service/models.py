@@ -5,7 +5,7 @@ from django.utils.timezone import now
 from config.utils import generate_id
 from healthier.consumers.models import Consumer
 from healthier.providers.models import Provider
-from django_prices.models import PriceField
+from django_prices.models import MoneyField
 from annoying.fields import JSONField
 
 DAYS_AVAILABLE_TUPLE = (
@@ -60,7 +60,7 @@ class OrderedService(models.Model):
     order_id = models.CharField(max_length=200, default=generate_id("order"))
     promo_code = models.CharField(max_length=200)
     order_date = models.DateTimeField(auto_now=False, default=now)
-    price = PriceField(currency='NGN', decimal_places=2, max_digits=12, default=0.00)
+    price = MoneyField(currency='NGN', decimal_places=2, max_digits=12, default=0.00)
     cancellation_time = models.CharField(default='', max_length=50)
     arrival_time = models.CharField(default='', max_length=50)
     arrival_date = models.CharField(default='', max_length=50)
@@ -78,7 +78,7 @@ class ServiceRequests(models.Model):
     """A paid for service request to the service organization"""
     request_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=now)
     requested_by = models.ForeignKey(Provider, on_delete=models.CASCADE)
-    price = PriceField(currency='NGN', decimal_places=2, max_digits=12, default=0.00)
+    price = MoneyField(currency='NGN', decimal_places=2, max_digits=12, default=0.00)
     service = models.ForeignKey(HealthierService, on_delete=models.CASCADE)
     is_ordered = models.BooleanField(default=False)
     days_available = models.CharField(max_length=200, choices=DAYS_AVAILABLE_TUPLE, default='EVR')

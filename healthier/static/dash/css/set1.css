@@ -19,7 +19,7 @@
 	background: #f0f0f0;
 	color: #333;
 	font-weight: bold;
-	font-family: 'lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	-webkit-appearance: none; /* for box shadows to show on iOS */
 }
 
@@ -136,7 +136,7 @@
 	overflow: hidden;
 	max-width: none;
 	width: 100%;
-	font-family: 'lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .input__field--hoshi {
@@ -156,7 +156,7 @@
 	height: calc(100% - 1em);
 	text-align: left;
 	pointer-events: none;
-	font-family: 'lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	text-transform: uppercase;
 	font-size: 13px;
 	color: #999;
